@@ -147,7 +147,7 @@ The site deploys as a **Cloudflare Worker with static assets** (Git-connected; c
 2. `public/_headers` keeps a backstop rule sending `X-Robots-Tag: noindex` on any `*.gregorio-inov.workers.dev` host in case those routes are re-enabled.
 3. Every page's canonical is an absolute `https://aletopintores.com/...` URL, so even a crawled stray copy points Google at production.
 
-`www.aletopintores.com` 301-redirects to the apex via a Cloudflare zone redirect rule (managed in the dashboard/API, not in the repo).
+`www.aletopintores.com` is attached to the worker as a custom domain (for DNS + TLS) and 301-redirects to the apex via a Cloudflare zone **Redirect Rule** (dashboard → Rules → "Redirect from WWW to Root" template) — zone rules run before the Worker, so www never serves content. Note: Workers `_redirects` files only accept RELATIVE paths (host rules that worked on Pages break the deploy).
 
 Never share or link `workers.dev` URLs publicly (social bios, directories, GBP) — always the real domain. After changing deploy config, verify: `curl -sI https://aletopintores.com/` shows security headers and **no** `X-Robots-Tag`.
 
