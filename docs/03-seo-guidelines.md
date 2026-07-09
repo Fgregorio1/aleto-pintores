@@ -142,12 +142,14 @@ Spot-check `dist/`: one `<title>`/canonical/H1 per page; hreflang only on true p
 
 ### Preview environments (duplicate-content protection)
 
-The only indexable host is `aletopintores.com`. Three layers keep preview/dev URLs out of Google:
-1. `public/_headers` sends `X-Robots-Tag: noindex` on every `*.pages.dev` host (production alias and branch previews). Verify after deploy: `curl -sI https://<project>.pages.dev/ | grep -i x-robots-tag` → `noindex`; the same curl on `aletopintores.com` must show **no** such header.
-2. Every page's canonical is an absolute `https://aletopintores.com/...` URL, so even a crawled preview points Google at production.
-3. After the custom domain goes live, uncomment the 301 rule in `public/_redirects` so `pages.dev` URLs redirect to the real domain outright.
+The site deploys as a **Cloudflare Worker with static assets** (Git-connected; config in `wrangler.jsonc`). The only indexable host is `aletopintores.com`. Three layers keep every other host out of Google:
+1. `wrangler.jsonc` sets `workers_dev: false` and `preview_urls: false` — the `*.workers.dev` alias and version-preview URLs don't serve at all. (If previews are ever needed, re-enable `preview_urls` AND protect them with Cloudflare Access.)
+2. `public/_headers` keeps a backstop rule sending `X-Robots-Tag: noindex` on any `*.gregorio-inov.workers.dev` host in case those routes are re-enabled.
+3. Every page's canonical is an absolute `https://aletopintores.com/...` URL, so even a crawled stray copy points Google at production.
 
-Never share or link `pages.dev` URLs publicly (social bios, directories, GBP) — always the real domain.
+`www.aletopintores.com` 301-redirects to the apex via a Cloudflare zone redirect rule (managed in the dashboard/API, not in the repo).
+
+Never share or link `workers.dev` URLs publicly (social bios, directories, GBP) — always the real domain. After changing deploy config, verify: `curl -sI https://aletopintores.com/` shows security headers and **no** `X-Robots-Tag`.
 
 ## 10. What we never do
 

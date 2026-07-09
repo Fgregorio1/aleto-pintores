@@ -1,9 +1,11 @@
-# Cloudflare Pages redirects
+# Workers static-assets redirects.
 #
-# ONCE aletopintores.com is live as the custom domain on this Pages project,
-# uncomment the rule below to 301 every pages.dev URL to the real domain.
-# This removes the duplicate host entirely (stronger than the noindex header).
-# Do NOT enable it before the custom domain is attached — it would break
-# preview access.
+# www -> apex: www.aletopintores.com is attached to this worker as a custom
+# domain purely so this rule can 301 it to the canonical host.
+https://www.aletopintores.com/* https://aletopintores.com/:splat 301
+
+# Host-level protections elsewhere:
+# - workers.dev + preview URLs: disabled in wrangler.jsonc (workers_dev/preview_urls)
 #
-# https://:project.pages.dev/* https://aletopintores.com/:splat 301
+# Add path redirects below when URLs change, e.g.:
+# /old-path/ /new-path/ 301

@@ -1,0 +1,27 @@
+/**
+ * Cloudflare Workers config — settings-as-code for the Git-connected worker.
+ * Workers Builds runs `wrangler deploy` on every push and honors this file.
+ * The `name` MUST match the existing worker exactly or a new one gets created.
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aleto-pintores",
+  "compatibility_date": "2026-07-09",
+
+  // No workers.dev host and no version-preview URLs: aletopintores.com is the
+  // ONLY public host (duplicate-content protection — see docs/03 §9).
+  // If previews are wanted later: set preview_urls: true and protect them
+  // with Cloudflare Access.
+  "workers_dev": false,
+  "preview_urls": false,
+
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}
