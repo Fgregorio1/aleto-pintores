@@ -1,0 +1,14 @@
+---
+/** Serializes each schema object into its own <script type="application/ld+json">. */
+interface Props {
+  schemas: (object | null)[];
+}
+const { schemas } = Astro.props;
+const valid = schemas.filter((s): s is object => s !== null);
+---
+
+{
+  valid.map((schema) => (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  ))
+}

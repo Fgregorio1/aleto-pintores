@@ -1,0 +1,43 @@
+---
+/**
+ * Suggests the English version to English-browser visitors on Spanish pages.
+ * NO automatic redirect (auto-redirects poison crawling/indexing) — just a
+ * dismissible suggestion, remembered in localStorage. Rendered only when an
+ * EN twin exists (BaseLayout checks the hreflang pair).
+ */
+interface Props {
+  enUrl: string;
+}
+const { enUrl } = Astro.props;
+---
+
+<div
+  id="lang-banner"
+  hidden
+  class="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-forest-900 px-4 py-3 text-paper shadow-lg"
+  role="region"
+  aria-label="Language suggestion"
+>
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 text-sm">
+    <p>This page is also available in English.</p>
+    <div class="flex items-center gap-3">
+      <a href={enUrl} class="rounded-full bg-chartreuse-400 px-4 py-1.5 font-semibold text-forest-950 hover:bg-chartreuse-300">View in English</a>
+      <button id="lang-banner-dismiss" class="text-paper/70 underline underline-offset-2 hover:text-paper" type="button">Dismiss</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const KEY = 'aleto-lang-banner-dismissed';
+  const banner = document.getElementById('lang-banner');
+  const prefersEnglish = (navigator.languages ?? [navigator.language]).some((l) =>
+    l?.toLowerCase().startsWith('en'),
+  );
+  if (banner && prefersEnglish && !localStorage.getItem(KEY)) {
+    banner.hidden = false;
+    document.getElementById('lang-banner-dismiss')?.addEventListener('click', () => {
+      localStorage.setItem(KEY, '1');
+      banner.hidden = true;
+    });
+  }
+</script>

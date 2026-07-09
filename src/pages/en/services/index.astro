@@ -1,0 +1,35 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import DirectAnswer from '@/components/DirectAnswer.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import Faq from '@/components/Faq.astro';
+import CtaBlock from '@/components/CtaBlock.astro';
+import { seoFromPagina } from '@/lib/seo';
+import { faqSchema } from '@/lib/schema';
+
+const pagina = await getEntry('paginas', 'en/services-hub');
+if (!pagina) throw new Error('Missing paginas entry: en/services-hub');
+const seo = seoFromPagina(pagina);
+const servicios = (await getCollection('servicios', (e) => e.id.startsWith('en/') && !e.data.draft)).sort(
+  (a, b) => a.data.orden - b.data.orden,
+);
+const crumbs = [
+  { name: 'Home', path: '/en/' },
+  { name: 'Services', path: seo.canonicalPath },
+];
+---
+
+<BaseLayout seo={seo} schemas={[faqSchema(pagina.data.faq)]}>
+  <Breadcrumbs items={crumbs} />
+  <section class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+    <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl lg:text-[2.75rem]">{pagina.data.h1}</h1>
+    {pagina.data.directAnswer && <DirectAnswer text={pagina.data.directAnswer} />}
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {servicios.map((s) => <ServiceCard servicio={s} locale="en" />)}
+    </div>
+    <Faq faq={pagina.data.faq} locale="en" />
+    <CtaBlock locale="en" />
+  </section>
+</BaseLayout>

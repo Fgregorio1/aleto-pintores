@@ -1,0 +1,46 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import DirectAnswer from '@/components/DirectAnswer.astro';
+import Faq from '@/components/Faq.astro';
+import UpdatedDate from '@/components/UpdatedDate.astro';
+import CtaBlock from '@/components/CtaBlock.astro';
+import { seoFromSingleLocale } from '@/lib/seo';
+import { faqSchema } from '@/lib/schema';
+import { staticPath } from '@/i18n/routes';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', (p) => !p.data.draft);
+  return posts.map((entry) => ({
+    params: { slug: entry.id.replace(/^es\//, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const seo = seoFromSingleLocale('blog', entry);
+const { Content } = await render(entry);
+const crumbs = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Guías', path: staticPath('blog-hub', 'es') },
+  { name: entry.data.h1, path: seo.canonicalPath },
+];
+---
+
+<BaseLayout seo={seo} schemas={[faqSchema(entry.data.faq)]}>
+  <Breadcrumbs items={crumbs} />
+  <article class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+    <header class="max-w-3xl">
+      <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl">{entry.data.h1}</h1>
+      <p class="mt-2 text-sm text-ink-soft">Por {entry.data.author}</p>
+      <UpdatedDate date={entry.data.dateModified} locale="es" />
+      <DirectAnswer text={entry.data.directAnswer} />
+    </header>
+    <div class="prose-aleto mt-8 max-w-3xl">
+      <Content />
+    </div>
+    <Faq faq={entry.data.faq} locale="es" />
+    <CtaBlock locale="es" />
+  </article>
+</BaseLayout>

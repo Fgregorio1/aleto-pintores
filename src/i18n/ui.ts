@@ -1,0 +1,86 @@
+export type Locale = 'es' | 'en';
+
+/** UI string dictionaries. Content lives in collections — only chrome/labels here. */
+export const ui = {
+  es: {
+    'nav.servicios': 'Servicios',
+    'nav.precios': 'Precios',
+    'nav.proyectos': 'Proyectos',
+    'nav.sobre': 'Sobre nosotros',
+    'nav.contacto': 'Contacto',
+    'nav.opiniones': 'Opiniones',
+    'nav.blog': 'Guías',
+    'cta.presupuesto': 'Presupuesto gratis',
+    'cta.presupuesto24h': 'Presupuesto en 24 h',
+    'cta.whatsapp': 'Escríbenos por WhatsApp',
+    'cta.llamar': 'Llamar',
+    'cta.verPrecios': 'Ver precios',
+    'cta.calcular': 'Calcular mi presupuesto',
+    'footer.horario': 'Horario',
+    'footer.zonas': 'Zonas de servicio',
+    'footer.legal': 'Legal',
+    'footer.tagline': 'Empresa de pintura en Madrid. Precios publicados, presupuesto en 24 h.',
+    'breadcrumb.inicio': 'Inicio',
+    'updated.label': 'Actualizado:',
+    'faq.title': 'Preguntas frecuentes',
+    'proceso.title': 'Cómo trabajamos',
+    'precios.desde': 'desde',
+    'precios.tabla.concepto': 'Concepto',
+    'precios.tabla.precio': 'Precio (2026)',
+    'precios.tabla.duracion': 'Duración',
+    'banner.suggestion': 'This page is also available in English.',
+    'banner.cta': 'View in English',
+    'banner.dismiss': 'Dismiss',
+    'lang.switch': 'English',
+    'lang.switchShort': 'EN',
+    'related.servicios': 'Servicios relacionados',
+    'related.precios': 'Guías de precios',
+    '404.title': 'Página no encontrada',
+    '404.text': 'La página que buscas no existe. Quizá te interese:',
+  },
+  en: {
+    'nav.servicios': 'Services',
+    'nav.precios': 'Prices',
+    'nav.proyectos': 'Projects',
+    'nav.sobre': 'About us',
+    'nav.contacto': 'Contact',
+    'nav.opiniones': 'Reviews',
+    'nav.blog': 'Guides',
+    'cta.presupuesto': 'Free quote',
+    'cta.presupuesto24h': 'Quote within 24 h',
+    'cta.whatsapp': 'Message us on WhatsApp',
+    'cta.llamar': 'Call',
+    'cta.verPrecios': 'See prices',
+    'cta.calcular': 'Estimate my project',
+    'footer.horario': 'Hours',
+    'footer.zonas': 'Service areas',
+    'footer.legal': 'Legal',
+    'footer.tagline': 'Painting company in Madrid. Published prices, quotes within 24 h.',
+    'breadcrumb.inicio': 'Home',
+    'updated.label': 'Updated:',
+    'faq.title': 'Frequently asked questions',
+    'proceso.title': 'How we work',
+    'precios.desde': 'from',
+    'precios.tabla.concepto': 'Item',
+    'precios.tabla.precio': 'Price (2026)',
+    'precios.tabla.duracion': 'Duration',
+    'banner.suggestion': 'This page is also available in English.',
+    'banner.cta': 'View in English',
+    'banner.dismiss': 'Dismiss',
+    'lang.switch': 'Español',
+    'lang.switchShort': 'ES',
+    'related.servicios': 'Related services',
+    'related.precios': 'Price guides',
+    '404.title': 'Page not found',
+    '404.text': 'The page you are looking for does not exist. You may be interested in:',
+  },
+} as const;
+
+export type UiKey = keyof (typeof ui)['es'];
+
+export function useTranslations(locale: Locale | undefined) {
+  const l: Locale = locale === 'en' ? 'en' : 'es';
+  return function t(key: UiKey): string {
+    return ui[l][key];
+  };
+}

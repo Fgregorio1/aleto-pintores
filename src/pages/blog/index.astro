@@ -1,0 +1,37 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import PaginaLayout from '@/layouts/PaginaLayout.astro';
+import { blogPath } from '@/lib/paths';
+
+const entry = await getEntry('paginas', 'es/blog-hub');
+if (!entry) throw new Error('Missing paginas entry: es/blog-hub');
+const posts = (await getCollection('blog', (p) => !p.data.draft)).sort(
+  (a, b) => b.data.datePublished.getTime() - a.data.datePublished.getTime(),
+);
+// Gate: entry frontmatter keeps noindex:true until posts exist.
+---
+
+<PaginaLayout entry={entry} showCta={false}>
+  {
+    posts.length > 0 && (
+      <section class="mt-10">
+        <ul class="space-y-4">
+          {posts.map((p) => (
+            <li>
+              <a href={blogPath(p)} class="group block rounded-2xl border border-line bg-white p-6 transition-all hover:border-olive-400 hover:shadow-md">
+                <h2 class="text-xl text-forest-900 group-hover:text-forest-700">{p.data.h1}</h2>
+                <p class="mt-2 text-sm leading-relaxed text-ink-soft">{p.data.excerpt}</p>
+                <p class="mt-3 text-xs text-ink-soft">
+                  {p.data.author} ·{' '}
+                  <time datetime={p.data.datePublished.toISOString().slice(0, 10)}>
+                    {p.data.datePublished.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  </time>
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</PaginaLayout>

@@ -1,0 +1,80 @@
+---
+import { render, getEntries, type CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import CtaBlock from '@/components/CtaBlock.astro';
+import UpdatedDate from '@/components/UpdatedDate.astro';
+import { seoFromSingleLocale } from '@/lib/seo';
+import { servicioPath } from '@/lib/paths';
+import { staticPath } from '@/i18n/routes';
+import { useTranslations } from '@/i18n/ui';
+
+/** Project page: real photos, real numbers — long-tail + internal-link fuel. */
+interface Props {
+  entry: CollectionEntry<'proyectos'>;
+}
+const { entry } = Astro.props;
+const t = useTranslations('es');
+const d = entry.data;
+const seo = seoFromSingleLocale('proyectos', entry);
+const { Content } = await render(entry);
+const servicios = await getEntries(d.servicios);
+const nf = new Intl.NumberFormat('es-ES');
+const faseLabel = { antes: 'Antes', durante: 'Durante', despues: 'Después' } as const;
+
+const crumbs = [
+  { name: t('breadcrumb.inicio'), path: '/' },
+  { name: t('nav.proyectos'), path: staticPath('proyectos-hub', 'es') },
+  { name: d.h1, path: seo.canonicalPath },
+];
+---
+
+<BaseLayout seo={seo}>
+  <Breadcrumbs items={crumbs} />
+  <article class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+    <header class="max-w-3xl">
+      <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl">{d.h1}</h1>
+      <UpdatedDate date={d.dateModified} locale="es" />
+      <dl class="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm">
+        <div><dt class="inline font-semibold text-forest-800">Superficie:</dt> <dd class="inline">{d.superficieM2} m²</dd></div>
+        <div><dt class="inline font-semibold text-forest-800">Precio:</dt> <dd class="inline">{nf.format(d.precioTotal)} €</dd></div>
+        <div><dt class="inline font-semibold text-forest-800">Duración:</dt> <dd class="inline">{d.duracionDias} días</dd></div>
+      </dl>
+    </header>
+
+    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      {
+        d.imagenes.map((img) => (
+          <figure class="overflow-hidden rounded-2xl border border-line bg-white">
+            <img src={img.src} alt={img.alt} loading="lazy" class="aspect-[4/3] w-full object-cover" />
+            <figcaption class="px-4 py-2.5 text-xs text-ink-soft">
+              <span class="font-semibold text-olive-600">{faseLabel[img.fase]}</span>
+              {img.caption && ` — ${img.caption}`}
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <div class="prose-aleto mt-10 max-w-3xl">
+      <Content />
+    </div>
+
+    <section class="mt-10">
+      <h2 class="text-xl text-forest-900">Servicios de este proyecto</h2>
+      <ul class="mt-4 flex flex-wrap gap-3">
+        {
+          servicios.map((s) => (
+            <li>
+              <a href={servicioPath(s)} class="inline-block rounded-full border border-line bg-white px-4 py-2 text-sm font-medium text-forest-800 hover:border-olive-400">
+                {s.data.shortLabel}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <CtaBlock locale="es" />
+  </article>
+</BaseLayout>

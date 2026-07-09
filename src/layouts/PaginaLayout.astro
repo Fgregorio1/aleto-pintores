@@ -1,0 +1,48 @@
+---
+import { render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import DirectAnswer from '@/components/DirectAnswer.astro';
+import Faq from '@/components/Faq.astro';
+import UpdatedDate from '@/components/UpdatedDate.astro';
+import CtaBlock from '@/components/CtaBlock.astro';
+import { seoFromPagina } from '@/lib/seo';
+import { faqSchema } from '@/lib/schema';
+import { entryLocale } from '@/lib/paths';
+import { useTranslations } from '@/i18n/ui';
+
+/** Generic markdown one-off page (about, legal, empty-state hubs). */
+interface Props {
+  entry: CollectionEntry<'paginas'>;
+  showCta?: boolean;
+  showDate?: boolean;
+  extraSchemas?: (object | null)[];
+}
+const { entry, showCta = true, showDate = true, extraSchemas = [] } = Astro.props;
+const locale = entryLocale(entry.id);
+const t = useTranslations(locale);
+const seo = seoFromPagina(entry);
+const { Content } = await render(entry);
+const crumbs = [
+  { name: t('breadcrumb.inicio'), path: locale === 'en' ? '/en/' : '/' },
+  { name: entry.data.h1, path: seo.canonicalPath },
+];
+---
+
+<BaseLayout seo={seo} schemas={[faqSchema(entry.data.faq), ...extraSchemas]}>
+  <Breadcrumbs items={crumbs} />
+  <article class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+    <header class="max-w-3xl">
+      <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
+      {showDate && <UpdatedDate date={entry.data.dateModified} locale={locale} />}
+      {entry.data.directAnswer && <DirectAnswer text={entry.data.directAnswer} />}
+    </header>
+    <div class="prose-aleto mt-8 max-w-3xl">
+      <slot name="before-content" />
+      <Content />
+    </div>
+    <slot />
+    <Faq faq={entry.data.faq} locale={locale} />
+    {showCta && <CtaBlock locale={locale} />}
+  </article>
+</BaseLayout>

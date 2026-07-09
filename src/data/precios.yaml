@@ -1,0 +1,114 @@
+# ══════════════════════════════════════════════════════════════════════
+# MASTER PRICE DATA — the single source of truth for every price on the site.
+# Consumed by: price tables, the /precios/ calculator, Service JSON-LD offers,
+# and llms.txt. Edit HERE, bump dateModified, rebuild — everything updates.
+# Update at least quarterly with real quote data (docs/02 §6, docs/03 §7).
+# ══════════════════════════════════════════════════════════════════════
+
+dateModified: 2026-07-09
+anio: 2026
+moneda: EUR
+metodologia_es: "Rangos basados en nuestros presupuestos reales en Madrid en 2026. El precio final depende del estado de las paredes, la altura de techos y el acceso."
+metodologia_en: "Ranges based on our real quotes in Madrid in 2026. The final price depends on wall condition, ceiling height and access."
+
+servicios:
+  pintura-interior:
+    label_es: "Pintura interior de pisos y casas"
+    label_en: "Interior painting (flats & houses)"
+    unidad_es: "€/m² de vivienda"
+    unidad_en: "€/m² floor area"
+    unidad_corta: "m²"
+    min: 13
+    max: 20
+    ejemplos:
+      - { m2: 60, label_es: "Piso de 60 m²", label_en: "60 m² flat", min: 850, max: 1250, dias: "2–3" }
+      - { m2: 80, label_es: "Piso de 80 m²", label_en: "80 m² flat", min: 1100, max: 1700, dias: "3–4" }
+      - { m2: 100, label_es: "Piso de 100 m²", label_en: "100 m² flat", min: 1400, max: 2100, dias: "4–5" }
+      - { m2: 120, label_es: "Piso de 120 m²", label_en: "120 m² flat", min: 1700, max: 2500, dias: "5–6" }
+
+  quitar-gotele:
+    label_es: "Quitar gotelé + alisar + pintar"
+    label_en: "Gotelé removal + wall smoothing + painting"
+    unidad_es: "€/m² de pared"
+    unidad_en: "€/m² wall area"
+    unidad_corta: "m² pared"
+    min: 9
+    max: 15
+    ejemplos:
+      - { m2: 60, label_es: "Piso de 60 m² (≈150 m² de pared)", label_en: "60 m² flat (≈150 m² wall)", min: 1400, max: 2100, dias: "3–5" }
+      - { m2: 80, label_es: "Piso de 80 m² (≈200 m² de pared)", label_en: "80 m² flat (≈200 m² wall)", min: 1800, max: 2600, dias: "4–6" }
+      - { m2: 100, label_es: "Piso de 100 m² (≈250 m² de pared)", label_en: "100 m² flat (≈250 m² wall)", min: 2200, max: 3300, dias: "5–7" }
+
+  alisar-paredes:
+    label_es: "Alisado de paredes (sin gotelé)"
+    label_en: "Wall smoothing (no gotelé)"
+    unidad_es: "€/m² de pared"
+    unidad_en: "€/m² wall area"
+    unidad_corta: "m² pared"
+    min: 7
+    max: 12
+    ejemplos:
+      - { m2: 80, label_es: "Piso de 80 m² (≈200 m² de pared)", label_en: "80 m² flat (≈200 m² wall)", min: 1400, max: 2400, dias: "3–5" }
+
+  lacar-puertas:
+    label_es: "Lacado de puertas"
+    label_en: "Door lacquering"
+    unidad_es: "€/puerta (dos caras + marco)"
+    unidad_en: "€/door (both sides + frame)"
+    unidad_corta: "puertas"
+    min: 80
+    max: 140
+    ejemplos:
+      - { m2: 5, label_es: "Piso con 5 puertas", label_en: "Flat with 5 doors", min: 400, max: 700, dias: "2–3" }
+      - { m2: 8, label_es: "Piso con 8 puertas", label_en: "Flat with 8 doors", min: 640, max: 1120, dias: "3–4" }
+
+  pintar-fachada:
+    label_es: "Pintura de fachadas"
+    label_en: "Facade painting"
+    unidad_es: "€/m² de fachada"
+    unidad_en: "€/m² facade"
+    unidad_corta: "m² fachada"
+    min: 12
+    max: 22
+    ejemplos:
+      - { m2: 300, label_es: "Fachada de 300 m²", label_en: "300 m² facade", min: 3600, max: 6600, dias: "8–15" }
+
+  pintura-oficinas:
+    label_es: "Pintura de oficinas y locales"
+    label_en: "Office & retail painting"
+    unidad_es: "€/m² de superficie"
+    unidad_en: "€/m² floor area"
+    unidad_corta: "m²"
+    min: 10
+    max: 16
+    ejemplos:
+      - { m2: 150, label_es: "Oficina de 150 m²", label_en: "150 m² office", min: 1500, max: 2400, dias: "3–5" }
+
+  quitar-papel:
+    label_es: "Quitar papel pintado + preparar pared"
+    label_en: "Wallpaper removal + wall prep"
+    unidad_es: "€/m² de pared"
+    unidad_en: "€/m² wall area"
+    unidad_corta: "m² pared"
+    min: 4
+    max: 8
+    ejemplos:
+      - { m2: 40, label_es: "Salón (≈40 m² de pared)", label_en: "Living room (≈40 m² wall)", min: 160, max: 320, dias: "1" }
+
+  impermeabilizacion:
+    label_es: "Impermeabilización de terrazas"
+    label_en: "Terrace waterproofing"
+    unidad_es: "€/m² de terraza"
+    unidad_en: "€/m² terrace"
+    unidad_corta: "m² terraza"
+    min: 25
+    max: 45
+    ejemplos:
+      - { m2: 20, label_es: "Terraza de 20 m²", label_en: "20 m² terrace", min: 500, max: 900, dias: "2–3" }
+
+# Multiplicadores del estado de la pared (usados por el calculador)
+modificadores:
+  buen_estado: { factor: 1.0, label_es: "Buen estado (repaso de color)", label_en: "Good condition (repaint)" }
+  algunos_desperfectos: { factor: 1.15, label_es: "Algunos desperfectos (grietas, humedades leves)", label_en: "Some damage (cracks, minor damp)" }
+  mal_estado: { factor: 1.3, label_es: "Mal estado (reparación importante)", label_en: "Poor condition (major repair)" }
+  techos_altos: { factor: 1.12, label_es: "Techos altos (+2,8 m) / molduras", label_en: "High ceilings (+2.8 m) / mouldings" }

@@ -1,0 +1,15 @@
+---
+/**
+ * The 2–3 sentence direct answer with concrete numbers, rendered right
+ * under the H1 (docs/02 §3). This block is what featured snippets and AI
+ * assistants lift verbatim — content comes from frontmatter `directAnswer`.
+ */
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<p class="mt-5 max-w-3xl border-l-4 border-chartreuse-400 bg-paper-dark/60 px-5 py-4 text-lg leading-relaxed text-ink">
+  {text}
+</p>

@@ -1,0 +1,9 @@
+---
+import { getEntry } from 'astro:content';
+import PaginaLayout from '@/layouts/PaginaLayout.astro';
+
+const entry = await getEntry('paginas', 'es/aviso-legal');
+if (!entry) throw new Error('Missing paginas entry: es/aviso-legal');
+---
+
+<PaginaLayout entry={entry} showCta={false} />

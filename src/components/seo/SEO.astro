@@ -1,0 +1,55 @@
+---
+import { absolute, BRAND_SUFFIX, DEFAULT_OG_IMAGE, type SEOData } from '@/lib/seo';
+import { BUSINESS } from '@/data/business';
+
+/**
+ * The ONLY place meta tags are rendered. Pages pass an SEOData built from
+ * content frontmatter (seoFromEntry / seoFromPagina) — never hand-written
+ * per page. Edit frontmatter → meta updates. See docs/03 §2.
+ */
+interface Props {
+  seo: SEOData;
+}
+
+const { seo } = Astro.props;
+const fullTitle =
+  seo.brandSuffix === false ? seo.title : `${seo.title} | ${BRAND_SUFFIX}`;
+const canonical = absolute(seo.canonicalPath);
+const ogImage = absolute(seo.ogImage ?? DEFAULT_OG_IMAGE);
+const ogLocale = seo.locale === 'es' ? 'es_ES' : 'en_GB';
+// hreflang only rendered when a genuine pair exists (docs/02 §10)
+const hasPair = seo.alternates.length > 1;
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={seo.description} />
+<link rel="canonical" href={canonical} />
+{seo.noindex && <meta name="robots" content="noindex, follow" />}
+{
+  hasPair &&
+    seo.alternates.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))
+}
+
+<meta property="og:type" content={seo.ogType ?? 'website'} />
+<meta property="og:site_name" content={BUSINESS.name} />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={seo.description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+{
+  seo.dateModified && (
+    <meta
+      property="article:modified_time"
+      content={seo.dateModified.toISOString()}
+    />
+  )
+}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={seo.description} />
+<meta name="twitter:image" content={ogImage} />

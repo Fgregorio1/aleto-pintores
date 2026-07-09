@@ -1,0 +1,55 @@
+---
+import preciosData from '@/data/precios.yaml';
+import { useTranslations, type Locale } from '@/i18n/ui';
+
+/**
+ * Renders the price table for a service from src/data/precios.yaml — the
+ * single source of truth. Edit the YAML, every table/calculator/schema updates.
+ */
+interface Props {
+  priceKey: string;
+  locale: Locale;
+}
+const { priceKey, locale } = Astro.props;
+const t = useTranslations(locale);
+const price = preciosData.servicios[priceKey];
+if (!price) throw new Error(`Unknown priceKey "${priceKey}" — add it to src/data/precios.yaml`);
+const label = locale === 'es' ? price.label_es : price.label_en;
+const unidad = locale === 'es' ? price.unidad_es : price.unidad_en;
+const fmt = (n: number) => n.toLocaleString(locale === 'es' ? 'es-ES' : 'en-GB');
+const diasLabel = locale === 'es' ? 'días' : 'days';
+---
+
+<div class="mt-8 overflow-x-auto">
+  <table class="w-full min-w-[28rem] border-collapse text-sm">
+    <caption class="mb-3 caption-top text-left text-base font-semibold text-forest-900">
+      {label} — {preciosData.anio}
+    </caption>
+    <thead>
+      <tr>
+        <th class="bg-forest-900 px-3 py-2.5 text-left font-medium text-paper">{t('precios.tabla.concepto')}</th>
+        <th class="bg-forest-900 px-3 py-2.5 text-left font-medium text-paper">{t('precios.tabla.precio')}</th>
+        <th class="bg-forest-900 px-3 py-2.5 text-left font-medium text-paper">{t('precios.tabla.duracion')}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-chartreuse-100/50">
+        <td class="border-b border-line px-3 py-2.5 font-medium">{unidad}</td>
+        <td class="border-b border-line px-3 py-2.5 font-semibold text-forest-800">{fmt(price.min)}–{fmt(price.max)} €</td>
+        <td class="border-b border-line px-3 py-2.5">—</td>
+      </tr>
+      {
+        price.ejemplos.map((ej: any) => (
+          <tr>
+            <td class="border-b border-line px-3 py-2.5">{locale === 'es' ? ej.label_es : ej.label_en}</td>
+            <td class="border-b border-line px-3 py-2.5 font-semibold text-forest-800">
+              {fmt(ej.min)}–{fmt(ej.max)} €
+            </td>
+            <td class="border-b border-line px-3 py-2.5">{ej.dias} {diasLabel}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+  <p class="mt-2 text-xs text-ink-soft">{locale === 'es' ? preciosData.metodologia_es : preciosData.metodologia_en}</p>
+</div>

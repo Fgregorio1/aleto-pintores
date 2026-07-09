@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { servicioPath } from '@/lib/paths';
+import preciosData from '@/data/precios.yaml';
+import { useTranslations, type Locale } from '@/i18n/ui';
+
+interface Props {
+  servicio: CollectionEntry<'servicios'>;
+  locale: Locale;
+}
+const { servicio, locale } = Astro.props;
+const t = useTranslations(locale);
+const price = preciosData.servicios[servicio.data.priceKey];
+const unidadCorta = price
+  ? locale === 'es'
+    ? price.unidad_es.replace('€/', '')
+    : price.unidad_en.replace('€/', '')
+  : '';
+---
+
+<a
+  href={servicioPath(servicio)}
+  class="group flex flex-col justify-between rounded-2xl border border-line bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-olive-400 hover:shadow-md"
+>
+  <div>
+    <h3 class="text-lg text-forest-900 group-hover:text-forest-700">{servicio.data.shortLabel}</h3>
+    <p class="mt-2 text-sm leading-relaxed text-ink-soft">{servicio.data.excerpt}</p>
+  </div>
+  {
+    price && (
+      <p class="mt-5 text-sm font-semibold text-olive-600">
+        {t('precios.desde')} {price.min} €/{unidadCorta} <span aria-hidden="true" class="ml-1 inline-block transition-transform group-hover:translate-x-0.5">→</span>
+      </p>
+    )
+  }
+</a>

@@ -1,0 +1,32 @@
+---
+import { breadcrumbSchema, type Crumb } from '@/lib/schema';
+import JsonLd from '@/components/seo/JsonLd.astro';
+
+/** Visible breadcrumb trail + BreadcrumbList schema, always together. */
+interface Props {
+  items: Crumb[];
+}
+const { items } = Astro.props;
+---
+
+<nav aria-label="breadcrumb" class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+  <ol class="flex flex-wrap items-center gap-1.5 text-xs text-ink-soft">
+    {
+      items.map((item, i) => (
+        <li class="flex items-center gap-1.5">
+          {i > 0 && <span aria-hidden="true" class="text-line">/</span>}
+          {i < items.length - 1 ? (
+            <a href={item.path} class="hover:text-forest-700 hover:underline">
+              {item.name}
+            </a>
+          ) : (
+            <span aria-current="page" class="font-medium text-forest-800">
+              {item.name}
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+<JsonLd schemas={[breadcrumbSchema(items)]} />

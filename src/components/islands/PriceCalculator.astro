@@ -1,0 +1,144 @@
+---
+import preciosData from '@/data/precios.yaml';
+import { whatsappLink } from '@/data/business';
+import type { Locale } from '@/i18n/ui';
+
+/**
+ * Client-side estimate widget. Reads the SAME precios.yaml as tables and
+ * schema (inlined as JSON at build time) — one source of truth. Output
+ * feeds a prefilled WhatsApp CTA (speed-to-lead, playbook §2).
+ * Zero frameworks: a small inline script, ~2 KB.
+ */
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+
+const services = Object.entries(preciosData.servicios).map(([key, s]: [string, any]) => ({
+  key,
+  label: locale === 'es' ? s.label_es : s.label_en,
+  unidad: locale === 'es' ? s.unidad_es : s.unidad_en,
+  min: s.min,
+  max: s.max,
+}));
+const mods = Object.entries(preciosData.modificadores).map(([key, m]: [string, any]) => ({
+  key,
+  label: locale === 'es' ? m.label_es : m.label_en,
+  factor: m.factor,
+}));
+
+const txt = {
+  es: {
+    title: 'Calcula tu presupuesto orientativo',
+    service: 'Servicio',
+    m2: 'Superficie (según la unidad del servicio)',
+    estado: 'Estado de las paredes',
+    result: 'Estimación orientativa',
+    disclaimer: 'Orientativo. El presupuesto cerrado se confirma con visita gratuita en 24 h.',
+    cta: 'Pedir presupuesto cerrado por WhatsApp',
+    waMsg: (s: string, m2: string, r: string) =>
+      `Hola, he usado el calculador de aletopintores.com: ${s}, ${m2} m². Estimación: ${r}. ¿Me podéis dar un presupuesto cerrado?`,
+  },
+  en: {
+    title: 'Estimate your project',
+    service: 'Service',
+    m2: 'Area (in the service unit)',
+    estado: 'Wall condition',
+    result: 'Estimated range',
+    disclaimer: 'Indicative. We confirm a fixed quote with a free visit within 24 h.',
+    cta: 'Get a fixed quote on WhatsApp',
+    waMsg: (s: string, m2: string, r: string) =>
+      `Hi, I used the calculator on aletopintores.com: ${s}, ${m2} m². Estimate: ${r}. Could you give me a fixed quote?`,
+  },
+}[locale];
+
+const config = { services, mods, waBase: whatsappLink(), locale };
+---
+
+<section
+  id="calculadora"
+  class="mt-12 rounded-2xl border border-olive-400/40 bg-chartreuse-100/40 p-6 sm:p-8"
+  data-config={JSON.stringify(config)}
+>
+  <h2 class="text-2xl text-forest-900">{txt.title}</h2>
+  <form class="mt-6 grid gap-5 sm:grid-cols-3" data-calc-form>
+    <label class="block text-sm font-medium text-forest-900">
+      {txt.service}
+      <select
+        name="servicio"
+        class="mt-1.5 w-full rounded-lg border border-line bg-white px-3 py-2.5 text-sm text-ink"
+      >
+        {services.map((s) => <option value={s.key}>{s.label}</option>)}
+      </select>
+      <span class="mt-1 block text-xs font-normal text-ink-soft" data-unidad>{services[0]?.unidad}</span>
+    </label>
+    <label class="block text-sm font-medium text-forest-900">
+      {txt.m2}
+      <input
+        type="number"
+        name="m2"
+        min="1"
+        max="10000"
+        value="80"
+        inputmode="numeric"
+        class="mt-1.5 w-full rounded-lg border border-line bg-white px-3 py-2.5 text-sm text-ink"
+      />
+    </label>
+    <label class="block text-sm font-medium text-forest-900">
+      {txt.estado}
+      <select
+        name="estado"
+        class="mt-1.5 w-full rounded-lg border border-line bg-white px-3 py-2.5 text-sm text-ink"
+      >
+        {mods.map((m) => <option value={m.key}>{m.label}</option>)}
+      </select>
+    </label>
+  </form>
+
+  <div class="mt-6 rounded-xl bg-forest-900 p-5 text-paper">
+    <p class="text-sm text-paper/70">{txt.result}</p>
+    <p class="font-display mt-1 text-3xl font-semibold" data-calc-result>—</p>
+    <p class="mt-2 text-xs text-paper/60">{txt.disclaimer}</p>
+  </div>
+  <a
+    href="#"
+    data-calc-cta
+    class="mt-4 inline-block rounded-full bg-forest-700 px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-forest-800"
+  >{txt.cta}</a>
+</section>
+
+<script>
+  const root = document.getElementById('calculadora');
+  if (root) {
+    const config = JSON.parse(root.dataset.config!);
+    const form = root.querySelector<HTMLFormElement>('[data-calc-form]')!;
+    const result = root.querySelector<HTMLElement>('[data-calc-result]')!;
+    const cta = root.querySelector<HTMLAnchorElement>('[data-calc-cta]')!;
+    const unidadEl = root.querySelector<HTMLElement>('[data-unidad]')!;
+    const nf = new Intl.NumberFormat(config.locale === 'es' ? 'es-ES' : 'en-GB');
+    const waMsgs: Record<string, (s: string, m2: string, r: string) => string> = {
+      es: (s, m2, r) =>
+        `Hola, he usado el calculador de aletopintores.com: ${s}, ${m2} m². Estimación: ${r}. ¿Me podéis dar un presupuesto cerrado?`,
+      en: (s, m2, r) =>
+        `Hi, I used the calculator on aletopintores.com: ${s}, ${m2} m². Estimate: ${r}. Could you give me a fixed quote?`,
+    };
+
+    function update() {
+      const data = new FormData(form);
+      const svc = config.services.find((s: any) => s.key === data.get('servicio'));
+      const mod = config.mods.find((m: any) => m.key === data.get('estado'));
+      const m2 = Math.max(1, Number(data.get('m2')) || 0);
+      if (!svc || !mod) return;
+      unidadEl.textContent = svc.unidad;
+      const min = Math.round((svc.min * m2 * mod.factor) / 10) * 10;
+      const max = Math.round((svc.max * m2 * mod.factor) / 10) * 10;
+      const range = `${nf.format(min)}–${nf.format(max)} €`;
+      result.textContent = range;
+      const msg = waMsgs[config.locale](svc.label, String(m2), range);
+      cta.href = `${config.waBase}?text=${encodeURIComponent(msg)}`;
+    }
+
+    form.addEventListener('input', update);
+    update();
+  }
+</script>

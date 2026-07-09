@@ -1,0 +1,65 @@
+---
+import { useTranslations, type Locale } from '@/i18n/ui';
+import { staticPath } from '@/i18n/routes';
+import { whatsappLink, WHATSAPP_DEFAULT_MSG } from '@/data/business';
+
+interface Props {
+  locale: Locale;
+  /** URL of this page in the other language (from hreflang pair), if it exists */
+  switchUrl?: string;
+}
+const { locale, switchUrl } = Astro.props;
+const t = useTranslations(locale);
+const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
+// Fall back to the other language's home when the page has no twin
+const langHref = switchUrl ?? (otherLocale === 'en' ? '/en/' : '/');
+
+const nav = [
+  { href: staticPath('servicios-hub', locale), label: t('nav.servicios') },
+  { href: staticPath('precios-hub', locale), label: t('nav.precios') },
+  ...(locale === 'es' ? [{ href: staticPath('proyectos-hub', 'es'), label: t('nav.proyectos') }] : []),
+  { href: staticPath('sobre-nosotros', locale), label: t('nav.sobre') },
+  { href: staticPath('contacto', locale), label: t('nav.contacto') },
+];
+const home = locale === 'en' ? '/en/' : '/';
+---
+
+<header class="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href={home} class="group flex items-baseline gap-2" aria-label="Aleto Pintores — inicio">
+      <span class="font-display text-2xl font-semibold tracking-[0.08em] text-forest-800">ALETO</span>
+      <span class="hidden text-[0.65rem] font-medium uppercase tracking-[0.22em] text-olive-600 sm:inline">Pintores · Madrid</span>
+    </a>
+
+    <nav class="hidden items-center gap-6 text-sm font-medium text-ink-soft lg:flex" aria-label="principal">
+      {nav.map((item) => (
+        <a href={item.href} class="transition-colors hover:text-forest-700">{item.label}</a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+      <a
+        href={langHref}
+        class="rounded-full border border-line px-2.5 py-1 text-xs font-semibold text-ink-soft transition-colors hover:border-forest-700 hover:text-forest-700"
+        aria-label={t('lang.switch')}
+        title={t('lang.switch')}
+      >{t('lang.switchShort')}</a>
+      <a
+        href={whatsappLink(WHATSAPP_DEFAULT_MSG[locale])}
+        class="hidden rounded-full bg-forest-700 px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-forest-800 sm:inline-block"
+      >{t('cta.presupuesto24h')}</a>
+      <!-- Mobile menu -->
+      <details class="relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-md border border-line text-forest-800 [&::-webkit-details-marker]:hidden" aria-label="Menú">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </summary>
+        <nav class="absolute right-0 mt-2 w-56 rounded-xl border border-line bg-paper p-2 shadow-lg" aria-label="móvil">
+          {nav.map((item) => (
+            <a href={item.href} class="block rounded-lg px-3 py-2.5 text-sm font-medium text-ink hover:bg-paper-dark">{item.label}</a>
+          ))}
+          <a href={whatsappLink(WHATSAPP_DEFAULT_MSG[locale])} class="mt-1 block rounded-lg bg-forest-700 px-3 py-2.5 text-center text-sm font-semibold text-paper">{t('cta.presupuesto24h')}</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

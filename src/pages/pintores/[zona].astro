@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import ZonaLayout from '@/layouts/ZonaLayout.astro';
+import { zonaPassesGate } from '@/lib/gates';
+
+/**
+ * Programmatic zone pages. THE QUALITY GATE LIVES HERE: a zona yaml that
+ * lacks real local proof (≥1 project or ≥2 reviews + substance fields)
+ * simply does not build (docs/02 §5). Never bypass this filter.
+ */
+export async function getStaticPaths() {
+  const zonas = await getCollection('zonas');
+  return zonas.filter(zonaPassesGate).map((zona) => ({
+    params: { zona: zona.data.slug },
+    props: { zona },
+  }));
+}
+
+const { zona } = Astro.props;
+---
+
+<ZonaLayout zona={zona} />

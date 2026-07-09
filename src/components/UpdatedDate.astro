@@ -1,0 +1,21 @@
+---
+import { useTranslations, type Locale } from '@/i18n/ui';
+
+/** Visible freshness signal — pairs with schema dateModified (docs/02 §6). */
+interface Props {
+  date: Date;
+  locale: Locale;
+}
+const { date, locale } = Astro.props;
+const t = useTranslations(locale);
+const formatted = date.toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<p class="mt-3 text-sm text-ink-soft">
+  <span class="font-medium text-olive-600">{t('updated.label')}</span>
+  <time datetime={date.toISOString().slice(0, 10)}>{formatted}</time>
+</p>

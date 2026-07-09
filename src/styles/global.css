@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+
+/* ── Brand tokens — palette sampled from the ALETO wordmark asset ── */
+@theme {
+  /* Greens */
+  --color-forest-950: #0f2a1c;
+  --color-forest-900: #16382a;
+  --color-forest-800: #1e4a34;
+  --color-forest-700: #2a6445; /* brand deep green */
+  --color-forest-600: #357a52;
+  --color-olive-600: #4d6d23; /* subtitle green from logo */
+  --color-olive-500: #789929;
+  --color-olive-400: #8eb543;
+  --color-chartreuse-500: #c3cc3d;
+  --color-chartreuse-400: #d5d743; /* brand chartreuse */
+  --color-chartreuse-300: #e7e163;
+  --color-chartreuse-100: #f4f1c8;
+
+  /* Neutrals — warm, paper-like */
+  --color-paper: #faf9f4;
+  --color-paper-dark: #f2f0e6;
+  --color-ink: #1c2620;
+  --color-ink-soft: #48544d;
+  --color-line: #e3e1d5;
+
+  /* Typography */
+  --font-display: 'Fraunces Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-paper text-ink font-sans antialiased;
+  font-feature-settings: 'kern';
+}
+
+/* Display headings use the brand serif */
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 40;
+  letter-spacing: -0.01em;
+}
+
+/* Brand gradient (hero accents, CTA) */
+.bg-brand-gradient {
+  background: linear-gradient(115deg, #1e4a34 0%, #2a6445 30%, #789929 68%, #d5d743 100%);
+}
+.text-gradient-brand {
+  background: linear-gradient(100deg, #2a6445 10%, #789929 55%, #a8bc3a 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Prose defaults for markdown-rendered content (no typography plugin — keep it lean) */
+.prose-aleto {
+  @apply text-ink leading-relaxed;
+}
+.prose-aleto h2 {
+  @apply text-2xl sm:text-3xl text-forest-900 mt-12 mb-4;
+}
+.prose-aleto h3 {
+  @apply text-xl text-forest-800 mt-8 mb-3;
+}
+.prose-aleto p {
+  @apply my-4;
+}
+.prose-aleto ul,
+.prose-aleto ol {
+  @apply my-4 pl-6 space-y-2;
+}
+.prose-aleto ul {
+  @apply list-disc marker:text-olive-500;
+}
+.prose-aleto ol {
+  @apply list-decimal marker:text-olive-600 marker:font-semibold;
+}
+.prose-aleto a {
+  @apply text-forest-700 underline decoration-chartreuse-400 decoration-2 underline-offset-2 hover:text-forest-900;
+}
+.prose-aleto strong {
+  @apply font-semibold text-forest-900;
+}
+.prose-aleto table {
+  @apply w-full my-6 text-sm border-collapse;
+}
+.prose-aleto th {
+  @apply text-left py-2.5 px-3 bg-forest-900 text-paper font-medium;
+}
+.prose-aleto td {
+  @apply py-2.5 px-3 border-b border-line;
+}
+.prose-aleto blockquote {
+  @apply border-l-4 border-chartreuse-400 pl-4 italic text-ink-soft my-6;
+}

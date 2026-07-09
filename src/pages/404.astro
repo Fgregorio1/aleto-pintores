@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { staticPath } from '@/i18n/routes';
+import type { SEOData } from '@/lib/seo';
+
+const seo: SEOData = {
+  title: 'Página no encontrada (404)',
+  description: 'La página que buscas no existe en aletopintores.com. Encuentra nuestros servicios de pintura, precios y contacto desde aquí.',
+  canonicalPath: '/404/',
+  locale: 'es',
+  alternates: [],
+  noindex: true,
+};
+
+const links = [
+  { href: '/', label: 'Inicio — Pintores en Madrid' },
+  { href: staticPath('servicios-hub', 'es'), label: 'Servicios de pintura' },
+  { href: staticPath('precios-hub', 'es'), label: 'Precios 2026 y calculadora' },
+  { href: staticPath('contacto', 'es'), label: 'Pedir presupuesto' },
+];
+---
+
+<BaseLayout seo={seo}>
+  <section class="mx-auto max-w-6xl px-4 py-24 text-center sm:px-6">
+    <p class="font-display text-7xl font-semibold text-gradient-brand">404</p>
+    <h1 class="mt-4 text-3xl text-forest-900">Página no encontrada</h1>
+    <p class="mx-auto mt-3 max-w-md text-ink-soft">La página que buscas no existe o ha cambiado de dirección. Quizá te interese:</p>
+    <ul class="mx-auto mt-8 flex max-w-md flex-col gap-3">
+      {links.map((l) => (
+        <li>
+          <a href={l.href} class="block rounded-xl border border-line bg-white px-5 py-3 text-sm font-medium text-forest-800 hover:border-olive-400">{l.label}</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

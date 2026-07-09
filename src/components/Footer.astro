@@ -1,0 +1,58 @@
+---
+import { useTranslations, type Locale } from '@/i18n/ui';
+import { staticPath } from '@/i18n/routes';
+import { BUSINESS, whatsappLink } from '@/data/business';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-forest-800 bg-forest-900 text-paper">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <p class="font-display text-2xl font-semibold tracking-[0.08em]">ALETO</p>
+      <p class="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-chartreuse-300">Pintores · Madrid</p>
+      <p class="mt-4 max-w-sm text-sm leading-relaxed text-paper/75">{t('footer.tagline')}</p>
+      {/* NAP verbatim — must match NAP.md byte-for-byte (entity consistency) */}
+      <address class="mt-6 text-sm not-italic leading-relaxed text-paper/90">
+        <strong class="font-semibold">{BUSINESS.name}</strong><br />
+        {BUSINESS.addressDisplay}<br />
+        <a href={`tel:${BUSINESS.phoneE164}`} class="underline decoration-chartreuse-400/60 underline-offset-2 hover:text-chartreuse-300">{BUSINESS.phoneDisplay}</a><br />
+        <a href={`mailto:${BUSINESS.email}`} class="underline decoration-chartreuse-400/60 underline-offset-2 hover:text-chartreuse-300">{BUSINESS.email}</a>
+      </address>
+      <p class="mt-3 text-sm text-paper/75">{t('footer.horario')}: {BUSINESS.hoursDisplay[locale]}</p>
+    </div>
+
+    <nav aria-label={t('nav.servicios')}>
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-chartreuse-300">{t('nav.servicios')}</h2>
+      <ul class="mt-4 space-y-2.5 text-sm text-paper/80">
+        <li><a class="hover:text-chartreuse-300" href={staticPath('servicios-hub', locale)}>{t('nav.servicios')}</a></li>
+        <li><a class="hover:text-chartreuse-300" href={staticPath('precios-hub', locale)}>{t('nav.precios')}</a></li>
+        <li><a class="hover:text-chartreuse-300" href={staticPath('sobre-nosotros', locale)}>{t('nav.sobre')}</a></li>
+        <li><a class="hover:text-chartreuse-300" href={staticPath('contacto', locale)}>{t('nav.contacto')}</a></li>
+        {locale === 'es' && <li><a class="hover:text-chartreuse-300" href={staticPath('opiniones', 'es')}>{t('nav.opiniones')}</a></li>}
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-chartreuse-300">{t('footer.zonas')}</h2>
+      <p class="mt-4 text-sm leading-relaxed text-paper/80">{BUSINESS.areaServed.join(' · ')}</p>
+      <a href={whatsappLink()} class="mt-5 inline-block rounded-full bg-chartreuse-400 px-4 py-2 text-sm font-semibold text-forest-950 transition-colors hover:bg-chartreuse-300">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="border-t border-forest-800">
+    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-2 px-4 py-5 text-xs text-paper/60 sm:flex-row sm:items-center sm:px-6">
+      <p>© {year} {BUSINESS.name} · {BUSINESS.address.city}</p>
+      <p>
+        <a class="hover:text-paper" href={staticPath('aviso-legal', 'es')}>Aviso legal</a>
+        <span class="mx-2">·</span>
+        <a class="hover:text-paper" href={staticPath('politica-privacidad', 'es')}>Política de privacidad</a>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,50 @@
+---
+import '@/styles/global.css';
+import '@fontsource-variable/fraunces';
+import SEO from '@/components/seo/SEO.astro';
+import JsonLd from '@/components/seo/JsonLd.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import LangBanner from '@/components/islands/LangBanner.astro';
+import { businessSchema, webPageSchema, websiteSchema } from '@/lib/schema';
+import type { SEOData } from '@/lib/seo';
+
+/**
+ * Every page renders through here: one SEOData in, one <head> out.
+ * The HousePainter #business node is emitted site-wide — it's the entity
+ * anchor for GBP/AI-model resolution (docs/02 §4).
+ */
+interface Props {
+  seo: SEOData;
+  /** Page-specific JSON-LD nodes (Service, FAQPage, BreadcrumbList…) */
+  schemas?: (object | null)[];
+}
+
+const { seo, schemas = [] } = Astro.props;
+const htmlLang = seo.locale === 'es' ? 'es' : 'en';
+const switchUrl = seo.alternates.find((a) =>
+  seo.locale === 'es' ? a.hreflang === 'en' : a.hreflang === 'es-ES',
+)?.href;
+const enTwin = seo.locale === 'es' ? seo.alternates.find((a) => a.hreflang === 'en')?.href : undefined;
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#2a6445" />
+    <SEO seo={seo} />
+    <JsonLd schemas={[businessSchema(), websiteSchema(), webPageSchema(seo), ...schemas]} />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <Header locale={seo.locale} switchUrl={switchUrl} />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer locale={seo.locale} />
+    {enTwin && <LangBanner enUrl={enTwin} />}
+  </body>
+</html>
