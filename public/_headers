@@ -10,3 +10,9 @@
 # Hashed build assets — cache forever
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Never index the pages.dev aliases (production or branch previews) —
+# the only indexable host is aletopintores.com. Prevents duplicate-content
+# and canonical dilution from preview/dev URLs.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

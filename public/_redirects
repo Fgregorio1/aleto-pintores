@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects
+#
+# ONCE aletopintores.com is live as the custom domain on this Pages project,
+# uncomment the rule below to 301 every pages.dev URL to the real domain.
+# This removes the duplicate host entirely (stronger than the noindex header).
+# Do NOT enable it before the custom domain is attached — it would break
+# preview access.
+#
+# https://:project.pages.dev/* https://aletopintores.com/:splat 301

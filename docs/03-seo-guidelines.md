@@ -122,6 +122,15 @@ Spot-check `dist/`: one `<title>`/canonical/H1 per page; hreflang only on true p
 
 **Cache gotcha:** if you *delete* a content/data file and its page keeps building, clear the content-layer cache: `rm -rf node_modules/.astro .astro dist && npm run build`.
 
+### Preview environments (duplicate-content protection)
+
+The only indexable host is `aletopintores.com`. Three layers keep preview/dev URLs out of Google:
+1. `public/_headers` sends `X-Robots-Tag: noindex` on every `*.pages.dev` host (production alias and branch previews). Verify after deploy: `curl -sI https://<project>.pages.dev/ | grep -i x-robots-tag` → `noindex`; the same curl on `aletopintores.com` must show **no** such header.
+2. Every page's canonical is an absolute `https://aletopintores.com/...` URL, so even a crawled preview points Google at production.
+3. After the custom domain goes live, uncomment the 301 rule in `public/_redirects` so `pages.dev` URLs redirect to the real domain outright.
+
+Never share or link `pages.dev` URLs publicly (social bios, directories, GBP) — always the real domain.
+
 ## 10. What we never do
 
 - Meta tags or NAP hand-written in templates
