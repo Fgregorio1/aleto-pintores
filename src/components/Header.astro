@@ -2,6 +2,7 @@
 import { useTranslations, type Locale } from '@/i18n/ui';
 import { staticPath } from '@/i18n/routes';
 import { whatsappLink, WHATSAPP_DEFAULT_MSG } from '@/data/business';
+import Logo from '@/components/Logo.astro';
 
 interface Props {
   locale: Locale;
@@ -27,7 +28,7 @@ const home = locale === 'en' ? '/en/' : '/';
 <header class="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-sm">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
     <a href={home} class="group flex items-baseline gap-2" aria-label="Aleto Pintores — inicio">
-      <span class="font-display text-2xl font-semibold tracking-[0.08em] text-forest-800">ALETO</span>
+      <Logo class="h-7 w-auto text-forest-800" />
       <span class="hidden text-[0.65rem] font-medium uppercase tracking-[0.22em] text-olive-600 sm:inline">Pintores · Madrid</span>
     </a>
 

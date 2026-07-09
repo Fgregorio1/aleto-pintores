@@ -7,7 +7,7 @@ locale: es
 serviceName: "Quitar gotelé y alisado de paredes"
 priceKey: quitar-gotele
 shortLabel: "Quitar gotelé y alisar"
-excerpt: "Adiós al gotelé: paredes lisas perfectas, con alisado y pintura incluidos en el precio."
+excerpt: "Paredes lisas perfectas comprobadas a contraluz, sin convertir tu casa en una obra polvorienta."
 orden: 2
 directAnswer: "Quitar el gotelé y alisar las paredes en Madrid cuesta entre 9 y 15 €/m² de pared en 2026, con el alisado y la pintura final incluidos. Un piso de 80 m² (unos 200 m² de pared) queda entre 1.800 € y 2.600 € y se termina en 4-6 días laborables."
 datePublished: 2026-07-09
@@ -19,40 +19,40 @@ relatedServices:
 relatedPrecio: es/precio-quitar-gotele
 proceso:
   - paso: "Diagnóstico del gotelé"
-    detalle: "Vemos si tu gotelé es temple o plástico — cambia la técnica y el precio. Lo comprobamos gratis en la visita."
-  - paso: "Protección y retirada"
-    detalle: "Sellamos la zona, protegemos suelos y carpintería y retiramos el gotelé con la técnica adecuada (agua o lijado con aspiración)."
+    detalle: "Vemos si tu gotelé es temple o plástico — cambia la técnica y el plazo. Lo comprobamos gratis en la visita."
+  - paso: "Sellado y retirada"
+    detalle: "Sellamos cada estancia con plásticos, protegemos suelos y carpintería y retiramos el gotelé con la técnica adecuada."
   - paso: "Alisado en dos capas"
-    detalle: "Aplicamos dos capas de plaste, lijamos con máquina con aspiración y dejamos la pared perfectamente lisa al tacto y a contraluz."
+    detalle: "Dos capas de plaste, lijado con máquina conectada a aspiración y pared perfectamente lisa al tacto y a contraluz."
   - paso: "Imprimación y pintura"
     detalle: "Imprimamos y damos dos manos del color que elijas. Entregamos con luz rasante para que compruebes el acabado."
 faq:
-  - q: "¿Cuánto cuesta quitar el gotelé de un piso de 80 m²?"
-    a: "Entre 1.800 € y 2.600 € en 2026, con alisado y pintura final incluidos. Un piso de 80 m² tiene unos 200 m² de pared, y el precio por m² de pared va de 9 a 15 € según el tipo de gotelé y el estado de la pared."
-  - q: "¿Cómo sé si mi gotelé es de temple o de plástico?"
-    a: "Moja una esponja y frótala en una zona discreta: si la pared se ablanda y mancha los dedos, es temple (se quita con agua, más barato). Si no se altera, es plástico y hay que lijarlo o aplastecerlo, lo que sube el precio. En la visita lo comprobamos nosotros."
   - q: "¿Se genera mucho polvo al quitar el gotelé?"
-    a: "Con el método tradicional sí; por eso usamos lijadoras conectadas a aspiración industrial y sellamos cada estancia con plásticos. El resultado es un trabajo mucho más limpio, apto para pisos habitados."
-  - q: "¿Se puede alisar encima del gotelé sin quitarlo?"
-    a: "Sí, si el gotelé está bien adherido se puede aplastecer encima (2-3 capas de plaste). Es la opción habitual con gotelé plástico. El resultado es idéntico: pared lisa perfecta. Te recomendamos la técnica según tu caso en la visita."
+    a: "Con el método tradicional sí; por eso trabajamos distinto: cada estancia se sella con plásticos, las lijadoras van conectadas a aspiración industrial y cada zona se limpia antes de pasar a la siguiente. Es la diferencia entre una obra y una intervención."
+  - q: "¿Se puede vivir en el piso durante la obra?"
+    a: "Sí — la mayoría de nuestros clientes no se mudan. Trabajamos por zonas para que siempre tengas habitaciones libres y limpias, y la casa es habitable todos los días de la obra."
+  - q: "¿Cómo sé si mi gotelé es de temple o de plástico?"
+    a: "Moja una esponja y frótala en una zona discreta: si la pared se ablanda y mancha los dedos, es temple (se retira con agua). Si no se altera, es plástico y se lija o se aplastece encima. En la visita lo comprobamos nosotros y te explicamos qué técnica conviene en tu caso."
+  - q: "¿Cómo compruebo que el alisado está bien hecho?"
+    a: "Con luz rasante: una lámpara pegada a la pared en ángulo delata cualquier ondulación. Es la prueba con la que revisamos nuestro propio trabajo y con la que te entregamos cada estancia — te invitamos a pasarla tú mismo antes de darnos por terminados."
   - q: "¿Cuántos días se tarda en un piso habitado?"
-    a: "Un piso de 80 m² habitado se hace en 4-6 días trabajando por zonas, para que siempre tengas habitaciones libres. Vacío, en 4-5 días."
-  - q: "¿El precio incluye la pintura final?"
-    a: "Sí. Nuestro precio de 9-15 €/m² incluye retirada o aplastecido del gotelé, alisado, imprimación y dos manos de pintura plástica de primera marca. No hay extras ocultos."
+    a: "Un piso de 80 m² habitado se hace en 4-6 días trabajando por zonas. El plaste necesita secado entre capas: quien te prometa paredes alisadas 'en un día' va a saltarse pasos que se notarán a contraluz."
+  - q: "¿Cuánto cuesta y qué incluye?"
+    a: "Entre 9 y 15 €/m² de pared (2026) con todo incluido: retirada o aplastecido, alisado, imprimación y dos manos de pintura de primera marca. El detalle por tamaños de piso está en nuestra guía de precios de quitar gotelé."
 ---
 
-## ¿Por qué quitar el gotelé revaloriza tu piso?
+## ¿Cómo se quita el gotelé sin llenar la casa de polvo?
 
-El gotelé se usaba en los años 70-90 para tapar defectos de obra, y hoy es lo primero que un comprador o inquilino percibe como "piso antiguo". Unas paredes lisas cambian por completo la luz y la sensación de amplitud, y son el paso previo a cualquier reforma estética seria. Es, junto a la cocina y el baño, la mejora con más impacto por euro invertido en un piso madrileño.
+Las historias de terror del gotelé van siempre de polvo: semanas respirándolo y encontrándolo en los armarios meses después. Nuestro proceso está montado para evitarlo. Cada estancia se sella con plásticos de suelo a techo antes de tocar la pared; las lijadoras trabajan conectadas a aspiración industrial, no en seco al aire; y ninguna zona se da por cerrada sin limpiar. El resultado es que la casa sigue siendo habitable todos los días — la mayoría de nuestros clientes no se mudan durante la obra, y esa es la prueba real de que el sistema funciona.
 
-## ¿Qué técnica usamos para quitar el gotelé?
+## ¿Qué diferencia un alisado profesional de uno mediocre?
 
-Depende del material. El **gotelé al temple** (habitual en fincas antiguas) se empapa con agua pulverizada y se retira con espátula: es el caso más económico. El **gotelé plástico** no se disuelve: se lija con máquinas con aspiración o se aplastece encima con 2-3 capas de plaste. En ambos casos el acabado final es el mismo: pared lisa, imprimada y pintada. En la visita gratuita identificamos tu caso y te damos precio cerrado por m².
+La luz rasante. Una pared puede parecer lisa de frente y ondular como el mar cuando la luz entra en ángulo — que es exactamente como entra el sol por una ventana. Un alisado serio lleva su proceso: diagnóstico del tipo de gotelé (temple o plástico, cada uno con su técnica), dos capas cruzadas de plaste aplicadas a llana, lijado mecánico fino y comprobación estancia por estancia con lámpara rasante antes de imprimar. Nosotros entregamos con esa prueba delante de ti. El plaste además necesita sus tiempos de secado: desconfía de plazos imposibles, porque las prisas en el alisado se quedan en la pared para siempre.
 
-## ¿Cuánto cuesta según el tamaño del piso?
+## ¿Por qué es la reforma con más impacto en un piso de Madrid?
 
-La referencia en Madrid en 2026 es de **9 a 15 €/m² de pared** todo incluido. Como regla rápida, la superficie de pared es unas 2,5 veces la superficie del piso. Un piso de 60 m² (≈150 m² de pared) va de 1.400 € a 2.100 €; uno de 80 m² (≈200 m² de pared), de 1.800 € a 2.600 €; y uno de 100 m² (≈250 m² de pared), de 2.200 € a 3.300 €. Tienes el detalle completo en la [guía de precios de quitar gotelé](/precios/precio-quitar-gotele/).
+Porque cambia la categoría del piso entero sin tocar un tabique. El gotelé grita "años 80"; la pared lisa deja correr la luz, agranda visualmente las estancias y es la base de cualquier decoración actual. Compradores e inquilinos lo perciben en los primeros segundos de una visita — los portales inmobiliarios lo citan sistemáticamente entre las mejoras con mejor retorno junto a cocina y baño. Y es la puerta a lo demás: con la pared lisa, el [lacado de puertas](/servicios/lacado-puertas-armarios/) y una buena elección de color terminan la transformación.
 
-## ¿Se puede vivir en el piso durante la obra?
+## ¿Qué me va a costar y cómo lo sé antes de llamar?
 
-Sí. Es la pregunta que más nos hacen y la respuesta es que la mayoría de nuestros clientes no se mudan. Sellamos cada estancia mientras se trabaja, usamos aspiración en el lijado y dejamos cada zona limpia antes de pasar a la siguiente. La casa es habitable todos los días de la obra.
+Lo publicamos: entre 9 y 15 €/m² de pared con alisado y pintura incluidos, y el porqué del rango (tipo de gotelé, estado del soporte, altura de techos) explicado con tablas por tamaño de piso en la [guía de precios de quitar gotelé](/precios/precio-quitar-gotele/). Tras la visita gratuita el presupuesto es cerrado, con fecha de inicio y de entrega por escrito.

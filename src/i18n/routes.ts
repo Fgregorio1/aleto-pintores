@@ -18,6 +18,7 @@ export const staticRoutes: StaticRoute[] = [
   { key: 'servicios-hub', es: '/servicios/', en: '/en/services/' },
   { key: 'precios-hub', es: '/precios/', en: '/en/prices/' },
   { key: 'sobre-nosotros', es: '/sobre-nosotros/', en: '/en/about/' },
+  { key: 'arquitectos', es: '/para-arquitectos-e-interioristas/', en: '/en/for-architects-and-designers/' },
   { key: 'contacto', es: '/contacto/', en: '/en/contact/' },
   { key: 'opiniones', es: '/opiniones/' },
   { key: 'proyectos-hub', es: '/proyectos/' },

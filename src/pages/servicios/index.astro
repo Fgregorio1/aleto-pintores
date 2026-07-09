@@ -29,6 +29,10 @@ const crumbs = [
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {servicios.map((s) => <ServiceCard servicio={s} locale="es" />)}
     </div>
+    <p class="mt-8 text-sm text-ink-soft">
+      ¿Eres arquitecto o interiorista? Tenemos un servicio específico para estudios:
+      <a href="/para-arquitectos-e-interioristas/" class="font-medium text-forest-700 underline decoration-chartreuse-400 decoration-2 underline-offset-2 hover:text-forest-900">pintores para arquitectos e interioristas</a>.
+    </p>
     <Faq faq={pagina.data.faq} locale="es" />
     <CtaBlock locale="es" />
   </section>

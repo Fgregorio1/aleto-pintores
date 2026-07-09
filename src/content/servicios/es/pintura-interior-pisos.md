@@ -7,7 +7,7 @@ locale: es
 serviceName: "Pintura interior de pisos y casas"
 priceKey: pintura-interior
 shortLabel: "Pintura interior"
-excerpt: "Pisos y casas completas: paredes, techos y detalles. Precio cerrado por adelantado y acabado limpio."
+excerpt: "Pisos y casas completas con protección total, fechas que se cumplen y un acabado que aguanta años."
 orden: 1
 directAnswer: "Pintar un piso de 80 m² en Madrid cuesta entre 1.100 € y 1.700 € en 2026, con materiales y protección incluidos, y se termina en 3-4 días. El precio exacto depende del estado de las paredes, la altura de los techos y los colores elegidos: te damos un presupuesto cerrado gratis en 24 horas."
 datePublished: 2026-07-09
@@ -19,7 +19,7 @@ relatedServices:
 relatedPrecio: es/precio-pintar-piso-madrid
 proceso:
   - paso: "Visita y presupuesto cerrado"
-    detalle: "Visitamos tu piso gratis, medimos y te damos un precio cerrado en 24 h. Sin sorpresas al final."
+    detalle: "Visitamos tu piso gratis, medimos y te damos un precio cerrado en 24 h. Con fecha de inicio y de entrega por escrito."
   - paso: "Protección total"
     detalle: "Cubrimos suelos, muebles, enchufes y carpintería antes de abrir un solo bote de pintura."
   - paso: "Preparación y pintura"
@@ -27,32 +27,32 @@ proceso:
   - paso: "Repaso y limpieza"
     detalle: "Repasamos contigo pared por pared y dejamos el piso limpio y listo para vivir el mismo día."
 faq:
-  - q: "¿Cuánto se tarda en pintar un piso de 80 m²?"
-    a: "Entre 3 y 4 días laborables en condiciones normales (paredes en buen estado y piso amueblado). Un piso vacío puede estar en 2-3 días. Si hay que reparar grietas o alisar zonas, añade 1-2 días."
-  - q: "¿El presupuesto incluye pintura y materiales?"
-    a: "Sí. Nuestros precios incluyen pintura plástica de primera marca (Titanlux, Bruguer o equivalente), materiales, protección de muebles y suelos, mano de obra y limpieza final. El precio que firmas es el precio que pagas."
+  - q: "¿Quién va a entrar en mi casa?"
+    a: "El mismo equipo de principio a fin: personas con nombre y apellido que conoces el primer día, con seguro de responsabilidad civil y un responsable directo al que llamar. Nada de cuadrillas que rotan ni subcontratas que no conoces."
+  - q: "¿Cómo protegéis los muebles y los suelos?"
+    a: "Antes de pintar cubrimos el 100% de lo que no se pinta: suelos con cartón y plástico, muebles agrupados y envueltos, enchufes, rodapiés y carpintería enmascarados. La protección se monta el primer día y no se retira hasta el repaso final."
   - q: "¿Tengo que vaciar el piso para pintarlo?"
-    a: "No. Trabajamos con el piso amueblado: movemos los muebles al centro de cada habitación y los cubrimos con plástico. Si el piso está vacío el trabajo es algo más rápido y el precio baja ligeramente."
-  - q: "¿Qué pintura usáis y puedo elegir cualquier color?"
-    a: "Trabajamos con pinturas plásticas mates y lavables de primeras marcas. Puedes elegir cualquier color de la carta (NCS, RAL o cartas de fabricante) y te asesoramos sin coste sobre colores y acabados según la luz de cada estancia."
-  - q: "¿Pintáis también techos, puertas y radiadores?"
-    a: "Sí. El techo va incluido en el precio por m² de vivienda. Puertas, marcos, radiadores y armarios se presupuestan aparte (lacado o esmalte) y podemos hacerlo todo en la misma intervención."
+    a: "No. Trabajamos con el piso amueblado: movemos los muebles al centro de cada habitación y los cubrimos. Organizamos el trabajo por zonas para que siempre tengas habitaciones utilizables."
+  - q: "¿Y si no tengo claro el color?"
+    a: "Te asesoramos sin coste y pintamos muestras reales en tus paredes antes de decidir — el mismo gris cambia por completo entre una habitación que da al norte y otra al sur. Nadie debería elegir un color de toda la casa desde un abanico de cartulinas."
+  - q: "¿Se cumplen las fechas y el precio?"
+    a: "Sí, por escrito: fecha de inicio, fecha de entrega y precio cerrado en el presupuesto. Si al empezar aparece algo que no vimos en la visita, lo asumimos nosotros."
   - q: "¿Dais factura y garantía?"
-    a: "Siempre. Factura con IVA y garantía por escrito sobre el trabajo. Tenemos seguro de responsabilidad civil que cubre cualquier incidencia durante la obra."
+    a: "Siempre. Factura con IVA y garantía por escrito sobre el trabajo. Al terminar te dejamos la pintura sobrante etiquetada por estancia para futuros retoques."
 ---
 
-## ¿Qué incluye pintar un piso con Aleto Pintores?
+## ¿Qué pasa con mis muebles, mis suelos y mi rutina?
 
-Pintar tu piso con nosotros incluye todo lo necesario para entregarlo listo: protección completa de suelos y muebles, reparación de grietas y pequeños desperfectos, dos manos de pintura plástica de primera marca en paredes y techos, repasos finales y limpieza. No trabajamos con "precio por hora" ni con extras que aparecen a mitad de obra: mides, firmas un precio cerrado y ese es el precio final.
+Es el miedo real de cualquiera que mete pintores en casa, y por eso nuestro protocolo empieza ahí. El primer día se protege todo lo que no se pinta: suelos, muebles agrupados y envueltos, lámparas, enchufes, marcos. Trabajamos por zonas para que la casa siga siendo habitable, con pinturas al agua de secado rápido y prácticamente sin olor. Cada tarde el equipo recoge y deja los pasos libres. Y al acabar, la limpieza final es nuestra, no tuya: entramos en un piso vivido y lo devolvemos pintado y limpio el mismo día de la entrega.
 
-## ¿Cuánto cuesta pintar un piso en Madrid en 2026?
+## ¿Por qué la preparación importa más que la pintura?
 
-El precio en Madrid se mueve entre **13 y 20 €/m² de vivienda** con material incluido. Un piso de 60 m² sale entre 850 € y 1.250 €; uno de 80 m², entre 1.100 € y 1.700 €; y uno de 100 m², entre 1.400 € y 2.100 €. Suben el precio: paredes en mal estado, gotelé que haya que cubrir o quitar, techos de más de 2,8 metros, colores intensos que piden tercera mano y pisos sin vaciar. Publicamos todos nuestros precios en la [guía de precios de pintar un piso en Madrid](/precios/precio-pintar-piso-madrid/).
+Un piso recién pintado luce bien casi siempre; la diferencia se ve a los seis meses. Las grietas mal selladas reaparecen, las manchas de humedad traspasan y los brillos delatan las paredes que no se lijaron. Por eso dedicamos a la preparación el tiempo que haga falta: sellado de fisuras con malla donde es necesario, tratamiento de manchas con imprimación tapamanchas y lijado fino antes de cada mano. Revisamos el resultado con luz rasante — la prueba que ninguna chapuza supera — antes de darte la obra por terminada.
 
-## ¿Por qué un precio cerrado importa tanto?
+## ¿Cómo elegimos los colores sin equivocarnos?
 
-Porque la queja número uno con los pintores es el presupuesto que crece durante la obra. Nuestro presupuesto detalla superficie, estancias, preparación necesaria, marca y tipo de pintura, número de manos y plazo de entrega. Si al empezar aparece algo que no vimos en la visita, lo asumimos nosotros — ese es nuestro compromiso y la razón por la que publicamos precios.
+El color es la decisión que más ilusión hace y la que más miedo da. Nuestro método: te asesoramos según la luz real de cada estancia (norte, sur, patio interior), pintamos muestras reales en tus paredes y las miras de día y de noche antes de decidir. Trabajamos cualquier carta — NCS, RAL o fabricante — y te decimos con honestidad cuándo un color intenso va a necesitar una mano extra o cuándo un blanco roto funcionará mejor que un blanco puro. El objetivo es que en tu casa no haya "ya me acostumbraré", sino aciertos.
 
-## ¿Trabajáis pisos habitados?
+## ¿Qué garantías tengo de fechas y de precio?
 
-Sí, la mayoría de nuestros trabajos son en pisos habitados. Organizamos el trabajo por zonas para que siempre tengas habitaciones utilizables, protegemos todo lo que no se pinta y ventilamos bien: las pinturas que usamos son al agua, de secado rápido y prácticamente sin olor. Si prefieres no estar durante la obra, coordinamos llaves y te enviamos fotos del avance cada día.
+Las tres cosas que firmamos por escrito: fecha de inicio, fecha de entrega y precio cerrado. El presupuesto detalla estancias, preparación, marca y modelo de pintura y número de manos, así que no hay dónde esconder sorpresas. Si aparece algo que no vimos en la visita, lo asumimos nosotros. Los rangos orientativos por tamaño de piso están publicados en la [guía de precios de pintar un piso en Madrid](/precios/precio-pintar-piso-madrid/) — consúltalos antes incluso de llamarnos.

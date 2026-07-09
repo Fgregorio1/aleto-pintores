@@ -24,9 +24,16 @@ const nf = new Intl.NumberFormat('en-GB');
 const p80 = preciosData.servicios['pintura-interior'].ejemplos.find((e: any) => e.m2 === 80);
 
 const trust = [
-  { title: 'Published prices', text: 'Real rates on the website, updated quarterly. Benchmark us before you even call.' },
-  { title: 'Fixed quote within 24 h', text: 'Free visit, written price the next day. It never grows mid-job.' },
-  { title: 'Invoice, insurance & warranty', text: 'VAT invoice always, current liability insurance and a written warranty.' },
+  { title: 'Your home, properly protected', text: 'Floors, furniture and joinery covered before we start. Dust-extracted sanding, odourless paint and a cleanup every evening.' },
+  { title: 'Dates and price in writing', text: 'Start, delivery and a fixed quote signed before we begin. Anything we missed at the visit is on us.' },
+  { title: 'The same crew, with names', text: 'The people you meet on day one finish the job. Liability-insured, with one direct contact you can call.' },
+];
+
+const metodo = [
+  { paso: 'Visit & listen', detalle: 'We see your home, measure and understand what you want. Fixed written quote in 24 h, with dates.' },
+  { paso: 'Full protection', detalle: 'Day one, everything that isn’t painted gets covered. The home stays livable throughout.' },
+  { paso: 'Proper preparation', detalle: 'Cracks sealed, stains blocked, fine sanding. 70% of the result happens before the paint.' },
+  { paso: 'Raking-light handover', detalle: 'A wall-by-wall review with you under raking light, final clean and written warranty.' },
 ];
 ---
 
@@ -65,24 +72,41 @@ const trust = [
   </section>
 
   <section class="mx-auto max-w-6xl px-4 pt-16 sm:px-6">
-    <h2 class="text-3xl text-forest-900 sm:text-4xl">Services with published prices</h2>
+    <h2 class="text-3xl text-forest-900 sm:text-4xl">What we do</h2>
     <p class="mt-3 max-w-2xl text-ink-soft">
-      Every service with its {preciosData.anio} rates, the step-by-step process, and the questions everyone asks.
+      Every service with its step-by-step process, the questions everyone asks, and its {preciosData.anio} rates.
     </p>
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {servicios.map((s) => <ServiceCard servicio={s} locale="en" />)}
     </div>
   </section>
 
+  <!-- Method -->
+  <section class="mx-auto max-w-6xl px-4 pt-20 sm:px-6">
+    <h2 class="text-3xl text-forest-900 sm:text-4xl">A method you can verify</h2>
+    <p class="mt-3 max-w-2xl text-ink-soft">
+      Every job follows the same four steps, whether it's 12 m² or 300. It's what keeps the result from depending on luck.
+    </p>
+    <ol class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {metodo.map((p, i) => (
+        <li class="rounded-2xl border border-line bg-white p-5">
+          <span class="font-display text-3xl font-semibold text-olive-400">{String(i + 1).padStart(2, '0')}</span>
+          <h3 class="mt-2 font-sans text-base font-semibold tracking-normal text-forest-900">{p.paso}</h3>
+          <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">{p.detalle}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
   <section class="mx-auto max-w-6xl px-4 pt-20 sm:px-6">
     <div class="rounded-2xl border border-olive-400/40 bg-chartreuse-100/40 p-8 sm:p-10">
       <div class="grid items-center gap-8 lg:grid-cols-2">
         <div>
-          <h2 class="text-3xl text-forest-900">How much? It's published.</h2>
+          <h2 class="text-3xl text-forest-900">And yes: the prices are published</h2>
           <p class="mt-4 leading-relaxed text-ink">
-            Almost no painting company publishes prices. We do: painting an 80 m² flat costs between
-            <strong>€{nf.format(p80.min)}</strong> and <strong>€{nf.format(p80.max)}</strong> in {preciosData.anio}, and removing that same flat's gotelé texture between
-            <strong>€1,800</strong> and <strong>€2,600</strong>, painting included. Real ranges from real quotes, updated quarterly.
+            Certainty includes knowing what things cost. Painting an 80 m² flat runs from
+            <strong>€{nf.format(p80.min)}</strong> to <strong>€{nf.format(p80.max)}</strong> in {preciosData.anio}, and removing its gotelé texture from
+            <strong>€1,800</strong> to <strong>€2,600</strong>, painting included — real ranges from real quotes, updated quarterly, so you can benchmark us before you even call.
           </p>
           <a href={staticPath('precios-hub', 'en')} class="mt-6 inline-block rounded-full bg-forest-700 px-6 py-3 text-sm font-semibold text-paper hover:bg-forest-800">
             Estimate my project →

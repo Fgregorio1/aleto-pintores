@@ -1,0 +1,9 @@
+---
+import { getEntry } from 'astro:content';
+import PaginaLayout from '@/layouts/PaginaLayout.astro';
+
+const entry = await getEntry('paginas', 'es/arquitectos');
+if (!entry) throw new Error('Missing paginas entry: es/arquitectos');
+---
+
+<PaginaLayout entry={entry} />

@@ -52,6 +52,24 @@ Style rules:
 - Internal links inside body text: service ↔ its price guide (both directions), related services, zone pages when they exist. 2–4 contextual links per page.
 - No filler posts. A blog entry must name its `targetQuery` in frontmatter — if you can't, don't write it.
 
+## 3b. Copy angles & the 15% price rule
+
+**Prose sells certainty; the meta layer sells price.** On service pages, home and about, price is ≈15% of the visible prose: max ONE price-context section per page (framed as certainty — "precio cerrado que no crece" — and linking to the `/precios/` guide for the numbers) and ≤2 price FAQs. The `/precios/` cluster is exempt — price is its search job.
+
+The meta layer keeps its price hooks regardless: `title`, `metaDescription` and `directAnswer` retain concrete numbers, because they feed SERP snippets, featured snippets and AI answers. The `PriceTable` component stays on service pages (it's data, not prose).
+
+**The angle library** — the real reasons demanding clients choose a painter. Every body section should serve one:
+1. **Who's in my home** — same named crew start to finish, insured, direct contact
+2. **The protection protocol** — sealed rooms, dust extraction, wrapped furniture, daily cleanup, odourless paints
+3. **Prep is the finish** — 70% happens before paint; raking-light (luz rasante) as the verifiable standard
+4. **Dates that hold** — start/delivery dates in writing; the fixed quote lives here as ONE certainty signal
+5. **Materials & building fluency** — right system per substrate; classic-Madrid expertise (old plaster, mouldings, 3 m ceilings)
+6. **Never in the dark** — one contact, photo updates, no decisions without the client
+7. **Color confidence** — real samples on the client's walls, advice per room's light
+8. **Aftercare** — written warranty honored, labeled leftover paint, revisions/checkups
+
+For architects/interior designers (see `/para-arquitectos-e-interioristas/`): spec fidelity (color/sheen/flatness), in-situ samples before execution, trade coordination and signed deadlines, complete documentation, "we make the studio look good with its client".
+
 ## 4. Adding pages, step by step
 
 ### New service

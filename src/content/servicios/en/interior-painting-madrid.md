@@ -7,7 +7,7 @@ locale: en
 serviceName: "Interior painting (flats & houses)"
 priceKey: pintura-interior
 shortLabel: "Interior painting"
-excerpt: "Full flats and houses: walls, ceilings and trim. Fixed price agreed upfront, clean finish."
+excerpt: "Full flats and houses with total protection, dates that hold and a finish that lasts years."
 orden: 1
 directAnswer: "Painting an 80 m² flat in Madrid costs between €1,100 and €1,700 in 2026, materials and protection included, and takes 3-4 days. The exact price depends on wall condition, ceiling height and colours — we give you a fixed written quote in English within 24 hours."
 datePublished: 2026-07-09
@@ -19,7 +19,7 @@ relatedServices:
 relatedPrecio: en/cost-to-paint-apartment-madrid
 proceso:
   - paso: "Visit & fixed quote"
-    detalle: "We visit your flat for free, measure everything and send a fixed quote within 24 h. The price you sign is the price you pay."
+    detalle: "We visit your flat for free, measure everything and send a fixed quote within 24 h — with a start date and a delivery date in writing."
   - paso: "Full protection"
     detalle: "Floors, furniture, sockets and woodwork are covered before we open a single tin of paint."
   - paso: "Prep & painting"
@@ -27,26 +27,32 @@ proceso:
   - paso: "Walkthrough & cleanup"
     detalle: "We walk every room with you, touch up anything you flag and leave the flat clean the same day."
 faq:
+  - q: "Who will be in my home?"
+    a: "The same crew start to finish: people with names you meet on day one, covered by liability insurance, with a direct manager you can call. No rotating strangers, no anonymous subcontractors."
+  - q: "How do you protect furniture and floors?"
+    a: "Everything that isn't being painted gets covered before we start: floors with board and plastic, furniture grouped and wrapped, sockets, skirting and joinery masked. Protection goes up on day one and stays until the final walkthrough."
   - q: "Do you really work in English?"
-    a: "Yes — quote, contract, WhatsApp updates and final walkthrough, all in English if you prefer. Many of our clients are Madrid-based expats and international landlords managing flats remotely."
-  - q: "How long does it take to paint an 80 m² flat?"
-    a: "3-4 working days furnished, 2-3 days if the flat is empty. Add 1-2 days if walls need significant repair or smoothing."
-  - q: "Is paint included in the price?"
-    a: "Yes. Our prices include premium washable paint (Titanlux, Bruguer or equivalent), all materials, furniture and floor protection, labour and final cleanup."
+    a: "Yes — quote, contract, WhatsApp updates and final walkthrough, all in English if you prefer. Many of our clients are Madrid expats and international landlords managing flats remotely."
+  - q: "What if I'm not sure about colours?"
+    a: "We advise at no cost and paint real samples on your walls before you decide — the same grey looks completely different in a north-facing room and a south-facing one. Nobody should choose a whole-house colour from a fan of cards."
+  - q: "Do the dates and the price actually hold?"
+    a: "Yes, in writing: start date, delivery date and fixed price on the quote. Anything we missed at the visit is absorbed by us, not billed to you."
   - q: "Can you handle the job while I'm abroad?"
-    a: "Yes — this is common with international owners. We coordinate keys with your agent or concierge, send daily photo updates on WhatsApp, and do a video walkthrough at handover."
-  - q: "Do you provide an invoice?"
-    a: "Always: a full VAT invoice (factura) for every job, plus a written warranty. We carry liability insurance covering any incident during the works."
+    a: "Yes — keys coordinated with your agent or concierge, daily photo updates on WhatsApp, a video walkthrough at handover and the VAT invoice by email."
 ---
 
-## What's included when we paint your flat?
+## What happens to my furniture, my floors and my routine?
 
-Everything needed to hand the flat back ready to live in: complete protection of floors and furniture, repair of cracks and minor defects, two coats of premium washable paint on walls and ceilings, final touch-ups and cleanup. No hourly rates, no mid-job extras: you sign a fixed price and that's what you pay.
+That's the real fear when painters come into your home, so that's where our protocol starts. Day one, everything that isn't being painted gets protected: floors, furniture grouped and wrapped, lamps, sockets, frames. We work zone by zone so the flat stays livable, with fast-drying, virtually odourless water-based paints. Every evening the crew tidies and clears the walkways. And the final clean is ours, not yours: we enter a lived-in flat and hand back a painted, clean one on delivery day.
 
-## How much does painting a flat in Madrid cost in 2026?
+## Why preparation matters more than paint
 
-The Madrid market rate is **€13–20 per m² of floor area**, materials included. A 60 m² flat runs €850–1,250; an 80 m² flat, €1,100–1,700; a 100 m² flat, €1,400–2,100. Prices go up with damaged walls, textured "gotelé" walls, ceilings above 2.8 m, and strong colour changes. Full breakdown in our [Madrid painting cost guide](/en/prices/cost-to-paint-apartment-madrid/).
+A freshly painted flat almost always looks good; the difference shows at six months. Badly sealed cracks reopen, damp stains bleed through, and sheen betrays the walls nobody sanded. So preparation gets whatever time it needs: fissures sealed (with mesh where required), stains blocked with the right primer, fine sanding before every coat. We check the result under raking light — the test no rushed job survives — before calling the work finished.
 
-## Why expats and international landlords choose us
+## How do we choose colours without regrets?
 
-Because the usual pain points — opaque pricing, no written quotes, language friction, jobs that drift — are exactly what we've built the company against. Published prices you can check before calling, a fixed quote in English within 24 hours, WhatsApp updates with photos, VAT invoice, and a warranty in writing. If you're renting the flat out afterwards, we can coordinate directly with your property manager.
+Colour is the decision people enjoy most and fear most. Our method: advice based on each room's real light (north, south, internal patio), real samples painted on your walls, viewed by day and by night before deciding. Any colour system — NCS, RAL, manufacturer decks — and honest guidance about when an intense colour needs an extra coat or when an off-white will live better than a pure one. The goal is a home with no "I'll get used to it" walls.
+
+## What certainty do I have on dates and price?
+
+Three things go in writing: start date, delivery date, fixed price. The quote itemises rooms, preparation, paint brand and number of coats, so there's nowhere for surprises to hide — and anything we missed at the visit is on us. The indicative ranges by flat size are published in the [Madrid painting cost guide](/en/prices/cost-to-paint-apartment-madrid/), so you can benchmark before you even call.

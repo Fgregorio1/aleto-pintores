@@ -29,6 +29,10 @@ const crumbs = [
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {servicios.map((s) => <ServiceCard servicio={s} locale="en" />)}
     </div>
+    <p class="mt-8 text-sm text-ink-soft">
+      Architect or interior designer? We run a dedicated service for studios:
+      <a href="/en/for-architects-and-designers/" class="font-medium text-forest-700 underline decoration-chartreuse-400 decoration-2 underline-offset-2 hover:text-forest-900">painters for architects & designers</a>.
+    </p>
     <Faq faq={pagina.data.faq} locale="en" />
     <CtaBlock locale="en" />
   </section>

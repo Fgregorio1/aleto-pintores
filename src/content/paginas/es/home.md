@@ -1,24 +1,26 @@
 ---
 title: "Pintores en Madrid — Precios publicados y 24 h"
 metaDescription: "Empresa de pintores en Madrid con precios publicados: pintar piso desde 13 €/m², quitar gotelé 9-15 €/m². Presupuesto cerrado en 24 h. Atención 24/7."
-h1: "Pintores en Madrid con precios claros y trabajo serio"
+h1: "Pintores en Madrid que tratan tu casa como lo que es: tu casa"
 pageKey: home
 translationKey: page-home
 locale: es
-directAnswer: "Aleto Pintores es una empresa de pintura en Madrid que publica sus precios: pintar un piso de 80 m² cuesta entre 1.100 € y 1.700 €, y quitar gotelé entre 9 y 15 €/m² con pintura incluida. Visita gratuita y presupuesto cerrado en 24 horas, en Madrid capital y toda el área metropolitana."
+directAnswer: "Aleto Pintores es una empresa de pintura en Madrid con un método claro: el mismo equipo de principio a fin, protección total de tu vivienda, fechas de inicio y entrega por escrito y un presupuesto cerrado que no crece durante la obra. Pintar un piso de 80 m² cuesta entre 1.100 € y 1.700 € en 2026 — todos nuestros precios están publicados."
 datePublished: 2026-07-09
 dateModified: 2026-07-09
 faq:
+  - q: "¿Quién va a entrar en mi casa?"
+    a: "El mismo equipo de principio a fin, con nombres que conoces el primer día, seguro de responsabilidad civil y un responsable directo al que llamar. Nada de cuadrillas rotando ni subcontratas anónimas."
+  - q: "¿Cómo protegéis la vivienda durante la obra?"
+    a: "Protocolo completo antes de abrir un bote: suelos cubiertos, muebles agrupados y envueltos, carpintería enmascarada. Lijado con aspiración, pinturas al agua sin olor y limpieza cada tarde. La casa sigue siendo habitable todos los días."
+  - q: "¿Se cumplen las fechas?"
+    a: "Sí: fecha de inicio y fecha de entrega van por escrito en el presupuesto, junto al precio cerrado. Si aparece algo que no vimos en la visita, lo asumimos nosotros — ese es el trato."
   - q: "¿Cuánto cobra un pintor en Madrid?"
-    a: "En 2026, pintar un piso completo cuesta entre 13 y 20 €/m² de vivienda con material incluido (un piso de 80 m², entre 1.100 € y 1.700 €). Quitar gotelé y alisar va de 9 a 15 €/m² de pared. Publicamos todas nuestras tarifas en la sección de precios."
-  - q: "¿Hacéis presupuestos gratis?"
-    a: "Sí. Puedes pedir una estimación inmediata por WhatsApp enviando fotos, o una visita gratuita en Madrid: medimos y entregamos presupuesto cerrado en 24 horas, sin compromiso."
+    a: "En 2026, pintar un piso completo cuesta entre 13 y 20 €/m² con material incluido (un piso de 80 m², entre 1.100 € y 1.700 €); quitar gotelé y alisar, de 9 a 15 €/m² de pared. Publicamos todas las tarifas en la sección de precios."
   - q: "¿En qué zonas de Madrid trabajáis?"
     a: "En todo Madrid capital y el área metropolitana: Alcorcón, Móstoles, Getafe, Leganés, Fuenlabrada, Las Rozas, Pozuelo, Majadahonda, Alcobendas y alrededores."
-  - q: "¿Trabajáis con factura y seguro?"
-    a: "Siempre. Factura con IVA en todos los trabajos y seguro de responsabilidad civil. El presupuesto que firmas es el precio final: sin extras a mitad de obra."
-  - q: "¿Pintáis pisos habitados y con muebles?"
-    a: "Sí, la mayoría de nuestros trabajos son en pisos habitados. Protegemos muebles y suelos por completo, trabajamos por zonas y usamos pinturas al agua sin olor."
+  - q: "¿Qué pasa después de la entrega?"
+    a: "Repaso final contigo pared a pared, garantía por escrito, factura con IVA y la pintura sobrante etiquetada por estancia para futuros retoques. Cobramos al terminar, cuando el trabajo está revisado y aceptado."
 ---
 
-Somos una empresa de pintura madrileña con una idea simple: si publicamos los precios y hacemos el trabajo bien, no necesitamos nada más. Pintura interior, gotelé, lacado, fachadas y locales — con presupuesto cerrado, factura y garantía.
+Somos una empresa de pintura madrileña con una convicción simple: lo difícil no es pintar bien una pared — es merecer que te dejen las llaves. Pintura interior, gotelé, lacado, fachadas y locales, con un método que puedes comprobar antes de contratar.

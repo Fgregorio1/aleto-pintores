@@ -32,6 +32,7 @@ const year = new Date().getFullYear();
       <ul class="mt-4 space-y-2.5 text-sm text-paper/80">
         <li><a class="hover:text-chartreuse-300" href={staticPath('servicios-hub', locale)}>{t('nav.servicios')}</a></li>
         <li><a class="hover:text-chartreuse-300" href={staticPath('precios-hub', locale)}>{t('nav.precios')}</a></li>
+        <li><a class="hover:text-chartreuse-300" href={staticPath('arquitectos', locale)}>{t('nav.arquitectos')}</a></li>
         <li><a class="hover:text-chartreuse-300" href={staticPath('sobre-nosotros', locale)}>{t('nav.sobre')}</a></li>
         <li><a class="hover:text-chartreuse-300" href={staticPath('contacto', locale)}>{t('nav.contacto')}</a></li>
         {locale === 'es' && <li><a class="hover:text-chartreuse-300" href={staticPath('opiniones', 'es')}>{t('nav.opiniones')}</a></li>}
