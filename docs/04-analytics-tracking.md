@@ -14,13 +14,22 @@ Guiding constraints, in order: **(1) never compromise site performance** (static
 | Page analytics + real-user Core Web Vitals | **Cloudflare Web Analytics (RUM beacon)** | ⬜ enable in dashboard (one click) | No — cookieless, no personal data |
 | SEO / search queries | **Google Search Console** (+ Bing Webmaster) | ⬜ set up ASAP — the SEO source of truth | No |
 | Tag manager + CMP + ad/marketing tools | **Cloudflare Zaraz + Zaraz Consent Management** | ⬜ activate at first campaign launch, not before | Yes — Zaraz gates it |
-| Conversion tracking (Google Ads, GA4, Meta Pixel + **Meta CAPI server-side**) | via Zaraz tools | ⬜ with Zaraz activation | Yes |
+| Ad-platform conversion signals (bidding) | **Google Ads tag + Meta Pixel/CAPI server-side**, via Zaraz tools | ⬜ with Zaraz activation | Yes |
+| Attribution & behavioral analytics (the "GA4 role") | **PostHog** (free tier, 1M events/mo) — via Zaraz Custom HTML, consent-gated | ⬜ with Zaraz activation | Yes ("Analítica" purpose) |
 
 **Explicitly rejected** (and why, so nobody re-litigates):
-- **Plausible/Fathom etc.** — good tools, but redundant: RUM covers traffic/CWV now; GA4-via-Zaraz covers events/campaigns later. No subscription needed.
+- **GA4** — user preference; PostHog takes its role (attribution, funnels, events). NOTE: PostHog does NOT feed Google Ads/Meta bidding — that job stays with the platform tags (Google Ads tag, Meta Pixel/CAPI) via Zaraz. Never remove those thinking PostHog covers them.
+- **Plausible/Fathom etc.** — good tools, but redundant: RUM covers traffic/CWV now; PostHog covers events/attribution later. No subscription needed.
 - **GTM (browser) + standalone certified CMP (CookieYes/Cookiebot/Axeptio)** — the fallback stack, only if Zaraz ever can't run a needed tag or a designer consent UX is wanted. Costs more JS + a vendor.
 - **GTM Server-Side for Meta CAPI** — requires a hosted container (~$20–120/mo). Zaraz does CAPI natively at the edge for free.
-- **PostHog** — it's product analytics, NOT a CMP; doesn't replace anything above.
+
+**PostHog implementation rules (SEO/perf-safe):**
+- Loaded as a **Zaraz Custom HTML component**, assigned to the "Analítica" consent purpose → loads ONLY after consent, async/deferred. Crawlers never consent → never see it; the indexed page stays near-zero-JS. LCP/CLS untouched by design.
+- **Session recordings OFF or sampled ≤10%** at launch (the rrweb replay module is the heavy part; events-only is light). Disable autocapture extras we don't use (surveys, feature-flag polling).
+- **Proxy ingestion through our domain** via a small Worker route (e.g. `aletopintores.com/ph/*` → PostHog cloud) so ad blockers don't eat events (~99% vs ~70% completeness).
+- UTMs/referrers auto-captured as first/last-touch person properties → attribution breakdowns on `whatsapp_click`/`form_submit`/`calculator_complete`.
+- This is the documented exception to the >15 KB JS guardrail (~50-60 KB, post-consent only). Cloudflare RUM is the independent CWV watchdog — if field INP/LCP degrade after activation, revisit sampling/config.
+- OPTIONAL (recommended, can ship pre-campaigns, ~1 KB, first-party): source-stamp leads — capture UTM/referrer in sessionStorage on landing, append a discreet `Ref: <source>` line to WhatsApp prefills and form messages, so each lead arrives already labeled with its true origin. Complements PostHog (attributes the conversation, not just the click).
 
 ## 2. Why Zaraz (recorded rationale)
 
@@ -40,7 +49,7 @@ Guiding constraints, in order: **(1) never compromise site performance** (static
 3. Monthly: check AI Crawl Control graphs for GPTBot/ClaudeBot/PerplexityBot activity (free GEO monitoring).
 
 ### Phase B — at first campaign launch (Google Ads and/or Meta)
-1. Enable **Zaraz** on the zone; configure tools: Google Ads tag, GA4, Facebook Pixel (+ CAPI access token from Meta Business settings).
+1. Enable **Zaraz** on the zone; configure tools: Google Ads tag, Facebook Pixel (+ CAPI access token from Meta Business settings), and PostHog as a Custom HTML component (per the PostHog rules in §1). Add the PostHog ingestion proxy Worker route.
 2. Enable **Zaraz Consent Management**: purposes "Analítica" + "Marketing"; every tool assigned to a purpose; modal texts in ES + EN (match site tone; style modal via CSS to brand tokens — forest/chartreuse, Fraunces headings).
 3. Confirm **Consent Mode v2** signals fire (Zaraz does this automatically when consent properties exist — verify with Tag Assistant).
 4. Wire the **conversion events** (docs/02 §11): `whatsapp_click`, `phone_click`, `form_submit`, `calculator_complete` — as `zaraz.track()` calls added to the relevant components (`WhatsAppButton`, `CtaBlock`, `ContactForm`, `PriceCalculator`). Import as conversions in Google Ads; map to Meta standard events (Lead, Contact).
@@ -67,9 +76,9 @@ Guiding constraints, in order: **(1) never compromise site performance** (static
 
 | KPI | Where it lives |
 |---|---|
-| GBP calls/clicks | GBP Performance (UTM-tagged link separates GBP traffic in GA4 later) |
+| GBP calls/clicks | GBP Performance (UTM-tagged link separates GBP traffic in PostHog later) |
 | Organic queries/clicks | GSC |
 | Page traffic + CWV | Cloudflare Web Analytics |
-| Leads by source | Zaraz events → GA4 + ask every lead "¿cómo nos encontraste?" (log manually meanwhile) |
+| Leads by source | Zaraz events → PostHog (UTM person properties) + optional WhatsApp source-stamping + ask every lead "¿cómo nos encontraste?" (log manually meanwhile) |
 | AI crawler activity | AI Crawl Control |
 | AI mention rate | Monthly manual matrix (10 prompts × 4 models) |
