@@ -55,6 +55,12 @@ Snippet config:
 
 Use in the UI: 2 funnels (`pageview → service page → whatsapp_click`; `calculator → whatsapp_click`), 1 leads dashboard (by source / service / page, weekly), the built-in Web Analytics tab. NOT used: feature flags, experiments, surveys, group analytics, data pipelines/CDP, error tracking, heatmaps. Never `identify()` leads with names/phones — client PII stays in WhatsApp, not analytics.
 
+**Phase B+ — PostHog Marketing Analytics (beta) for blended cost-per-lead:**
+- Activate only once spend exists on ≥2 channels. Feature is BETA — re-check its pricing/terms at activation.
+- **Google Ads + Meta spend**: use PostHog's native connectors (OAuth) — no bucket needed.
+- **Marketplace/offline spend** (Habitissimo, Cronoshare — the €100-300/mo playbook line no ad platform sees): drop monthly CSVs (`date, source, cost`) into a **Cloudflare R2 bucket** connected as a self-managed source → true blended CPL across ads + marketplaces in one view.
+- R2 cost at our volume: **€0** (10 GB storage + 1M writes/10M reads monthly free tier, zero egress; cost CSVs are KBs). One-time step: R2 activation requires a card on file (no charge within free tier). Later option: automate marketplace-cost uploads with a small Worker.
+
 ## 2. Why Zaraz (recorded rationale)
 
 1. **Server-side by design**: tools run in a Worker at Cloudflare's edge → minimal client JS (the whole site currently ships ~0 KB of third-party JS; Zaraz keeps the added weight far below a GTM+CMP+pixels stack).
