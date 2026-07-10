@@ -55,6 +55,10 @@ const year = new Date().getFullYear();
         <a class="hover:text-paper" href={staticPath('politica-privacidad', locale)}>
           {locale === 'en' ? 'Privacy policy' : 'Política de privacidad'}
         </a>
+        <span class="mx-2">·</span>
+        <a class="hover:text-paper" href={staticPath('terminos-condiciones', 'es')}>
+          {locale === 'en' ? 'Terms and conditions' : 'Términos y condiciones'}
+        </a>
       </p>
     </div>
   </div>
