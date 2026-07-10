@@ -30,6 +30,30 @@ Guiding constraints, in order: **(1) never compromise site performance** (static
 - UTMs/referrers auto-captured as first/last-touch person properties → attribution breakdowns on `whatsapp_click`/`form_submit`/`calculator_complete`.
 - This is the documented exception to the >15 KB JS guardrail (~50-60 KB, post-consent only). Cloudflare RUM is the independent CWV watchdog — if field INP/LCP degrade after activation, revisit sampling/config.
 - OPTIONAL (recommended, can ship pre-campaigns, ~1 KB, first-party): source-stamp leads — capture UTM/referrer in sessionStorage on landing, append a discreet `Ref: <source>` line to WhatsApp prefills and form messages, so each lead arrives already labeled with its true origin. Complements PostHog (attributes the conversation, not just the click).
+- DECISION 2026-07-10: PostHog is NOT installed before Zaraz (wizard/npm install rejected — it would ship unconditioned cookies without a CMP). It arrives WITH Zaraz, gated by consent, configured per below.
+
+**PostHog scope — ONLY these (it's a SaaS-analytics suite; we use the lead-gen slice):**
+
+Event schema (fired via `zaraz.track()` → forwarded to PostHog):
+| Event | From | Properties |
+|---|---|---|
+| `whatsapp_click` | WhatsAppButton, CtaBlock, header/footer links | `service`, `page`, `position` (hero/cta/footer), `locale` |
+| `phone_click` | `tel:` links | same |
+| `form_submit` | ContactForm | `service`, `locale` |
+| `calculator_complete` | PriceCalculator | `service`, `m2`, `estimate_range` |
+
+Snippet config:
+```js
+{
+  capture_pageview: true,
+  autocapture: false,                  // no click noise; our 4 events are intentional
+  person_profiles: 'identified_only',  // visitors stay anonymous — cheaper, less PII
+  disable_session_recording: true,     // enable later at ≤10% sampling only to debug funnels
+  disable_surveys: true
+}
+```
+
+Use in the UI: 2 funnels (`pageview → service page → whatsapp_click`; `calculator → whatsapp_click`), 1 leads dashboard (by source / service / page, weekly), the built-in Web Analytics tab. NOT used: feature flags, experiments, surveys, group analytics, data pipelines/CDP, error tracking, heatmaps. Never `identify()` leads with names/phones — client PII stays in WhatsApp, not analytics.
 
 ## 2. Why Zaraz (recorded rationale)
 
