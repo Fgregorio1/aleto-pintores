@@ -9,6 +9,7 @@ priceKey: impermeabilizacion
 shortLabel: "Terrace waterproofing"
 excerpt: "Diagnosis of the leak's real source, mesh-reinforced system at the critical points, one-year checkup."
 orden: 7
+heroLead: "We trace the leak's real source before quoting, and apply a system reinforced exactly at the points where most systems fail — with a free one-year checkup."
 directAnswer: "Waterproofing a terrace in Madrid costs €25–45 per m² in 2026 with a liquid polyurethane membrane, surface preparation included. A 20 m² terrace runs €500–900, takes 2-3 days, and carries a 10-year written warranty on the applied system."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

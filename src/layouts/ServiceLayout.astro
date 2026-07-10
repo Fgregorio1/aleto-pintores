@@ -42,9 +42,13 @@ const crumbs = [
     <header class="max-w-3xl">
       <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
       <UpdatedDate date={entry.data.dateModified} locale={locale} />
-      <DirectAnswer text={entry.data.directAnswer} />
+      {/* Human-first hero: value-led, no prices. The price-rich answer box lives with the table below. */}
+      <p class="mt-5 max-w-3xl text-lg leading-relaxed text-ink-soft">
+        {entry.data.heroLead ?? entry.data.directAnswer}
+      </p>
     </header>
 
+    {entry.data.heroLead && <DirectAnswer text={entry.data.directAnswer} />}
     <PriceTable priceKey={entry.data.priceKey} locale={locale} />
     {
       relatedPrecio && (

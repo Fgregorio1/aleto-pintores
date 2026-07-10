@@ -9,6 +9,7 @@ priceKey: impermeabilizacion
 shortLabel: "Impermeabilizar terrazas"
 excerpt: "Diagnóstico del origen real de la filtración, sistema con refuerzo en puntos críticos y revisión al año."
 orden: 7
+heroLead: "Localizamos el origen real de la gotera antes de presupuestar y aplicamos un sistema reforzado justo en los puntos donde fallan casi todos, con revisión gratuita al año."
 directAnswer: "Impermeabilizar una terraza en Madrid cuesta entre 25 y 45 €/m² en 2026 con membrana de poliuretano líquido, incluida la preparación del soporte. Una terraza de 20 m² queda entre 500 € y 900 € en 2-3 días, con garantía por escrito de 10 años en el sistema aplicado."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

@@ -9,6 +9,7 @@ priceKey: pintura-interior
 shortLabel: "Interior painting"
 excerpt: "Full flats and houses with total protection, dates that hold and a finish that lasts years."
 orden: 1
+heroLead: "Your flat painted in days, not weeks: total protection of furniture and floors, the same crew start to finish, and a result we review with you wall by wall before you pay — all in English."
 directAnswer: "Painting an 80 m² flat in Madrid costs between €1,100 and €1,700 in 2026, materials and protection included, and takes 3-4 days. The exact price depends on wall condition, ceiling height and colours — we give you a fixed written quote in English within 24 hours."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

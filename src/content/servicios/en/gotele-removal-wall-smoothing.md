@@ -9,6 +9,7 @@ priceKey: quitar-gotele
 shortLabel: "Gotelé removal"
 excerpt: "Perfectly smooth walls verified under raking light — without turning your home into a dust bowl."
 orden: 2
+heroLead: "Perfectly smooth walls, verified with you under raking light — and a home that stays livable every day of the job, without dust ending up in the wardrobes."
 directAnswer: "Removing gotelé and smoothing the walls in Madrid costs €9–15 per m² of wall in 2026, smoothing and final painting included. An 80 m² flat (roughly 200 m² of wall) comes to €1,800–2,600 and takes 4-6 working days."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

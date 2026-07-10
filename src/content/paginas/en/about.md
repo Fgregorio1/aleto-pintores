@@ -5,6 +5,7 @@ h1: "About Aleto Pintores"
 pageKey: sobre-nosotros
 translationKey: page-about
 locale: en
+heroLead: "A painting company founded on a simple idea: a verifiable method, deadlines that hold, and enough transparency that you never have to take our word for anything."
 directAnswer: "Aleto Pintores is a residential and commercial painting company founded in 2026, based in Chamberí (Madrid) and serving the whole city and metro area. We work with the same crew start to finish, dates and a fixed quote in writing, liability insurance, VAT invoices on every job and published prices — with full service available in English."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

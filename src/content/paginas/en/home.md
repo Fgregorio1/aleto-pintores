@@ -5,6 +5,7 @@ h1: "Painters in Madrid who treat your home like it's theirs to protect"
 pageKey: home
 translationKey: page-home
 locale: en
+heroLead: "The same crew start to finish, complete protection of your home, start and delivery dates in writing, and a fixed quote that never grows mid-job — with everything, from contract to walkthrough, available in English."
 directAnswer: "Aleto Pintores is a Madrid painting company with a method you can verify: the same crew start to finish, complete protection of your home, start and delivery dates in writing, and a fixed quote that never grows mid-job — all in English if you prefer. Painting an 80 m² flat costs €1,100–1,700 in 2026; every price is published."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

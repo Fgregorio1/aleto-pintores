@@ -9,6 +9,7 @@ priceKey: quitar-gotele
 shortLabel: "Quitar gotelé y alisar"
 excerpt: "Paredes lisas perfectas comprobadas a contraluz, sin convertir tu casa en una obra polvorienta."
 orden: 2
+heroLead: "Paredes perfectamente lisas, comprobadas contigo a contraluz — y una casa que sigue siendo habitable todos los días de la obra, sin polvo hasta en los armarios."
 directAnswer: "Quitar el gotelé y alisar las paredes en Madrid cuesta entre 9 y 15 €/m² de pared en 2026, con el alisado y la pintura final incluidos. Un piso de 80 m² (unos 200 m² de pared) queda entre 1.800 € y 2.600 € y se termina en 4-6 días laborables."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

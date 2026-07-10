@@ -9,6 +9,7 @@ priceKey: pintura-oficinas
 shortLabel: "Offices & retail"
 excerpt: "Overnight or weekend execution with complete company paperwork. Your business never stops."
 orden: 5
+heroLead: "We paint your office or shop overnight or at weekends: your team walks in Monday to an immaculate space, and your business never stops for a single hour."
 directAnswer: "Painting an office or shop in Madrid costs €10–16 per m² of floor area in 2026, with night or weekend work included so your business never closes. A 150 m² office runs €1,500–2,400, completed in 3-5 days or two weekends."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

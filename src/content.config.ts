@@ -18,6 +18,11 @@ const seoBase = {
   metaDescription: z.string().min(70).max(160),
   /** Visible H1 — may differ from title (H1 targets the query verbatim). */
   h1: z.string(),
+  /**
+   * The visible hero subtitle — what a HUMAN reads first. Value-led, NO
+   * prices (docs/03 §3b). Optional: layouts fall back to directAnswer.
+   */
+  heroLead: z.string().min(60).max(300).optional(),
   /** Pairs ES↔EN versions. Same key in both locales = hreflang pair exists. */
   translationKey: z.string(),
   locale: z.enum(['es', 'en']).default('es'),

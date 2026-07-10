@@ -9,6 +9,7 @@ priceKey: lacar-puertas
 shortLabel: "Lacado de puertas"
 excerpt: "Acabado tipo fábrica que no amarillea ni se descascarilla, hecho en tu casa y sin desmontarla."
 orden: 3
+heroLead: "Tus puertas de madera con acabado de fábrica, en blanco o el color que elijas: preparación completa, imprimación de agarre y un esmalte que no amarillea ni se descascarilla."
 directAnswer: "Lacar una puerta en Madrid cuesta entre 80 € y 140 € en 2026, incluyendo las dos caras, el marco y las jambas. Un piso con 8 puertas queda entre 640 € y 1.120 €, con acabado tipo fábrica, en 3-4 días. Pasar de puertas de sapelli a blanco lacado es el cambio estético con más impacto por euro en un piso de los 80-90."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

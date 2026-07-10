@@ -9,6 +9,7 @@ priceKey: pintar-fachada
 shortLabel: "Facades & buildings"
 excerpt: "Honest diagnosis, board-ready itemised quotes and a site that respects the people living in it."
 orden: 4
+heroLead: "An honest diagnosis of the building, an itemised board-ready quote, and a site that respects the people living in it from the first day to the last."
 directAnswer: "Painting a building facade in Madrid costs €12–22 per m² in 2026, depending on surface condition and the access system required (scaffolding, lift or rope access). A 300 m² facade runs €3,600–6,600. We prepare itemised quotes ready to present to your community board (junta de propietarios)."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

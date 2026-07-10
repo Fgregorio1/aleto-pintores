@@ -58,6 +58,8 @@ Style rules:
 
 The meta layer keeps its price hooks regardless: `title`, `metaDescription` and `directAnswer` retain concrete numbers, because they feed SERP snippets, featured snippets and AI answers. The `PriceTable` component stays on service pages (it's data, not prose).
 
+**`heroLead` vs `directAnswer` — two fields, two audiences.** `heroLead` is what a HUMAN reads first: the visible hero subtitle, value-led, **no prices** (60–300 chars). `directAnswer` is what MACHINES quote: the concrete-numbers answer block, rendered in the bordered box just above the price table (still above the fold for snippet extraction, no longer the hero). Every service page and key one-off page sets both; `/precios/` guides intentionally set only `directAnswer` (price pages stay price-first — layouts fall back to it in the hero).
+
 **The angle library** — the real reasons demanding clients choose a painter. Every body section should serve one:
 1. **Who's in my home** — same named crew start to finish, insured, direct contact
 2. **The protection protocol** — sealed rooms, dust extraction, wrapped furniture, daily cleanup, odourless paints

@@ -5,6 +5,7 @@ h1: "Pintores en Madrid que tratan tu casa como lo que es: tu casa"
 pageKey: home
 translationKey: page-home
 locale: es
+heroLead: "El mismo equipo de principio a fin, protección total de tu vivienda, fechas de inicio y entrega por escrito y un presupuesto cerrado que no crece durante la obra. Así se pinta una casa cuando se respeta a quien vive en ella."
 directAnswer: "Aleto Pintores es una empresa de pintura en Madrid con un método claro: el mismo equipo de principio a fin, protección total de tu vivienda, fechas de inicio y entrega por escrito y un presupuesto cerrado que no crece durante la obra. Pintar un piso de 80 m² cuesta entre 1.100 € y 1.700 € en 2026 — todos nuestros precios están publicados."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

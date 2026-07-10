@@ -9,6 +9,7 @@ priceKey: pintura-interior
 shortLabel: "Pintura interior"
 excerpt: "Pisos y casas completas con protección total, fechas que se cumplen y un acabado que aguanta años."
 orden: 1
+heroLead: "Tu piso pintado en días, no en semanas: protección total de muebles y suelos, el mismo equipo de principio a fin y un acabado que revisamos contigo pared a pared antes de cobrar."
 directAnswer: "Pintar un piso de 80 m² en Madrid cuesta entre 1.100 € y 1.700 € en 2026, con materiales y protección incluidos, y se termina en 3-4 días. El precio exacto depende del estado de las paredes, la altura de los techos y los colores elegidos: te damos un presupuesto cerrado gratis en 24 horas."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

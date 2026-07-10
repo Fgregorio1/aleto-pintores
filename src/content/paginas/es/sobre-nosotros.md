@@ -5,6 +5,7 @@ h1: "Quiénes somos: Aleto Pintores"
 pageKey: sobre-nosotros
 translationKey: page-about
 locale: es
+heroLead: "Una empresa de pintura fundada sobre una idea simple: método verificable, plazos que se cumplen y la transparencia suficiente para que no tengas que fiarte de nuestra palabra."
 directAnswer: "Aleto Pintores es una empresa de pintura residencial y comercial fundada en 2026, con base en Chamberí (Madrid) y servicio en toda la capital y su área metropolitana. Trabajamos con el mismo equipo de principio a fin, fechas y presupuesto cerrado por escrito, seguro de responsabilidad civil, factura en todos los trabajos y precios publicados."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

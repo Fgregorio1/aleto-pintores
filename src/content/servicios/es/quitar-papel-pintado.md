@@ -9,6 +9,7 @@ priceKey: quitar-papel
 shortLabel: "Quitar papel pintado"
 excerpt: "Retirada sin dañar el yeso, lavado de cola incluido y consejo honesto sobre el siguiente acabado."
 orden: 6
+heroLead: "Retiramos el papel sin dañar el yeso, lavamos hasta el último resto de cola y te aconsejamos con honestidad el siguiente acabado — aunque sea la opción más barata."
 directAnswer: "Quitar papel pintado en Madrid cuesta entre 4 y 8 €/m² de pared en 2026, incluyendo la retirada, el lavado de restos de cola y la preparación básica del soporte. Un salón medio (unos 40 m² de pared) queda entre 160 € y 320 € en una jornada."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

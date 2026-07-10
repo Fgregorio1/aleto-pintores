@@ -9,6 +9,7 @@ priceKey: quitar-papel
 shortLabel: "Wallpaper removal"
 excerpt: "Stripped without damaging the plaster, glue washed off, and honest advice on the next finish."
 orden: 6
+heroLead: "We strip the paper without damaging the plaster, wash off every trace of glue, and give you honest advice on the next finish — even when it's the cheapest option."
 directAnswer: "Wallpaper removal in Madrid costs €4–8 per m² of wall in 2026, including stripping, washing off glue residue and basic wall preparation. An average living room (about 40 m² of wall) runs €160–320 and is done in a day."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

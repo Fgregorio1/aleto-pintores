@@ -20,9 +20,6 @@ const servicios = (await getCollection('servicios', (e) => e.id.startsWith('es/'
 const guias = (await getCollection('precios', (e) => e.id.startsWith('es/') && !e.data.draft)).sort(
   (a, b) => a.data.orden - b.data.orden,
 );
-const nf = new Intl.NumberFormat('es-ES');
-const p80 = preciosData.servicios['pintura-interior'].ejemplos.find((e: any) => e.m2 === 80);
-
 const trust = [
   { title: 'Tu casa, protegida de verdad', text: 'Suelos, muebles y carpintería cubiertos antes de empezar. Lijado con aspiración, pintura sin olor y limpieza cada tarde.' },
   { title: 'Fechas y precio por escrito', text: 'Inicio, entrega y presupuesto cerrado firmados antes de empezar. Si surge algo que no vimos, lo asumimos nosotros.' },
@@ -45,7 +42,7 @@ const metodo = [
         {BUSINESS.address.district}, {BUSINESS.address.city} · {BUSINESS.hoursDisplay.es}
       </p>
       <h1 class="mt-4 max-w-2xl text-4xl leading-tight sm:text-5xl lg:text-6xl">{pagina.data.h1}</h1>
-      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-paper/90">{pagina.data.directAnswer}</p>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-paper/90">{pagina.data.heroLead ?? pagina.data.directAnswer}</p>
       <div class="mt-8 flex flex-wrap items-center gap-3">
         <a href={whatsappLink(WHATSAPP_DEFAULT_MSG.es)} class="rounded-full bg-paper px-7 py-3.5 text-sm font-semibold text-forest-900 transition-transform hover:scale-[1.02]">
           Presupuesto por WhatsApp
@@ -107,10 +104,10 @@ const metodo = [
       <div class="grid items-center gap-8 lg:grid-cols-2">
         <div>
           <h2 class="text-3xl text-forest-900">Y sí: los precios están publicados</h2>
-          <p class="mt-4 leading-relaxed text-ink">
-            La certeza también incluye saber qué cuesta. Pintar un piso de 80 m² va de
-            <strong>{nf.format(p80.min)} €</strong> a <strong>{nf.format(p80.max)} €</strong> en {preciosData.anio}, y quitar su gotelé de
-            <strong>1.800 €</strong> a <strong>2.600 €</strong> con pintura incluida — rangos de presupuestos reales, actualizados cada trimestre, para que compares antes incluso de llamarnos.
+          {/* The price-rich directAnswer renders here (snippet/AI extraction block) instead of in the hero */}
+          <p class="mt-4 leading-relaxed text-ink">{pagina.data.directAnswer}</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink-soft">
+            Rangos de presupuestos reales, actualizados cada trimestre, para que compares antes incluso de llamarnos.
           </p>
           <a href={staticPath('precios-hub', 'es')} class="mt-6 inline-block rounded-full bg-forest-700 px-6 py-3 text-sm font-semibold text-paper hover:bg-forest-800">
             Calcular mi presupuesto →

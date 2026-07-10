@@ -9,6 +9,7 @@ priceKey: lacar-puertas
 shortLabel: "Door lacquering"
 excerpt: "A factory-grade finish that won't yellow or peel — done in your home, without dismantling it."
 orden: 3
+heroLead: "Your wooden doors with a factory-grade finish, in white or any colour you choose: full preparation, bonding primer, and a lacquer that won't yellow or peel."
 directAnswer: "Lacquering a door in Madrid costs between €80 and €140 in 2026, covering both sides, the frame and trim. A flat with 8 doors comes to €640–1,120 with a factory-grade finish, in 3-4 days. Turning dark varnished doors white is the highest-impact upgrade per euro in flats from the 70s-90s."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

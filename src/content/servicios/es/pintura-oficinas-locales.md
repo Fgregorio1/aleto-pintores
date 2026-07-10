@@ -9,6 +9,7 @@ priceKey: pintura-oficinas
 shortLabel: "Oficinas y locales"
 excerpt: "Nocturno o fin de semana, con documentación de empresa completa. Tu negocio no para ni un día."
 orden: 5
+heroLead: "Pintamos tu oficina o local de noche o en fin de semana: tu equipo llega el lunes a un espacio impecable y tu actividad no se detiene ni una hora."
 directAnswer: "Pintar una oficina o local en Madrid cuesta entre 10 y 16 €/m² de superficie en 2026, con trabajo en horario nocturno o de fin de semana incluido para no interrumpir la actividad. Una oficina de 150 m² se pinta por 1.500-2.400 € en 3-5 días (o 2 fines de semana)."
 datePublished: 2026-07-09
 dateModified: 2026-07-09
