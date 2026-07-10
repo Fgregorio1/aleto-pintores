@@ -55,4 +55,4 @@ Una fachada se decide en junta pero se sufre en el descansillo, y lo sabemos. Av
 
 ## ¿Y el precio?
 
-Publicado y explicado: 12-22 €/m² de fachada en 2026, con los factores que mueven el rango (soporte, altura, medio de elevación) desglosados en la [guía de precio de pintar fachada](/precios/precio-pintar-fachada/) — pensada para que administradores y juntas comparen ofertas con criterio. Si el edificio va a montar andamio, es también el momento de revisar la cubierta: mira nuestra [impermeabilización de terrazas](/servicios/impermeabilizacion-terrazas/).
+Publicado y explicado, porque una junta necesita comparar con criterio: los factores que mueven cualquier presupuesto de fachada (estado del soporte, altura, medio de elevación) están desglosados partida a partida en la [guía de precio de pintar fachada](/precios/precio-pintar-fachada/), actualizada cada trimestre. Si el edificio va a montar andamio, es también el momento de revisar la cubierta: mira nuestra [impermeabilización de terrazas](/servicios/impermeabilizacion-terrazas/).

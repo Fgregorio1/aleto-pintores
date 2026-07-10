@@ -52,9 +52,16 @@ Style rules:
 - Internal links inside body text: service ↔ its price guide (both directions), related services, zone pages when they exist. 2–4 contextual links per page.
 - No filler posts. A blog entry must name its `targetQuery` in frontmatter — if you can't, don't write it.
 
-## 3b. Copy angles & the 15% price rule
+## 3b. Copy angles & the price-placement rule
 
-**Prose sells certainty; the meta layer sells price.** On service pages, home and about, price is ≈15% of the visible prose: max ONE price-context section per page (framed as certainty — "precio cerrado que no crece" — and linking to the `/precios/` guide for the numbers) and ≤2 price FAQs. The `/precios/` cluster is exempt — price is its search job.
+**Main pages sell value, trust and authority. Visible prices (numbers with €) appear in EXACTLY three places:**
+1. The `/precios/` cluster — price is its search job (tables, calculator, ranges)
+2. **FAQ answers** — every service page carries ONE "¿Cuánto cuesta…?" FAQ with the full range (this is also the featured-snippet / FAQPage-schema source for price queries)
+3. The invisible meta layer — `title` and `metaDescription` keep their price hooks
+
+**Never in:** service cards, heroes, `heroLead`, answer boxes, body prose, hub intros. Body sections may CLAIM transparency ("tarifas publicadas, actualizadas cada trimestre") and link to the price guide — without figures. Service pages end with the standard price-pointer section (built into `ServiceLayout`) linking to the guide + calculator.
+
+**Price-focused SEO content strategy:** concrete price copy targeting "cuánto cuesta" queries belongs in the `/precios/` guides today and in future BLOG articles (e.g. "Cuánto cuesta pintar un piso en Chamberí en 2027") that internal-link to the service pages. Blog posts are exempt from the no-numbers rule when their `targetQuery` is a price query.
 
 The meta layer keeps its price hooks regardless: `title`, `metaDescription` and `directAnswer` retain concrete numbers, because they feed SERP snippets, featured snippets and AI answers. The `PriceTable` component stays on service pages (it's data, not prose).
 

@@ -38,6 +38,8 @@ faq:
     a: "Te asesoramos sin coste y pintamos muestras reales en tus paredes antes de decidir — el mismo gris cambia por completo entre una habitación que da al norte y otra al sur. Nadie debería elegir un color de toda la casa desde un abanico de cartulinas."
   - q: "¿Se cumplen las fechas y el precio?"
     a: "Sí, por escrito: fecha de inicio, fecha de entrega y precio cerrado en el presupuesto. Si al empezar aparece algo que no vimos en la visita, lo asumimos nosotros."
+  - q: "¿Cuánto cuesta pintar un piso en Madrid?"
+    a: "Entre 13 y 20 €/m² de vivienda en 2026 con material y protección incluidos: un piso de 80 m² queda entre 1.100 € y 1.700 €, terminado en 3-4 días. Las tablas completas por tamaño están en nuestra guía de precios de pintar un piso."
   - q: "¿Dais factura y garantía?"
     a: "Siempre. Factura con IVA y garantía por escrito sobre el trabajo. Al terminar te dejamos la pintura sobrante etiquetada por estancia para futuros retoques."
 ---

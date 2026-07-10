@@ -54,4 +54,4 @@ With a written plan before a single desk moves: which zones get painted each nig
 
 ## And the price, for internal budgeting?
 
-Published so you can run numbers before asking for anything: €10–16 per m² in 2026, unsocial hours included. After the visit, a fixed itemised quote ready for your internal or accounting approval. If you also manage the building itself, see our [facade & community painting](/en/services/facade-community-painting/).
+Published so you can run numbers before asking for anything — unsocial hours included, no surprise surcharges — in our [prices section](/en/prices/), updated quarterly. After the visit, a fixed itemised quote ready for your internal or accounting approval. If you also manage the building itself, see our [facade & community painting](/en/services/facade-community-painting/).

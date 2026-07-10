@@ -54,4 +54,4 @@ Con un plan por escrito antes de mover un mueble: qué zonas se pintan cada noch
 
 ## ¿Y el precio para presupuestarlo internamente?
 
-Publicado para que puedas hacer números antes de pedir nada: 10-16 €/m² de superficie en 2026, nocturnidad incluida. Tras la visita, presupuesto cerrado por partidas listo para tu aprobación interna o la de tu gestoría. Si gestionas también la finca del edificio, mira nuestro servicio de [fachadas y comunidades](/servicios/pintura-fachadas-comunidades/).
+Publicado para que puedas hacer números antes de pedir nada — nocturnidad incluida, sin recargos sorpresa — en nuestra [sección de precios](/precios/), actualizada cada trimestre. Tras la visita, presupuesto cerrado por partidas listo para tu aprobación interna o la de tu gestoría. Si gestionas también la finca del edificio, mira nuestro servicio de [fachadas y comunidades](/servicios/pintura-fachadas-comunidades/).

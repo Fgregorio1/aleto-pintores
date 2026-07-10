@@ -46,6 +46,6 @@ Porque el papel esconde lo que hay debajo, y porque quitarlo mal sale caro. Un v
 
 Depende de cómo salga la pared, y te lo diremos con honestidad aunque sea la opción más barata. Si el soporte queda sano: preparación puntual y **pintura directa**, la ruta más económica. Si hay reparaciones extensas o buscas un acabado fino: **alisado y pintura** — el mismo proceso que usamos al [quitar gotelé](/servicios/quitar-gotele-alisar-paredes/). Y si te gusta el papel: **empapelar de nuevo** una pared de acento con un papel actual, sobre una base bien preparada que permita retirarlo fácil en el futuro. La visita es gratuita y el consejo, sin compromiso.
 
-## ¿Qué cuesta y qué incluye?
+## ¿Qué incluye el precio?
 
-Está publicado: 4-8 €/m² de pared en 2026, con retirada, lavado de cola y preparación básica incluidos — sin sorpresas de "la cola se cobra aparte". Si después pintamos o alisamos nosotros, los trabajos se encadenan sin días muertos y el conjunto se cierra en un único presupuesto con fechas por escrito.
+Todo el ciclo completo: retirada, lavado de cola y preparación básica del soporte — sin sorpresas de "la cola se cobra aparte". Las tarifas están publicadas en nuestra [sección de precios](/precios/) y se actualizan cada trimestre. Si después pintamos o alisamos nosotros, los trabajos se encadenan sin días muertos y el conjunto se cierra en un único presupuesto con fechas por escrito.

@@ -5,10 +5,10 @@ h1: "Painting services in Madrid"
 pageKey: servicios-hub
 translationKey: page-servicios-hub
 locale: en
-directAnswer: "We cover every painting service for homes and businesses in Madrid: interior painting (€13-20/m²), gotelé removal and wall smoothing (€9-15/m² wall), door lacquering (€80-140/door), facades and communities, offices and retail, wallpaper removal and terrace waterproofing. All with published prices and a fixed quote within 24 h — in English."
+directAnswer: "Every painting service for homes and businesses in Madrid — interior, gotelé removal and smoothing, lacquering, facades, offices, wallpaper and terraces — executed with the same method: total protection, the same crew start to finish, dates in writing and a fixed quote within 24 h, all available in English."
 datePublished: 2026-07-09
 dateModified: 2026-07-09
 faq: []
 ---
 
-Every service has its own page with real 2026 prices, the step-by-step process, and answers to the questions everyone asks. No small print: the price you see is the basis of the fixed quote you get after the free visit.
+Every service has its own page with the step-by-step process, answers to the questions everyone asks, and exactly what's included. And when you want to talk numbers, our rates are published on the prices page.

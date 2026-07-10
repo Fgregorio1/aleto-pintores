@@ -54,6 +54,6 @@ La luz rasante. Una pared puede parecer lisa de frente y ondular como el mar cua
 
 Porque cambia la categoría del piso entero sin tocar un tabique. El gotelé grita "años 80"; la pared lisa deja correr la luz, agranda visualmente las estancias y es la base de cualquier decoración actual. Compradores e inquilinos lo perciben en los primeros segundos de una visita — los portales inmobiliarios lo citan sistemáticamente entre las mejoras con mejor retorno junto a cocina y baño. Y es la puerta a lo demás: con la pared lisa, el [lacado de puertas](/servicios/lacado-puertas-armarios/) y una buena elección de color terminan la transformación.
 
-## ¿Qué me va a costar y cómo lo sé antes de llamar?
+## ¿Cómo sé lo que me va a costar antes de llamar?
 
-Lo publicamos: entre 9 y 15 €/m² de pared con alisado y pintura incluidos, y el porqué del rango (tipo de gotelé, estado del soporte, altura de techos) explicado con tablas por tamaño de piso en la [guía de precios de quitar gotelé](/precios/precio-quitar-gotele/). Tras la visita gratuita el presupuesto es cerrado, con fecha de inicio y de entrega por escrito.
+Porque lo publicamos. Nuestras tarifas de retirada de gotelé — con el porqué de cada rango: tipo de gotelé, estado del soporte, altura de techos — están explicadas con tablas por tamaño de piso en la [guía de precios de quitar gotelé](/precios/precio-quitar-gotele/), actualizada cada trimestre. Tras la visita gratuita el presupuesto es cerrado, con fecha de inicio y de entrega por escrito — y no crece durante la obra.

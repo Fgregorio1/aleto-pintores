@@ -1,21 +1,18 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { servicioPath } from '@/lib/paths';
-import preciosData from '@/data/precios.yaml';
 import { useTranslations, type Locale } from '@/i18n/ui';
 
+/**
+ * Value-first card: no prices here (docs/03 §3b — visible prices live only
+ * in FAQ answers and the /precios/ cluster).
+ */
 interface Props {
   servicio: CollectionEntry<'servicios'>;
   locale: Locale;
 }
 const { servicio, locale } = Astro.props;
 const t = useTranslations(locale);
-const price = preciosData.servicios[servicio.data.priceKey];
-const unidadCorta = price
-  ? locale === 'es'
-    ? price.unidad_es.replace('€/', '')
-    : price.unidad_en.replace('€/', '')
-  : '';
 ---
 
 <a
@@ -26,11 +23,7 @@ const unidadCorta = price
     <h3 class="text-lg text-forest-900 group-hover:text-forest-700">{servicio.data.shortLabel}</h3>
     <p class="mt-2 text-sm leading-relaxed text-ink-soft">{servicio.data.excerpt}</p>
   </div>
-  {
-    price && (
-      <p class="mt-5 text-sm font-semibold text-olive-600">
-        {t('precios.desde')} {price.min} €/{unidadCorta} <span aria-hidden="true" class="ml-1 inline-block transition-transform group-hover:translate-x-0.5">→</span>
-      </p>
-    )
-  }
+  <p class="mt-5 text-sm font-semibold text-olive-600">
+    {t('card.ver')} <span aria-hidden="true" class="ml-1 inline-block transition-transform group-hover:translate-x-0.5">→</span>
+  </p>
 </a>

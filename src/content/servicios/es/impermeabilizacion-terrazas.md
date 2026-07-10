@@ -42,7 +42,7 @@ faq:
 
 ## ¿Por qué el diagnóstico importa más que el material?
 
-Porque el agua engaña. La mancha del dormitorio puede venir de una junta a cuatro metros, de un sumidero mal sellado o de una pendiente que embalsa — y una impermeabilización perfecta aplicada en el sitio equivocado no arregla nada. Por eso nuestra visita no es un vistazo para dar precio: comprobamos pendientes, desagües, juntas y encuentros, y localizamos el origen real antes de proponer solución. A veces la respuesta honesta es una reparación puntual de 200 € y no un sistema completo; también te lo diremos.
+Porque el agua engaña. La mancha del dormitorio puede venir de una junta a cuatro metros, de un sumidero mal sellado o de una pendiente que embalsa — y una impermeabilización perfecta aplicada en el sitio equivocado no arregla nada. Por eso nuestra visita no es un vistazo para dar precio: comprobamos pendientes, desagües, juntas y encuentros, y localizamos el origen real antes de proponer solución. A veces la respuesta honesta es una pequeña reparación puntual y no un sistema completo; también te lo diremos.
 
 ## ¿Qué hace que un sistema dure 15 años en el clima de Madrid?
 
@@ -50,4 +50,4 @@ Madrid castiga las cubiertas por los dos extremos: ciclos de hielo-deshielo en i
 
 ## ¿Qué pasa después de la obra?
 
-No desaparecemos: garantía por escrito del sistema aplicado y una revisión gratuita al año, porque una cubierta se comporta distinto tras pasar su primer verano y su primer invierno. Si tu comunidad está planificando obra de fachada, coordina ambas: con el andamio ya montado, tratar la cubierta cuesta sensiblemente menos — lo gestionamos en un mismo presupuesto por partidas junto a la [pintura de fachadas](/servicios/pintura-fachadas-comunidades/). Los rangos orientativos (25-45 €/m² en 2026) están publicados para que hagas números antes de llamar.
+No desaparecemos: garantía por escrito del sistema aplicado y una revisión gratuita al año, porque una cubierta se comporta distinto tras pasar su primer verano y su primer invierno. Si tu comunidad está planificando obra de fachada, coordina ambas: con el andamio ya montado, tratar la cubierta cuesta sensiblemente menos — lo gestionamos en un mismo presupuesto por partidas junto a la [pintura de fachadas](/servicios/pintura-fachadas-comunidades/). Y los rangos orientativos están publicados en la [sección de precios](/precios/) para que hagas números antes de llamar.

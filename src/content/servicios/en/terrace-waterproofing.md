@@ -42,7 +42,7 @@ faq:
 
 ## Why the diagnosis matters more than the material
 
-Because water lies. The bedroom stain can come from a joint four metres away, a badly sealed drain, or a slope that ponds — and a perfect membrane applied in the wrong place fixes nothing. So our visit isn't a glance to name a price: we check slopes, drains, joints and junctions, and locate the real source before proposing anything. Sometimes the honest answer is a €200 spot repair rather than a full system — we'll tell you that too.
+Because water lies. The bedroom stain can come from a joint four metres away, a badly sealed drain, or a slope that ponds — and a perfect membrane applied in the wrong place fixes nothing. So our visit isn't a glance to name a price: we check slopes, drains, joints and junctions, and locate the real source before proposing anything. Sometimes the honest answer is a small spot repair rather than a full system — we'll tell you that too.
 
 ## What makes a system last 15 years in Madrid's climate?
 
@@ -50,4 +50,4 @@ Madrid punishes roofs from both ends: freeze-thaw cycles in winter and surfaces 
 
 ## What happens after the job?
 
-We don't disappear: a written warranty on the applied system and a free one-year checkup, because a roof behaves differently after its first summer and first winter. If your community is planning facade work, coordinate both: with the scaffolding already up, treating the roof costs noticeably less — we manage it in a single itemised quote alongside [facade painting](/en/services/facade-community-painting/). The indicative ranges (€25–45/m² in 2026) are published so you can run numbers before calling.
+We don't disappear: a written warranty on the applied system and a free one-year checkup, because a roof behaves differently after its first summer and first winter. If your community is planning facade work, coordinate both: with the scaffolding already up, treating the roof costs noticeably less — we manage it in a single itemised quote alongside [facade painting](/en/services/facade-community-painting/). And the indicative ranges are published in our [prices section](/en/prices/) so you can run numbers before calling.

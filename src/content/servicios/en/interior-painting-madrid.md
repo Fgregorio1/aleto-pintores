@@ -38,6 +38,8 @@ faq:
     a: "We advise at no cost and paint real samples on your walls before you decide — the same grey looks completely different in a north-facing room and a south-facing one. Nobody should choose a whole-house colour from a fan of cards."
   - q: "Do the dates and the price actually hold?"
     a: "Yes, in writing: start date, delivery date and fixed price on the quote. Anything we missed at the visit is absorbed by us, not billed to you."
+  - q: "How much does it cost to paint a flat in Madrid?"
+    a: "Between €13 and €20 per m² of floor area in 2026 with materials and protection included: an 80 m² flat runs €1,100–1,700, finished in 3-4 days. Full tables by flat size are in our Madrid painting cost guide."
   - q: "Can you handle the job while I'm abroad?"
     a: "Yes — keys coordinated with your agent or concierge, daily photo updates on WhatsApp, a video walkthrough at handover and the VAT invoice by email."
 ---

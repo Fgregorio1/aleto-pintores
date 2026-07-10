@@ -46,6 +46,6 @@ Because the paper hides what's underneath, and removing it badly is expensive. A
 
 It depends on how the wall comes out, and we'll tell you straight even when the answer is the cheapest option. If the substrate is sound: targeted prep and **direct painting**, the most economical route. If repairs are extensive or you want a fine finish: **skim and paint** — the same process we use for [gotelé removal](/en/services/gotele-removal-wall-smoothing/). And if you love paper: **re-paper** a feature wall with a modern print, over a properly prepared base that will strip easily next time. The visit is free and the advice comes with no strings.
 
-## What does it cost, and what's included?
+## What's included in the price?
 
-Published: €4–8 per m² of wall in 2026, with stripping, glue wash and basic prep included — no "the glue is extra" surprises. If we paint or smooth afterwards, the trades chain without idle days and everything closes in a single fixed quote with dates in writing.
+The full cycle: stripping, glue wash and basic substrate prep — no "the glue is extra" surprises. Rates are published in our [prices section](/en/prices/) and updated quarterly. If we paint or smooth afterwards, the trades chain without idle days and everything closes in a single fixed quote with dates in writing.

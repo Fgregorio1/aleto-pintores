@@ -54,4 +54,4 @@ A facade is voted in a meeting but endured on the landing — we know. Advance n
 
 ## And the price?
 
-Published and explained: €12–22 per m² in 2026, with the factors that move the range (substrate, height, access equipment) broken down in the [facade price guide](/en/prices/) — written so administrators and boards can compare offers properly. If the building is scaffolding up anyway, it's also the moment to inspect the roof: see [terrace waterproofing](/en/services/terrace-waterproofing/).
+Published and explained, because a board needs to compare properly: the factors that move any facade quote (substrate condition, height, access equipment) are broken down line by line in our [prices section](/en/prices/), updated quarterly. If the building is scaffolding up anyway, it's also the moment to inspect the roof: see [terrace waterproofing](/en/services/terrace-waterproofing/).

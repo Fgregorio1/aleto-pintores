@@ -54,6 +54,6 @@ Raking light. A wall can look flat straight-on and ripple like water when light 
 
 Because it changes the flat's category without touching a single partition. Gotelé shouts "1980s"; a smooth wall lets light travel, visually enlarges rooms and is the base for any current interior. Buyers and tenants register it in the first seconds of a viewing — property portals consistently rank it among the best-return improvements alongside kitchen and bathroom. And it unlocks the rest: with smooth walls, [door lacquering](/en/services/door-cabinet-lacquering/) and a good colour choice complete the transformation. For international owners preparing a flat for the Madrid market, this is the move.
 
-## What will it cost me — before I even call?
+## How do I know what it will cost — before I even call?
 
-It's published: €9–15 per m² of wall with smoothing and painting included, and the reasons behind the range (gotelé type, wall condition, ceiling height) explained with size tables in the [gotelé removal cost guide](/en/prices/gotele-removal-cost/). After the free visit the quote is fixed, with start and delivery dates in writing — in English if you prefer.
+Because we publish it. Our gotelé-removal rates — with the reasons behind every range: gotelé type, wall condition, ceiling height — are explained with size tables in the [gotelé removal cost guide](/en/prices/gotele-removal-cost/), updated quarterly. After the free visit the quote is fixed, with start and delivery dates in writing — in English if you prefer — and it never grows mid-job.
