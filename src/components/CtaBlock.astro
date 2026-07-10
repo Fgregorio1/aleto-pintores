@@ -31,11 +31,11 @@ const msg =
   <div class="mt-6 flex flex-wrap items-center gap-3">
     <a
       href={whatsappLink(msg)}
-      class="rounded-full bg-paper px-6 py-3 text-sm font-semibold text-forest-900 transition-transform hover:scale-[1.02]"
+      data-pos="cta" class="rounded-full bg-paper px-6 py-3 text-sm font-semibold text-forest-900 transition-transform hover:scale-[1.02]"
     >{t('cta.whatsapp')}</a>
     <a
       href={`tel:${BUSINESS.phoneE164}`}
-      class="rounded-full border border-paper/50 px-6 py-3 text-sm font-semibold text-paper hover:border-paper"
+      data-pos="cta" class="rounded-full border border-paper/50 px-6 py-3 text-sm font-semibold text-paper hover:border-paper"
     >{t('cta.llamar')}: {BUSINESS.phoneDisplay}</a>
     <a href={staticPath('contacto', locale)} class="text-sm font-medium text-paper/90 underline underline-offset-4 hover:text-paper">
       {t('nav.contacto')} →

@@ -77,7 +77,14 @@ const txt = {
             `I need: ${data.get('detalle')}`,
             'Could you give me a quote?',
           ];
-      const msg = lines.filter(Boolean).join('\n');
+      // Source-stamp the lead (docs/04) — set by Attribution.astro
+      const src = (window as any).aletoSrc;
+      const msg = lines.filter(Boolean).join('\n') + (src ? `\nRef: ${src}` : '');
+      (window as any).aletoTrack?.('form_submit', {
+        page: location.pathname,
+        source: src || 'directo',
+        locale: form.dataset.locale,
+      });
       window.open(`${form.dataset.waBase}?text=${encodeURIComponent(msg)}`, '_blank');
     });
   }

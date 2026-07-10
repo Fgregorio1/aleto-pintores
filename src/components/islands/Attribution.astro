@@ -1,0 +1,97 @@
+---
+/**
+ * First-party attribution + event layer (docs/04).
+ * ~1 KB inline, no cookies (sessionStorage only — part of fulfilling the
+ * visitor's own quote request), no third parties.
+ *
+ * 1. Captures the visit source once per session (utm_* > referrer > directo)
+ * 2. Stamps every wa.me link with a "Ref: <source>" line so leads arrive
+ *    in WhatsApp already labeled with their true origin
+ * 3. Fires conversion events via zaraz.track() — a safe no-op until Zaraz
+ *    is active. Events: whatsapp_click, phone_click (form_submit and
+ *    calculator_complete fire from their own components via window.aletoTrack)
+ */
+---
+
+<script>
+  const KEY = 'aleto-src';
+  try {
+    if (!sessionStorage.getItem(KEY)) {
+      const p = new URLSearchParams(location.search);
+      let src = '';
+      const utm = p.get('utm_source');
+      if (utm) {
+        src = utm + (p.get('utm_campaign') ? '/' + p.get('utm_campaign') : '');
+      } else if (document.referrer) {
+        try {
+          const h = new URL(document.referrer).hostname.replace(/^www\./, '');
+          if (!h.includes('aletopintores.com')) {
+            const map: Record<string, string> = {
+              'google.': 'google-organic',
+              'bing.': 'bing-organic',
+              'duckduckgo.': 'ddg-organic',
+              'chatgpt.com': 'chatgpt',
+              'perplexity.': 'perplexity',
+              'facebook.': 'facebook',
+              'instagram.': 'instagram',
+              'l.instagram': 'instagram',
+            };
+            const hit = Object.entries(map).find(([k]) => h.includes(k));
+            src = hit ? hit[1] : h;
+          }
+        } catch {}
+      }
+      sessionStorage.setItem(KEY, src || 'directo');
+    }
+  } catch {}
+
+  const src = (() => {
+    try {
+      return sessionStorage.getItem(KEY) || 'directo';
+    } catch {
+      return 'directo';
+    }
+  })();
+
+  // Expose for ContactForm / PriceCalculator scripts
+  (window as any).aletoSrc = src;
+  const track = (name: string, props: Record<string, unknown> = {}) => {
+    try {
+      (window as any).zaraz?.track?.(name, props);
+    } catch {}
+  };
+  (window as any).aletoTrack = track;
+
+  // Stamp all prefilled WhatsApp links with the source
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="https://wa.me"]').forEach((a) => {
+    try {
+      const u = new URL(a.href);
+      const t = u.searchParams.get('text') || '';
+      if (t && !/\bRef:/.test(t)) {
+        u.searchParams.set('text', t + '\nRef: ' + src);
+        a.href = u.toString();
+      }
+    } catch {}
+  });
+
+  // service slug from the URL (docs/04 event property)
+  const service = (() => {
+    const m = location.pathname.match(/^\/(?:servicios|en\/services)\/([^/]+)/);
+    return m ? m[1] : '';
+  })();
+
+  // Delegated conversion events
+  document.addEventListener('click', (e) => {
+    const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
+    if (!a) return;
+    const base = {
+      page: location.pathname,
+      source: src,
+      service,
+      locale: document.documentElement.lang,
+      position: (a as HTMLElement).dataset.pos || '',
+    };
+    if (a.href.startsWith('https://wa.me')) track('whatsapp_click', base);
+    else if (a.href.startsWith('tel:')) track('phone_click', base);
+  });
+</script>

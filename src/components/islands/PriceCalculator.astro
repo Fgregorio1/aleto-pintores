@@ -103,6 +103,7 @@ const config = { services, mods, waBase: whatsappLink(), locale };
   <a
     href="#"
     data-calc-cta
+    data-pos="calculator"
     class="mt-4 inline-block rounded-full bg-forest-700 px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-forest-800"
   >{txt.cta}</a>
 </section>
@@ -123,6 +124,8 @@ const config = { services, mods, waBase: whatsappLink(), locale };
         `Hi, I used the calculator on aletopintores.com: ${s}, ${m2} m². Estimate: ${r}. Could you give me a fixed quote?`,
     };
 
+    let last = { service: '', m2: 0, range: '' };
+
     function update() {
       const data = new FormData(form);
       const svc = config.services.find((s: any) => s.key === data.get('servicio'));
@@ -134,9 +137,23 @@ const config = { services, mods, waBase: whatsappLink(), locale };
       const max = Math.round((svc.max * m2 * mod.factor) / 10) * 10;
       const range = `${nf.format(min)}–${nf.format(max)} €`;
       result.textContent = range;
-      const msg = waMsgs[config.locale](svc.label, String(m2), range);
+      last = { service: svc.key, m2, range };
+      let msg = waMsgs[config.locale](svc.label, String(m2), range);
+      // Source-stamp the lead (docs/04) — set by Attribution.astro
+      const src = (window as any).aletoSrc;
+      if (src) msg += `\nRef: ${src}`;
       cta.href = `${config.waBase}?text=${encodeURIComponent(msg)}`;
     }
+
+    // calculator_complete event (docs/04 schema); whatsapp_click fires via delegation
+    cta.addEventListener('click', () => {
+      (window as any).aletoTrack?.('calculator_complete', {
+        service: last.service,
+        m2: last.m2,
+        estimate_range: last.range,
+        locale: config.locale,
+      });
+    });
 
     form.addEventListener('input', update);
     update();

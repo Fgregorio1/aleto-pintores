@@ -47,7 +47,7 @@ const home = locale === 'en' ? '/en/' : '/';
       >{t('lang.switchShort')}</a>
       <a
         href={whatsappLink(WHATSAPP_DEFAULT_MSG[locale])}
-        class="hidden rounded-full bg-forest-700 px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-forest-800 sm:inline-block"
+        data-pos="header" class="hidden rounded-full bg-forest-700 px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-forest-800 sm:inline-block"
       >{t('cta.presupuesto24h')}</a>
       <!-- Mobile menu -->
       <details class="relative lg:hidden">
@@ -58,7 +58,7 @@ const home = locale === 'en' ? '/en/' : '/';
           {nav.map((item) => (
             <a href={item.href} class="block rounded-lg px-3 py-2.5 text-sm font-medium text-ink hover:bg-paper-dark">{item.label}</a>
           ))}
-          <a href={whatsappLink(WHATSAPP_DEFAULT_MSG[locale])} class="mt-1 block rounded-lg bg-forest-700 px-3 py-2.5 text-center text-sm font-semibold text-paper">{t('cta.presupuesto24h')}</a>
+          <a href={whatsappLink(WHATSAPP_DEFAULT_MSG[locale])} data-pos="header-mobile" class="mt-1 block rounded-lg bg-forest-700 px-3 py-2.5 text-center text-sm font-semibold text-paper">{t('cta.presupuesto24h')}</a>
         </nav>
       </details>
     </div>
