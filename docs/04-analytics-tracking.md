@@ -90,7 +90,7 @@ Use in the UI: 2 funnels (`pageview → service page → whatsapp_click`; `calcu
 3. Confirm **Consent Mode v2** signals fire (Zaraz automatic — verify with Tag Assistant).
 4. In Google Ads: import `whatsapp_click`/`form_submit`/`phone_click` as conversions; in Meta: map to standard events (Lead, Contact).
 5. UTM-tag all paid URLs (`?utm_source=google&utm_medium=cpc&utm_campaign=<c>`); canonical already strips them from indexing. Tag the GBP website link `?utm_source=gbp`.
-6. **Legal**: update `politica-privacidad` (it currently — truthfully — promises banner + policy updates BEFORE any tracking activates) + add cookies section listing Zaraz-set cookies/purposes.
+6. ✅ **Legal (done 2026-07-10)**: `politica-privacidad` rebuilt consent-ready (cookies table: zaraz-consent / Analítica→PostHog EU / Marketing→Google+Meta CAPI; sessionStorage attribution disclosed; DPF transfer note) + EN twin at `/en/privacy-policy/` (hreflang-paired; Zaraz EN modal links to it).
 7. **Verify** (all live):
    - No marketing tags fire before consent (Network tab, fresh incognito, deny → zero pixel/collect calls)
    - Consent Mode v2 states update on accept (Tag Assistant)

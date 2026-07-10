@@ -24,7 +24,7 @@ export const staticRoutes: StaticRoute[] = [
   { key: 'proyectos-hub', es: '/proyectos/' },
   { key: 'blog-hub', es: '/blog/' },
   { key: 'aviso-legal', es: '/aviso-legal/' },
-  { key: 'politica-privacidad', es: '/politica-privacidad/' },
+  { key: 'politica-privacidad', es: '/politica-privacidad/', en: '/en/privacy-policy/' },
 ];
 
 export function staticRoute(key: string): StaticRoute {
