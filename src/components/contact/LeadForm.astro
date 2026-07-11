@@ -2,6 +2,19 @@
 import type { Locale } from '@/i18n/ui';
 import { staticPath } from '@/i18n/routes';
 import Logo from '@/components/Logo.astro';
+import { DIAL_CODES, PRIORITY_COUNTRIES, flagOf } from '@/data/dial-codes';
+
+// Country options rendered at build time (zero client JS for the list):
+// the 5 neighbours/priority countries first, then the whole world A→Z.
+const priorityOptions = PRIORITY_COUNTRIES.map((iso) => ({
+  iso,
+  dial: DIAL_CODES[iso][0],
+  label: `${flagOf(iso)} ${DIAL_CODES[iso][1]} +${DIAL_CODES[iso][0]}`,
+}));
+const restOptions = Object.entries(DIAL_CODES)
+  .filter(([iso]) => !(PRIORITY_COUNTRIES as readonly string[]).includes(iso))
+  .sort((a, b) => a[1][1].localeCompare(b[1][1], 'es'))
+  .map(([iso, [dial, name]]) => ({ iso, dial, label: `${flagOf(iso)} ${name} +${dial}` }));
 
 /**
  * Estimate-request form (ported from cm-painting ContactSection, Aleto brand,
@@ -23,7 +36,6 @@ const txt = {
     name: 'Nombre y apellidos*',
     phone: 'Teléfono*',
     email: 'Tu email*',
-    zip: 'Código postal',
     help: '¿En qué te ayudamos?*',
     privacy1: 'He leído y acepto la',
     privacyLink: 'política de privacidad',
@@ -32,7 +44,6 @@ const txt = {
     errName: 'Escribe tu nombre',
     errEmail: 'Revisa el email',
     errPhone: 'Revisa el teléfono (9 dígitos en España)',
-    errZip: 'Código postal no válido',
     errService: 'Elige una opción',
     errPrivacy: 'Necesitamos tu consentimiento',
     errServer: 'No hemos podido enviar tu solicitud. Escríbenos por WhatsApp al 624 04 62 10 y te atendemos al momento.',
@@ -45,7 +56,6 @@ const txt = {
     name: 'First and last name*',
     phone: 'Phone*',
     email: 'Your email*',
-    zip: 'Postal code',
     help: 'How can we help you?*',
     privacy1: 'I have read and accept the',
     privacyLink: 'privacy policy',
@@ -54,7 +64,6 @@ const txt = {
     errName: 'Please enter your name',
     errEmail: 'Please check the email',
     errPhone: 'Please check the phone number',
-    errZip: 'Invalid postal code',
     errService: 'Please choose an option',
     errPrivacy: 'We need your consent',
     errServer: "We couldn't send your request. Message us on WhatsApp at +34 624 04 62 10 and we'll reply right away.",
@@ -71,14 +80,6 @@ const services = [
   { value: 'quitar-papel', es: 'Quitar papel pintado', en: 'Wallpaper removal' },
   { value: 'impermeabilizacion', es: 'Impermeabilizar terraza', en: 'Terrace waterproofing' },
   { value: 'otros', es: 'Otros', en: 'Others' },
-];
-
-const countries = [
-  { code: 'ES', prefix: '+34', flag: '🇪🇸' },
-  { code: 'GB', prefix: '+44', flag: '🇬🇧' },
-  { code: 'FR', prefix: '+33', flag: '🇫🇷' },
-  { code: 'DE', prefix: '+49', flag: '🇩🇪' },
-  { code: 'US', prefix: '+1', flag: '🇺🇸' },
 ];
 
 const inputCls =
@@ -109,13 +110,38 @@ const inputCls =
     </div>
 
     <div>
-      <div class="flex gap-2">
-        <select name="phone_country" aria-label="País" class="rounded-lg border border-line bg-paper px-2 py-3 text-sm">
-          {countries.map((c) => (
-            <option value={c.code} data-prefix={c.prefix} selected={c.code === 'ES'}>{c.flag} {c.prefix}</option>
-          ))}
-        </select>
-        <input type="tel" name="phone_national" required placeholder={txt.phone} autocomplete="tel-national" inputmode="tel" class={inputCls} />
+      {/* Unified phone field: flag picker overlays an invisible select; dial code lives IN the input */}
+      <div class="flex items-stretch rounded-lg border border-line bg-paper focus-within:border-olive-400" data-phone-box>
+        <div class="relative flex shrink-0 items-center border-r border-line pl-3 pr-2">
+          <span class="pointer-events-none select-none text-base" data-flag>{flagOf('ES')}</span>
+          <span class="pointer-events-none ml-1 text-[0.6rem] text-ink-soft" aria-hidden="true">▾</span>
+          <select
+            name="phone_country"
+            aria-label={locale === 'es' ? 'País del teléfono' : 'Phone country'}
+            class="absolute inset-0 cursor-pointer opacity-0"
+          >
+            <optgroup label={locale === 'es' ? 'Frecuentes' : 'Frequent'}>
+              {priorityOptions.map((c) => (
+                <option value={c.iso} data-dial={c.dial} selected={c.iso === 'ES'}>{c.label}</option>
+              ))}
+            </optgroup>
+            <optgroup label={locale === 'es' ? 'Todos los países' : 'All countries'}>
+              {restOptions.map((c) => (
+                <option value={c.iso} data-dial={c.dial}>{c.label}</option>
+              ))}
+            </optgroup>
+          </select>
+        </div>
+        <input
+          type="tel"
+          name="phone_full"
+          required
+          value="+34 "
+          aria-label={txt.phone}
+          autocomplete="tel"
+          inputmode="tel"
+          class="w-full rounded-r-lg bg-transparent px-3 py-3 text-sm text-ink focus:outline-none"
+        />
       </div>
       <p data-err="phone" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errPhone}</p>
     </div>
@@ -123,11 +149,6 @@ const inputCls =
     <div>
       <input type="email" name="email" required placeholder={txt.email} autocomplete="email" class={inputCls} />
       <p data-err="email" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errEmail}</p>
-    </div>
-
-    <div>
-      <input type="text" name="zip_code" placeholder={txt.zip} inputmode="numeric" autocomplete="postal-code" class={inputCls} />
-      <p data-err="zip_code" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errZip}</p>
     </div>
 
     <fieldset>
@@ -182,19 +203,50 @@ const inputCls =
     };
     const clear = () => errs.forEach((e) => e.setAttribute('hidden', ''));
 
+    // ── Unified phone field: keep the select, flag and the +code inside the
+    // input in sync in both directions ──
+    const countrySel = form.querySelector<HTMLSelectElement>('[name=phone_country]')!;
+    const flagEl = form.querySelector<HTMLElement>('[data-flag]')!;
+    const phoneInput = form.querySelector<HTMLInputElement>('[name=phone_full]')!;
+    const dialOf = (iso: string) =>
+      countrySel.querySelector<HTMLOptionElement>(`option[value="${iso}"]`)?.dataset.dial ?? '34';
+    const flagOf = (iso: string) =>
+      String.fromCodePoint(...[...iso.toUpperCase()].map((c) => 0x1f1a5 + c.charCodeAt(0)));
+
+    countrySel.addEventListener('change', () => {
+      const dial = dialOf(countrySel.value);
+      const national = phoneInput.value.replace(/^\+\d*\s*/, '');
+      phoneInput.value = `+${dial} ${national}`;
+      flagEl.textContent = flagOf(countrySel.value);
+      phoneInput.focus();
+    });
+
+    // If the user hand-types a different +code, re-sync the picker (longest match wins)
+    phoneInput.addEventListener('input', () => {
+      const digits = phoneInput.value.replace(/^\+/, '').replace(/\D/g, '');
+      if (!phoneInput.value.startsWith('+') || !digits) return;
+      let best: HTMLOptionElement | null = null;
+      countrySel.querySelectorAll<HTMLOptionElement>('option').forEach((o) => {
+        const d = o.dataset.dial ?? '';
+        if (digits.startsWith(d) && (!best || d.length > (best.dataset.dial ?? '').length)) best = o;
+      });
+      if (best && (best as HTMLOptionElement).value !== countrySel.value) {
+        countrySel.value = (best as HTMLOptionElement).value;
+        flagEl.textContent = flagOf(countrySel.value);
+      }
+    });
+
     form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
       clear();
       const data = new FormData(form);
-      const country = form.querySelector<HTMLSelectElement>('[name=phone_country]')!;
-      const prefix = country.selectedOptions[0]?.dataset.prefix ?? '+34';
-      const national = String(data.get('phone_national') ?? '').replace(/[\s\-().]/g, '');
+      const rawPhone = phoneInput.value.replace(/[\s\-().]/g, '');
       const payload: Record<string, string> = {
         full_name: String(data.get('full_name') ?? '').trim(),
         email: String(data.get('email') ?? '').trim(),
-        phone: national ? prefix + national.replace(/^0+/, '') : '',
-        phone_country: country.value,
-        zip_code: String(data.get('zip_code') ?? '').trim(),
+        phone: rawPhone.startsWith('+') ? rawPhone : rawPhone ? `+${dialOf(countrySel.value)}${rawPhone.replace(/^0+/, '')}` : '',
+        phone_country: countrySel.value,
+        zip_code: '',
         service: String(data.get('service') ?? ''),
         privacy: data.get('privacy') ? 'true' : 'false',
         form_source: form.dataset.formSource ?? 'home',
@@ -212,9 +264,8 @@ const inputCls =
       const fail = (f: string) => { show(f); bad = true; };
       if (payload.full_name.length < 2) fail('full_name');
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) fail('email');
-      const phoneOk = payload.phone_country === 'ES' ? /^\+34[6789]\d{8}$/.test(payload.phone) : /^\+\d{7,15}$/.test(payload.phone);
+      const phoneOk = payload.phone.startsWith('+34') ? /^\+34[6789]\d{8}$/.test(payload.phone) : /^\+\d{7,15}$/.test(payload.phone);
       if (!phoneOk) fail('phone');
-      if (payload.zip_code && !/^\d{4,5}$/.test(payload.zip_code)) fail('zip_code');
       if (!payload.service) fail('service');
       if (payload.privacy !== 'true') fail('privacy');
       if (bad) return;
