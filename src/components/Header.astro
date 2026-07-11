@@ -1,7 +1,7 @@
 ---
 import { useTranslations, type Locale } from '@/i18n/ui';
 import { staticPath } from '@/i18n/routes';
-import { whatsappLink, WHATSAPP_DEFAULT_MSG } from '@/data/business';
+import { BUSINESS, whatsappLink, WHATSAPP_DEFAULT_MSG } from '@/data/business';
 import Logo from '@/components/Logo.astro';
 
 interface Props {
@@ -24,6 +24,15 @@ const nav = [
 ];
 const home = locale === 'en' ? '/en/' : '/';
 ---
+
+{/* Top CTA strip (cmpainting.co pattern) — not sticky; the header below is */}
+<div class="border-b border-forest-900/10 bg-chartreuse-400">
+  <div class="mx-auto flex max-w-6xl items-center justify-center gap-3 px-4 py-2.5 text-[13px] font-bold text-forest-950 sm:text-sm">
+    <a href={`tel:${BUSINESS.phoneE164}`} data-pos="topbar" class="transition-colors hover:text-forest-700">{BUSINESS.phoneDisplay}</a>
+    <span class="text-forest-950/30">|</span>
+    <a href={`mailto:${BUSINESS.email}`} class="transition-colors hover:text-forest-700">{BUSINESS.email}</a>
+  </div>
+</div>
 
 <header class="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur-sm">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
