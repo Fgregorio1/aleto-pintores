@@ -4,6 +4,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import Faq from '@/components/Faq.astro';
 import ContactSection from '@/components/contact/ContactSection.astro';
+import WhatsAppIcon from '@/components/WhatsAppIcon.astro';
 import { seoFromPagina } from '@/lib/seo';
 import { faqSchema } from '@/lib/schema';
 import { staticPath } from '@/i18n/routes';
@@ -50,8 +51,11 @@ const metodo = [
           See all prices
         </a>
       </div>
-      <p class="mt-6 text-sm text-paper/80">
-        <a href={`tel:${BUSINESS.phoneE164}`} class="font-semibold underline decoration-chartreuse-400 underline-offset-4">{BUSINESS.phoneDisplay}</a>
+      <p class="mt-6 flex flex-wrap items-center gap-1.5 text-sm text-paper/80">
+        <a href={whatsappLink(WHATSAPP_DEFAULT_MSG.en)} data-pos="hero-phone" class="inline-flex items-center gap-1.5 font-semibold underline decoration-chartreuse-400 underline-offset-4">
+          <WhatsAppIcon />
+          {BUSINESS.phoneDisplay}
+        </a>
         — immediate reply, weekends included
       </p>
     </div>
