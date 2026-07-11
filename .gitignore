@@ -21,3 +21,6 @@ credentials*.json
 
 # wrangler local secrets
 .dev.vars
+
+# wrangler local state
+.wrangler/
