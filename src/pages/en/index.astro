@@ -3,7 +3,7 @@ import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import Faq from '@/components/Faq.astro';
-import CtaBlock from '@/components/CtaBlock.astro';
+import ContactSection from '@/components/contact/ContactSection.astro';
 import { seoFromPagina } from '@/lib/seo';
 import { faqSchema } from '@/lib/schema';
 import { staticPath } from '@/i18n/routes';
@@ -132,6 +132,7 @@ const metodo = [
 
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <Faq faq={pagina.data.faq} locale="en" />
-    <CtaBlock locale="en" />
   </div>
+
+  <ContactSection locale="en" formSource="home" />
 </BaseLayout>

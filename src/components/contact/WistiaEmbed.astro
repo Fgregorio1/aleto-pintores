@@ -1,0 +1,56 @@
+---
+import { WISTIA_MEDIA_ID } from '@/data/business';
+import Logo from '@/components/Logo.astro';
+
+/**
+ * Wistia player (CM Painting's web-component pattern) with two upgrades:
+ * - scripts load via IntersectionObserver only when the section nears the
+ *   viewport (protects LCP/INP on the pages that embed it)
+ * - no media ID configured → a branded 16:9 placeholder card renders
+ *   instead (set WISTIA_MEDIA_ID in src/data/business.ts to activate)
+ */
+const id = WISTIA_MEDIA_ID;
+---
+
+{
+  id ? (
+    <div class="w-full overflow-hidden rounded-2xl border border-line" data-wistia-box data-media-id={id}>
+      <style set:html={`wistia-player[media-id='${id}']:not(:defined){background:center/contain no-repeat url('https://fast.wistia.com/embed/medias/${id}/swatch');display:block;filter:blur(5px);padding-top:56.25%;}`} />
+      <wistia-player media-id={id} aspect="1.7777777777777777" />
+      <script>
+        const box = document.querySelector('[data-wistia-box]') as HTMLElement | null;
+        if (box) {
+          const load = () => {
+            for (const src of [
+              'https://fast.wistia.com/player.js',
+              `https://fast.wistia.com/embed/${box.dataset.mediaId}.js`,
+            ]) {
+              const s = document.createElement('script');
+              s.src = src;
+              s.async = true;
+              if (src.includes('/embed/')) s.type = 'module';
+              document.head.appendChild(s);
+            }
+          };
+          const io = new IntersectionObserver(
+            (entries) => {
+              if (entries.some((e) => e.isIntersecting)) {
+                io.disconnect();
+                load();
+              }
+            },
+            { rootMargin: '400px' },
+          );
+          io.observe(box);
+        }
+      </script>
+    </div>
+  ) : (
+    <div class="bg-brand-gradient flex w-full items-center justify-center overflow-hidden rounded-2xl" style="aspect-ratio: 16/9;">
+      <div class="text-center text-paper">
+        <Logo class="mx-auto h-10 w-auto text-paper" />
+        <p class="mt-3 text-[0.65rem] font-medium uppercase tracking-[0.25em] text-chartreuse-300">Pintores · Madrid</p>
+      </div>
+    </div>
+  )
+}

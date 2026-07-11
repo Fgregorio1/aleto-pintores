@@ -1,0 +1,253 @@
+---
+import type { Locale } from '@/i18n/ui';
+import { staticPath } from '@/i18n/routes';
+import Logo from '@/components/Logo.astro';
+
+/**
+ * Estimate-request form (ported from cm-painting ContactSection, Aleto brand,
+ * no React — vanilla country-select phone field). Submits JSON to
+ * /api/submit-lead (worker/index.ts) with attribution from sessionStorage;
+ * success → /gracias/ | /en/thank-you/. RGPD checkbox required.
+ */
+interface Props {
+  locale: Locale;
+  formSource: string;
+}
+const { locale, formSource } = Astro.props;
+
+const txt = {
+  es: {
+    heading1: 'Pide tu inspección y',
+    headingFree: 'presupuesto GRATIS',
+    heading2: 'hoy mismo',
+    name: 'Nombre y apellidos*',
+    phone: 'Teléfono*',
+    email: 'Tu email*',
+    zip: 'Código postal',
+    help: '¿En qué te ayudamos?*',
+    privacy1: 'He leído y acepto la',
+    privacyLink: 'política de privacidad',
+    submit: 'Pedir mi presupuesto gratis',
+    sending: 'Enviando…',
+    errName: 'Escribe tu nombre',
+    errEmail: 'Revisa el email',
+    errPhone: 'Revisa el teléfono (9 dígitos en España)',
+    errZip: 'Código postal no válido',
+    errService: 'Elige una opción',
+    errPrivacy: 'Necesitamos tu consentimiento',
+    errServer: 'No hemos podido enviar tu solicitud. Escríbenos por WhatsApp al 624 04 62 10 y te atendemos al momento.',
+    thankUrl: '/gracias/',
+  },
+  en: {
+    heading1: 'Schedule your',
+    headingFree: 'FREE inspection & quote',
+    heading2: 'today',
+    name: 'First and last name*',
+    phone: 'Phone*',
+    email: 'Your email*',
+    zip: 'Postal code',
+    help: 'How can we help you?*',
+    privacy1: 'I have read and accept the',
+    privacyLink: 'privacy policy',
+    submit: 'Request my free quote',
+    sending: 'Sending…',
+    errName: 'Please enter your name',
+    errEmail: 'Please check the email',
+    errPhone: 'Please check the phone number',
+    errZip: 'Invalid postal code',
+    errService: 'Please choose an option',
+    errPrivacy: 'We need your consent',
+    errServer: "We couldn't send your request. Message us on WhatsApp at +34 624 04 62 10 and we'll reply right away.",
+    thankUrl: '/en/thank-you/',
+  },
+}[locale];
+
+const services = [
+  { value: 'pintura-interior', es: 'Pintura interior', en: 'Interior painting' },
+  { value: 'quitar-gotele', es: 'Quitar gotelé y alisar', en: 'Gotelé removal & smoothing' },
+  { value: 'lacado-puertas', es: 'Lacado de puertas y armarios', en: 'Door & wardrobe lacquering' },
+  { value: 'fachadas-comunidades', es: 'Fachadas y comunidades', en: 'Facades & communities' },
+  { value: 'oficinas-locales', es: 'Oficinas y locales', en: 'Offices & retail' },
+  { value: 'quitar-papel', es: 'Quitar papel pintado', en: 'Wallpaper removal' },
+  { value: 'impermeabilizacion', es: 'Impermeabilizar terraza', en: 'Terrace waterproofing' },
+  { value: 'otros', es: 'Otros', en: 'Others' },
+];
+
+const countries = [
+  { code: 'ES', prefix: '+34', flag: '🇪🇸' },
+  { code: 'GB', prefix: '+44', flag: '🇬🇧' },
+  { code: 'FR', prefix: '+33', flag: '🇫🇷' },
+  { code: 'DE', prefix: '+49', flag: '🇩🇪' },
+  { code: 'US', prefix: '+1', flag: '🇺🇸' },
+];
+
+const inputCls =
+  'w-full rounded-lg border border-line bg-paper px-3 py-3 text-sm text-ink placeholder:text-ink-soft/70 focus:border-olive-400 focus:outline-none';
+---
+
+<div class="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+  <div class="text-center">
+    <Logo class="mx-auto h-8 w-auto text-forest-800" />
+    <h2 class="mt-4 text-2xl leading-snug text-forest-900">
+      {txt.heading1} <span class="underline decoration-chartreuse-400 decoration-4 underline-offset-4">{txt.headingFree}</span> {txt.heading2}
+    </h2>
+  </div>
+
+  <form
+    id="lead-form"
+    class="mt-6 space-y-4"
+    method="POST"
+    action="/api/submit-lead"
+    novalidate
+    data-form-source={formSource}
+    data-locale={locale}
+    data-thank-url={txt.thankUrl}
+  >
+    <div>
+      <input type="text" name="full_name" required placeholder={txt.name} autocomplete="name" class={inputCls} />
+      <p data-err="full_name" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errName}</p>
+    </div>
+
+    <div>
+      <div class="flex gap-2">
+        <select name="phone_country" aria-label="País" class="rounded-lg border border-line bg-paper px-2 py-3 text-sm">
+          {countries.map((c) => (
+            <option value={c.code} data-prefix={c.prefix} selected={c.code === 'ES'}>{c.flag} {c.prefix}</option>
+          ))}
+        </select>
+        <input type="tel" name="phone_national" required placeholder={txt.phone} autocomplete="tel-national" inputmode="tel" class={inputCls} />
+      </div>
+      <p data-err="phone" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errPhone}</p>
+    </div>
+
+    <div>
+      <input type="email" name="email" required placeholder={txt.email} autocomplete="email" class={inputCls} />
+      <p data-err="email" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errEmail}</p>
+    </div>
+
+    <div>
+      <input type="text" name="zip_code" placeholder={txt.zip} inputmode="numeric" autocomplete="postal-code" class={inputCls} />
+      <p data-err="zip_code" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errZip}</p>
+    </div>
+
+    <fieldset>
+      <legend class="text-sm font-semibold text-forest-900">{txt.help}</legend>
+      <div class="mt-2 space-y-2">
+        {services.map((s) => (
+          <label class="flex cursor-pointer items-center gap-2.5 text-sm text-ink">
+            <input type="radio" name="service" value={s.value} class="h-4 w-4 accent-forest-700" />
+            {locale === 'es' ? s.es : s.en}
+          </label>
+        ))}
+      </div>
+      <p data-err="service" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errService}</p>
+    </fieldset>
+
+    <div>
+      <label class="flex cursor-pointer items-start gap-2.5 text-xs text-ink-soft">
+        <input type="checkbox" name="privacy" class="mt-0.5 h-4 w-4 accent-forest-700" />
+        <span>
+          {txt.privacy1}
+          <a href={staticPath('politica-privacidad', locale)} target="_blank" class="font-medium text-forest-700 underline underline-offset-2">{txt.privacyLink}</a>*
+        </span>
+      </label>
+      <p data-err="privacy" hidden class="mt-1 text-xs font-medium text-red-600">{txt.errPrivacy}</p>
+    </div>
+
+    {/* Honeypot — humans never see it */}
+    <input type="text" name="company" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+    <button
+      type="submit"
+      data-submit
+      class="w-full rounded-full bg-forest-700 px-6 py-3.5 text-sm font-semibold text-paper transition-colors hover:bg-forest-800 disabled:opacity-60"
+    >{txt.submit}</button>
+
+    <p data-err="server" hidden class="text-center text-xs font-medium text-red-600">{txt.errServer}</p>
+
+    {/* Trust badges slot — add real Google/Facebook rating SVGs once reviews exist
+    <div class="flex items-center justify-center gap-6 pt-2"> ... </div> */}
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('lead-form') as HTMLFormElement | null;
+  if (form) {
+    const errs = form.querySelectorAll<HTMLElement>('[data-err]');
+    const btn = form.querySelector<HTMLButtonElement>('[data-submit]')!;
+    const btnLabel = btn.textContent;
+    const sending = form.dataset.locale === 'es' ? 'Enviando…' : 'Sending…';
+    const show = (field: string) => {
+      form.querySelector<HTMLElement>(`[data-err="${field}"]`)?.removeAttribute('hidden');
+    };
+    const clear = () => errs.forEach((e) => e.setAttribute('hidden', ''));
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      clear();
+      const data = new FormData(form);
+      const country = form.querySelector<HTMLSelectElement>('[name=phone_country]')!;
+      const prefix = country.selectedOptions[0]?.dataset.prefix ?? '+34';
+      const national = String(data.get('phone_national') ?? '').replace(/[\s\-().]/g, '');
+      const payload: Record<string, string> = {
+        full_name: String(data.get('full_name') ?? '').trim(),
+        email: String(data.get('email') ?? '').trim(),
+        phone: national ? prefix + national.replace(/^0+/, '') : '',
+        phone_country: country.value,
+        zip_code: String(data.get('zip_code') ?? '').trim(),
+        service: String(data.get('service') ?? ''),
+        privacy: data.get('privacy') ? 'true' : 'false',
+        form_source: form.dataset.formSource ?? 'home',
+        locale: form.dataset.locale ?? 'es',
+        page: location.pathname,
+        company: String(data.get('company') ?? ''),
+        source: (window as any).aletoSrc ?? 'directo',
+      };
+      // raw UTMs if present this session
+      const q = new URLSearchParams(location.search);
+      for (const k of ['utm_source', 'utm_medium', 'utm_campaign']) payload[k] = q.get(k) ?? '';
+
+      // client-side validation (mirrors worker rules)
+      let bad = false;
+      const fail = (f: string) => { show(f); bad = true; };
+      if (payload.full_name.length < 2) fail('full_name');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) fail('email');
+      const phoneOk = payload.phone_country === 'ES' ? /^\+34[6789]\d{8}$/.test(payload.phone) : /^\+\d{7,15}$/.test(payload.phone);
+      if (!phoneOk) fail('phone');
+      if (payload.zip_code && !/^\d{4,5}$/.test(payload.zip_code)) fail('zip_code');
+      if (!payload.service) fail('service');
+      if (payload.privacy !== 'true') fail('privacy');
+      if (bad) return;
+
+      btn.disabled = true;
+      btn.textContent = sending;
+      try {
+        const ctrl = new AbortController();
+        const t = setTimeout(() => ctrl.abort(), 10000);
+        const res = await fetch('/api/submit-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+          signal: ctrl.signal,
+        });
+        clearTimeout(t);
+        const out = await res.json().catch(() => ({}));
+        if (res.ok && (out as any).success) {
+          (window as any).aletoTrack?.('form_submit', {
+            page: location.pathname,
+            source: payload.source,
+            service: payload.service,
+            locale: payload.locale,
+          });
+          location.href = form.dataset.thankUrl ?? '/gracias/';
+          return;
+        }
+        show('server');
+      } catch {
+        show('server');
+      }
+      btn.disabled = false;
+      btn.textContent = btnLabel;
+    });
+  }
+</script>

@@ -49,7 +49,7 @@ Data from quotes that are not accepted is kept for a maximum of 12 months. Clien
 
 ## Who we share your data with
 
-We do not share data with third parties except under legal obligation and as described in the cookies section (only with your consent). Our technology providers (web hosting, email, analytics) act as data processors under GDPR guarantees.
+We do not share data with third parties except under legal obligation and as described in the cookies section (only with your consent). Our technology providers (web hosting, email, analytics) act as data processors under GDPR guarantees. Quote requests sent through the form are logged in a Google spreadsheet (Google acts as a data processor).
 
 ## Your rights
 

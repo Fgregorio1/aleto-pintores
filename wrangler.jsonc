@@ -8,6 +8,10 @@
   "name": "aleto-pintores",
   "compatibility_date": "2026-07-09",
 
+  // Worker script handles ONLY /api/* (lead form endpoint). All other
+  // routes are served as pure static assets without invoking the script.
+  "main": "worker/index.ts",
+
   // No workers.dev host and no version-preview URLs: aletopintores.com is the
   // ONLY public host (duplicate-content protection — see docs/03 §9).
   // If previews are wanted later: set preview_urls: true and protect them
@@ -17,8 +21,10 @@
 
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
-    "html_handling": "auto-trailing-slash"
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api/*"]
   },
 
   "observability": {

@@ -3,11 +3,10 @@ import { getEntry } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import DirectAnswer from '@/components/DirectAnswer.astro';
-import ContactForm from '@/components/islands/ContactForm.astro';
+import ContactSection from '@/components/contact/ContactSection.astro';
 import Faq from '@/components/Faq.astro';
 import { seoFromPagina } from '@/lib/seo';
 import { faqSchema } from '@/lib/schema';
-import { BUSINESS, whatsappLink, WHATSAPP_DEFAULT_MSG } from '@/data/business';
 
 const entry = await getEntry('paginas', 'es/contacto');
 if (!entry) throw new Error('Missing paginas entry: es/contacto');
@@ -23,37 +22,11 @@ const crumbs = [
   <section class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
     <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
     {entry.data.directAnswer && <DirectAnswer text={entry.data.directAnswer} />}
+  </section>
 
-    <div class="mt-10 grid gap-12 lg:grid-cols-2">
-      <div>
-        <h2 class="text-2xl text-forest-900">Escríbenos</h2>
-        <ContactForm locale="es" />
-      </div>
-      <div>
-        <h2 class="text-2xl text-forest-900">Contacto directo</h2>
-        <ul class="mt-6 space-y-4 text-sm">
-          <li class="rounded-2xl border border-line bg-white p-5">
-            <p class="font-semibold text-forest-900">WhatsApp y teléfono</p>
-            <p class="mt-1">
-              <a href={whatsappLink(WHATSAPP_DEFAULT_MSG.es)} class="font-medium text-forest-700 underline decoration-chartreuse-400 decoration-2 underline-offset-2">WhatsApp: {BUSINESS.phoneDisplay}</a>
-              <span class="mx-2 text-line">·</span>
-              <a href={`tel:${BUSINESS.phoneE164}`} class="font-medium text-forest-700 underline decoration-chartreuse-400 decoration-2 underline-offset-2">Llamar</a>
-            </p>
-            <p class="mt-1 text-ink-soft">{BUSINESS.hoursDisplay.es}</p>
-          </li>
-          <li class="rounded-2xl border border-line bg-white p-5">
-            <p class="font-semibold text-forest-900">Email</p>
-            <a href={`mailto:${BUSINESS.email}`} class="mt-1 inline-block font-medium text-forest-700 underline decoration-chartreuse-400 decoration-2 underline-offset-2">{BUSINESS.email}</a>
-          </li>
-          <li class="rounded-2xl border border-line bg-white p-5">
-            <p class="font-semibold text-forest-900">Dirección</p>
-            <p class="mt-1 text-ink">{BUSINESS.addressDisplay}</p>
-            <p class="mt-1 text-ink-soft">Servicio en Madrid capital y área metropolitana</p>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <ContactSection locale="es" formSource="contact" />
 
+  <section class="mx-auto max-w-6xl px-4 sm:px-6">
     <Faq faq={entry.data.faq} locale="es" />
   </section>
 </BaseLayout>

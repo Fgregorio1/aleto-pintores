@@ -29,7 +29,7 @@ Companion to `01-seo-strategy-playbook.md`. This is the build spec: stack, archi
 | Forms/leads | Static form → webhook (Make/n8n) → WhatsApp + Google Sheet/CRM | Speed-to-lead matters more than the tool |
 | Analytics | **PostHog** (EU cloud, cookieless config) + **Google Search Console** + Bing Webmaster Tools (feeds ChatGPT search) | PostHog free tier (1M events/mo) covers analytics + session replay + surveys + A/B tests in one; cookieless mode = **no GDPR consent banner** (keeps §10's no-popup rule); load the script deferred to protect CWV. Replaces GA4/Clarity/Hotjar. GSC is the source of truth; Bing/IndexNow gets you into ChatGPT's index faster |
 | Rank tracking | SE Ranking or Nightwatch (Madrid-geolocated tracking, ~€30–50/mo) | Ahrefs/Semrush overkill at this stage; add Ahrefs Starter later for link research |
-| Reviews/WhatsApp | Start manual; automate later via WhatsApp Business API (360dialog/Twilio) or a local tool | See playbook §6 |
+| Reviews/WhatsApp | Start manual; automate later via WhatsApp Business API (360dialog/Twilio) or a local tool | See playbook §6 |  
 | Crawler/audit | Screaming Frog (free tier is enough) + Lighthouse CI | Quarterly audits |
 
 **Alternative:** WordPress + GeneratePress + RankMath if a non-developer must edit everything. It works, but you get slower CWV, plugin maintenance, and a worse programmatic-SEO story. Given Claude Code is in the loop, Astro is the right call.

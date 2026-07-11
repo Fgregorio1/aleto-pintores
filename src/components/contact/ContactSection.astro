@@ -1,0 +1,82 @@
+---
+import type { Locale } from '@/i18n/ui';
+import { staticPath } from '@/i18n/routes';
+import { BUSINESS, MAPS_EMBED_URL, MAPS_LINK, STATS } from '@/data/business';
+import WistiaEmbed from './WistiaEmbed.astro';
+import LeadForm from './LeadForm.astro';
+
+/**
+ * Bottom contact section — layout ported from cmpainting.co's ContactSection
+ * (video + stats + "about" button / map + contact info / form card),
+ * restyled with Aleto tokens.
+ */
+interface Props {
+  locale: Locale;
+  formSource: string;
+}
+const { locale, formSource } = Astro.props;
+
+const t = {
+  es: { about: 'Conócenos', maps: 'Abrir en Maps', phone: 'Teléfono', email: 'Email', address: 'Dirección' },
+  en: { about: 'About us', maps: 'Open in Maps', phone: 'Phone', email: 'Email', address: 'Address' },
+}[locale];
+---
+
+<section id="contact-section" class="mt-24 border-t border-line bg-paper-dark/40">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 gap-x-14 gap-y-8 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:py-20">
+    <!-- Left top: video + stats + about -->
+    <div class="order-1 space-y-6">
+      <WistiaEmbed />
+
+      <div class="grid grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-white">
+        {STATS.map((s) => (
+          <div class="px-4 py-5 text-center">
+            <p class="text-xs font-semibold uppercase tracking-wider text-olive-600">{s.label[locale]}</p>
+            <p class="font-display mt-1 text-3xl font-semibold text-forest-900">{s.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <a
+        href={staticPath('sobre-nosotros', locale)}
+        class="inline-block rounded-full border border-line bg-white px-6 py-3 text-sm font-semibold text-forest-800 transition-colors hover:border-olive-400"
+      >{t.about}</a>
+    </div>
+
+    <!-- Right: form card (spans both rows on lg) -->
+    <div class="order-2 lg:row-span-2">
+      <LeadForm locale={locale} formSource={formSource} />
+    </div>
+
+    <!-- Left bottom: map + contact info -->
+    <div class="order-3 flex flex-col gap-6 sm:flex-row">
+      <div class="h-44 w-full overflow-hidden rounded-2xl border border-line sm:h-52 sm:w-56 shrink-0">
+        <iframe
+          src={MAPS_EMBED_URL}
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title={`${BUSINESS.name} — ${BUSINESS.address.city}`}
+        ></iframe>
+      </div>
+      <div class="space-y-4 text-sm">
+        <div>
+          <p class="font-display text-lg font-semibold text-forest-900">{t.phone}</p>
+          <a href={`tel:${BUSINESS.phoneE164}`} class="text-ink hover:text-forest-700">{BUSINESS.phoneDisplay}</a>
+        </div>
+        <div>
+          <p class="font-display text-lg font-semibold text-forest-900">{t.email}</p>
+          <a href={`mailto:${BUSINESS.email}`} class="text-ink hover:text-forest-700">{BUSINESS.email}</a>
+        </div>
+        <div>
+          <p class="font-display text-lg font-semibold text-forest-900">{t.address}</p>
+          <p class="text-ink">{BUSINESS.address.street},<br />{BUSINESS.address.postalCode} {BUSINESS.address.city}</p>
+          <a href={MAPS_LINK} target="_blank" rel="noopener" class="mt-1 inline-block text-xs font-medium text-forest-700 underline decoration-chartreuse-400 decoration-2 underline-offset-2">{t.maps} ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

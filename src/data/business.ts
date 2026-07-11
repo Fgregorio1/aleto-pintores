@@ -64,6 +64,25 @@ export const BUSINESS = {
   ],
 } as const;
 
+/**
+ * Wistia media ID for the presentation video in the contact section.
+ * Empty string → a branded placeholder card renders instead of the player.
+ * Paste the ID (e.g. "fq4z5flmd8") when the Aleto video exists.
+ */
+export const WISTIA_MEDIA_ID = '';
+
+/** Keyless Google Maps embed + link (no API key needed) */
+const MAPS_QUERY = encodeURIComponent(`${BUSINESS.address.street}, ${BUSINESS.address.postalCode} ${BUSINESS.address.city}`);
+export const MAPS_EMBED_URL = `https://maps.google.com/maps?q=${MAPS_QUERY}&output=embed&hl=es`;
+export const MAPS_LINK = `https://maps.google.com/?q=${MAPS_QUERY}`;
+
+/** Honest stats for the contact section (no invented client counts) */
+export const STATS = [
+  { value: '24 h', label: { es: 'Presupuesto cerrado', en: 'Fixed quote' } },
+  { value: '2026', label: { es: 'Fundada en Madrid', en: 'Founded in Madrid' } },
+  { value: '24/7', label: { es: 'Atención', en: 'Availability' } },
+] as const;
+
 /** WhatsApp deep link with optional prefilled message */
 export function whatsappLink(message?: string): string {
   const base = `https://wa.me/${BUSINESS.phoneE164.replace('+', '')}`;

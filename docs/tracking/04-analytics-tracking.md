@@ -115,6 +115,6 @@ Use in the UI: 2 funnels (`pageview → service page → whatsapp_click`; `calcu
 | GBP calls/clicks | GBP Performance (UTM-tagged link separates GBP traffic in PostHog later) |
 | Organic queries/clicks | GSC |
 | Page traffic + CWV | Cloudflare Web Analytics |
-| Leads by source | Zaraz events → PostHog (UTM person properties) + optional WhatsApp source-stamping + ask every lead "¿cómo nos encontraste?" (log manually meanwhile) |
+| Leads by source | Zaraz events → PostHog (UTM person properties) + WhatsApp source-stamping (live) + **lead form → Worker `/api/submit-lead` → Google Sheet** with source/utm/page columns (secret `SHEETS_WEBHOOK_URL` on the worker; graceful 503 fallback until set) + ask every lead "¿cómo nos encontraste?" |
 | AI crawler activity | AI Crawl Control |
 | AI mention rate | Monthly manual matrix (10 prompts × 4 models) |

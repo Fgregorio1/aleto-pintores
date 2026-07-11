@@ -20,6 +20,7 @@ export const staticRoutes: StaticRoute[] = [
   { key: 'sobre-nosotros', es: '/sobre-nosotros/', en: '/en/about/' },
   { key: 'arquitectos', es: '/para-arquitectos-e-interioristas/', en: '/en/for-architects-and-designers/' },
   { key: 'contacto', es: '/contacto/', en: '/en/contact/' },
+  { key: 'gracias', es: '/gracias/', en: '/en/thank-you/' },
   { key: 'opiniones', es: '/opiniones/' },
   { key: 'proyectos-hub', es: '/proyectos/' },
   { key: 'blog-hub', es: '/blog/' },

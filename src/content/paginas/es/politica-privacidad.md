@@ -49,7 +49,7 @@ Los datos de presupuestos no aceptados se conservan un máximo de 12 meses. Los 
 
 ## A quién comunicamos tus datos
 
-No cedemos datos a terceros salvo obligación legal y lo descrito en la sección de cookies (solo con tu consentimiento). Los proveedores tecnológicos que usamos (alojamiento web, correo, analítica) actúan como encargados de tratamiento con las garantías del RGPD.
+No cedemos datos a terceros salvo obligación legal y lo descrito en la sección de cookies (solo con tu consentimiento). Los proveedores tecnológicos que usamos (alojamiento web, correo, analítica) actúan como encargados de tratamiento con las garantías del RGPD. Las solicitudes de presupuesto enviadas por el formulario se registran en una hoja de cálculo de Google (Google actúa como encargado de tratamiento).
 
 ## Tus derechos
 
