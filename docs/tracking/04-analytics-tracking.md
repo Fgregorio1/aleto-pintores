@@ -91,11 +91,15 @@ Use in the UI: 2 funnels (`pageview → service page → whatsapp_click`; `calcu
 - ✅ **Site-side event layer live** (`src/components/islands/Attribution.astro` + PriceCalculator/ContactForm): the 4 events fire via `zaraz.track()` (no-op until tools exist) with the §1 property schema; every wa.me prefill is source-stamped (`Ref: <utm or referrer or directo>`, sessionStorage, first-party).
 - ✅ **Zaraz consent configured via API**: enabled, purposes `analitica` + `marketing` with ES/EN names/descriptions, branded modal intro + button texts, default language ES, cookie `zaraz-consent`. NOTE: Zaraz does not inject (and the banner does not render) until the FIRST TOOL is added — dormant by design, zero JS on the site today.
 
+**✅ LIVE since 2026-07-12 — PostHog + consent banner:**
+- PostHog (EU project 220433) runs as a Zaraz Custom HTML tool, `defaultPurpose: analitica`, ingesting through `/ph/*`. Verified E2E: reject → zero analytics requests; accept → posthog loads via proxy, events POST to `/ph/i/v0/e/`; consent persists.
+- Consent modal branded via `consent.customCSS` (shadow-DOM selectors: `dialog.cf_modal`, `#cf_modal_title`, `.cf_button--accept/--reject/--save`, `li.cf_consent-element`).
+- **Zaraz API gotchas learned (do not relearn):** tool purpose field is `defaultPurpose` (+ requires `vendorName`/`vendorPolicyUrl` on Custom HTML); consent needs the plain `purposes` map, not just `purposesWithTranslations`; auto-inject does NOT rewrite Worker-served HTML → manual `<script src>` in BaseLayout; `/cdn-cgi/zaraz/*` is ad-block-listed → custom paths `settings.initPath=/al/i.js, scriptPath=/al/s.js, trackPath=/al/t, mcRootPath=/al/mc`; zone workflow is `realtime` (PUTs are live instantly, no publish).
+
 **Remaining, blocked on account creation:**
-1. Configure tools in Zaraz: Google Ads tag (needs conversion ID/label from a Google Ads account), Facebook Pixel + CAPI access token (needs Meta Business), PostHog as Custom HTML per §1 rules (needs eu.posthog.com project `phc_` key) + the ingestion proxy Worker route. Assign every tool to its purpose (`analitica` → PostHog; `marketing` → Google/Meta).
-2. Style the consent modal via `consent.customCSS` to brand tokens (do it when the banner actually renders — needs a tool present).
-3. Confirm **Consent Mode v2** signals fire (Zaraz automatic — verify with Tag Assistant).
-4. In Google Ads: import `whatsapp_click`/`form_submit`/`phone_click` as conversions; in Meta: map to standard events (Lead, Contact).
+1. Zaraz tools: Google Ads tag (needs conversion ID/label) and Facebook Pixel + CAPI token (needs Meta Business) → `defaultPurpose: marketing`.
+2. Confirm **Consent Mode v2** signals when the Google tool lands (Tag Assistant).
+3. In Google Ads: import `whatsapp_click`/`form_submit`/`phone_click` as conversions; in Meta: map to standard events (Lead, Contact).
 5. UTM-tag all paid URLs (`?utm_source=google&utm_medium=cpc&utm_campaign=<c>`); canonical already strips them from indexing. Tag the GBP website link `?utm_source=gbp`.
 6. ✅ **Legal (done 2026-07-10)**: `politica-privacidad` rebuilt consent-ready (cookies table: zaraz-consent / Analítica→PostHog EU / Marketing→Google+Meta CAPI; sessionStorage attribution disclosed; DPF transfer note) + EN twin at `/en/privacy-policy/` (hreflang-paired; Zaraz EN modal links to it).
 7. **Verify** (all live):
