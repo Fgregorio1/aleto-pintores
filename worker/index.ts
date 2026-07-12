@@ -1,12 +1,17 @@
 /**
- * Worker script — handles ONLY /api/* (see wrangler.jsonc run_worker_first).
- * Every other route is served directly from static assets and never invokes
- * this code.
+ * Worker script — handles ONLY /api/* and /ph/* (see wrangler.jsonc
+ * run_worker_first). Every other route is served directly from static
+ * assets and never invokes this code.
  *
  * POST /api/submit-lead: validates the estimate form and forwards the lead
  * to a Google Sheets Apps Script webhook (SHEETS_WEBHOOK_URL secret).
  * Ported from cm-painting-website/src/pages/api/submit-lead.ts, without
  * Astro/zod dependencies.
+ *
+ * /ph/*: reverse proxy to PostHog EU ingestion (official Cloudflare recipe,
+ * https://posthog.com/docs/advanced/proxy/cloudflare) so analytics events
+ * are first-party and survive ad blockers. Configure the PostHog snippet
+ * with api_host: 'https://aletopintores.com/ph', ui_host: 'https://eu.posthog.com'.
  */
 
 interface Env {
@@ -121,15 +126,43 @@ async function submitLead(request: Request, env: Env): Promise<Response> {
   }
 }
 
+// ── PostHog reverse proxy ──────────────────────────────────────────────
+const POSTHOG_API_HOST = 'eu.i.posthog.com';
+const POSTHOG_ASSET_HOST = 'eu-assets.i.posthog.com';
+
+async function posthogProxy(request: Request, ctx: ExecutionContext): Promise<Response> {
+  const url = new URL(request.url);
+  // strip the /ph mount prefix, keep the rest of the path + query string
+  const pathWithParams = url.pathname.replace(/^\/ph/, '') + url.search;
+
+  if (pathWithParams.startsWith('/static/')) {
+    // Static assets: cache at the edge (per PostHog's official worker)
+    let response = await caches.default.match(request);
+    if (!response) {
+      response = await fetch(`https://${POSTHOG_ASSET_HOST}${pathWithParams}`);
+      ctx.waitUntil(caches.default.put(request, response.clone()));
+    }
+    return response;
+  }
+
+  // Ingestion/API: forward method/body/headers, but never our zone's cookies
+  const originRequest = new Request(request);
+  originRequest.headers.delete('cookie');
+  return fetch(`https://${POSTHOG_API_HOST}${pathWithParams}`, originRequest);
+}
+
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if (url.pathname === '/api/submit-lead') {
       if (request.method !== 'POST') return json(405, { success: false, error: 'method' });
       return submitLead(request, env);
     }
-    // Any other /api path → 404; non-/api paths never reach this script
+    // Any other /api path → 404
     if (url.pathname.startsWith('/api/')) return json(404, { success: false, error: 'not_found' });
+    // PostHog ingestion proxy (first-party analytics)
+    if (url.pathname.startsWith('/ph/')) return posthogProxy(request, ctx);
+    // Paths outside run_worker_first never reach this script
     return env.ASSETS.fetch(request);
   },
 } satisfies ExportedHandler<Env>;
