@@ -40,9 +40,10 @@ const enTwin = seo.locale === 'es' ? seo.alternates.find((a) => a.hreflang === '
     <SEO seo={seo} />
     <JsonLd schemas={[businessSchema(), websiteSchema(), webPageSchema(seo), ...schemas]} />
     {/* Zaraz manual install: auto-inject doesn't rewrite Worker-served HTML.
-        /cdn-cgi/* is answered at the edge (never reaches our worker); 404s
-        harmlessly in local dev. Loads consent manager + consent-gated tools. */}
-    <script is:inline src="/cdn-cgi/zaraz/i.js"></script>
+        Custom path (Zaraz settings.initPath) — /cdn-cgi/zaraz/* is on ad-block
+        lists; /al/* is intercepted at the edge before our worker and matches
+        no blocklist. 404s harmlessly in local dev. Loads consent + tools. */}
+    <script is:inline src="/al/i.js"></script>
   </head>
   <body class="flex min-h-screen flex-col">
     <Header locale={seo.locale} switchUrl={switchUrl} />
