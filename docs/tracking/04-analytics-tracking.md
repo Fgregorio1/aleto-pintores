@@ -98,7 +98,7 @@ Use in the UI: 2 funnels (`pageview → service page → whatsapp_click`; `calcu
 - **Zaraz API gotchas learned (do not relearn):** tool purpose field is `defaultPurpose` (+ requires `vendorName`/`vendorPolicyUrl` on Custom HTML); consent needs the plain `purposes` map, not just `purposesWithTranslations`; auto-inject does NOT rewrite Worker-served HTML → manual `<script src>` in BaseLayout; `/cdn-cgi/zaraz/*` is ad-block-listed → custom paths `settings.initPath=/al/i.js, scriptPath=/al/s.js, trackPath=/al/t, mcRootPath=/al/mc`; zone workflow is `realtime` (PUTs are live instantly, no publish).
 
 **Remaining, blocked on account creation:**
-1. Zaraz tools: Google Ads tag (needs conversion ID/label) and Facebook Pixel + CAPI token (needs Meta Business) → `defaultPurpose: marketing`.
+1. Zaraz tools: Google Ads tag (needs conversion ID/label) and Facebook Pixel + CAPI token (needs Meta Business) → `defaultPurpose: marketing`. NOTE: a no-op placeholder tool `MarketingSlot` (2026-07-12) makes the Marketing purpose render in the modal so consent is collected IN ADVANCE — returning visitors who accepted are already covered when the real tools land. DELETE MarketingSlot when adding them. Pre-checked consent boxes were evaluated and REJECTED (CJEU Planet49: invalid consent; and Accept-all is already one click).
 2. Confirm **Consent Mode v2** signals when the Google tool lands (Tag Assistant).
 3. In Google Ads: import `whatsapp_click`/`form_submit`/`phone_click` as conversions; in Meta: map to standard events (Lead, Contact).
 5. UTM-tag all paid URLs (`?utm_source=google&utm_medium=cpc&utm_campaign=<c>`); canonical already strips them from indexing. Tag the GBP website link `?utm_source=gbp`.
