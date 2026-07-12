@@ -73,6 +73,11 @@
     try {
       (window as any).zaraz?.track?.(name, props);
     } catch {}
+    try {
+      // PostHog runs as a Zaraz Custom HTML tool (consent-gated), which
+      // doesn't consume zaraz.track events — capture directly when loaded.
+      (window as any).posthog?.capture?.(name, props);
+    } catch {}
   };
   (window as any).aletoTrack = track;
 
