@@ -6,6 +6,8 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Faq from '@/components/Faq.astro';
 import UpdatedDate from '@/components/UpdatedDate.astro';
 import CtaBlock from '@/components/CtaBlock.astro';
+import ContactSection from '@/components/contact/ContactSection.astro';
+import PriceTable from '@/components/PriceTable.astro';
 import { seoFromEntry } from '@/lib/seo';
 import { faqSchema, serviceSchema } from '@/lib/schema';
 import { entryLocale, precioPath, servicioPath } from '@/lib/paths';
@@ -68,6 +70,21 @@ const heroCta = {
         <p class="text-xs font-medium text-ink-soft">{heroCta.micro}</p>
       </div>
     </header>
+
+    {/* Collapsable Pricing Table: minimal presence so pricing isn't the primary focus, but highly accessible for Google Ads/SEO crawlers */}
+    <details class="group mt-8 border border-line bg-white rounded-2xl overflow-hidden max-w-3xl">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-4 font-medium text-forest-900 [&::-webkit-details-marker]:hidden bg-paper-dark/30 hover:bg-paper-dark/50 select-none">
+        <span class="text-sm font-semibold tracking-normal flex items-center gap-2">
+          📊 {locale === 'es' ? 'Ver tarifas orientativas de este servicio' : 'View estimated rates for this service'}
+        </span>
+        <span class="text-olive-500 transition-transform group-open:rotate-45" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
+        </span>
+      </summary>
+      <div class="px-5 pb-5 border-t border-line">
+        <PriceTable priceKey={entry.data.priceKey} locale={locale} />
+      </div>
+    </details>
 
     {
       entry.data.image && (
@@ -145,4 +162,7 @@ const heroCta = {
 
     <CtaBlock locale={locale} message={locale === 'es' ? `Hola, me interesa: ${entry.data.serviceName}. ¿Me podéis dar un presupuesto?` : `Hi, I'm interested in: ${entry.data.serviceName}. Could you give me a quote?`} />
   </article>
+
+  {/* Full Contact Form & Trust Signals for Ads Traffic */}
+  <ContactSection locale={locale} formSource={`servicio_${entry.id.replace('/', '_')}`} />
 </BaseLayout>
