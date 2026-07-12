@@ -6,6 +6,7 @@ translationKey: service-gotele
 locale: en
 serviceName: "Gotelé removal & wall smoothing"
 priceKey: quitar-gotele
+image: "/img/servicios/quitar-gotele.jpg"
 shortLabel: "Gotelé removal"
 excerpt: "Perfectly smooth walls verified under raking light — without turning your home into a dust bowl."
 orden: 2

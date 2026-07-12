@@ -6,6 +6,7 @@ translationKey: service-papel
 locale: es
 serviceName: "Retirada de papel pintado"
 priceKey: quitar-papel
+image: "/img/servicios/quitar-papel-pintado.jpg"
 shortLabel: "Quitar papel pintado"
 excerpt: "Retirada sin dañar el yeso, lavado de cola incluido y consejo honesto sobre el siguiente acabado."
 orden: 6

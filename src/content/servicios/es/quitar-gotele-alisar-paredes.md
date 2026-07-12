@@ -6,6 +6,7 @@ translationKey: service-gotele
 locale: es
 serviceName: "Quitar gotelé y alisado de paredes"
 priceKey: quitar-gotele
+image: "/img/servicios/quitar-gotele.jpg"
 shortLabel: "Quitar gotelé y alisar"
 excerpt: "Paredes lisas perfectas comprobadas a contraluz, sin convertir tu casa en una obra polvorienta."
 orden: 2

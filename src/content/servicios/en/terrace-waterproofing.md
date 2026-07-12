@@ -6,6 +6,7 @@ translationKey: service-terrazas
 locale: en
 serviceName: "Terrace waterproofing"
 priceKey: impermeabilizacion
+image: "/img/servicios/impermeabilizacion-terrazas.jpg"
 shortLabel: "Terrace waterproofing"
 excerpt: "Diagnosis of the leak's real source, mesh-reinforced system at the critical points, one-year checkup."
 orden: 7

@@ -62,6 +62,15 @@ const home = locale === 'en' ? '/en/' : '/';
         href={whatsappLink(WHATSAPP_DEFAULT_MSG[locale])}
         data-pos="header" class="hidden rounded-full bg-forest-700 px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-forest-800 sm:inline-block"
       >{t('cta.presupuesto24h')}</a>
+      {/* Mobile: compact WhatsApp pill (the full button is ≥sm only) */}
+      <a
+        href={whatsappLink(WHATSAPP_DEFAULT_MSG[locale])}
+        data-pos="header-mobile"
+        aria-label={t('cta.whatsapp')}
+        class="flex h-9 w-9 items-center justify-center rounded-full bg-forest-700 text-paper sm:hidden"
+      >
+        <WhatsAppIcon size={16} />
+      </a>
       <!-- Mobile menu -->
       <details class="relative lg:hidden">
         <summary class="flex h-9 w-9 cursor-pointer list-none items-center justify-center rounded-md border border-line text-forest-800 [&::-webkit-details-marker]:hidden" aria-label="Menú">

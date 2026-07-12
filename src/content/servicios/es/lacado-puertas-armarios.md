@@ -6,6 +6,7 @@ translationKey: service-lacado
 locale: es
 serviceName: "Lacado de puertas y armarios"
 priceKey: lacar-puertas
+image: "/img/servicios/lacado-puertas-armarios.jpg"
 shortLabel: "Lacado de puertas"
 excerpt: "Acabado tipo fábrica que no amarillea ni se descascarilla, hecho en tu casa y sin desmontarla."
 orden: 3

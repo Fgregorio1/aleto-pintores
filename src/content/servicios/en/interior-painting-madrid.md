@@ -6,6 +6,7 @@ translationKey: service-pintura-interior
 locale: en
 serviceName: "Interior painting (flats & houses)"
 priceKey: pintura-interior
+image: "/img/servicios/pintura-interior.jpg"
 shortLabel: "Interior painting"
 excerpt: "Full flats and houses with total protection, dates that hold and a finish that lasts years."
 orden: 1

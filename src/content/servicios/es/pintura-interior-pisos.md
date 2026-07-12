@@ -6,6 +6,7 @@ translationKey: service-pintura-interior
 locale: es
 serviceName: "Pintura interior de pisos y casas"
 priceKey: pintura-interior
+image: "/img/servicios/pintura-interior.jpg"
 shortLabel: "Pintura interior"
 excerpt: "Pisos y casas completas con protección total, fechas que se cumplen y un acabado que aguanta años."
 orden: 1

@@ -6,6 +6,7 @@ translationKey: service-fachadas
 locale: es
 serviceName: "Pintura de fachadas y comunidades"
 priceKey: pintar-fachada
+image: "/img/servicios/pintura-fachadas-comunidades.jpg"
 shortLabel: "Fachadas y comunidades"
 excerpt: "Diagnóstico honesto, presupuesto por partidas listo para junta y una obra que respeta a los vecinos."
 orden: 4

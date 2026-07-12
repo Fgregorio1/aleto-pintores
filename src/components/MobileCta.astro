@@ -1,0 +1,40 @@
+---
+import type { Locale } from '@/i18n/ui';
+import { BUSINESS, whatsappLink, WHATSAPP_DEFAULT_MSG } from '@/data/business';
+import WhatsAppIcon from '@/components/WhatsAppIcon.astro';
+
+/**
+ * Sticky mobile CTA bar (CRO audit fix #1): thumb-reachable WhatsApp +
+ * call buttons on phones. Hidden ≥sm. BaseLayout adds matching bottom
+ * padding on mobile so content never hides behind it.
+ */
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = {
+  es: { wa: 'Presupuesto gratis', call: 'Llamar' },
+  en: { wa: 'Free quote', call: 'Call' },
+}[locale];
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 z-[60] border-t border-line bg-paper/95 px-3 pt-2.5 backdrop-blur-sm sm:hidden"
+  style="padding-bottom: calc(0.625rem + env(safe-area-inset-bottom));"
+>
+  <div class="flex gap-2">
+    <a
+      href={whatsappLink(WHATSAPP_DEFAULT_MSG[locale])}
+      data-pos="sticky"
+      class="flex flex-1 items-center justify-center gap-2 rounded-full bg-forest-700 px-4 py-3 text-sm font-semibold text-paper"
+    >
+      <WhatsAppIcon size={15} />
+      {t.wa}
+    </a>
+    <a
+      href={`tel:${BUSINESS.phoneE164}`}
+      data-pos="sticky"
+      class="flex items-center justify-center gap-2 rounded-full border border-line bg-white px-5 py-3 text-sm font-semibold text-forest-800"
+    >{t.call}</a>
+  </div>
+</div>

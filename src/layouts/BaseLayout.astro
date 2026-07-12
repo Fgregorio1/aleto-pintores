@@ -6,6 +6,7 @@ import JsonLd from '@/components/seo/JsonLd.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import LangBanner from '@/components/islands/LangBanner.astro';
+import MobileCta from '@/components/MobileCta.astro';
 import Attribution from '@/components/islands/Attribution.astro';
 import { businessSchema, webPageSchema, websiteSchema } from '@/lib/schema';
 import type { SEOData } from '@/lib/seo';
@@ -45,13 +46,14 @@ const enTwin = seo.locale === 'es' ? seo.alternates.find((a) => a.hreflang === '
         no blocklist. 404s harmlessly in local dev. Loads consent + tools. */}
     <script is:inline src="/al/i.js"></script>
   </head>
-  <body class="flex min-h-screen flex-col">
+  <body class="flex min-h-screen flex-col pb-[72px] sm:pb-0">
     <Header locale={seo.locale} switchUrl={switchUrl} />
     <main class="flex-1">
       <slot />
     </main>
     <Footer locale={seo.locale} />
     {enTwin && <LangBanner enUrl={enTwin} />}
+    <MobileCta locale={seo.locale} />
     <Attribution />
   </body>
 </html>

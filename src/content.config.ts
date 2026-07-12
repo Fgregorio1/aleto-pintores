@@ -50,6 +50,8 @@ const servicios = defineCollection({
     serviceName: z.string(),
     /** Key into src/data/precios.yaml — price table + JSON-LD offers read from there */
     priceKey: z.string(),
+    /** Path to service hero photo */
+    image: z.string().optional(),
     /** Steps shown in the "Cómo trabajamos" section */
     proceso: z.array(z.object({ paso: z.string(), detalle: z.string() })).default([]),
     relatedServices: z.array(reference('servicios')).default([]),

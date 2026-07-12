@@ -10,6 +10,8 @@ import { faqSchema, serviceSchema } from '@/lib/schema';
 import { entryLocale, precioPath, servicioPath } from '@/lib/paths';
 import { staticPath } from '@/i18n/routes';
 import { useTranslations } from '@/i18n/ui';
+import { whatsappLink } from '@/data/business';
+import WhatsAppIcon from '@/components/WhatsAppIcon.astro';
 
 /**
  * Template order per docs/02 §3: H1 → direct answer with numbers →
@@ -32,6 +34,15 @@ const crumbs = [
   { name: t('nav.servicios'), path: staticPath('servicios-hub', locale) },
   { name: entry.data.shortLabel, path: seo.canonicalPath },
 ];
+
+const waMessage =
+  locale === 'es'
+    ? `Hola, me interesa: ${entry.data.serviceName}. ¿Me podéis dar un presupuesto?`
+    : `Hi, I'm interested in: ${entry.data.serviceName}. Could you give me a quote?`;
+const heroCta = {
+  es: { btn: 'Pedir presupuesto gratis', micro: 'Visita gratuita · Presupuesto cerrado en 24 h · Sin compromiso' },
+  en: { btn: 'Get a free quote', micro: 'Free visit · Fixed quote within 24 h · No obligation' },
+}[locale];
 ---
 
 <BaseLayout seo={seo} schemas={[serviceSchema(entry, seo.canonicalPath), faqSchema(entry.data.faq)]}>
@@ -39,12 +50,37 @@ const crumbs = [
   <article class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
     <header class="max-w-3xl">
       <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
-      <UpdatedDate date={entry.data.dateModified} locale={locale} />
       {/* Value-first hero. Visible prices live ONLY in the FAQ and /precios/ (docs/03 §3b). */}
       <p class="mt-5 max-w-3xl text-lg leading-relaxed text-ink-soft">
         {entry.data.heroLead ?? entry.data.directAnswer}
       </p>
+      {/* CRO: conversion path in the first viewport */}
+      <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+        <a
+          href={whatsappLink(waMessage)}
+          data-pos="hero"
+          class="inline-flex items-center gap-2 rounded-full bg-forest-700 px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-forest-800"
+        >
+          <WhatsAppIcon size={15} />
+          {heroCta.btn}
+        </a>
+        <p class="text-xs font-medium text-ink-soft">{heroCta.micro}</p>
+      </div>
     </header>
+
+    {
+      entry.data.image && (
+        <div class="mt-8 overflow-hidden rounded-2xl border border-line bg-white">
+          <img
+            src={entry.data.image}
+            alt={entry.data.serviceName}
+            class="aspect-[21/9] w-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+      )
+    }
 
     {
       entry.data.proceso.length > 0 && (
@@ -67,8 +103,10 @@ const crumbs = [
       <Content />
     </div>
 
+    <UpdatedDate date={entry.data.dateModified} locale={locale} />
+
     {/* Price POINTER only — no numbers on the page outside the FAQ (docs/03 §3b) */}
-    <section class="mt-14 max-w-3xl rounded-2xl border border-line bg-white p-6 sm:p-8">
+    <section class="mt-4 max-w-3xl rounded-2xl border border-line bg-white p-6 sm:p-8">
       <h2 class="text-xl text-forest-900">{t('precio.pointer.title')}</h2>
       <p class="mt-2 text-sm leading-relaxed text-ink-soft">{t('precio.pointer.text')}</p>
       <div class="mt-4 flex flex-wrap gap-3">
