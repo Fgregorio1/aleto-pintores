@@ -6,7 +6,7 @@ translationKey: service-papel
 locale: en
 serviceName: "Wallpaper removal"
 priceKey: quitar-papel
-image: "/img/servicios/quitar-papel-pintado.jpg"
+image: "../../../assets/servicios/quitar-papel-pintado.jpg"
 shortLabel: "Wallpaper removal"
 excerpt: "Stripped without damaging the plaster, glue washed off, and honest advice on the next finish."
 orden: 6

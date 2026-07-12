@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 import { servicioPath } from '@/lib/paths';
 import { useTranslations, type Locale } from '@/i18n/ui';
 
@@ -22,9 +23,11 @@ const t = useTranslations(locale);
   {
     servicio.data.image && (
       <div class="overflow-hidden aspect-[16/10] border-b border-line">
-        <img
+        <Image
           src={servicio.data.image}
           alt={servicio.data.shortLabel}
+          widths={[400, 600, 800]}
+          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
           class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           loading="lazy"
         />

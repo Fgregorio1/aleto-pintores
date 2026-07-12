@@ -151,7 +151,46 @@ async function posthogProxy(request: Request, ctx: ExecutionContext): Promise<Re
   return fetch(`https://${POSTHOG_API_HOST}${pathWithParams}`, originRequest);
 }
 
+// ── IndexNow (docs/02 §2) ──────────────────────────────────────────────
+// Daily cron: read our own sitemap and submit every URL to IndexNow so
+// Bing/Yandex/Seznam re-crawl changes within hours instead of weeks
+// (Bing's index also feeds ChatGPT search). Resubmitting unchanged URLs
+// is fine — the endpoints dedupe. Key file lives at /<key>.txt (static asset).
+const SITE_HOST = 'aletopintores.com';
+const INDEXNOW_KEY = 'ad77914522694b9516420ebceaaa1204';
+
+async function indexNowPing(): Promise<void> {
+  const sitemap = await fetch(`https://${SITE_HOST}/sitemap.xml`);
+  if (!sitemap.ok) {
+    console.error(`indexnow: sitemap fetch failed (${sitemap.status})`);
+    return;
+  }
+  const xml = await sitemap.text();
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  if (urls.length === 0) {
+    console.error('indexnow: no <loc> entries found in sitemap');
+    return;
+  }
+
+  const res = await fetch('https://api.indexnow.org/indexnow', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify({
+      host: SITE_HOST,
+      key: INDEXNOW_KEY,
+      keyLocation: `https://${SITE_HOST}/${INDEXNOW_KEY}.txt`,
+      urlList: urls,
+    }),
+  });
+  // 200 = submitted, 202 = accepted (key pending verification)
+  console.log(`indexnow: submitted ${urls.length} urls → ${res.status}`);
+}
+
 export default {
+  async scheduled(_controller: ScheduledController, _env: Env, ctx: ExecutionContext): Promise<void> {
+    ctx.waitUntil(indexNowPing());
+  },
+
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
     if (url.pathname === '/api/submit-lead') {

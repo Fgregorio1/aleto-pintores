@@ -44,14 +44,15 @@ const seoBase = {
 
 const servicios = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/servicios' }),
-  schema: z.object({
+  schema: ({ image }) =>
+    z.object({
     ...seoBase,
     /** schema.org Service name */
     serviceName: z.string(),
     /** Key into src/data/precios.yaml — price table + JSON-LD offers read from there */
     priceKey: z.string(),
-    /** Path to service hero photo */
-    image: z.string().optional(),
+    /** Service hero photo (src/assets/servicios/*) — optimized via astro:assets */
+    image: image().optional(),
     /** Steps shown in the "Cómo trabajamos" section */
     proceso: z.array(z.object({ paso: z.string(), detalle: z.string() })).default([]),
     relatedServices: z.array(reference('servicios')).default([]),
@@ -62,7 +63,7 @@ const servicios = defineCollection({
     excerpt: z.string().max(160),
     /** Sort order in hubs/nav */
     orden: z.number().default(99),
-  }),
+    }),
 });
 
 const precios = defineCollection({

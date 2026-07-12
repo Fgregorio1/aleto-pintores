@@ -29,5 +29,12 @@
 
   "observability": {
     "enabled": true
+  },
+
+  // Daily IndexNow ping (06:00 UTC): the scheduled handler reads the live
+  // sitemap and submits every URL to api.indexnow.org (Bing/Yandex/Seznam;
+  // Bing's index feeds ChatGPT search). Google ignores IndexNow — GSC covers it.
+  "triggers": {
+    "crons": ["0 6 * * *"]
   }
 }

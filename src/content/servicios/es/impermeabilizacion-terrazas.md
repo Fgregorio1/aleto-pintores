@@ -6,7 +6,7 @@ translationKey: service-terrazas
 locale: es
 serviceName: "Impermeabilización de terrazas"
 priceKey: impermeabilizacion
-image: "/img/servicios/impermeabilizacion-terrazas.jpg"
+image: "../../../assets/servicios/impermeabilizacion-terrazas.jpg"
 shortLabel: "Impermeabilizar terrazas"
 excerpt: "Diagnóstico del origen real de la filtración, sistema con refuerzo en puntos críticos y revisión al año."
 orden: 7

@@ -6,7 +6,7 @@ translationKey: service-fachadas
 locale: en
 serviceName: "Facade & community painting"
 priceKey: pintar-fachada
-image: "/img/servicios/pintura-fachadas-comunidades.jpg"
+image: "../../../assets/servicios/pintura-fachadas-comunidades.jpg"
 shortLabel: "Facades & buildings"
 excerpt: "Honest diagnosis, board-ready itemised quotes and a site that respects the people living in it."
 orden: 4

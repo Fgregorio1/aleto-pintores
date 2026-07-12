@@ -6,7 +6,7 @@ translationKey: service-oficinas
 locale: en
 serviceName: "Office & retail painting"
 priceKey: pintura-oficinas
-image: "/img/servicios/pintura-oficinas-locales.jpg"
+image: "../../../assets/servicios/pintura-oficinas-locales.jpg"
 shortLabel: "Offices & retail"
 excerpt: "Overnight or weekend execution with complete company paperwork. Your business never stops."
 orden: 5

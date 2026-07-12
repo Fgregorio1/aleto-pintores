@@ -6,7 +6,7 @@ translationKey: service-lacado
 locale: en
 serviceName: "Door & cabinet lacquering"
 priceKey: lacar-puertas
-image: "/img/servicios/lacado-puertas-armarios.jpg"
+image: "../../../assets/servicios/lacado-puertas-armarios.jpg"
 shortLabel: "Door lacquering"
 excerpt: "A factory-grade finish that won't yellow or peel — done in your home, without dismantling it."
 orden: 3

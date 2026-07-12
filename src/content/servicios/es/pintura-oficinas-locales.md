@@ -6,7 +6,7 @@ translationKey: service-oficinas
 locale: es
 serviceName: "Pintura de oficinas y locales"
 priceKey: pintura-oficinas
-image: "/img/servicios/pintura-oficinas-locales.jpg"
+image: "../../../assets/servicios/pintura-oficinas-locales.jpg"
 shortLabel: "Oficinas y locales"
 excerpt: "Nocturno o fin de semana, con documentación de empresa completa. Tu negocio no para ni un día."
 orden: 5
