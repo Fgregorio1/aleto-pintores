@@ -41,6 +41,9 @@ interface LeadFields {
   utm_source: string;
   utm_medium: string;
   utm_campaign: string;
+  gclid: string;
+  wbraid: string;
+  fbclid: string;
   page: string;
   locale: string;
   company: string; // honeypot
@@ -90,6 +93,9 @@ async function submitLead(request: Request, env: Env): Promise<Response> {
     utm_source: d.utm_source || '',
     utm_medium: d.utm_medium || '',
     utm_campaign: d.utm_campaign || '',
+    gclid: d.gclid || '',
+    wbraid: d.wbraid || '',
+    fbclid: d.fbclid || '',
     ip_address: request.headers.get('CF-Connecting-IP') || '',
     user_agent: request.headers.get('User-Agent') || '',
     ...(env.SHEETS_SHARED_TOKEN ? { token: env.SHEETS_SHARED_TOKEN } : {}),

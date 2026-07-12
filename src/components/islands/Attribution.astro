@@ -53,6 +53,20 @@
     }
   })();
 
+  // Platform click IDs for the offline-conversion loop (docs/04): unlike the
+  // source label (first-touch), these UPDATE whenever present — a newer ad
+  // click wins. Persisted per session so they survive navigation to the form.
+  const clickIds: Record<string, string> = {};
+  try {
+    const p = new URLSearchParams(location.search);
+    for (const k of ['gclid', 'wbraid', 'fbclid']) {
+      const v = p.get(k);
+      if (v) sessionStorage.setItem('aleto-' + k, v);
+      clickIds[k] = sessionStorage.getItem('aleto-' + k) || '';
+    }
+  } catch {}
+  (window as any).aletoClickIds = clickIds;
+
   // Expose for LeadForm / PriceCalculator scripts
   (window as any).aletoSrc = src;
   const track = (name: string, props: Record<string, unknown> = {}) => {

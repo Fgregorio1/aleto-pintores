@@ -17,7 +17,14 @@ Guiding constraints, in order: **(1) never compromise site performance** (static
 | Ad-platform conversion signals (bidding) | **Google Ads tag + Meta Pixel/CAPI server-side**, via Zaraz tools | ⬜ with Zaraz activation | Yes |
 | Attribution & behavioral analytics (the "GA4 role") | **PostHog** (free tier, 1M events/mo) — via Zaraz Custom HTML, consent-gated | ⬜ with Zaraz activation | Yes ("Analítica" purpose) |
 
+**The offline-conversion loop (the highest-leverage ad optimization, decided 2026-07-12):**
+1. **Click IDs captured** (live): `gclid`/`wbraid`/`fbclid` are session-persisted by `Attribution.astro` (newest click wins) and attached to every form lead → Sheet columns.
+2. **Lead ledger**: the leads Sheet gains stage columns (`quoted` / `won-lost` / `job_value_eur`) filled manually after each conversation (~30 s/lead).
+3. **Weekly offline uploads** (at campaign time): won leads (hashed phone + click ID + value) → Google Ads via Aleto Ads Manager (Enhanced Conversions for Leads — the API method already selected in the dashboard) and → Meta CAPI offline events. This makes bidding optimize toward people who HIRE, not people who click.
+4. **Call tracking**: use Google Ads' free forwarding numbers on call assets; no CallRail-type subscription.
+
 **Explicitly rejected** (and why, so nobody re-litigates):
+- **RudderStack** (evaluated 2026-07-12) — a fine warehouse-first CDP, but Zaraz already plays the capture-once/route-to-many role at the edge for our 3 destinations, free. Revisit only if we need destinations Zaraz can't reach (email tools, warehouse) at real scale.
 - **GA4** — user preference; PostHog takes its role (attribution, funnels, events). NOTE: PostHog does NOT feed Google Ads/Meta bidding — that job stays with the platform tags (Google Ads tag, Meta Pixel/CAPI) via Zaraz. Never remove those thinking PostHog covers them.
 - **Plausible/Fathom etc.** — good tools, but redundant: RUM covers traffic/CWV now; PostHog covers events/attribution later. No subscription needed.
 - **GTM (browser) + standalone certified CMP (CookieYes/Cookiebot/Axeptio)** — the fallback stack, only if Zaraz ever can't run a needed tag or a designer consent UX is wanted. Costs more JS + a vendor.
