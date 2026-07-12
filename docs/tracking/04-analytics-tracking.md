@@ -93,7 +93,8 @@ Use in the UI: 2 funnels (`pageview → service page → whatsapp_click`; `calcu
 
 **✅ LIVE since 2026-07-12 — PostHog + consent banner:**
 - PostHog (EU project 220433) runs as a Zaraz Custom HTML tool, `defaultPurpose: analitica`, ingesting through `/ph/*`. Verified E2E: reject → zero analytics requests; accept → posthog loads via proxy, events POST to `/ph/i/v0/e/`; consent persists.
-- Consent modal branded via `consent.customCSS` (shadow-DOM selectors: `dialog.cf_modal`, `#cf_modal_title`, `.cf_button--accept/--reject/--save`, `li.cf_consent-element`).
+- Consent modal v2 (Axeptio-style, 2026-07-12): compact bottom-left card, light backdrop (no blur), conversion hierarchy (big forest Accept → subtle Confirm → quiet underlined Reject; all same layer = AEPD-compliant), mobile bottom-sheet media query. Shadow-DOM selectors: `dialog.cf_modal`, `.cf_button--accept/--reject/--save`, `li.cf_consent-element`.
+- **Modal language = browser Accept-Language, resolved at the edge per request** (es default when unknown). Spanish browsers get Spanish; this is correct behavior, verify with `curl -H 'Accept-Language: es'` not with an EN browser. Zaraz's native title ("Cookie Settings") is hardcoded EN for all languages → workaround: `.title_container` hidden via CSS, translated title embedded as `<span class="al-title">` inside `consentModalIntroHTMLWithTranslations`.
 - **Zaraz API gotchas learned (do not relearn):** tool purpose field is `defaultPurpose` (+ requires `vendorName`/`vendorPolicyUrl` on Custom HTML); consent needs the plain `purposes` map, not just `purposesWithTranslations`; auto-inject does NOT rewrite Worker-served HTML → manual `<script src>` in BaseLayout; `/cdn-cgi/zaraz/*` is ad-block-listed → custom paths `settings.initPath=/al/i.js, scriptPath=/al/s.js, trackPath=/al/t, mcRootPath=/al/mc`; zone workflow is `realtime` (PUTs are live instantly, no publish).
 
 **Remaining, blocked on account creation:**
