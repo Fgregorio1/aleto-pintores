@@ -1,6 +1,6 @@
 ---
 title: "Cost to Paint an Apartment in Madrid (2026 Prices)"
-metaDescription: "Real 2026 prices: painting an apartment in Madrid costs €13-20/m². An 80 m² flat runs €1,100-1,700, done in 3-4 days. Price table plus online calculator."
+metaDescription: "Real 2026 prices: painting an apartment in Madrid costs €15-23/m². An 80 m² flat runs €1,250-1,950, done in 4-5 days. Price table plus online calculator."
 h1: "How much does it cost to paint an apartment in Madrid? (2026)"
 translationKey: precio-pintar-piso
 locale: en
@@ -11,9 +11,9 @@ relatedServicio: en/interior-painting-madrid
 shortLabel: "Paint an apartment"
 excerpt: "The reference guide: price per m², by flat size, and what makes a quote go up or down."
 orden: 1
-directAnswer: "Painting an 80 m² apartment in Madrid costs between €1,100 and €1,700 in 2026 (€13–20 per m² of floor area), with premium paint, materials and protection included. The range depends on wall condition, ceiling height, and whether the flat is furnished or empty."
+directAnswer: "Painting an 80 m² apartment in Madrid costs between €1,250 and €1,950 in 2026 (€15–23 per m² of floor area), with premium paint, materials and protection included. The range depends on wall condition, ceiling height, and whether the flat is furnished or empty."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-07-12
 faq:
   - q: "Why do quotes for the same flat vary so much?"
     a: "Almost always because of what they include: paint quality (a premium brand costs double a budget white), real wall preparation, number of coats, and whether the price is fixed or 'estimated'. Always ask for a written breakdown — ours is itemised by default."

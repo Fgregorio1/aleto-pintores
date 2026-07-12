@@ -1,6 +1,6 @@
 ---
 title: "Interior Painting in Madrid — Fixed Quotes in English"
-metaDescription: "English-speaking painters in Madrid. Painting an 80 m² flat costs €1,100–1,700, done in 3-4 days. Fixed written quote within 24 h — no surprises."
+metaDescription: "English-speaking painters in Madrid. Painting an 80 m² flat costs €1,250–1,950, done in 4-5 days. Fixed written quote within 24 h — no surprises."
 h1: "Interior painting in Madrid (flats & houses)"
 translationKey: service-pintura-interior
 locale: en
@@ -11,9 +11,9 @@ shortLabel: "Interior painting"
 excerpt: "Full flats and houses with total protection, dates that hold and a finish that lasts years."
 orden: 1
 heroLead: "Your flat painted in days, not weeks: total protection of furniture and floors, the same crew start to finish, and a result we review with you wall by wall before you pay — all in English."
-directAnswer: "Painting an 80 m² flat in Madrid costs between €1,100 and €1,700 in 2026, materials and protection included, and takes 3-4 days. The exact price depends on wall condition, ceiling height and colours — we give you a fixed written quote in English within 24 hours."
+directAnswer: "Painting an 80 m² flat in Madrid costs between €1,250 and €1,950 in 2026, materials and protection included, and takes 4-5 days. The exact price depends on wall condition, ceiling height and colours — we give you a fixed written quote in English within 24 hours."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-07-12
 relatedServices:
   - en/gotele-removal-wall-smoothing
   - en/door-cabinet-lacquering
@@ -40,7 +40,7 @@ faq:
   - q: "Do the dates and the price actually hold?"
     a: "Yes, in writing: start date, delivery date and fixed price on the quote. Anything we missed at the visit is absorbed by us, not billed to you."
   - q: "How much does it cost to paint a flat in Madrid?"
-    a: "Between €13 and €20 per m² of floor area in 2026 with materials and protection included: an 80 m² flat runs €1,100–1,700, finished in 3-4 days. Full tables by flat size are in our Madrid painting cost guide."
+    a: "Between €15 and €23 per m² of floor area in 2026 with materials and protection included: an 80 m² flat runs €1,250–1,950, finished in 4-5 days. Full tables by flat size are in our Madrid painting cost guide."
   - q: "Can you handle the job while I'm abroad?"
     a: "Yes — keys coordinated with your agent or concierge, daily photo updates on WhatsApp, a video walkthrough at handover and the VAT invoice by email."
 ---

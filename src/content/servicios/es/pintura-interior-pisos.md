@@ -1,6 +1,6 @@
 ---
-title: "Pintar piso en Madrid — Precio cerrado y en 3-4 días"
-metaDescription: "Empresa de pintores para pintar tu piso o casa en Madrid. Piso de 80 m² desde 1.100 €, terminado en 3-4 días. Presupuesto cerrado en 24 h."
+title: "Pintar piso en Madrid — Precio cerrado y en 4-5 días"
+metaDescription: "Empresa de pintores para pintar tu piso o casa en Madrid. Piso de 80 m² desde 1.250 €, terminado en 4-5 días. Presupuesto cerrado en 24 h."
 h1: "Pintar piso o casa en Madrid"
 translationKey: service-pintura-interior
 locale: es
@@ -11,9 +11,9 @@ shortLabel: "Pintura interior"
 excerpt: "Pisos y casas completas con protección total, fechas que se cumplen y un acabado que aguanta años."
 orden: 1
 heroLead: "Tu piso pintado en días, no en semanas: protección total de muebles y suelos, el mismo equipo de principio a fin y un acabado que revisamos contigo pared a pared antes de cobrar."
-directAnswer: "Pintar un piso de 80 m² en Madrid cuesta entre 1.100 € y 1.700 € en 2026, con materiales y protección incluidos, y se termina en 3-4 días. El precio exacto depende del estado de las paredes, la altura de los techos y los colores elegidos: te damos un presupuesto cerrado gratis en 24 horas."
+directAnswer: "Pintar un piso de 80 m² en Madrid cuesta entre 1.250 € y 1.950 € en 2026, con materiales y protección incluidos, y se termina en 4-5 días. El precio exacto depende del estado de las paredes, la altura de los techos y los colores elegidos: te damos un presupuesto cerrado gratis en 24 horas."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-07-12
 relatedServices:
   - es/quitar-gotele-alisar-paredes
   - es/lacado-puertas-armarios
@@ -40,7 +40,7 @@ faq:
   - q: "¿Se cumplen las fechas y el precio?"
     a: "Sí, por escrito: fecha de inicio, fecha de entrega y precio cerrado en el presupuesto. Si al empezar aparece algo que no vimos en la visita, lo asumimos nosotros."
   - q: "¿Cuánto cuesta pintar un piso en Madrid?"
-    a: "Entre 13 y 20 €/m² de vivienda en 2026 con material y protección incluidos: un piso de 80 m² queda entre 1.100 € y 1.700 €, terminado en 3-4 días. Las tablas completas por tamaño están en nuestra guía de precios de pintar un piso."
+    a: "Entre 15 y 23 €/m² de vivienda en 2026 con material y protección incluidos: un piso de 80 m² queda entre 1.250 € y 1.950 €, terminado en 4-5 días. Las tablas completas por tamaño están en nuestra guía de precios de pintar un piso."
   - q: "¿Dais factura y garantía?"
     a: "Siempre. Factura con IVA y garantía por escrito sobre el trabajo. Al terminar te dejamos la pintura sobrante etiquetada por estancia para futuros retoques."
 ---

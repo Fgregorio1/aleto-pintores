@@ -5,7 +5,7 @@
 # Update at least quarterly with real quote data (docs/02 §6, docs/03 §7).
 # ══════════════════════════════════════════════════════════════════════
 
-dateModified: 2026-07-09
+dateModified: 2026-07-12
 anio: 2026
 moneda: EUR
 metodologia_es: "Rangos basados en nuestros presupuestos reales en Madrid en 2026. El precio final depende del estado de las paredes, la altura de techos y el acceso."
@@ -18,13 +18,13 @@ servicios:
     unidad_es: "€/m² de vivienda"
     unidad_en: "€/m² floor area"
     unidad_corta: "m²"
-    min: 13
-    max: 20
+    min: 15
+    max: 23
     ejemplos:
-      - { m2: 60, label_es: "Piso de 60 m²", label_en: "60 m² flat", min: 850, max: 1250, dias: "2–3" }
-      - { m2: 80, label_es: "Piso de 80 m²", label_en: "80 m² flat", min: 1100, max: 1700, dias: "3–4" }
-      - { m2: 100, label_es: "Piso de 100 m²", label_en: "100 m² flat", min: 1400, max: 2100, dias: "4–5" }
-      - { m2: 120, label_es: "Piso de 120 m²", label_en: "120 m² flat", min: 1700, max: 2500, dias: "5–6" }
+      - { m2: 60, label_es: "Piso de 60 m²", label_en: "60 m² flat", min: 950, max: 1400, dias: "3–4" }
+      - { m2: 80, label_es: "Piso de 80 m²", label_en: "80 m² flat", min: 1250, max: 1950, dias: "4–5" }
+      - { m2: 100, label_es: "Piso de 100 m²", label_en: "100 m² flat", min: 1600, max: 2400, dias: "5–7" }
+      - { m2: 120, label_es: "Piso de 120 m²", label_en: "120 m² flat", min: 1950, max: 2900, dias: "7–8" }
 
   quitar-gotele:
     label_es: "Quitar gotelé + alisar + pintar"

@@ -1,6 +1,6 @@
 ---
 title: "Cuánto cuesta pintar un piso en Madrid (precios 2026)"
-metaDescription: "Precio real de pintar un piso en Madrid en 2026: de 13 a 20 €/m². Un piso de 80 m² cuesta entre 1.100 € y 1.700 €. Tabla por tamaños y calculadora."
+metaDescription: "Precio real de pintar un piso en Madrid en 2026: de 15 a 23 €/m². Un piso de 80 m² cuesta entre 1.250 € y 1.950 €. Tabla por tamaños y calculadora."
 h1: "¿Cuánto cuesta pintar un piso en Madrid? Precios reales 2026"
 translationKey: precio-pintar-piso
 locale: es
@@ -11,12 +11,12 @@ relatedServicio: es/pintura-interior-pisos
 shortLabel: "Pintar un piso"
 excerpt: "La guía de referencia: precio por m², por tamaño de piso y qué hace subir o bajar el presupuesto."
 orden: 1
-directAnswer: "Pintar un piso de 80 m² en Madrid cuesta entre 1.100 € y 1.700 € en 2026 (de 13 a 20 €/m² de vivienda), con pintura de primera marca, materiales y protección incluidos. El rango depende del estado de las paredes, la altura de los techos y de si el piso está amueblado o vacío."
+directAnswer: "Pintar un piso de 80 m² en Madrid cuesta entre 1.250 € y 1.950 € en 2026 (de 15 a 23 €/m² de vivienda), con pintura de primera marca, materiales y protección incluidos. El rango depende del estado de las paredes, la altura de los techos y de si el piso está amueblado o vacío."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-07-12
 faq:
   - q: "¿Cuánto cuesta pintar un piso de 70 m² en Madrid?"
-    a: "Entre 950 € y 1.500 € en 2026, con material y mano de obra incluidos. Es la media entre los rangos de 60 m² (850-1.250 €) y 80 m² (1.100-1.700 €)."
+    a: "Entre 1.100 € y 1.700 € en 2026, con material y mano de obra incluidos. Es la media entre los rangos de 60 m² (950-1.400 €) y 80 m² (1.250-1.950 €)."
   - q: "¿Por qué unos presupuestos piden 900 € y otros 2.000 € por el mismo piso?"
     a: "Casi siempre por lo que incluyen: calidad de la pintura (una primera marca cuesta el doble que una blanca de gran superficie), preparación real de las paredes, número de manos, y si hay presupuesto cerrado o 'precio por hora'. Pide siempre el desglose por escrito."
   - q: "¿Es más barato pintar el piso vacío?"
