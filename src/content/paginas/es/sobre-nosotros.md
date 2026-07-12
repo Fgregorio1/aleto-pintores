@@ -1,17 +1,17 @@
 ---
 title: "Sobre Aleto Pintores — Empresa de pintura en Madrid"
-metaDescription: "Aleto Pintores: empresa de pintura fundada en 2026 en Chamberí, Madrid. Precios publicados, seguro de responsabilidad civil, factura y garantía por escrito."
+metaDescription: "Aleto Pintores: empresa de pintura fundada en 2026 en Chamberí, Madrid. 7 años de experiencia previa en EE. UU., seguro de responsabilidad civil y garantía."
 h1: "Quiénes somos: Aleto Pintores"
 pageKey: sobre-nosotros
 translationKey: page-about
 locale: es
-heroLead: "Una empresa de pintura fundada sobre una idea simple: método verificable, plazos que se cumplen y la transparencia suficiente para que no tengas que fiarte de nuestra palabra."
-directAnswer: "Aleto Pintores es una empresa de pintura residencial y comercial fundada en 2026, con base en Chamberí (Madrid) y servicio en toda la capital y su área metropolitana. Trabajamos con el mismo equipo de principio a fin, fechas y presupuesto cerrado por escrito, seguro de responsabilidad civil, factura en todos los trabajos y precios publicados."
+heroLead: "Combinamos 7 años de experiencia dirigiendo proyectos de pintura en EE. UU. con el oficio de pintores locales en Madrid, bajo una metodología transparente y de total confianza."
+directAnswer: "Aleto Pintores es una empresa de pintura residencial y comercial fundada en 2026 por un profesional con 7 años de trayectoria en el sector en EE. UU. Con base en Chamberí (Madrid), combinamos estándares internacionales de servicio al cliente con pintores locales experimentados. Ofrecemos precios publicados, contratos cerrados, seguro y garantía por escrito."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-07-12
 faq:
   - q: "¿Desde cuándo existe Aleto Pintores?"
-    a: "La empresa se fundó en 2026 en Madrid. Nuestro equipo acumula años de oficio en pintura residencial y comercial en la capital, y decidimos montar una empresa que trabajara como nos gustaría que trabajaran con nosotros: método claro, plazos cumplidos y trabajo bien rematado."
+    a: "La empresa se fundó en Madrid en 2026. Su fundador aporta 7 años de experiencia previa dirigiendo una empresa de pintura residencial y comercial en Estados Unidos. Creamos Aleto con un propósito: unir el servicio al cliente y la organización norteamericana con la mejor mano de obra local en Madrid."
   - q: "¿Quién entra en mi casa si os contrato?"
     a: "El mismo equipo de principio a fin: las personas que conoces el primer día terminan tu obra. Con seguro de responsabilidad civil vigente y un responsable directo con teléfono, no un call center."
   - q: "¿Tenéis seguro y dais factura?"
@@ -25,6 +25,12 @@ faq:
 ## Por qué existe Aleto Pintores
 
 El sector de la pintura funciona demasiadas veces así: presupuestos que crecen a mitad de obra, cuadrillas que cambian cada día, plazos que nadie firma y calidades imposibles de comparar. Aleto nace en 2026 para trabajar exactamente al revés: **un método que el cliente puede comprobar** — protección, preparación, fechas, entrega a contraluz — y la transparencia suficiente (precios incluidos) para que no haga falta fiarse de nuestra palabra.
+
+## Nuestra historia: del estándar de EE. UU. a las casas de Madrid
+
+Aleto Pintores no nace de la nada. Tras 7 años gestionando una empresa de pintura residencial y comercial en Estados Unidos, aprendí que la pintura profesional no consiste solo en saber aplicar pintura en una pared. Consiste en la puntualidad, en proteger el suelo como si fuera el tuyo, en presupuestos claros donde cada partida se detalla por escrito, y en una comunicación constante con el cliente.
+
+En 2026, decidimos trasladar esa experiencia y ese nivel de exigencia a Madrid. Al abrir Aleto, nuestro objetivo fue muy claro: combinar la fiabilidad, la metodología y los altos estándares de servicio al cliente norteamericanos con la destreza y el conocimiento de pintores locales que entienden a la perfección los materiales y las particularidades de las viviendas madrileñas (los techos altos de Chamberí, los yesos antiguos, las molduras y los desafíos del gotelé).
 
 ## Cómo trabajamos
 

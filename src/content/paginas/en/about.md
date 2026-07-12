@@ -1,17 +1,17 @@
 ---
 title: "About Aleto Pintores — Painting Company in Madrid"
-metaDescription: "Aleto Pintores: painting company founded in 2026 in Chamberí, Madrid. Published prices, liability insurance, VAT invoices and written warranty. English spoken."
+metaDescription: "Aleto Pintores: painting company founded in 2026 in Madrid. 7 years of prior US experience, liability insurance, written warranty. English spoken."
 h1: "About Aleto Pintores"
 pageKey: sobre-nosotros
 translationKey: page-about
 locale: en
-heroLead: "A painting company founded on a simple idea: a verifiable method, deadlines that hold, and enough transparency that you never have to take our word for anything."
-directAnswer: "Aleto Pintores is a residential and commercial painting company founded in 2026, based in Chamberí (Madrid) and serving the whole city and metro area. We work with the same crew start to finish, dates and a fixed quote in writing, liability insurance, VAT invoices on every job and published prices — with full service available in English."
+heroLead: "We combine 7 years of experience managing painting projects in the US with the craftsmanship of local painters in Madrid, under a clear, trusted method."
+directAnswer: "Aleto Pintores is a residential and commercial painting company founded in 2026 by an industry professional with 7 years of experience running a painting business in the US. Based in Chamberí (Madrid), we combine US-grade customer service standards with experienced local painters. We offer published prices, fixed quotes, full insurance, and written warranties."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-07-12
 faq:
   - q: "Since when does Aleto Pintores exist?"
-    a: "The company was founded in 2026 in Madrid. Our team brings years of residential and commercial painting experience in the city, organised into a company that works the way we'd want to be treated as clients: a clear method, kept deadlines, finished details."
+    a: "The company was founded in Madrid in 2026. The founder brings 7 years of experience running a residential and commercial painting company in the United States. We created Aleto with a clear purpose: to unite American-style customer service and organization with the best local craftsmanship in Madrid."
   - q: "Who comes into my home if I hire you?"
     a: "The same crew start to finish: the people you meet on day one deliver your job. Covered by current liability insurance, with one direct contact on the phone — not a call centre."
   - q: "Are you insured, and do you invoice?"
@@ -25,6 +25,12 @@ faq:
 ## Why Aleto Pintores exists
 
 The painting trade too often works like this: quotes that grow mid-job, crews that change daily, deadlines nobody signs and quality impossible to compare. Aleto was founded in 2026 to work exactly the other way around: **a method the client can verify** — protection, preparation, dates, raking-light handover — plus enough transparency (prices included) that you don't have to take our word for anything.
+
+## Our story: from US service standards to Madrid homes
+
+Aleto Pintores didn't start in a vacuum. After 7 years of running a residential and commercial painting company in the United States, I learned that professional painting isn't just about putting paint on a wall. It is about punctuality, protecting floors as if they were our own, providing clear quotes where every single item is written down, and keeping communication fluid and constant.
+
+In 2026, we decided to bring that experience and those service standards to Madrid. When opening Aleto, our goal was clear: combine the reliability, structured methodology, and customer-first culture of US service businesses with the mastery and skill of local painters who know Madrid’s unique architecture inside out—from Chamberí's high ceilings and old plaster walls to complex gotelé smoothing.
 
 ## How we work
 
@@ -44,7 +50,7 @@ Every job follows the same method, whether it's 12 m² or 300: a free visit with
 - **Activity:** residential & commercial painting (interior, gotelé removal & smoothing, lacquering, facades, offices, waterproofing)
 - **Founded:** 2026, Madrid
 - **Base:** Chamberí, Madrid — serving the whole city and metro area
-- **Languages:** Spanish and English
+- **Languages:** English and Spanish
 - **Prices:** published and updated quarterly on the [prices page](/en/prices/)
 
 ## Reputation as the business plan
