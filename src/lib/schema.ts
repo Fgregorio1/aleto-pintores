@@ -20,6 +20,8 @@ export function businessSchema(): object {
     '@type': 'HousePainter',
     '@id': BUSINESS.id,
     name: BUSINESS.name,
+    legalName: BUSINESS.legalName,
+    taxID: BUSINESS.taxId,
     url: BUSINESS.url,
     telephone: BUSINESS.phoneE164,
     email: BUSINESS.email,

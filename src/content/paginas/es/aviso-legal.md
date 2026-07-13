@@ -15,13 +15,12 @@ faq: []
 
 En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa:
 
-- **Titular:** Aleto Pintores
+- **Titular / Responsable legal:** Paola Alejandra Vera Zambrano (comercializado como Aleto Pintores)
+- **NIF:** 48473949T
 - **Domicilio:** C. de Juan de Austria, 13, Chamberí, 28010 Madrid, España
 - **Correo electrónico:** contacto@aletopintores.com
 - **Teléfono:** 624 04 62 10
 - **Sitio web:** https://aletopintores.com
-
-*(Completar con NIF/CIF y, en su caso, datos registrales antes de la puesta en producción.)*
 
 ## Condiciones de uso
 

@@ -13,7 +13,8 @@ faq: []
 
 ## Data controller
 
-- **Controller:** Aleto Pintores
+- **Controller / Owner:** Paola Alejandra Vera Zambrano
+- **NIF (Tax ID):** 48473949T
 - **Address:** C. de Juan de Austria, 13, Chamberí, 28010 Madrid, España
 - **Email:** contacto@aletopintores.com
 

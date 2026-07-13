@@ -13,7 +13,8 @@ faq: []
 
 ## Responsable del tratamiento
 
-- **Responsable:** Aleto Pintores
+- **Responsable / Titular:** Paola Alejandra Vera Zambrano
+- **NIF:** 48473949T
 - **Domicilio:** C. de Juan de Austria, 13, Chamberí, 28010 Madrid, España
 - **Correo:** contacto@aletopintores.com
 

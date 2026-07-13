@@ -8,6 +8,8 @@ export const SITE_URL = 'https://aletopintores.com';
 
 export const BUSINESS = {
   name: 'Aleto Pintores',
+  legalName: 'Paola Alejandra Vera Zambrano',
+  taxId: '48473949T',
   url: SITE_URL,
   /** schema.org @id — the entity anchor every Service/WebPage points at */
   id: `${SITE_URL}/#business`,
