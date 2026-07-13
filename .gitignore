@@ -24,3 +24,6 @@ credentials*.json
 
 # wrangler local state
 .wrangler/
+
+# local advertising toolkit repositories
+tools/
