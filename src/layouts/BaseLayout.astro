@@ -44,23 +44,46 @@ const { googleAdsId, googleAdsConversionLabel } = BUSINESS;
     <meta name="theme-color" content="#2a6445" />
     <SEO seo={seo} />
     <JsonLd schemas={[businessSchema(), websiteSchema(), webPageSchema(seo), ...schemas]} />
-    {/* Zaraz manual install: auto-inject doesn't rewrite Worker-served HTML.
+    {/* Zaraz manual install — the ONLY loader. Zaraz autoInjectScript is
+        disabled zone-side (it injects a second copy for browser UAs →
+        "zaraz is loaded twice"); if the error reappears, re-check that flag.
         Custom path (Zaraz settings.initPath) — /cdn-cgi/zaraz/* is on ad-block
         lists; /al/* is intercepted at the edge before our worker and matches
         no blocklist. 404s harmlessly in local dev. Loads consent + tools. */}
     <script is:inline src="/al/i.js"></script>
 
-    {/* Google Ads Global Site Tag */}
+    {/* Google Ads gtag with Consent Mode v2: everything DENIED by default;
+        granted only when the Zaraz consent modal's Marketing purpose ('marketing')
+        is accepted. Denied-state gtag sends only cookieless pings (Google's
+        EEA-required setup). Conversion firing lives in LeadForm (window.gtag). */}
     {googleAdsId && (
       <>
-        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}></script>
         <script is:inline define:vars={{ googleAdsId }}>
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           window.gtag = gtag;
+          gtag('consent', 'default', {
+            ad_storage: 'denied',
+            ad_user_data: 'denied',
+            ad_personalization: 'denied',
+            analytics_storage: 'denied',
+          });
           gtag('js', new Date());
           gtag('config', googleAdsId);
+
+          function aletoSyncGoogleConsent() {
+            var granted = !!(window.zaraz && zaraz.consent && zaraz.consent.get('marketing'));
+            gtag('consent', 'update', {
+              ad_storage: granted ? 'granted' : 'denied',
+              ad_user_data: granted ? 'granted' : 'denied',
+              ad_personalization: granted ? 'granted' : 'denied',
+              analytics_storage: (window.zaraz && zaraz.consent && zaraz.consent.get('analitica')) ? 'granted' : 'denied',
+            });
+          }
+          document.addEventListener('zarazConsentAPIReady', aletoSyncGoogleConsent);
+          document.addEventListener('zarazConsentChoicesUpdated', aletoSyncGoogleConsent);
         </script>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}></script>
       </>
     )}
   </head>
