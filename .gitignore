@@ -27,3 +27,6 @@ credentials*.json
 
 # local advertising toolkit repositories
 tools/
+
+# Python bytecode
+__pycache__/

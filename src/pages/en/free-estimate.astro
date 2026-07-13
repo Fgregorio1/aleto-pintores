@@ -1,0 +1,106 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import DirectAnswer from '@/components/DirectAnswer.astro';
+import LeadForm from '@/components/contact/LeadForm.astro';
+import Faq from '@/components/Faq.astro';
+import { seoFromPagina } from '@/lib/seo';
+import { faqSchema } from '@/lib/schema';
+
+const entry = await getEntry('paginas', 'en/free-estimate');
+if (!entry) throw new Error('Missing paginas entry: en/free-estimate');
+const seo = seoFromPagina(entry);
+const crumbs = [
+  { name: 'Home', path: '/en/' },
+  { name: 'Free estimate', path: seo.canonicalPath },
+];
+
+const pasos = [
+  {
+    paso: '1. Online Request',
+    detalle: 'Fill out the form in 1 minute. Select the painting service you need and enter your basic contact info.'
+  },
+  {
+    paso: '2. Free On-Site Visit (20m)',
+    detalle: 'We visit your property in Madrid to take laser measurements, inspect wall conditions, and advise you on paint types.'
+  },
+  {
+    paso: '3. Written Quote within 24h',
+    detalle: 'Receive a formal PDF estimate outlining fixed costs, paint brands, and execution dates. No hidden fees, no surprises.'
+  }
+];
+
+const garantias = [
+  {
+    titulo: 'Third-Party Liability Insurance',
+    descripcion: 'Fully insured painters with MAPFRE covering up to €300,000 against any accidental damages.'
+  },
+  {
+    titulo: 'Written Quality Warranty',
+    descripcion: 'Every project is backed by a signed contract detailing the exact paint specifications and warranty terms.'
+  },
+  {
+    titulo: 'Timeline & Deadline Guarantee',
+    descripcion: 'We sign off on exact start and completion dates. If we are delayed due to our own fault, we compensate you.'
+  }
+];
+---
+
+<BaseLayout seo={seo} schemas={[faqSchema(entry.data.faq)]}>
+  <Breadcrumbs items={crumbs} />
+  
+  <main class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+    <header class="max-w-3xl">
+      <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
+      {entry.data.directAnswer && <DirectAnswer text={entry.data.directAnswer} />}
+    </header>
+
+    <div class="mt-12 grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-2">
+      {/* Left Column: Timeline + Guarantees */}
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-2xl font-bold text-forest-900">How it works</h2>
+          <p class="mt-2 text-sm text-ink-soft">Our streamlined process ensures total clarity and speed from day one, with no vague estimations.</p>
+          <ol class="mt-6 space-y-6">
+            {pasos.map((p, index) => (
+              <li class="flex gap-4">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-forest-900 text-sm font-bold text-paper">
+                  {index + 1}
+                </span>
+                <div>
+                  <h3 class="font-sans text-base font-semibold text-forest-900">{p.paso}</h3>
+                  <p class="mt-1 text-sm leading-relaxed text-ink-soft">{p.detalle}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="rounded-2xl border border-line bg-paper-dark/30 p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-forest-900 font-display">Our Guarantees to You</h2>
+          <ul class="mt-4 space-y-4">
+            {garantias.map((g) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-forest-700 font-bold" aria-hidden="true">✓</span>
+                <div>
+                  <h3 class="text-sm font-semibold text-forest-900">{g.titulo}</h3>
+                  <p class="mt-0.5 text-xs leading-relaxed text-ink-soft">{g.descripcion}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Right Column: Lead Form Card */}
+      <div class="lg:-mt-4">
+        <LeadForm locale="en" formSource="estimate" />
+      </div>
+    </div>
+
+    <section class="mt-16">
+      <Faq faq={entry.data.faq} locale="en" />
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,106 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import DirectAnswer from '@/components/DirectAnswer.astro';
+import LeadForm from '@/components/contact/LeadForm.astro';
+import Faq from '@/components/Faq.astro';
+import { seoFromPagina } from '@/lib/seo';
+import { faqSchema } from '@/lib/schema';
+
+const entry = await getEntry('paginas', 'es/presupuesto-gratis');
+if (!entry) throw new Error('Missing paginas entry: es/presupuesto-gratis');
+const seo = seoFromPagina(entry);
+const crumbs = [
+  { name: 'Inicio', path: '/' },
+  { name: 'Presupuesto gratis', path: seo.canonicalPath },
+];
+
+const pasos = [
+  {
+    paso: '1. Solicitud online',
+    detalle: 'Completa el formulario en 1 minuto. Elige el servicio de pintura que necesitas y facilítanos tus datos básicos de contacto.'
+  },
+  {
+    paso: '2. Visita técnica gratuita (20m)',
+    detalle: 'Nos desplazamos a tu inmueble en Madrid para tomar medidas láser, valorar el estado de las paredes y asesorarte en calidades.'
+  },
+  {
+    paso: '3. Presupuesto detallado en 24h',
+    detalle: 'Recibes un documento formal en PDF con precios cerrados, marcas de pintura, y plazos. Sin costes ocultos ni sorpresas.'
+  }
+];
+
+const garantias = [
+  {
+    titulo: 'Seguro de Responsabilidad Civil',
+    descripcion: 'Pintores completamente asegurados con MAPFRE hasta 300.000 € de cobertura ante cualquier daño accidental.'
+  },
+  {
+    titulo: 'Garantía de Calidad por Escrito',
+    descripcion: 'Todos nuestros proyectos se respaldan con un contrato por escrito que detalla los materiales aplicados y su garantía.'
+  },
+  {
+    titulo: 'Compromiso de Fechas y Plazos',
+    descripcion: 'Firmamos plazos exactos de inicio y fin de obra. Si se produce un retraso por nuestra culpa, te compensamos.'
+  }
+];
+---
+
+<BaseLayout seo={seo} schemas={[faqSchema(entry.data.faq)]}>
+  <Breadcrumbs items={crumbs} />
+  
+  <main class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+    <header class="max-w-3xl">
+      <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
+      {entry.data.directAnswer && <DirectAnswer text={entry.data.directAnswer} />}
+    </header>
+
+    <div class="mt-12 grid grid-cols-1 gap-x-12 gap-y-12 lg:grid-cols-2">
+      {/* Left Column: Timeline + Guarantees */}
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-2xl font-bold text-forest-900">¿Cómo funciona el proceso?</h2>
+          <p class="mt-2 text-sm text-ink-soft">Nuestro método garantiza transparencia y rapidez de principio a fin, sin rodeos ni estimaciones vagas.</p>
+          <ol class="mt-6 space-y-6">
+            {pasos.map((p, index) => (
+              <li class="flex gap-4">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-forest-900 text-sm font-bold text-paper">
+                  {index + 1}
+                </span>
+                <div>
+                  <h3 class="font-sans text-base font-semibold text-forest-900">{p.paso}</h3>
+                  <p class="mt-1 text-sm leading-relaxed text-ink-soft">{p.detalle}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="rounded-2xl border border-line bg-paper-dark/30 p-6 sm:p-8">
+          <h2 class="text-xl font-bold text-forest-900 font-display">Tus garantías con nosotros</h2>
+          <ul class="mt-4 space-y-4">
+            {garantias.map((g) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-0.5 text-forest-700 font-bold" aria-hidden="true">✓</span>
+                <div>
+                  <h3 class="text-sm font-semibold text-forest-900">{g.titulo}</h3>
+                  <p class="mt-0.5 text-xs leading-relaxed text-ink-soft">{g.descripcion}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Right Column: Lead Form Card */}
+      <div class="lg:-mt-4">
+        <LeadForm locale="es" formSource="estimate" />
+      </div>
+    </div>
+
+    <section class="mt-16">
+      <Faq faq={entry.data.faq} locale="es" />
+    </section>
+  </main>
+</BaseLayout>
