@@ -1,6 +1,7 @@
 ---
 import type { Locale } from '@/i18n/ui';
 import { staticPath } from '@/i18n/routes';
+import { BUSINESS } from '@/data/business';
 import Logo from '@/components/Logo.astro';
 import { DIAL_CODES, PRIORITY_COUNTRIES, flagOf } from '@/data/dial-codes';
 
@@ -115,6 +116,8 @@ const inputCls =
     data-form-source={formSource}
     data-locale={locale}
     data-thank-url={txt.thankUrl}
+    data-google-ads-id={BUSINESS.googleAdsId}
+    data-google-ads-label={BUSINESS.googleAdsConversionLabel}
   >
     <div>
       <input type="text" name="full_name" required placeholder={txt.name} autocomplete="name" class={inputCls} />
@@ -312,7 +315,34 @@ const inputCls =
             service: payload.service,
             locale: payload.locale,
           });
-          location.href = form.dataset.thankUrl ?? '/gracias/';
+
+          // Google Ads Enhanced Conversions trigger
+          const adsId = form.dataset.googleAdsId;
+          const adsLabel = form.dataset.googleAdsLabel;
+          const thankUrl = form.dataset.thankUrl ?? '/gracias/';
+
+          if (adsId && adsLabel && typeof (window as any).gtag === 'function') {
+            let redirected = false;
+            const doRedirect = () => {
+              if (!redirected) {
+                redirected = true;
+                location.href = thankUrl;
+              }
+            };
+            
+            (window as any).gtag('event', 'conversion', {
+              'send_to': `${adsId}/${adsLabel}`,
+              'enhanced_conversion_data': {
+                'email': payload.email,
+                'phone_number': payload.phone
+              },
+              'event_callback': doRedirect
+            });
+            // Fallback safety timeout in case the callback is blocked/delayed
+            setTimeout(doRedirect, 1000);
+          } else {
+            location.href = thankUrl;
+          }
           return;
         }
         show('server');

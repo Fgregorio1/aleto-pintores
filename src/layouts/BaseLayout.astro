@@ -63,17 +63,6 @@ const { googleAdsId, googleAdsConversionLabel } = BUSINESS;
         </script>
       </>
     )}
-
-    {/* Google Ads Conversion Event Trigger */}
-    {googleAdsId && googleAdsConversionLabel && isThankYouPage && (
-      <script is:inline define:vars={{ googleAdsId, googleAdsConversionLabel }}>
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', 'conversion', {
-            'send_to': `${googleAdsId}/${googleAdsConversionLabel}`
-          });
-        }
-      </script>
-    )}
   </head>
   <body class="flex min-h-screen flex-col pb-[72px] sm:pb-0">
     <Header locale={seo.locale} switchUrl={switchUrl} />
