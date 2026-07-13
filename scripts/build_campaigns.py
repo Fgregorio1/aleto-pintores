@@ -231,9 +231,9 @@ SITELINKS = {
         },
         {
             "text": "Pide tu presupuesto",
-            "url": f"{SITE}/contacto/",
+            "url": f"{SITE}/presupuesto-gratis/",
             "d1": "Visita gratis y sin compromiso",
-            "d2": "Respuesta en 24 horas",
+            "d2": "Precio cerrado en 24 horas",
         },
     ],
     "Aleto Pintores - Expat Madrid (English)": [
@@ -269,7 +269,7 @@ SITELINKS = {
         },
         {
             "text": "Get a Free Quote",
-            "url": f"{SITE}/en/contact/",
+            "url": f"{SITE}/en/free-estimate/",
             "d1": "Fixed quote within 24 hours",
             "d2": "Free visit, no obligation",
         },

@@ -41,12 +41,32 @@ def ensure_asset(client, customer_id, sl):
     rows = search(
         client,
         customer_id,
-        "SELECT asset.resource_name FROM asset "
-        "WHERE asset.type = 'SITELINK' "
+        "SELECT asset.resource_name, asset.final_urls, "
+        "asset.sitelink_asset.description1, asset.sitelink_asset.description2 "
+        "FROM asset WHERE asset.type = 'SITELINK' "
         f"AND asset.sitelink_asset.link_text = '{escaped}'",
     )
     if rows:
-        return rows[0].asset.resource_name, False
+        existing = rows[0].asset
+        if (
+            list(existing.final_urls) != [sl["url"]]
+            or existing.sitelink_asset.description1 != sl["d1"]
+            or existing.sitelink_asset.description2 != sl["d2"]
+        ):
+            op = client.get_type("AssetOperation")
+            asset = op.update
+            asset.resource_name = existing.resource_name
+            del asset.final_urls[:]
+            asset.final_urls.append(sl["url"])
+            asset.sitelink_asset.description1 = sl["d1"]
+            asset.sitelink_asset.description2 = sl["d2"]
+            op.update_mask.paths.extend(
+                ["final_urls", "sitelink_asset.description1", "sitelink_asset.description2"]
+            )
+            svc = client.get_service("AssetService")
+            svc.mutate_assets(customer_id=customer_id, operations=[op])
+            print(f"  ↻ {sl['text']}: asset updated -> {sl['url']}")
+        return existing.resource_name, False
     op = client.get_type("AssetOperation")
     asset = op.create
     asset.final_urls.append(sl["url"])
