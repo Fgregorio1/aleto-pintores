@@ -277,6 +277,146 @@ SITELINKS = {
 }
 
 
+# Tracking URL suffix per campaign (ValueTrack fills {keyword}/{creative}/
+# {campaignid} at click time; Attribution.astro captures all six UTM params
+# into the lead payload). Consumed by scripts/add_assets.py.
+URL_SUFFIX = {
+    "Aleto Pintores - Madrid (Spanish)": (
+        "utm_source=google&utm_medium=cpc&utm_campaign=search-madrid-es"
+        "&utm_term={keyword}&utm_content={creative}&utm_id={campaignid}"
+    ),
+    "Aleto Pintores - Expat Madrid (English)": (
+        "utm_source=google&utm_medium=cpc&utm_campaign=search-expat-en"
+        "&utm_term={keyword}&utm_content={creative}&utm_id={campaignid}"
+    ),
+}
+
+# Call asset (both campaigns). Phone from src/data/business.ts. Call assets
+# require an AD_CALL-type conversion action (the account's "Clicks to call"
+# is GOOGLE_HOSTED and not usable here) — add_assets.py creates it if missing.
+CALL_ASSET = {
+    "phone": "+34624046210",
+    "country": "ES",
+    "conversion_name": "Calls from ads (60s+)",
+    "min_call_seconds": 60,
+}
+
+# Callout assets (≤25 chars each; every claim sourced from site content).
+CALLOUTS = {
+    "Aleto Pintores - Madrid (Spanish)": [
+        "Presupuesto en 24 h",
+        "Precio cerrado",
+        "Garantía por escrito",
+        "Factura con IVA",
+        "Visita gratis",
+        "Seguro de resp. civil",
+    ],
+    "Aleto Pintores - Expat Madrid (English)": [
+        "Fixed Quote in 24h",
+        "Written Warranty",
+        "VAT Invoice",
+        "Free On-Site Visit",
+        "English Spoken",
+        "Liability Insured",
+    ],
+}
+
+# Structured snippet assets (header from Google's fixed list; values ≤25 chars).
+SNIPPETS = {
+    "Aleto Pintores - Madrid (Spanish)": {
+        "header": "Servicios",
+        "values": [
+            "Pintura interior",
+            "Quitar gotelé",
+            "Lacado de puertas",
+            "Quitar papel pintado",
+            "Pintura de fachadas",
+            "Oficinas y locales",
+        ],
+    },
+    "Aleto Pintores - Expat Madrid (English)": {
+        "header": "Services",
+        "values": [
+            "Interior Painting",
+            "Gotelé Removal",
+            "Door Lacquering",
+            "Wallpaper Removal",
+            "Facade Painting",
+            "Office Painting",
+        ],
+    },
+}
+
+# Price assets (type SERVICES, qualifier FROM; prices from src/data/precios.yaml,
+# header/description ≤25 chars, 3-8 offerings per asset).
+PRICE_ASSETS = {
+    "Aleto Pintores - Madrid (Spanish)": {
+        "language": "es",
+        "offerings": [
+            {
+                "header": "Pintar piso 80 m²",
+                "desc": "Todo incluido, 4-5 días",
+                "eur": 1250,
+                "url": f"{SITE}/servicios/pintura-interior-pisos/",
+            },
+            {
+                "header": "Quitar gotelé 80 m²",
+                "desc": "Pintura incluida",
+                "eur": 1800,
+                "url": f"{SITE}/servicios/quitar-gotele-alisar-paredes/",
+            },
+            {
+                "header": "Lacar puertas",
+                "desc": "Por puerta, en tu casa",
+                "eur": 80,
+                "url": f"{SITE}/servicios/lacado-puertas-armarios/",
+            },
+            {
+                "header": "Quitar papel pintado",
+                "desc": "Desde 4 €/m² de pared",
+                "eur": 160,
+                "url": f"{SITE}/servicios/quitar-papel-pintado/",
+            },
+            {
+                "header": "Impermeabilizar terraza",
+                "desc": "Garantía de 10 años",
+                "eur": 500,
+                "url": f"{SITE}/servicios/impermeabilizacion-terrazas/",
+            },
+        ],
+    },
+    "Aleto Pintores - Expat Madrid (English)": {
+        "language": "en",
+        "offerings": [
+            {
+                "header": "Interior Painting 80 m²",
+                "desc": "All included, 4-5 days",
+                "eur": 1250,
+                "url": f"{SITE}/en/services/interior-painting-madrid/",
+            },
+            {
+                "header": "Gotelé Removal 80 m²",
+                "desc": "Paint included",
+                "eur": 1800,
+                "url": f"{SITE}/en/services/gotele-removal-wall-smoothing/",
+            },
+            {
+                "header": "Door Lacquering",
+                "desc": "Per door, at your home",
+                "eur": 80,
+                "url": f"{SITE}/en/services/door-cabinet-lacquering/",
+            },
+            {
+                "header": "Terrace Waterproofing",
+                "desc": "10-year warranty",
+                "eur": 500,
+                "url": f"{SITE}/en/services/terrace-waterproofing/",
+            },
+        ],
+    },
+}
+
+
 def get_client():
     config = {
         "developer_token": os.getenv("GOOGLE_ADS_DEVELOPER_TOKEN"),
