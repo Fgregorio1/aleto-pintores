@@ -15,7 +15,7 @@ faq:
   - q: "Who comes into my home if I hire you?"
     a: "The same crew start to finish: the people you meet on day one deliver your job. Covered by current liability insurance, with one direct contact on the phone — not a call centre."
   - q: "Are you insured, and do you invoice?"
-    a: "Both, always: current liability insurance and a full VAT invoice on every job. It's the minimum anyone should demand from a company working inside their home."
+    a: "Both, always: liability insurance with Mapfre (€300,000 cover) and a full VAT invoice on every job. It's the minimum anyone should demand from a company working inside their home."
   - q: "What makes you different from other Madrid painters?"
     a: "A verifiable method: full protection of the home, preparation checked under raking light, start and delivery dates in writing, and prices published on the website so you can compare before calling. And we charge on completion, never upfront."
   - q: "Do you work for international clients?"
@@ -41,7 +41,7 @@ Every job follows the same method, whether it's 12 m² or 300: a free visit with
 - **The same crew start to finish**, with names and a direct contact
 - **Start date and delivery date** — not "about two weeks"
 - **A fixed price**: anything we missed at the visit is on us
-- **Liability insurance** current, and a VAT invoice on 100% of jobs
+- **Liability insurance with Mapfre** (€300,000 cover), and a VAT invoice on 100% of jobs
 - **Written warranty** plus leftover paint labelled for touch-ups
 - **Replies within 24 h** to any query, before and after the job
 
@@ -50,6 +50,7 @@ Every job follows the same method, whether it's 12 m² or 300: a free visit with
 - **Activity:** residential & commercial painting (interior, gotelé removal & smoothing, lacquering, facades, offices, waterproofing)
 - **Founded:** 2026, Madrid
 - **Base:** Chamberí, Madrid — serving the whole city and metro area
+- **Insurance:** liability cover with Mapfre, €300,000
 - **Languages:** English and Spanish
 - **Prices:** published and updated quarterly on the [prices page](/en/prices/)
 

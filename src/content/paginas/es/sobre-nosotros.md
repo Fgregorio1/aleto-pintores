@@ -15,7 +15,7 @@ faq:
   - q: "¿Quién entra en mi casa si os contrato?"
     a: "El mismo equipo de principio a fin: las personas que conoces el primer día terminan tu obra. Con seguro de responsabilidad civil vigente y un responsable directo con teléfono, no un call center."
   - q: "¿Tenéis seguro y dais factura?"
-    a: "Sí a las dos cosas, siempre: seguro de responsabilidad civil vigente y factura con IVA en cada trabajo. Es lo mínimo que debería exigirse a cualquier empresa que entra en tu casa."
+    a: "Sí a las dos cosas, siempre: seguro de responsabilidad civil con Mapfre (300.000 € de cobertura) y factura con IVA en cada trabajo. Es lo mínimo que debería exigirse a cualquier empresa que entra en tu casa."
   - q: "¿Qué os diferencia de otros pintores de Madrid?"
     a: "Un método verificable: protección total de la vivienda, preparación a conciencia comprobada con luz rasante, fechas de inicio y entrega por escrito, y precios publicados en la web para que compares antes de llamar. Y cobramos al terminar, no por adelantado."
   - q: "¿Atendéis en inglés?"
@@ -41,7 +41,7 @@ Cada obra sigue el mismo método, tenga 12 m² o 300: visita gratuita con medici
 - **El mismo equipo de principio a fin**, con nombres y un responsable directo
 - **Fecha de inicio y fecha de entrega** — no "unas dos semanas"
 - **Precio cerrado**: si aparece algo que no vimos en la visita, lo asumimos nosotros
-- **Seguro de responsabilidad civil** vigente y factura con IVA en el 100% de los trabajos
+- **Seguro de responsabilidad civil con Mapfre** (300.000 € de cobertura) y factura con IVA en el 100% de los trabajos
 - **Garantía por escrito** y pintura sobrante etiquetada para retoques
 - **Respuesta en menos de 24 h** a cualquier consulta, antes y después de la obra
 
@@ -50,6 +50,7 @@ Cada obra sigue el mismo método, tenga 12 m² o 300: visita gratuita con medici
 - **Actividad:** pintura residencial y comercial (interior, gotelé y alisado, lacado, fachadas, oficinas, impermeabilización)
 - **Fundación:** 2026, Madrid
 - **Base:** Chamberí, Madrid — servicio en toda la capital y área metropolitana
+- **Seguro:** responsabilidad civil con Mapfre, 300.000 € de cobertura
 - **Idiomas:** español e inglés
 - **Precios:** publicados y actualizados cada trimestre en [la sección de precios](/precios/)
 

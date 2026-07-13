@@ -49,8 +49,16 @@ export const BUSINESS = {
    * Entity-resolution glue (docs/02 §4). ADD every real profile the moment
    * it exists (GBP, Instagram, Habitissimo, Houzz…). Never list a profile
    * that hasn't been created — broken sameAs corrodes the entity.
+   * GBP uses the stable ?cid= form (never a search/share URL with tokens).
    */
-  sameAs: [] as string[],
+  sameAs: [
+    'https://maps.google.com/?cid=17828868560601819322',
+    'https://www.instagram.com/aleto.pintores/',
+    'https://www.yelp.es/user_details?userid=7k_Gj6Hy2GuOsPZkYi-iwQ',
+    'https://www.cronoshare.com/croner-5556442-aleto-pintores',
+  ] as string[],
+  /** Canonical Google Business Profile link (also first entry of sameAs) */
+  gbpUrl: 'https://maps.google.com/?cid=17828868560601819322',
   knowsAbout: [
     'pintura interior',
     'quitar gotelé',

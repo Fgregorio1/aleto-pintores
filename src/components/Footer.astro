@@ -42,6 +42,11 @@ const year = new Date().getFullYear();
     <div>
       <h2 class="text-sm font-semibold uppercase tracking-wider text-chartreuse-300">{t('footer.zonas')}</h2>
       <p class="mt-4 text-sm leading-relaxed text-paper/80">{BUSINESS.areaServed.join(' · ')}</p>
+      <p class="mt-4 text-sm">
+        <a href={BUSINESS.gbpUrl} rel="noopener" class="text-paper/80 underline decoration-chartreuse-400/60 underline-offset-2 hover:text-chartreuse-300">
+          {locale === 'en' ? 'Find us on Google' : 'Encuéntranos en Google'}
+        </a>
+      </p>
       <a href={whatsappLink()} data-pos="footer" class="mt-5 inline-block rounded-full bg-chartreuse-400 px-4 py-2 text-sm font-semibold text-forest-950 transition-colors hover:bg-chartreuse-300">WhatsApp</a>
     </div>
   </div>
