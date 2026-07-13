@@ -277,6 +277,10 @@ SITELINKS = {
 }
 
 
+# Ad schedule: serve 7:00-21:00 every day (account time zone = Madrid clock).
+# Applied to every campaign by scripts/set_ad_schedule.py.
+AD_SCHEDULE = {"start_hour": 7, "end_hour": 21}
+
 # Tracking URL suffix per campaign (ValueTrack fills {keyword}/{creative}/
 # {campaignid} at click time; Attribution.astro captures all six UTM params
 # into the lead payload). Consumed by scripts/add_assets.py.
