@@ -8,6 +8,7 @@ import Footer from '@/components/Footer.astro';
 import LangBanner from '@/components/islands/LangBanner.astro';
 import MobileCta from '@/components/MobileCta.astro';
 import Attribution from '@/components/islands/Attribution.astro';
+import { BUSINESS } from '@/data/business';
 import { businessSchema, webPageSchema, websiteSchema } from '@/lib/schema';
 import type { SEOData } from '@/lib/seo';
 
@@ -28,6 +29,9 @@ const switchUrl = seo.alternates.find((a) =>
   seo.locale === 'es' ? a.hreflang === 'en' : a.hreflang === 'es-ES',
 )?.href;
 const enTwin = seo.locale === 'es' ? seo.alternates.find((a) => a.hreflang === 'en')?.href : undefined;
+
+const isThankYouPage = Astro.url.pathname.endsWith('/gracias/') || Astro.url.pathname.endsWith('/thank-you/');
+const { googleAdsId, googleAdsConversionLabel } = BUSINESS;
 ---
 
 <!doctype html>
@@ -45,6 +49,31 @@ const enTwin = seo.locale === 'es' ? seo.alternates.find((a) => a.hreflang === '
         lists; /al/* is intercepted at the edge before our worker and matches
         no blocklist. 404s harmlessly in local dev. Loads consent + tools. */}
     <script is:inline src="/al/i.js"></script>
+
+    {/* Google Ads Global Site Tag */}
+    {googleAdsId && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}></script>
+        <script is:inline define:vars={{ googleAdsId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', googleAdsId);
+        </script>
+      </>
+    )}
+
+    {/* Google Ads Conversion Event Trigger */}
+    {googleAdsId && googleAdsConversionLabel && isThankYouPage && (
+      <script is:inline define:vars={{ googleAdsId, googleAdsConversionLabel }}>
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            'send_to': `${googleAdsId}/${googleAdsConversionLabel}`
+          });
+        }
+      </script>
+    )}
   </head>
   <body class="flex min-h-screen flex-col pb-[72px] sm:pb-0">
     <Header locale={seo.locale} switchUrl={switchUrl} />

@@ -11,6 +11,8 @@ export const BUSINESS = {
   legalName: 'Paola Alejandra Vera Zambrano',
   taxId: '48473949T',
   url: SITE_URL,
+  googleAdsId: 'AW-18313263418',
+  googleAdsConversionLabel: 'YIMKCLb24s8cELryuJxE',
   /** schema.org @id — the entity anchor every Service/WebPage points at */
   id: `${SITE_URL}/#business`,
   phoneDisplay: '624 04 62 10',
