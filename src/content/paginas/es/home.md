@@ -1,11 +1,11 @@
 ---
 title: "Pintores en Madrid — Precios publicados y 24 h"
 metaDescription: "Empresa de pintores en Madrid con precios publicados: pintar piso desde 15 €/m², quitar gotelé 9-15 €/m². Presupuesto cerrado en 24 h. Atención 24/7."
-h1: "Pintores en Madrid que tratan tu casa como lo que es: tu casa"
+h1: "Pintores profesionales en Madrid: el acabado que buscas con la seriedad que exiges"
 pageKey: home
 translationKey: page-home
 locale: es
-heroLead: "El mismo equipo de principio a fin, protección total de tu vivienda, fechas de inicio y entrega por escrito y un presupuesto cerrado que no crece durante la obra. Así se pinta una casa cuando se respeta a quien vive en ella."
+heroLead: "Atención al cliente profesional y cercana unida al oficio de pintores locales experimentados en Madrid. Protegemos al 100%, cumplimos plazos por contrato y cobramos al terminar."
 directAnswer: "Aleto Pintores es una empresa de pintura en Madrid con un método claro: el mismo equipo de principio a fin, protección total de tu vivienda, fechas de inicio y entrega por escrito y un presupuesto cerrado que no crece durante la obra. Pintar un piso de 80 m² cuesta entre 1.250 € y 1.950 € en 2026 — todos nuestros precios están publicados."
 datePublished: 2026-07-09
 dateModified: 2026-07-12

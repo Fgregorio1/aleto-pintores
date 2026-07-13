@@ -1,11 +1,11 @@
 ---
 title: "Painters in Madrid — English-Speaking, Fixed Quotes"
 metaDescription: "English-speaking painting company in Madrid with published prices: flats from €15/m², gotelé removal €9-15/m². Fixed written quote within 24 h. Open 24/7."
-h1: "Painters in Madrid who treat your home like it's theirs to protect"
+h1: "Professional Painters in Madrid: Premium Finishes & Outstanding Service"
 pageKey: home
 translationKey: page-home
 locale: en
-heroLead: "The same crew start to finish, complete protection of your home, start and delivery dates in writing, and a fixed quote that never grows mid-job — with everything, from contract to walkthrough, available in English."
+heroLead: "Professional customer care combined with Madrid's finest local craftsmanship. Complete protection, written warranties, and pay only on completion."
 directAnswer: "Aleto Pintores is a Madrid painting company with a method you can verify: the same crew start to finish, complete protection of your home, start and delivery dates in writing, and a fixed quote that never grows mid-job — all in English if you prefer. Painting an 80 m² flat costs €1,250–1,950 in 2026; every price is published."
 datePublished: 2026-07-09
 dateModified: 2026-07-12
