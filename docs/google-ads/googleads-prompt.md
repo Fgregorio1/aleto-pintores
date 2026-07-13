@@ -5,7 +5,7 @@ This prompt guide is configured to direct AI coding assistants in managing and o
 ---
 
 ## 0. Connect to Google Ads API
-> Read the setup guide and walk me through connecting the Google Ads API client. My Google Ads Customer ID is `183-132-6341` (Google Tag: `AW-18313263418`).
+> Read the setup guide and walk me through connecting the Google Ads API client. My Google Ads Customer ID is `955-983-4349` (manager/MCC login customer ID: `801-598-6693`, Google Tag: `AW-18313263418`).
 
 ---
 

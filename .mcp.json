@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "google-ads": {
+      "command": ".venv/bin/google-ads-mcp",
+      "args": [],
+      "env": {}
+    }
+  }
+}
