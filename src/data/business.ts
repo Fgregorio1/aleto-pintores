@@ -65,6 +65,22 @@ export const BUSINESS = {
 } as const;
 
 /**
+ * Founder record — the entity behind the business (docs/02 §7: visible
+ * name + bio + schema Person must always match; never name someone in
+ * JSON-LD who isn't shown on the page).
+ * sameAs: add real personal profiles (LinkedIn…) the moment they exist.
+ */
+export const FOUNDER = {
+  name: 'Felipe Gregorio',
+  jobTitle: { es: 'Fundador', en: 'Founder' },
+  bio: {
+    es: 'Tras 7 años dirigiendo una empresa de pintura residencial y comercial en Estados Unidos, fundó Aleto en 2026 para traer ese estándar de servicio a Madrid, trabajando con pintores locales experimentados.',
+    en: 'After 7 years running a residential and commercial painting company in the US, he founded Aleto in 2026 to bring that standard of service to Madrid, working with experienced local painters.',
+  },
+  sameAs: [] as string[],
+} as const;
+
+/**
  * Wistia media ID for the presentation video in the contact section.
  * Empty string → a branded placeholder card renders instead of the player.
  * Paste the ID (e.g. "fq4z5flmd8") when the Aleto video exists.

@@ -6,12 +6,12 @@ pageKey: sobre-nosotros
 translationKey: page-about
 locale: en
 heroLead: "We combine 7 years of experience managing painting projects in the US with the craftsmanship of local painters in Madrid, under a clear, trusted method."
-directAnswer: "Aleto Pintores is a residential and commercial painting company founded in 2026 by an industry professional with 7 years of experience running a painting business in the US. Based in Chamberí (Madrid), we combine US-grade customer service standards with experienced local painters. We offer published prices, fixed quotes, full insurance, and written warranties."
+directAnswer: "Aleto Pintores is a residential and commercial painting company founded in 2026 by Felipe Gregorio, an industry professional with 7 years of experience running a painting business in the US. Based in Chamberí (Madrid), we combine US-grade customer service standards with experienced local painters. We offer published prices, fixed quotes, full insurance, and written warranties."
 datePublished: 2026-07-09
-dateModified: 2026-07-12
+dateModified: 2026-07-13
 faq:
   - q: "Since when does Aleto Pintores exist?"
-    a: "The company was founded in Madrid in 2026. The founder brings 7 years of experience running a residential and commercial painting company in the United States. We created Aleto with a clear purpose: to unite American-style customer service and organization with the best local craftsmanship in Madrid."
+    a: "The company was founded in Madrid in 2026. Founder Felipe Gregorio brings 7 years of experience running a residential and commercial painting company in the United States. We created Aleto with a clear purpose: to unite American-style customer service and organization with the best local craftsmanship in Madrid."
   - q: "Who comes into my home if I hire you?"
     a: "The same crew start to finish: the people you meet on day one deliver your job. Covered by current liability insurance, with one direct contact on the phone — not a call centre."
   - q: "Are you insured, and do you invoice?"
@@ -28,7 +28,7 @@ The painting trade too often works like this: quotes that grow mid-job, crews th
 
 ## Our story: from US service standards to Madrid homes
 
-Aleto Pintores didn't start in a vacuum. After 7 years of running a residential and commercial painting company in the United States, I learned that professional painting isn't just about putting paint on a wall. It is about punctuality, protecting floors as if they were our own, providing clear quotes where every single item is written down, and keeping communication fluid and constant.
+Aleto Pintores didn't start in a vacuum. I'm Felipe Gregorio, Aleto's founder. After 7 years of running a residential and commercial painting company in the United States, I learned that professional painting isn't just about putting paint on a wall. It is about punctuality, protecting floors as if they were our own, providing clear quotes where every single item is written down, and keeping communication fluid and constant.
 
 In 2026, we decided to bring that experience and those service standards to Madrid. When opening Aleto, our goal was clear: combine the reliability, structured methodology, and customer-first culture of US service businesses with the mastery and skill of local painters who know Madrid’s unique architecture inside out—from Chamberí's high ceilings and old plaster walls to complex gotelé smoothing.
 

@@ -1,5 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
-import { BUSINESS, SITE_URL } from '@/data/business';
+import { BUSINESS, FOUNDER, SITE_URL } from '@/data/business';
 import preciosData from '@/data/precios.yaml';
 import { absolute, type SEOData } from './seo';
 
@@ -46,6 +46,9 @@ export function businessSchema(): object {
     ],
     ...(BUSINESS.sameAs.length > 0 ? { sameAs: BUSINESS.sameAs } : {}),
     knowsAbout: BUSINESS.knowsAbout,
+    // Reciprocal entity link: business→founder here, founder→business via
+    // worksFor in founderSchema(). Same @id so the nodes merge.
+    founder: { '@type': 'Person', '@id': `${SITE_URL}/#founder`, name: FOUNDER.name },
   };
 }
 
@@ -139,14 +142,23 @@ export function websiteSchema(): object {
   };
 }
 
-/** Founder Person node — only rendered on /sobre-nosotros/ (docs/02 §7). */
-export function founderSchema(founder: { name: string; jobTitle: string }): object {
+/**
+ * Founder Person node — only rendered on /sobre-nosotros/ + /en/about/
+ * (docs/02 §7), where the same name/bio/photo are VISIBLE on the page.
+ * Data comes from FOUNDER in business.ts; image is passed in by the page
+ * because the optimized asset URL only exists there (astro:assets).
+ */
+export function founderSchema(locale: 'es' | 'en', imageUrl?: string): object {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': `${SITE_URL}/#founder`,
-    name: founder.name,
-    jobTitle: founder.jobTitle,
+    name: FOUNDER.name,
+    jobTitle: FOUNDER.jobTitle[locale],
+    description: FOUNDER.bio[locale],
+    knowsAbout: BUSINESS.knowsAbout,
+    ...(imageUrl ? { image: absolute(imageUrl) } : {}),
+    ...(FOUNDER.sameAs.length > 0 ? { sameAs: FOUNDER.sameAs } : {}),
     worksFor: { '@id': BUSINESS.id },
   };
 }

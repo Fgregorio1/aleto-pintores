@@ -6,12 +6,12 @@ pageKey: sobre-nosotros
 translationKey: page-about
 locale: es
 heroLead: "Combinamos 7 años de experiencia dirigiendo proyectos de pintura en EE. UU. con el oficio de pintores locales en Madrid, bajo una metodología transparente y de total confianza."
-directAnswer: "Aleto Pintores es una empresa de pintura residencial y comercial fundada en 2026 por un profesional con 7 años de trayectoria en el sector en EE. UU. Con base en Chamberí (Madrid), combinamos estándares internacionales de servicio al cliente con pintores locales experimentados. Ofrecemos precios publicados, contratos cerrados, seguro y garantía por escrito."
+directAnswer: "Aleto Pintores es una empresa de pintura residencial y comercial fundada en 2026 por Felipe Gregorio, profesional con 7 años de trayectoria en el sector en EE. UU. Con base en Chamberí (Madrid), combinamos estándares internacionales de servicio al cliente con pintores locales experimentados. Ofrecemos precios publicados, contratos cerrados, seguro y garantía por escrito."
 datePublished: 2026-07-09
-dateModified: 2026-07-12
+dateModified: 2026-07-13
 faq:
   - q: "¿Desde cuándo existe Aleto Pintores?"
-    a: "La empresa se fundó en Madrid en 2026. Su fundador aporta 7 años de experiencia previa dirigiendo una empresa de pintura residencial y comercial en Estados Unidos. Creamos Aleto con un propósito: unir el servicio al cliente y la organización norteamericana con la mejor mano de obra local en Madrid."
+    a: "La empresa se fundó en Madrid en 2026. Su fundador, Felipe Gregorio, aporta 7 años de experiencia previa dirigiendo una empresa de pintura residencial y comercial en Estados Unidos. Creamos Aleto con un propósito: unir el servicio al cliente y la organización norteamericana con la mejor mano de obra local en Madrid."
   - q: "¿Quién entra en mi casa si os contrato?"
     a: "El mismo equipo de principio a fin: las personas que conoces el primer día terminan tu obra. Con seguro de responsabilidad civil vigente y un responsable directo con teléfono, no un call center."
   - q: "¿Tenéis seguro y dais factura?"
@@ -28,7 +28,7 @@ El sector de la pintura funciona demasiadas veces así: presupuestos que crecen 
 
 ## Nuestra historia: del estándar de EE. UU. a las casas de Madrid
 
-Aleto Pintores no nace de la nada. Tras 7 años gestionando una empresa de pintura residencial y comercial en Estados Unidos, aprendí que la pintura profesional no consiste solo en saber aplicar pintura en una pared. Consiste en la puntualidad, en proteger el suelo como si fuera el tuyo, en presupuestos claros donde cada partida se detalla por escrito, y en una comunicación constante con el cliente.
+Aleto Pintores no nace de la nada. Soy Felipe Gregorio, fundador de Aleto. Tras 7 años gestionando una empresa de pintura residencial y comercial en Estados Unidos, aprendí que la pintura profesional no consiste solo en saber aplicar pintura en una pared. Consiste en la puntualidad, en proteger el suelo como si fuera el tuyo, en presupuestos claros donde cada partida se detalla por escrito, y en una comunicación constante con el cliente.
 
 En 2026, decidimos trasladar esa experiencia y ese nivel de exigencia a Madrid. Al abrir Aleto, nuestro objetivo fue muy claro: combinar la fiabilidad, la metodología y los altos estándares de servicio al cliente norteamericanos con la destreza y el conocimiento de pintores locales que entienden a la perfección los materiales y las particularidades de las viviendas madrileñas (los techos altos de Chamberí, los yesos antiguos, las molduras y los desafíos del gotelé).
 

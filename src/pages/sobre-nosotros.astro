@@ -1,14 +1,15 @@
 ---
 import { getEntry } from 'astro:content';
 import PaginaLayout from '@/layouts/PaginaLayout.astro';
+import FounderCard from '@/components/FounderCard.astro';
 import { founderSchema } from '@/lib/schema';
 
 const entry = await getEntry('paginas', 'es/sobre-nosotros');
 if (!entry) throw new Error('Missing paginas entry: es/sobre-nosotros');
 
-const schemas = [
-  founderSchema({ name: 'Felipe Gregorio', jobTitle: 'Founder' })
-];
+const schemas = [founderSchema('es')];
 ---
 
-<PaginaLayout entry={entry} extraSchemas={schemas} />
+<PaginaLayout entry={entry} extraSchemas={schemas}>
+  <FounderCard slot="after-header" locale="es" />
+</PaginaLayout>
