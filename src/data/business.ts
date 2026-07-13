@@ -87,7 +87,9 @@ export const FOUNDER = {
     es: 'Tras 7 años dirigiendo una empresa de pintura residencial y comercial en Estados Unidos, fundó Aleto en 2026 para traer ese estándar de servicio a Madrid, trabajando con pintores locales experimentados.',
     en: 'After 7 years running a residential and commercial painting company in the US, he founded Aleto in 2026 to bring that standard of service to Madrid, working with experienced local painters.',
   },
-  sameAs: [] as string[],
+  sameAs: [
+    'https://www.linkedin.com/in/fgregoriobr/'
+  ] as string[],
 } as const;
 
 /**
