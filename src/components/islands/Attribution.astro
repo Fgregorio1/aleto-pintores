@@ -53,17 +53,40 @@
     }
   })();
 
+  // Persist all standard UTMs inside sessionStorage
+  try {
+    const p = new URLSearchParams(location.search);
+    for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id']) {
+      const v = p.get(k);
+      if (v) sessionStorage.setItem('aleto-' + k, v);
+    }
+  } catch {}
+
   // Platform click IDs for the offline-conversion loop (docs/04): unlike the
   // source label (first-touch), these UPDATE whenever present — a newer ad
   // click wins. Persisted per session so they survive navigation to the form.
   const clickIds: Record<string, string> = {};
   try {
     const p = new URLSearchParams(location.search);
-    for (const k of ['gclid', 'wbraid', 'fbclid']) {
+    for (const k of ['gclid', 'wbraid', 'gbraid', 'fbclid']) {
       const v = p.get(k);
       if (v) sessionStorage.setItem('aleto-' + k, v);
       clickIds[k] = sessionStorage.getItem('aleto-' + k) || '';
     }
+
+    // Extract Facebook FBP & FBC cookies for Meta CAPI optimization
+    let fbp = '';
+    let fbc = '';
+    document.cookie.split('; ').forEach((row) => {
+      if (row.startsWith('_fbp=')) fbp = row.split('=')[1] || '';
+      if (row.startsWith('_fbc=')) fbc = row.split('=')[1] || '';
+    });
+    // Fallback FBC generation if the Meta Pixel cookie hasn't resolved yet
+    if (!fbc && clickIds.fbclid) {
+      fbc = `fb.1.${Date.now()}.${clickIds.fbclid}`;
+    }
+    clickIds['fbp'] = fbp;
+    clickIds['fbc'] = fbc;
   } catch {}
   (window as any).aletoClickIds = clickIds;
 

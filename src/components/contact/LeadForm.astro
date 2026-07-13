@@ -271,11 +271,15 @@ const inputCls =
       };
       // raw UTMs if present this session
       const q = new URLSearchParams(location.search);
-      for (const k of ['utm_source', 'utm_medium', 'utm_campaign']) payload[k] = q.get(k) ?? '';
+      for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'utm_id']) {
+        payload[k] = q.get(k) || sessionStorage.getItem('aleto-' + k) || '';
+      }
       // platform click IDs (session-persisted by Attribution.astro) — the key
       // to offline conversion uploads when a lead becomes a paying job
       const ids = ((window as any).aletoClickIds ?? {}) as Record<string, string>;
-      for (const k of ['gclid', 'wbraid', 'fbclid']) payload[k] = ids[k] ?? '';
+      for (const k of ['gclid', 'wbraid', 'gbraid', 'fbclid', 'fbp', 'fbc']) {
+        payload[k] = ids[k] ?? '';
+      }
 
       // client-side validation (mirrors worker rules)
       let bad = false;
