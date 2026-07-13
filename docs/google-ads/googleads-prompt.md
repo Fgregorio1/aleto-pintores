@@ -1,127 +1,63 @@
-0. Read the @setup-googleads.md guide and help me connect Claude Code into Google Ads
+# Google Ads Assistant Operating Prompt — Aleto Pintores
 
+This prompt guide is configured to direct AI coding assistants in managing and optimizing Google Ads for aletopintores.com.
 
+---
 
+## 0. Connect to Google Ads API
+> Read the setup guide and walk me through connecting the Google Ads API client. My Google Ads Customer ID is `183-132-6341` (Google Tag: `AW-18313263418`).
 
-> Read the @setup-googleads.md and walk me through connecting Google Ads. My customer ID is `[Add ID here]`.
+---
 
+## 1. Build the Search Campaigns
+> Build two Search campaigns:
+> 1. **Aleto Pintores - Madrid (Spanish)**: Targeting painting, gotelé removal, and lacquering in Madrid.
+> 2. **Aleto Pintores - Expat Madrid (English)**: Targeting English-speaking expats, landlords, and tenants in Madrid.
+> Set both campaigns to PAUSED until I approve.
 
+---
 
+## 2. Build the Responsive Search Ads (RSAs)
+> Build high-performing Responsive Search Ads (RSAs) for the following Ad Groups:
+> * **Ad Group: Pintar Piso Madrid (Spanish)** (Target: `/servicios/pintura-interior-pisos/`)
+> * **Ad Group: Quitar Gotelé Madrid (Spanish)** (Target: `/servicios/quitar-gotele-alisar-paredes/`)
+> * **Ad Group: Expat Painters Madrid (English)** (Target: `/en/services/interior-painting-madrid/`)
+> Incorporate value propositions like: budget cerrado en 24h, plazos por contrato, seguro Mapfre (300k €), and client support in English. Add the ads as PAUSED.
 
+---
 
+## 3. Negative Keywords Setup
+> Create a Shared Negative Keyword List named "Aleto Universal Negatives" and attach it to both campaigns. Populate it with standard junk search terms (DIY, gratis, empleo, leroy merlin, bricomart, foro, etc.) using broad or phrase matches where appropriate.
 
+---
 
+## 4. Landing Page Configuration Audit
+> Audit the Astro service layout files. Confirm that the contact form passes `gclid`, `wbraid`, `gbraid`, `fbclid`, and all standard UTMs (`utm_source`, `utm_medium`, `utm_campaign`, `utm_term`, `utm_content`, `utm_id`) in its JSON payload to the worker endpoint `/api/submit-lead`.
 
-1. Build the campaign
+---
 
+## 5. Verify Conversion Tracking & Enhanced Conversions
+> Verify that the Google Tag (`AW-18313263418`) is loaded in the Astro base layout head. Verify that on form success, the LeadForm triggers the conversion event with `'send_to': 'AW-18313263418/YIMKCLb24s8cELryuJxE'` and supplies client email and phone inside `'enhanced_conversion_data'` for secure hashing, before executing the redirect callback.
 
+---
 
+## 6. Check Tag Assistant Logs
+> Can you verify that the conversion event fires successfully based on the payload strings copied from Google Tag Assistant on the success redirect paths `/gracias/` or `/en/thank-you/`?
 
-> Read the @campaign.md and build me a campaign for "pintores en madrid". Set it to PAUSED until I approve.
+---
 
+## 7. Build an Ads Analytics Dashboard
+> Build a simple analytics dashboard at `/dashboard` in the Astro site. Parse campaign ROAS, leads generated, and match rate recommendations, locking it under custom admin access.
 
+---
 
+## 8. Find Search Terms Bleeding Money
+> Pull search term reports for the painting campaigns. Analyze keywords that spend budget but have zero conversions, and suggest them as negatives.
 
+---
 
-
-
-
-2. Build the ads
-
-
-
-
-> Read the @anatomy-of-a-good-ad.md and build me 3 RSAs for the emergency plumber Toronto campaign. Add them into Google Ads and mark them as paused. Also read the @ad-assets-best-practices.md and add the asset structure to my emergency plumber campaign.
-
-
-
-
-3. Negative keywords
-
-
-> Read the @universal-negative-keywords.md and add the full universal negative keyword list to my account as a Shared Negative Keyword List, then attach it to my emergency plumber campaign. Use BROAD match unless the term is in quotes or brackets.
-
-
-
-
-
-
-
-
-4. Build the landing page
-
-
-
-
-> Build a landing page for emergency plumber Toronto in the Next.js site. Headline matches the keyword. Form + click-to-call. Hidden fields for gclid and UTMs.
-
-
-
-
-
-
-
-
-5. Add the conversion tracking + build a remarketing audience
-
-
-
-
-> Read the @setup-conversion-tracking-and-audience.md and run it end-to-end. Domain `[Add your domain here]`, attach the audience to my emergency plumber ad group at +50%.
-
-
-
-
-6. Checking the conversion tracking is working
-
-
-> Can you confirm that the conversion event fire on my website based on these tags that I'm copying in from the google tag assistant?
-
-
-
-
-6. Build an analytics dashboard
-
-
-
-
-> Build me a dashboard at `/dashboard` in the Next.js site. Show ROAS by campaign and the top recommendations ranked by dollars recoverable. Each rec gets a "Send to Claude" button.
-
-
-
-
-
-
-
-
-7. Find search terms bleeding money and add them to negatives
-
-
-
-
-> Read the @find-and-add-negatives.md and run it on my emergency plumber campaign. Show me the list with verdicts before adding anything.
-
-
-
-
-
-
-
-
-8. Deploy the website to GitHub
-
-
-
-
-> Push the website we built in this project to GitHub and connect Vercel. Domain `[Add your domain here]`. After deploy, confirm the conversion tag fires.
-
-
-
-
-9. Skills
-
-
-> Read @anatomy-of-a-good-ad.md and @ad-assets-best-practices.md then create a skill called /generate-ads for generating high performing ads
+## 9. Deploy & Verify
+> Push the updated repository to GitHub to trigger the Cloudflare Pages deploy. Once deployed, run a network check on the live site to confirm the Google Tag and conversion event setup execute flawlessly.
 
 
 
