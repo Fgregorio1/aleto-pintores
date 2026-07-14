@@ -41,6 +41,8 @@ NEGATIVES = [
     ("careers", "BROAD"),
     # DIY / Information / Learning
     ("como pintar", "PHRASE"),
+    ("como quitar", "PHRASE"),
+    ("como se quita", "PHRASE"),
     ("how to paint", "PHRASE"),
     ("curso", "BROAD"),
     ("tutorial", "BROAD"),
@@ -65,6 +67,9 @@ NEGATIVES = [
     ("free", "BROAD"),
     ("barato", "BROAD"),
     ("barata", "BROAD"),
+    # negatives do NOT match plurals/close variants — list them explicitly
+    ("baratos", "BROAD"),
+    ("baratas", "BROAD"),
     ("economico", "BROAD"),
     ("economica", "BROAD"),
     ("low cost", "PHRASE"),
