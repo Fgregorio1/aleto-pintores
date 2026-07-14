@@ -2,6 +2,11 @@
  * Cloudflare Workers config — settings-as-code for the Git-connected worker.
  * Workers Builds runs `wrangler deploy` on every push and honors this file.
  * The `name` MUST match the existing worker exactly or a new one gets created.
+ *
+ * SECRETS (SHEETS_WEBHOOK_URL, optionally SHEETS_SHARED_TOKEN) must be set
+ * with `wrangler secret put <NAME>` — NEVER as dashboard plain-text vars:
+ * every push-deploy wipes dashboard vars (this silently killed the lead
+ * form on 2026-07-14), while secrets persist across deploys.
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
