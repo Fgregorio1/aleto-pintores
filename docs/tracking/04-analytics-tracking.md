@@ -41,26 +41,32 @@ Guiding constraints, in order: **(1) never compromise site performance** (static
 
 **PostHog scope — ONLY these (it's a SaaS-analytics suite; we use the lead-gen slice):**
 
-Event schema (fired via `zaraz.track()` → forwarded to PostHog):
+Event schema (dual-dispatched by `window.aletoTrack` → `zaraz.track()` + `posthog.capture()`; CRO events added 2026-07-14):
 | Event | From | Properties |
 |---|---|---|
 | `whatsapp_click` | WhatsAppButton, CtaBlock, header/footer links | `service`, `page`, `position` (hero/cta/footer), `locale` |
 | `phone_click` | `tel:` links | same |
-| `form_submit` | ContactForm | `service`, `locale` |
+| `cta_click` | internal links to `/presupuesto-gratis/` + `/en/free-estimate/` | same |
+| `form_submit` | LeadForm (on webhook success only) | `service`, `locale`, `source`, `page` |
+| `form_start` | LeadForm, first field focus (once/pageview) | `form_source`, `locale`, `page` |
+| `form_error` | LeadForm, validation fail or server/network fail | `kind` (validation/server/network), `fields[]` or `status`, `form_source` |
+| `form_abandon` | LeadForm, pagehide after start w/o submit | `last_field`, `form_source`, `locale`, `page` |
+| `scroll_depth` | Attribution.astro, once on pagehide | `depth` (0/25/50/75/90), `page`, `source`, `locale` |
 | `calculator_complete` | PriceCalculator | `service`, `m2`, `estimate_range` |
 
-Snippet config:
+Snippet config (CRO scope since 2026-07-14 — see `posthog-zaraz-snippet.html`, applied in Zaraz):
 ```js
 {
   capture_pageview: true,
-  autocapture: false,                  // no click noise; our 4 events are intentional
+  autocapture: true,                   // heatmap/dead-click data for CRO
   person_profiles: 'identified_only',  // visitors stay anonymous — cheaper, less PII
-  disable_session_recording: true,     // enable later at ≤10% sampling only to debug funnels
-  disable_surveys: true
+  session_recording: { maskAllInputs: true },  // replay ON: sampling + URL triggers set project-side
+  disable_surveys: true                // exit survey deferred (policy-safe as corner widget if wanted)
 }
 ```
+Replay project settings (PostHog → Settings → Session replay): record ~20% of sessions globally, URL trigger 100% on `/contacto|/presupuesto-gratis|/en/contact|/en/free-estimate`. Privacy: inputs masked; add a session-recordings line to `politica-privacidad`.
 
-Use in the UI: 2 funnels (`pageview → service page → whatsapp_click`; `calculator → whatsapp_click`), 1 leads dashboard (by source / service / page, weekly), the built-in Web Analytics tab. NOT used: feature flags, experiments, surveys, group analytics, data pipelines/CDP, error tracking, heatmaps. Never `identify()` leads with names/phones — client PII stays in WhatsApp, not analytics.
+Use in the UI: funnels + "CRO Semanal" dashboard per `05-cro-playbook.md` (supersedes the 2-funnel note from 2026-07-10), the built-in Web Analytics tab. NOT used: feature flags, group analytics, data pipelines/CDP, error tracking; experiments deferred until traffic supports them. Never `identify()` leads with names/phones — client PII stays in WhatsApp, not analytics.
 
 **Phase B+ — PostHog Marketing Analytics (beta) for blended cost-per-lead:**
 - Activate only once spend exists on ≥2 channels. Feature is BETA — re-check its pricing/terms at activation.

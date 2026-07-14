@@ -220,6 +220,32 @@ const inputCls =
     };
     const clear = () => errs.forEach((e) => e.setAttribute('hidden', ''));
 
+    // ── CRO funnel events (docs/04 §1): form_start on first interaction,
+    // form_abandon (with the last-touched field) if they leave mid-form ──
+    const track = (name: string, props: Record<string, unknown> = {}) =>
+      (window as any).aletoTrack?.(name, {
+        form_source: form.dataset.formSource ?? 'home',
+        locale: form.dataset.locale ?? 'es',
+        page: location.pathname,
+        ...props,
+      });
+    let started = false;
+    let submitted = false;
+    let lastField = '';
+    form.addEventListener('focusin', (e) => {
+      const el = e.target as HTMLElement;
+      const name = el?.getAttribute?.('name');
+      if (!name || name === 'company') return;
+      lastField = name;
+      if (!started) {
+        started = true;
+        track('form_start');
+      }
+    });
+    window.addEventListener('pagehide', () => {
+      if (started && !submitted) track('form_abandon', { last_field: lastField });
+    });
+
     // ── Unified phone field: keep the select, flag and the +code inside the
     // input in sync in both directions ──
     const countrySel = form.querySelector<HTMLSelectElement>('[name=phone_country]')!;
@@ -285,15 +311,18 @@ const inputCls =
       }
 
       // client-side validation (mirrors worker rules)
-      let bad = false;
-      const fail = (f: string) => { show(f); bad = true; };
+      const failed: string[] = [];
+      const fail = (f: string) => { show(f); failed.push(f); };
       if (payload.full_name.length < 2) fail('full_name');
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) fail('email');
       const phoneOk = payload.phone.startsWith('+34') ? /^\+34[6789]\d{8}$/.test(payload.phone) : /^\+\d{7,15}$/.test(payload.phone);
       if (!phoneOk) fail('phone');
       if (!payload.service) fail('service');
       if (payload.privacy !== 'true') fail('privacy');
-      if (bad) return;
+      if (failed.length) {
+        track('form_error', { kind: 'validation', fields: failed });
+        return;
+      }
 
       btn.disabled = true;
       btn.textContent = sending;
@@ -309,6 +338,7 @@ const inputCls =
         clearTimeout(t);
         const out = await res.json().catch(() => ({}));
         if (res.ok && (out as any).success) {
+          submitted = true;
           (window as any).aletoTrack?.('form_submit', {
             page: location.pathname,
             source: payload.source,
@@ -345,8 +375,10 @@ const inputCls =
           }
           return;
         }
+        track('form_error', { kind: 'server', status: res.status });
         show('server');
       } catch {
+        track('form_error', { kind: 'network' });
         show('server');
       }
       btn.disabled = false;

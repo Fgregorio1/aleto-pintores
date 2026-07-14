@@ -135,5 +135,32 @@
     };
     if (a.href.startsWith('https://wa.me')) track('whatsapp_click', base);
     else if (a.href.startsWith('tel:')) track('phone_click', base);
+    else if (/^\/(presupuesto-gratis|en\/free-estimate)\//.test(new URL(a.href, location.origin).pathname))
+      track('cta_click', base);
+  });
+
+  // Scroll depth: track the max bucket reached, send once when leaving the
+  // page — distinguishes "never saw the form" from "saw it and declined".
+  let maxScroll = 0;
+  let scrollSent = false;
+  document.addEventListener(
+    'scroll',
+    () => {
+      const doc = document.documentElement;
+      const depth = ((window.scrollY + window.innerHeight) / doc.scrollHeight) * 100;
+      if (depth > maxScroll) maxScroll = depth;
+    },
+    { passive: true }
+  );
+  window.addEventListener('pagehide', () => {
+    if (scrollSent || maxScroll === 0) return;
+    scrollSent = true;
+    const bucket = maxScroll >= 90 ? 90 : maxScroll >= 75 ? 75 : maxScroll >= 50 ? 50 : maxScroll >= 25 ? 25 : 0;
+    track('scroll_depth', {
+      page: location.pathname,
+      source: src,
+      locale: document.documentElement.lang,
+      depth: bucket,
+    });
   });
 </script>
