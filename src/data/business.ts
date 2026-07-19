@@ -13,6 +13,8 @@ export const BUSINESS = {
   url: SITE_URL,
   googleAdsId: 'AW-18313263418',
   googleAdsConversionLabel: 'YIMKCLb24s8cELryuJxE',
+  /** Secondary conversion "WhatsApp click" (id 7690385253) — fired by Attribution.astro on wa.me clicks */
+  googleAdsWhatsappLabel: 't3eLCOXuh9McELryuJxE',
   /** schema.org @id — the entity anchor every Service/WebPage points at */
   id: `${SITE_URL}/#business`,
   phoneDisplay: '624 04 62 10',

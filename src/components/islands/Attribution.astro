@@ -14,6 +14,8 @@
 ---
 
 <script>
+  import { BUSINESS } from '@/data/business';
+
   const KEY = 'aleto-src';
   try {
     if (!sessionStorage.getItem(KEY)) {
@@ -133,8 +135,14 @@
       locale: document.documentElement.lang,
       position: (a as HTMLElement).dataset.pos || '',
     };
-    if (a.href.startsWith('https://wa.me')) track('whatsapp_click', base);
-    else if (a.href.startsWith('tel:')) track('phone_click', base);
+    if (a.href.startsWith('https://wa.me')) {
+      track('whatsapp_click', base);
+      // Secondary Google Ads conversion (docs/04 Phase B). Consent Mode v2
+      // in BaseLayout gates whether gtag actually sends it.
+      (window as any).gtag?.('event', 'conversion', {
+        send_to: `${BUSINESS.googleAdsId}/${BUSINESS.googleAdsWhatsappLabel}`,
+      });
+    } else if (a.href.startsWith('tel:')) track('phone_click', base);
     else if (/^\/(presupuesto-gratis|en\/free-estimate)\//.test(new URL(a.href, location.origin).pathname))
       track('cta_click', base);
   });

@@ -37,6 +37,8 @@ if missing:
     sys.exit(1)
 
 SITE = "https://aletopintores.com"
+# 2026-07-19: Spanish campaign budget lowered to €10/day in the account
+# (scripts/optimize_2026_07_19.py); this constant only seeds NEW campaigns.
 DAILY_BUDGET_MICROS = 15_000_000  # 15 €/day
 CPC_CEILING_MICROS = 3_000_000  # 3 € max CPC while on Maximize Clicks
 NEGATIVE_LIST_NAME = "Aleto Universal Negatives"
@@ -55,6 +57,9 @@ GEO_NAMES = [
     "Alcobendas",
     "San Sebastián de los Reyes",
     "Rivas-Vaciamadrid",
+    # 2026-07-19: added after search terms proved adjacent demand
+    "Boadilla del Monte",
+    "Tres Cantos",
 ]
 
 LANG_ES = "languageConstants/1003"
@@ -72,15 +77,22 @@ CAMPAIGNS = [
                 "final_url": f"{SITE}/servicios/pintura-interior-pisos/",
                 "path1": "pintar-piso",
                 "path2": "madrid",
+                # 2026-07-15: intent curation (scripts/refine_keywords_intent.py) —
+                # price-shopper terms ("presupuesto pintar piso", geo-less
+                # "pintar piso") dropped; "hire a pro" formulations added.
                 "keywords": [
+                    # "pintores madrid" PAUSED 2026-07-19 in the account:
+                    # 2.6% CTR vs 8-11% on service terms; revisit with
+                    # conversion data (optimize_2026_07_19.py).
                     ("pintores madrid", "PHRASE"),
                     ("pintores en madrid", "PHRASE"),
                     ("empresa de pintores madrid", "PHRASE"),
+                    ("empresa de pintura madrid", "PHRASE"),
                     ("pintar piso madrid", "PHRASE"),
-                    ("pintar piso", "EXACT"),
-                    ("presupuesto pintar piso", "PHRASE"),
+                    ("pintor madrid", "EXACT"),
                     ("pintar casa madrid", "PHRASE"),
                     ("pintores de interiores madrid", "PHRASE"),
+                    ("pintores cerca de mi", "PHRASE"),
                 ],
                 "headlines": [
                     "Pintores en Madrid",
@@ -111,12 +123,15 @@ CAMPAIGNS = [
                 "final_url": f"{SITE}/servicios/quitar-gotele-alisar-paredes/",
                 "path1": "quitar-gotele",
                 "path2": "madrid",
+                # 2026-07-15: "quitar gotele precio" dropped (price-shopper
+                # intent); bundled-job and noun-form variants added.
                 "keywords": [
                     ("quitar gotele madrid", "PHRASE"),
                     ("quitar gotele", "EXACT"),
-                    ("quitar gotele precio", "PHRASE"),
+                    ("quitar gotele y pintar", "PHRASE"),
                     ("alisar paredes madrid", "PHRASE"),
                     ("alisar paredes", "EXACT"),
+                    ("alisado de paredes", "PHRASE"),
                     ("eliminar gotele madrid", "PHRASE"),
                     ("quitar gotele piso", "PHRASE"),
                 ],
@@ -144,9 +159,61 @@ CAMPAIGNS = [
                     "Entrega estancia por estancia comprobada a contraluz. Factura y garantía por escrito.",
                 ],
             },
+            {
+                # 2026-07-15: town-level "pintores + municipio" intent, demand
+                # proven by the search-terms report; one phrase keyword per
+                # geo-targeted town. Landing on the interior-painting page
+                # until zone pages pass the quality gate (src/data/zonas).
+                # Added by scripts/refine_keywords_intent.py.
+                "name": "Pintores por Zona",
+                "final_url": f"{SITE}/servicios/pintura-interior-pisos/",
+                "path1": "pintores",
+                "path2": "tu-zona",
+                "keywords": [
+                    ("pintores alcobendas", "PHRASE"),
+                    ("pintores getafe", "PHRASE"),
+                    ("pintores leganes", "PHRASE"),
+                    ("pintores mostoles", "PHRASE"),
+                    ("pintores fuenlabrada", "PHRASE"),
+                    ("pintores alcorcon", "PHRASE"),
+                    ("pintores pozuelo", "PHRASE"),
+                    ("pintores las rozas", "PHRASE"),
+                    ("pintores majadahonda", "PHRASE"),
+                    ("pintores rivas", "PHRASE"),
+                    ("pintores san sebastian de los reyes", "PHRASE"),
+                    ("pintores boadilla", "PHRASE"),
+                    ("pintores tres cantos", "PHRASE"),
+                ],
+                "headlines": [
+                    "Pintores en tu zona",
+                    "Pintores cerca de ti",
+                    "Precio cerrado en 24 h",
+                    "Piso de 80 m² desde 1.250 €",
+                    "Terminado en 4-5 días",
+                    "Fechas de entrega por escrito",
+                    "Sin sorpresas en la factura",
+                    "Muebles y suelos protegidos",
+                    "El mismo equipo cada día",
+                    "Repaso final pared a pared",
+                    "Seguro de RC de 300.000 €",
+                    "Pintura de primera marca",
+                    "Factura y garantía por escrito",
+                    "Visita gratis en tu casa",
+                    "Pintura interior y gotelé",
+                ],
+                "descriptions": [
+                    "Pintores profesionales en tu zona. Precio cerrado y por escrito antes de empezar.",
+                    "Protegemos el 100% de muebles y suelos y repasamos contigo pared a pared antes de cobrar.",
+                    "Piso de 80 m² desde 1.250 € con materiales incluidos, terminado en 4-5 días.",
+                    "Seguro de RC de 300.000 € con Mapfre, factura con IVA y garantía por escrito.",
+                ],
+            },
         ],
     },
     {
+        # PAUSED 2026-07-19 (optimize_2026_07_19.py): 14 imps / 1 click in 5
+        # days, 80% rank-lost. Re-enable when reviews/projects exist and the
+        # CPC ceiling can go higher.
         "name": "Aleto Pintores - Expat Madrid (English)",
         "language": LANG_EN,
         # Also reach landlords abroad searching for painters in Madrid.
