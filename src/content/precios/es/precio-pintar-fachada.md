@@ -4,6 +4,7 @@ metaDescription: "Pintar la fachada de un edificio en Madrid cuesta de 12 a 22 ‚
 h1: "Precio de pintar una fachada (Madrid, 2026)"
 translationKey: precio-fachada
 locale: es
+draft: true
 priceKey: pintar-fachada
 showCalculator: false
 metodologia: "Rangos basados en nuestros presupuestos reales a comunidades de propietarios en Madrid en 2026, incluyendo medios de elevaci√≥n."

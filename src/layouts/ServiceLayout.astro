@@ -1,32 +1,28 @@
 ---
-import { render, getEntries, getEntry, type CollectionEntry } from 'astro:content';
+import { getEntries, type CollectionEntry } from 'astro:content';
 import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import DirectAnswer from '@/components/DirectAnswer.astro';
+import FeatureCard from '@/components/FeatureCard.astro';
+import GalleryGrid from '@/components/GalleryGrid.astro';
+import EstimateSection from '@/components/EstimateSection.astro';
+import TestimonialsBlock from '@/components/TestimonialsBlock.astro';
+import StatsBand from '@/components/StatsBand.astro';
 import Faq from '@/components/Faq.astro';
-import UpdatedDate from '@/components/UpdatedDate.astro';
-import CtaBlock from '@/components/CtaBlock.astro';
-import ContactSection from '@/components/contact/ContactSection.astro';
-import WistiaEmbed from '@/components/contact/WistiaEmbed.astro';
-import FounderCard from '@/components/FounderCard.astro';
-import TrustGarantias from '@/components/TrustGarantias.astro';
-import PriceTable from '@/components/PriceTable.astro';
 import { seoFromEntry } from '@/lib/seo';
 import { faqSchema, serviceSchema } from '@/lib/schema';
-import { entryLocale, precioPath, servicioPath } from '@/lib/paths';
+import { entryLocale, servicioPath } from '@/lib/paths';
 import { staticPath } from '@/i18n/routes';
 import { useTranslations } from '@/i18n/ui';
-import { whatsappLink, WHATSAPP_DEFAULT_MSG, STATS } from '@/data/business';
+import { whatsappLink, WHATSAPP_DEFAULT_MSG } from '@/data/business';
 import WhatsAppIcon from '@/components/WhatsAppIcon.astro';
 
 /**
- * CRO-first service page (2026-07-19 redesign), SEO layer intact:
- * gradient hero (H1 + CTA + trust chips) → direct answer + collapsed
- * tarifas → proceso → trust band (video/stats/garantías/founder) →
- * CTA band → body → gallery → FAQ → price pointer → related → form.
- * Scroll data drove this: 80% of paid visitors never passed 50% on the
- * old text-wall order, and the form was section 12/12.
+ * Wolf-blueprint service page (2026-07-19 full CRO rebuild): hero →
+ * gallery → capability cards → estimate form → reviews (gated) →
+ * related services. Image-first, short copy, NO prices anywhere.
+ * The markdown body is intentionally not rendered (content kept in the
+ * .md files — reversible). Meta/FAQ schema still derive from frontmatter.
  */
 interface Props {
   entry: CollectionEntry<'servicios'>;
@@ -35,10 +31,8 @@ const { entry } = Astro.props;
 const locale = entryLocale(entry.id);
 const t = useTranslations(locale);
 const seo = await seoFromEntry('servicios', entry);
-const { Content } = await render(entry);
 
-const related = await getEntries(entry.data.relatedServices);
-const relatedPrecio = entry.data.relatedPrecio ? await getEntry(entry.data.relatedPrecio) : undefined;
+const related = (await getEntries(entry.data.relatedServices)).filter((r) => !r.data.draft);
 
 const crumbs = [
   { name: t('breadcrumb.inicio'), path: locale === 'en' ? '/en/' : '/' },
@@ -50,19 +44,17 @@ const waMessage = WHATSAPP_DEFAULT_MSG[locale];
 const ui = {
   es: {
     btn: 'Presupuesto por WhatsApp',
-    btnForm: 'Presupuesto en 24 h',
+    btnForm: 'Pedir presupuesto gratis',
     micro: 'Respuesta hoy · Visita gratuita · Sin compromiso',
-    chips: ['Seguro RC 300.000 €', 'Garantía por escrito', 'Fechas por contrato'],
-    trustTitle: 'Quién entra en tu casa',
-    trustLead: 'Un equipo con nombre, asegurado y con cada compromiso por escrito.',
+    chips: ['Asegurados (RC 300.000 €)', 'Garantía por escrito', 'Fechas por contrato'],
+    featuresTitle: 'Así trabajamos',
   },
   en: {
     btn: 'Quote via WhatsApp',
-    btnForm: 'Fixed quote in 24 h',
+    btnForm: 'Get a free estimate',
     micro: 'Reply today · Free visit · No obligation',
-    chips: ['€300k liability insured', 'Written guarantee', 'Dates in the contract'],
-    trustTitle: 'Who comes into your home',
-    trustLead: 'A named crew, insured, with every commitment in writing.',
+    chips: ['Insured (€300k liability)', 'Written guarantee', 'Dates in the contract'],
+    featuresTitle: 'How we work',
   },
 }[locale];
 ---
@@ -70,16 +62,12 @@ const ui = {
 <BaseLayout seo={seo} schemas={[serviceSchema(entry, seo.canonicalPath), faqSchema(entry.data.faq)]}>
   <Breadcrumbs items={crumbs} />
 
-  {/* Hero: conversion path + trust chips in the first viewport */}
+  {/* Hero: short, visual, conversion-first */}
   <header class="bg-brand-gradient text-paper">
-    <div class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr]">
+    <div class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr]">
       <div>
-        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-chartreuse-300">{entry.data.serviceName}</p>
-        <h1 class="mt-3 text-3xl leading-tight sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
-        {/* Value-first hero. Visible prices live ONLY in the FAQ and /precios/ (docs/03 §3b). */}
-        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-paper/90">
-          {entry.data.heroLead ?? entry.data.directAnswer}
-        </p>
+        <h1 class="text-3xl leading-tight sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
+        <p class="mt-4 max-w-xl text-lg leading-relaxed text-paper/90">{entry.data.heroLead}</p>
         <div class="mt-7 flex flex-wrap items-center gap-3">
           <a
             href={whatsappLink(waMessage)}
@@ -89,10 +77,9 @@ const ui = {
             <WhatsAppIcon size={15} />
             {ui.btn}
           </a>
-          <a
-            href="#contacto"
-            class="rounded-full border border-paper/50 px-6 py-3.5 text-sm font-semibold text-paper hover:border-paper"
-          >{ui.btnForm}</a>
+          <a href="#contacto" class="rounded-full border border-paper/50 px-6 py-3.5 text-sm font-semibold text-paper hover:border-paper">
+            {ui.btnForm}
+          </a>
         </div>
         <p class="mt-4 text-xs font-medium text-paper/80">{ui.micro}</p>
         <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2">
@@ -111,7 +98,7 @@ const ui = {
               src={entry.data.image}
               alt={entry.data.serviceName}
               widths={[600, 900, 1200]}
-              sizes="(min-width: 1024px) 500px, 100vw"
+              sizes="(min-width: 1024px) 520px, 100vw"
               class="aspect-[4/3] w-full object-cover"
               loading="eager"
               fetchpriority="high"
@@ -122,121 +109,40 @@ const ui = {
     </div>
   </header>
 
-  <article class="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
-    {/* Direct answer (snippet layer, keeps its numbers) + collapsed tarifas as one compact unit */}
-    <DirectAnswer text={entry.data.directAnswer} />
+  {/* Work gallery */}
+  {
+    entry.data.gallery.length > 0 && (
+      <section class="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+        <GalleryGrid items={entry.data.gallery} />
+      </section>
+    )
+  }
 
-    <details class="group mt-4 max-w-3xl overflow-hidden rounded-2xl border border-line bg-white">
-      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 bg-paper-dark/30 p-4 font-medium text-forest-900 select-none hover:bg-paper-dark/50 [&::-webkit-details-marker]:hidden">
-        <span class="flex items-center gap-2 text-sm font-semibold tracking-normal">
-          📊 {locale === 'es' ? 'Ver tarifas orientativas de este servicio' : 'View estimated rates for this service'}
-        </span>
-        <span class="text-olive-500 transition-transform group-open:rotate-45" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
-        </span>
-      </summary>
-      <div class="border-t border-line px-5 pb-5">
-        <PriceTable priceKey={entry.data.priceKey} locale={locale} />
-      </div>
-    </details>
-
-    {
-      entry.data.proceso.length > 0 && (
-        <section class="mt-14">
-          <h2 class="text-2xl text-forest-900 sm:text-3xl">{t('proceso.title')}</h2>
-          <ol class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {entry.data.proceso.map((p, i) => (
-              <li class="rounded-2xl border border-line border-t-4 border-t-chartreuse-400 bg-white p-5">
-                <span class="font-display text-3xl font-semibold text-olive-400">{String(i + 1).padStart(2, '0')}</span>
-                <h3 class="mt-2 font-sans text-base font-semibold tracking-normal text-forest-900">{p.paso}</h3>
-                <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">{p.detalle}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-      )
-    }
-  </article>
-
-  {/* Trust band: the mid-page E-E-A-T moment for paid traffic */}
-  <section class="mt-14 border-y border-line bg-paper-dark/40">
-    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-      <h2 class="text-2xl text-forest-900 sm:text-3xl">{ui.trustTitle}</h2>
-      <p class="mt-2 max-w-2xl text-ink-soft">{ui.trustLead}</p>
-      <div class="mt-8 grid gap-8 lg:grid-cols-2">
-        <div class="space-y-6">
-          <WistiaEmbed />
-          <div class="grid grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-white">
-            {STATS.map((s) => (
-              <div class="px-4 py-5 text-center">
-                <p class="text-xs font-semibold uppercase tracking-wider text-olive-600">{s.label[locale]}</p>
-                <p class="font-display mt-1 text-3xl font-semibold text-forest-900">{s.value}</p>
-              </div>
-            ))}
-          </div>
+  {/* Capability cards (Wolf feature grid) */}
+  {
+    entry.data.features.length > 0 && (
+      <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <h2 class="text-2xl text-forest-900 sm:text-3xl">{ui.featuresTitle}</h2>
+        <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {entry.data.features.map((f) => (
+            <FeatureCard icon={f.icon} title={f.title} text={f.text} />
+          ))}
         </div>
-        <div>
-          <TrustGarantias locale={locale} />
-          <FounderCard locale={locale} />
-        </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    )
+  }
 
-  <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <CtaBlock locale={locale} />
-  </div>
+  <EstimateSection locale={locale} formSource={`servicio_${entry.id.replace('/', '_')}`} />
 
-  <article class="mx-auto max-w-6xl px-4 sm:px-6">
-    <div class="prose-aleto mt-12 max-w-3xl">
-      <Content />
-    </div>
+  <TestimonialsBlock locale={locale} />
 
-    {
-      entry.data.gallery.length > 0 && (
-        <section class="mt-12">
-          <div class="grid gap-4 sm:grid-cols-3">
-            {entry.data.gallery.map((g) => (
-              <figure class="overflow-hidden rounded-2xl border border-line bg-white">
-                <Image
-                  src={g.src}
-                  alt={g.alt}
-                  widths={[400, 700]}
-                  sizes="(min-width: 640px) 360px, 100vw"
-                  class="aspect-[4/3] w-full object-cover"
-                  loading="lazy"
-                />
-                {g.caption && <figcaption class="px-4 py-3 text-xs font-medium text-ink-soft">{g.caption}</figcaption>}
-              </figure>
-            ))}
-          </div>
-        </section>
-      )
-    }
+  <StatsBand locale={locale} />
 
-    <UpdatedDate date={entry.data.dateModified} locale={locale} />
-
+  <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
     <Faq faq={entry.data.faq} locale={locale} />
-
-    {/* Price POINTER only — no numbers on the page outside the FAQ (docs/03 §3b) */}
-    <section class="mt-12 max-w-3xl rounded-2xl border border-line bg-white p-6 sm:p-8">
-      <h2 class="text-xl text-forest-900">{t('precio.pointer.title')}</h2>
-      <p class="mt-2 text-sm leading-relaxed text-ink-soft">{t('precio.pointer.text')}</p>
-      <div class="mt-4 flex flex-wrap gap-3">
-        <a
-          href={relatedPrecio ? precioPath(relatedPrecio) : staticPath('precios-hub', locale)}
-          class="rounded-full bg-forest-700 px-5 py-2.5 text-sm font-semibold text-paper hover:bg-forest-800"
-        >{t('precio.pointer.guia')} →</a>
-        <a
-          href={`${staticPath('precios-hub', locale)}#calculadora`}
-          class="rounded-full border border-line px-5 py-2.5 text-sm font-semibold text-forest-800 hover:border-olive-400"
-        >{t('precio.pointer.calc')}</a>
-      </div>
-    </section>
-
     {
       related.length > 0 && (
-        <section class="mt-14 pb-2">
+        <div class="mt-12">
           <h2 class="text-xl text-forest-900">{t('related.servicios')}</h2>
           <ul class="mt-4 flex flex-wrap gap-3">
             {related.map((r) => (
@@ -247,13 +153,8 @@ const ui = {
               </li>
             ))}
           </ul>
-        </section>
+        </div>
       )
     }
-  </article>
-
-  {/* Full contact form — anchor target of the hero's secondary CTA */}
-  <div id="contacto">
-    <ContactSection locale={locale} formSource={`servicio_${entry.id.replace('/', '_')}`} />
-  </div>
+  </section>
 </BaseLayout>

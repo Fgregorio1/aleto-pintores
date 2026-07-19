@@ -4,6 +4,7 @@ metaDescription: "Precio real de pintar un piso en Madrid en 2026: de 15 a 23 �
 h1: "¿Cuánto cuesta pintar un piso en Madrid? Precios reales 2026"
 translationKey: precio-pintar-piso
 locale: es
+draft: true
 priceKey: pintura-interior
 showCalculator: true
 metodologia: "Precios elaborados con nuestros presupuestos reales en Madrid durante 2026. Actualizamos esta guía cada trimestre."

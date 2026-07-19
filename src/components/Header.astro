@@ -12,14 +12,12 @@ interface Props {
 }
 const { locale, switchUrl } = Astro.props;
 const t = useTranslations(locale);
-const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
-// Fall back to the other language's home when the page has no twin
-const langHref = switchUrl ?? (otherLocale === 'en' ? '/en/' : '/');
+void switchUrl; // language switch removed 2026-07-19 (ES-only CRO rebuild); prop kept for BaseLayout compat
 
+// 2026-07-19 CRO rebuild: Precios/Proyectos dropped from nav (no-prices policy;
+// gallery returns when real photos exist).
 const nav = [
   { href: staticPath('servicios-hub', locale), label: t('nav.servicios') },
-  { href: staticPath('precios-hub', locale), label: t('nav.precios') },
-  ...(locale === 'es' ? [{ href: staticPath('proyectos-hub', 'es'), label: t('nav.proyectos') }] : []),
   { href: staticPath('sobre-nosotros', locale), label: t('nav.sobre') },
   { href: staticPath('contacto', locale), label: t('nav.contacto') },
 ];
@@ -52,12 +50,6 @@ const home = locale === 'en' ? '/en/' : '/';
     </nav>
 
     <div class="flex items-center gap-2 sm:gap-3">
-      <a
-        href={langHref}
-        class="rounded-full border border-line px-2.5 py-1 text-xs font-semibold text-ink-soft transition-colors hover:border-forest-700 hover:text-forest-700"
-        aria-label={t('lang.switch')}
-        title={t('lang.switch')}
-      >{t('lang.switchShort')}</a>
       <a
         href={staticPath('presupuesto-gratis', locale)}
         data-pos="header" class="hidden rounded-full bg-forest-700 px-4 py-2 text-sm font-semibold text-paper transition-colors hover:bg-forest-800 sm:inline-block"

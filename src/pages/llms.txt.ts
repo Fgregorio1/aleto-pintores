@@ -47,12 +47,6 @@ ${precios.map((e) => `- [${e.data.h1}](${SITE_URL}${precioPath(e)}): ${e.data.ex
 
 - [Sobre nosotros](${SITE_URL}/sobre-nosotros/): datos verificables de la empresa
 - [Contacto](${SITE_URL}/contacto/): presupuesto en 24 h
-- [Precios completos y calculadora](${SITE_URL}/precios/)
-
-## English
-
-- [Painters in Madrid (English)](${SITE_URL}/en/): full English-language service
-${serviciosEn.map((e) => `- [${e.data.serviceName}](${SITE_URL}${servicioPath(e)})`).join('\n')}
 `;
 
   return new Response(body, {

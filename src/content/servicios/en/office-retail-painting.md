@@ -4,6 +4,7 @@ metaDescription: "We paint offices, shops and restaurants in Madrid overnight or
 h1: "Office & retail painting in Madrid"
 translationKey: service-oficinas
 locale: en
+draft: true
 serviceName: "Office & retail painting"
 priceKey: pintura-oficinas
 image: "../../../assets/servicios/pintura-oficinas-locales.jpg"

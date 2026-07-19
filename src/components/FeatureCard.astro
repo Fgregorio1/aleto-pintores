@@ -1,0 +1,34 @@
+---
+/**
+ * Wolf-blueprint capability card: icon + short title + 1-2 sentences.
+ * Icons are hand-authored inline SVGs (site convention — no icon lib).
+ */
+interface Props {
+  icon?: string;
+  title: string;
+  text: string;
+}
+const { icon = 'check', title, text } = Astro.props;
+
+const paths: Record<string, string> = {
+  check: 'M4 12.5 9.2 17.5 20 6.5',
+  shield: 'M12 3 5 6v5c0 4.5 3 8.1 7 9.5 4-1.4 7-5 7-9.5V6l-7-3Z',
+  clock: 'M12 7v5l3.5 2.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z',
+  spray: 'M7 9h10v11a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 7 20V9ZM9.5 9V6.2A1.2 1.2 0 0 1 10.7 5h2.6a1.2 1.2 0 0 1 1.2 1.2V9M16 3.5h3M17.5 2v3',
+  home: 'M3.5 11 12 4l8.5 7M6 9.5V20h12V9.5',
+  sparkle: 'M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4L12 3ZM19 16.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z',
+  doc: 'M7 3h7l4 4v14H7V3ZM14 3v4h4M10 12h5M10 15.5h5',
+  vacuum: 'M5 18a3 3 0 1 0 6 0 3 3 0 0 0-6 0ZM8 15V8a4 4 0 0 1 8 0v10h4M16 18h1',
+};
+const d = paths[icon] ?? paths.check;
+---
+
+<div class="rounded-2xl border border-line bg-white p-5 sm:p-6">
+  <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-chartreuse-100 text-forest-800" aria-hidden="true">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d={d} stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </span>
+  <h3 class="mt-3.5 font-sans text-base font-semibold tracking-normal text-forest-900">{title}</h3>
+  <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">{text}</p>
+</div>

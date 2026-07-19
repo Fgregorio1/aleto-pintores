@@ -5,6 +5,7 @@ h1: "Privacy & cookie policy"
 pageKey: politica-privacidad
 translationKey: page-privacidad
 locale: en
+draft: true
 noindex: true
 datePublished: 2026-07-10
 dateModified: 2026-07-10

@@ -4,6 +4,7 @@ metaDescription: "We remove gotelé (popcorn texture) and smooth walls in Madrid
 h1: "Gotelé (popcorn wall) removal & smoothing in Madrid"
 translationKey: service-gotele
 locale: en
+draft: true
 serviceName: "Gotelé removal & wall smoothing"
 priceKey: quitar-gotele
 image: "../../../assets/servicios/quitar-gotele.jpg"

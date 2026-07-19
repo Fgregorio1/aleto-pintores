@@ -4,6 +4,7 @@ metaDescription: "Facade painting for buildings and homeowner communities in Mad
 h1: "Facade & community painting in Madrid"
 translationKey: service-fachadas
 locale: en
+draft: true
 serviceName: "Facade & community painting"
 priceKey: pintar-fachada
 image: "../../../assets/servicios/pintura-fachadas-comunidades.jpg"

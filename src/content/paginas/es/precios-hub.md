@@ -5,6 +5,7 @@ h1: "Precios de pintores en Madrid (2026)"
 pageKey: precios-hub
 translationKey: page-precios-hub
 locale: es
+draft: true
 directAnswer: "Estos son nuestros precios reales en Madrid en 2026: pintar un piso completo de 13 a 20 €/m² de vivienda, quitar gotelé y alisar de 9 a 15 €/m² de pared, lacar puertas de 80 a 140 € por puerta y pintar fachadas de 12 a 22 €/m². Casi ninguna empresa de pintura publica sus precios; nosotros sí, porque no tenemos nada que esconder."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

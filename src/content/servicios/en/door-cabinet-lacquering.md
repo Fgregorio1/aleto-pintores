@@ -4,6 +4,7 @@ metaDescription: "Door and wardrobe lacquering in Madrid: €80-140 per door (bo
 h1: "Door & wardrobe lacquering in Madrid"
 translationKey: service-lacado
 locale: en
+draft: true
 serviceName: "Door & cabinet lacquering"
 priceKey: lacar-puertas
 image: "../../../assets/servicios/lacado-puertas-armarios.jpg"

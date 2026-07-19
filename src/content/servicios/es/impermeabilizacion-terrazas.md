@@ -1,6 +1,6 @@
 ---
-title: "Impermeabilizar terraza en Madrid — 25-45 €/m²"
-metaDescription: "Impermeabilización de terrazas y cubiertas en Madrid con membrana líquida o tela asfáltica: 25-45 €/m² y garantía por escrito. Adiós a las goteras."
+title: "Impermeabilización de terrazas en Madrid | Aleto Pintores"
+metaDescription: "Impermeabilizamos tu terraza con membrana de poliuretano armada: diagnóstico del origen real de la gotera, garantía por escrito y revisión gratis al año."
 h1: "Impermeabilización de terrazas en Madrid"
 translationKey: service-terrazas
 locale: es
@@ -26,6 +26,25 @@ proceso:
     detalle: "Membrana de poliuretano líquido armada con malla en los puntos críticos, aplicada en dos capas cruzadas."
   - paso: "Entrega con garantía"
     detalle: "Acabado transitable del color que elijas, garantía por escrito y revisión gratuita al año."
+features:
+  - icon: "check"
+    title: "Origen real de la gotera"
+    text: "La mancha casi nunca está donde nace la filtración. Diagnosticamos antes de presupuestar."
+  - icon: "shield"
+    title: "Membrana armada"
+    text: "Poliuretano líquido reforzado con malla justo en los puntos donde fallan casi todas."
+  - icon: "spray"
+    title: "Dos capas cruzadas"
+    text: "Aplicación en capas cruzadas para un espesor uniforme y sin puntos débiles."
+  - icon: "home"
+    title: "Acabado transitable"
+    text: "Tu terraza sigue siendo terraza: acabado transitable del color que elijas."
+  - icon: "clock"
+    title: "Revisión gratis al año"
+    text: "Volvemos a los 12 meses a comprobar que todo sigue perfecto."
+  - icon: "doc"
+    title: "Garantía por escrito"
+    text: "Sistema y mano de obra garantizados por contrato, con RC de 300.000 €."
 faq:
   - q: "¿Cómo sabéis dónde está realmente la filtración?"
     a: "Inspeccionando antes de presupuestar: la mancha del techo casi nunca está justo debajo del fallo, porque el agua viaja por la estructura. Comprobamos pendientes, desagües, juntas y encuentros antes de proponer nada — tratar el punto equivocado es dinero tirado, aunque el trabajo esté bien hecho."
@@ -38,7 +57,7 @@ faq:
   - q: "¿Trabajáis cubiertas de comunidades?"
     a: "Sí, tanto terrazas privadas como cubiertas comunitarias, con presupuesto por partidas para la junta y coordinación con el administrador. Si el edificio va a montar andamio para la fachada, es el momento óptimo de tratar también la cubierta."
   - q: "¿Cuánto cuesta impermeabilizar una terraza?"
-    a: "Entre 25 y 45 €/m² en 2026 con membrana de poliuretano líquido y preparación incluida; una terraza de 20 m², entre 500 y 900 €. El presupuesto exacto sale de la inspección gratuita."
+    a: "Cada casa es distinta, así que no trabajamos con tarifas genéricas: visitamos tu piso gratis, medimos y te damos un presupuesto cerrado por escrito en 24 horas, con materiales y fechas incluidos. Ese precio no cambia después — si aparece algo que no vimos en la visita, lo asumimos nosotros."
 ---
 
 ## ¿Por qué el diagnóstico importa más que el material?

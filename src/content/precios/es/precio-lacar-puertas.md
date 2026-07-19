@@ -4,6 +4,7 @@ metaDescription: "Lacar una puerta en Madrid cuesta de 80 a 140 € (dos caras, 
 h1: "Precio de lacar puertas en blanco (Madrid, 2026)"
 translationKey: precio-lacado
 locale: es
+draft: true
 priceKey: lacar-puertas
 showCalculator: false
 metodologia: "Rangos basados en nuestros presupuestos reales de lacado en Madrid en 2026, para puertas plafonadas estándar en buen estado."

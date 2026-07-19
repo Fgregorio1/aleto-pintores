@@ -5,6 +5,7 @@ h1: "A painting contractor architects can put their name behind"
 pageKey: arquitectos
 translationKey: page-arquitectos
 locale: en
+draft: true
 directAnswer: "We execute painting and finishes for architecture and interior design studios in Madrid with strict fidelity to the spec: colour, sheen and surface flatness verified under raking light, samples applied on-site before execution, coordination with the other trades, and deadlines that hold. Your project reaches handover the way you designed it."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

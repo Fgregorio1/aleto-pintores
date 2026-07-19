@@ -5,6 +5,7 @@ h1: "Request Your Free Painting Estimate"
 pageKey: presupuesto-gratis
 translationKey: page-presupuesto-gratis
 locale: en
+draft: true
 directAnswer: "Get a detailed, fixed-price painting estimate in Madrid within 24 hours. Includes a free 20-minute on-site measuring visit, contract-backed deadlines, and MAPFRE liability insurance."
 datePublished: 2026-07-13
 dateModified: 2026-07-13

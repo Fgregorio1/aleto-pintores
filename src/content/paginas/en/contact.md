@@ -5,6 +5,7 @@ h1: "Get your quote within 24 hours"
 pageKey: contacto
 translationKey: page-contacto
 locale: en
+draft: true
 directAnswer: "The fastest way to get a price is WhatsApp: send us photos of what you want painted and you'll have an estimate today, in English. For a fixed quote, we do a free 20-minute visit anywhere in Madrid and deliver it in writing within 24 hours."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

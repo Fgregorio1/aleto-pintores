@@ -1,6 +1,6 @@
 ---
-title: "Lacar puertas en Madrid — Desde 80 € por puerta"
-metaDescription: "Lacado de puertas, armarios y carpintería en Madrid: de 80 a 140 € por puerta (dos caras y marco), acabado de fábrica. Presupuesto cerrado en 24 h."
+title: "Lacado de puertas y armarios en Madrid | Aleto Pintores"
+metaDescription: "Lacamos puertas y armarios en tu casa con acabado tipo fábrica: imprimación de agarre, esmalte que no amarillea y garantía por escrito. Presupuesto en 24 h."
 h1: "Lacado de puertas y armarios en Madrid"
 translationKey: service-lacado
 locale: es
@@ -26,6 +26,28 @@ proceso:
     detalle: "Dos o tres manos de esmalte laca de poliuretano, con lijado suave entre manos para un acabado liso tipo fábrica."
   - paso: "Montaje y entrega"
     detalle: "Remontamos herrajes (o los sustituimos si quieres renovarlos) y repasamos el conjunto contigo puerta a puerta."
+features:
+  - icon: "spray"
+    title: "Acabado tipo fábrica"
+    text: "Esmalte laca de poliuretano aplicado con técnica de espray: liso, uniforme y duro."
+  - icon: "check"
+    title: "Imprimación de agarre"
+    text: "El paso que separa un lacado profesional de uno que se descascarilla en meses."
+  - icon: "sparkle"
+    title: "Lijado entre manos"
+    text: "Dos o tres manos con lijado suave entre ellas. El tacto lo nota cualquiera."
+  - icon: "home"
+    title: "En tu casa"
+    text: "Trabajamos puerta a puerta sin llevárnoslas: menos molestias y sin días con huecos vacíos."
+  - icon: "check"
+    title: "No amarillea"
+    text: "Esmaltes que mantienen el blanco: nada de puertas cremosas a los dos años."
+  - icon: "doc"
+    title: "Herrajes resueltos"
+    text: "Desmontamos, protegemos y remontamos herrajes — o los renovamos si quieres."
+  - icon: "shield"
+    title: "Garantía por escrito"
+    text: "Materiales y acabado respaldados por contrato, con seguro de RC de 300.000 €."
 faq:
   - q: "¿Qué diferencia hay entre lacar una puerta y pintarla de blanco?"
     a: "El proceso. Una puerta 'pintada de blanco' sin desmontar herrajes, sin lijado y sin imprimación de agarre se descascarilla en meses. Un lacado profesional lleva preparación completa, imprimación específica sobre el barniz y dos o tres manos con lijado fino entre ellas. Se ve a contraluz y, sobre todo, se ve a los dos años."
@@ -38,7 +60,7 @@ faq:
   - q: "¿Lacáis también armarios, ventanas y radiadores?"
     a: "Sí: frentes de armario, ventanas de madera, radiadores, barandillas y rodapiés. Lo presupuestamos por elemento en la misma visita, y si se coordina con la pintura del piso el conjunto sale mejor de precio."
   - q: "¿Cuánto cuesta lacar las puertas de un piso?"
-    a: "Entre 80 y 140 € por puerta completa (dos caras, marco y jambas) en 2026. Un piso de 8 puertas, entre 640 y 1.120 €. Las tablas completas están en nuestra guía de precios de lacado."
+    a: "Cada casa es distinta, así que no trabajamos con tarifas genéricas: visitamos tu piso gratis, medimos y te damos un presupuesto cerrado por escrito en 24 horas, con materiales y fechas incluidos. Ese precio no cambia después — si aparece algo que no vimos en la visita, lo asumimos nosotros."
 ---
 
 ## ¿Por qué un lacado bien hecho dura décadas y uno malo dura meses?

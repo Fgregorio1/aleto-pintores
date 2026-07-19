@@ -5,6 +5,7 @@ h1: "Got it! We'll contact you within 24 h"
 pageKey: gracias
 translationKey: page-gracias
 locale: en
+draft: true
 noindex: true
 datePublished: 2026-07-11
 dateModified: 2026-07-11

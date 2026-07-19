@@ -5,6 +5,7 @@ h1: "Painting services in Madrid"
 pageKey: servicios-hub
 translationKey: page-servicios-hub
 locale: en
+draft: true
 directAnswer: "Every painting service for homes and businesses in Madrid — interior, gotelé removal and smoothing, lacquering, facades, offices, wallpaper and terraces — executed with the same method: total protection, the same crew start to finish, dates in writing and a fixed quote within 24 h, all available in English."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

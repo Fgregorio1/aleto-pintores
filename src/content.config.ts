@@ -55,6 +55,14 @@ const servicios = defineCollection({
     image: image().optional(),
     /** Steps shown in the "Cómo trabajamos" section */
     proceso: z.array(z.object({ paso: z.string(), detalle: z.string() })).default([]),
+    /**
+     * Wolf-blueprint capability cards (2026-07-19 CRO rebuild): 6-8 short
+     * benefit cards per service ("Lijado sin polvo", 1-2 sentences each).
+     * icon = key into FeatureCard's inline SVG set.
+     */
+    features: z
+      .array(z.object({ icon: z.string().default('check'), title: z.string().max(40), text: z.string().max(200) }))
+      .default([]),
     relatedServices: z.array(reference('servicios')).default([]),
     relatedPrecio: reference('precios').optional(),
     /**

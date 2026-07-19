@@ -4,6 +4,7 @@ metaDescription: "Alisar paredes cuesta de 7 a 12 €/m² de pared en Madrid en 
 h1: "Precio de alisar paredes por m² (Madrid, 2026)"
 translationKey: precio-alisar
 locale: es
+draft: true
 priceKey: alisar-paredes
 showCalculator: true
 metodologia: "Rangos basados en nuestros presupuestos reales de alisado en Madrid en 2026, sobre paredes sin gotelé (con gotelé, consulta la guía específica)."

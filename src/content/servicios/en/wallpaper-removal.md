@@ -4,6 +4,7 @@ metaDescription: "Wallpaper removal in Madrid: €4-8/m² wall including glue wa
 h1: "Wallpaper removal in Madrid"
 translationKey: service-papel
 locale: en
+draft: true
 serviceName: "Wallpaper removal"
 priceKey: quitar-papel
 image: "../../../assets/servicios/quitar-papel-pintado.jpg"

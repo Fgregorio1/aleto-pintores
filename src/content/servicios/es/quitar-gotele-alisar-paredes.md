@@ -1,6 +1,6 @@
 ---
-title: "Quitar gotelé y alisar paredes en Madrid — 9-15 €/m²"
-metaDescription: "Quitamos el gotelé y alisamos tus paredes en Madrid: 9-15 €/m² con pintura incluida. Piso de 80 m² entre 1.800 € y 2.600 €, en 4-6 días. Presupuesto en 24 h."
+title: "Quitar gotelé y alisar paredes en Madrid | Aleto Pintores"
+metaDescription: "Quitamos el gotelé y alisamos tus paredes en Madrid sin polvo y sin mudarte. Visita gratuita y presupuesto cerrado por escrito en 24 horas."
 h1: "Quitar gotelé y alisar paredes en Madrid"
 translationKey: service-gotele
 locale: es
@@ -40,6 +40,31 @@ proceso:
     detalle: "Dos capas de plaste, lijado con máquina conectada a aspiración y pared perfectamente lisa al tacto y a contraluz."
   - paso: "Imprimación y pintura"
     detalle: "Imprimamos y damos dos manos del color que elijas. Entregamos con luz rasante para que compruebes el acabado."
+features:
+  - icon: "vacuum"
+    title: "Lijado sin polvo"
+    text: "Lijadoras conectadas a aspiración industrial: el polvo se queda en la máquina, no en tus armarios."
+  - icon: "home"
+    title: "Sellado por estancias"
+    text: "Cada habitación se sella con plásticos y se limpia antes de pasar a la siguiente. La casa sigue habitable."
+  - icon: "check"
+    title: "Diagnóstico del gotelé"
+    text: "Temple o plástico: lo comprobamos gratis en la visita, porque cambia la técnica y el plazo."
+  - icon: "sparkle"
+    title: "Entrega a contraluz"
+    text: "Revisamos cada pared contigo con luz rasante — la prueba que delata cualquier imperfección."
+  - icon: "spray"
+    title: "Pintura incluida"
+    text: "Imprimación y dos manos del color que elijas, con pintura de primera marca. Pared terminada, no a medias."
+  - icon: "clock"
+    title: "Terminado en días"
+    text: "Un piso completo en 4-6 días laborables, trabajando por zonas para molestar lo mínimo."
+  - icon: "doc"
+    title: "Fechas por contrato"
+    text: "Inicio y entrega por escrito antes de empezar. Si nos retrasamos por nuestra culpa, te compensamos."
+  - icon: "shield"
+    title: "Asegurados con MAPFRE"
+    text: "Responsabilidad civil de 300.000 € y garantía por escrito en cada trabajo."
 faq:
   - q: "¿Se genera mucho polvo al quitar el gotelé?"
     a: "Con el método tradicional sí; por eso trabajamos distinto: cada estancia se sella con plásticos, las lijadoras van conectadas a aspiración industrial y cada zona se limpia antes de pasar a la siguiente. Es la diferencia entre una obra y una intervención."
@@ -52,7 +77,7 @@ faq:
   - q: "¿Cuántos días se tarda en un piso habitado?"
     a: "Un piso de 80 m² habitado se hace en 4-6 días trabajando por zonas. El plaste necesita secado entre capas: quien te prometa paredes alisadas 'en un día' va a saltarse pasos que se notarán a contraluz."
   - q: "¿Cuánto cuesta y qué incluye?"
-    a: "Entre 9 y 15 €/m² de pared (2026) con todo incluido: retirada o aplastecido, alisado, imprimación y dos manos de pintura de primera marca. El detalle por tamaños de piso está en nuestra guía de precios de quitar gotelé."
+    a: "Cada casa es distinta, así que no trabajamos con tarifas genéricas: visitamos tu piso gratis, medimos y te damos un presupuesto cerrado por escrito en 24 horas, con materiales y fechas incluidos. Ese precio no cambia después — si aparece algo que no vimos en la visita, lo asumimos nosotros."
 ---
 
 ## ¿Cómo se quita el gotelé sin llenar la casa de polvo?

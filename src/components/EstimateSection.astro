@@ -1,0 +1,52 @@
+---
+import LeadForm from '@/components/contact/LeadForm.astro';
+import type { Locale } from '@/i18n/ui';
+
+/**
+ * Mid-page estimate band (Wolf pattern: the form comes to the visitor,
+ * not the other way round). Wraps the existing LeadForm — tracking,
+ * validation, Enhanced Conversions and the Sheets pipeline unchanged.
+ */
+interface Props {
+  locale: Locale;
+  formSource: string;
+  title?: string;
+}
+const { locale, formSource, title } = Astro.props;
+
+const ui = {
+  es: {
+    title: 'Pide tu presupuesto gratis',
+    lead: 'Visita gratuita de 20 minutos y precio cerrado por escrito en 24 horas. Sin compromiso.',
+  },
+  en: {
+    title: 'Request your free estimate',
+    lead: 'Free 20-minute visit and a fixed written quote within 24 hours. No obligation.',
+  },
+}[locale];
+---
+
+<section id="contacto" class="border-y border-line bg-paper-dark/40">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-2 lg:py-18">
+    <div>
+      <h2 class="text-2xl text-forest-900 sm:text-3xl">{title ?? ui.title}</h2>
+      <p class="mt-3 max-w-md text-ink-soft">{ui.lead}</p>
+      <ul class="mt-6 space-y-3">
+        {
+          (locale === 'es'
+            ? ['Respuesta el mismo día', 'Fechas de inicio y entrega por escrito', 'El mismo equipo del primer al último día']
+            : ['Same-day reply', 'Start and delivery dates in writing', 'The same crew from first day to last']
+          ).map((t) => (
+            <li class="flex items-center gap-2.5 text-sm text-ink">
+              <span class="flex h-5 w-5 items-center justify-center rounded-full bg-chartreuse-100 text-forest-800" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5 4.8 9.2 10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              {t}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <LeadForm locale={locale} formSource={formSource} />
+  </div>
+</section>

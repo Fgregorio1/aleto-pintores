@@ -4,6 +4,7 @@ metaDescription: "Removing gotelé texture costs €9-15 per m² of wall in Madr
 h1: "Gotelé removal cost in Madrid (2026 prices)"
 translationKey: precio-gotele
 locale: en
+draft: true
 priceKey: quitar-gotele
 showCalculator: true
 metodologia: "Ranges based on our real gotelé-removal quotes in Madrid in 2026, by gotelé type (water-soluble or plastic) and wall condition."

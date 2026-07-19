@@ -1,0 +1,40 @@
+---
+import type { Locale } from '@/i18n/ui';
+
+/**
+ * Honest stats band (Wolf's "+850 clients" pattern with claims we can
+ * actually make — docs rule: no fabricated proof).
+ */
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+
+const stats = {
+  es: [
+    { value: '7 años', label: 'de oficio en EE.UU.' },
+    { value: '2026', label: 'Fundada en Madrid' },
+    { value: '300.000 €', label: 'Seguro de RC (MAPFRE)' },
+    { value: '24 h', label: 'Presupuesto cerrado' },
+  ],
+  en: [
+    { value: '7 years', label: 'of trade in the US' },
+    { value: '2026', label: 'Founded in Madrid' },
+    { value: '€300,000', label: 'Liability insured (MAPFRE)' },
+    { value: '24 h', label: 'Fixed quote' },
+  ],
+}[locale];
+---
+
+<section class="bg-forest-900 text-paper">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-y-8 px-4 py-12 sm:px-6 lg:grid-cols-4">
+    {
+      stats.map((s) => (
+        <div class="text-center">
+          <p class="font-display text-3xl font-semibold text-chartreuse-300 sm:text-4xl">{s.value}</p>
+          <p class="mt-1 text-sm text-paper/80">{s.label}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

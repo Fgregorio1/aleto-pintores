@@ -4,6 +4,7 @@ metaDescription: "Quitar gotelé cuesta de 9 a 15 €/m² de pared en Madrid (20
 h1: "Precio de quitar gotelé y alisar paredes (Madrid, 2026)"
 translationKey: precio-gotele
 locale: es
+draft: true
 priceKey: quitar-gotele
 showCalculator: true
 metodologia: "Rangos basados en nuestros presupuestos reales de retirada de gotelé en Madrid en 2026, según tipo de gotelé (temple o plástico) y estado del soporte."

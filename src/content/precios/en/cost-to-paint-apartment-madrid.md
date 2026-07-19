@@ -4,6 +4,7 @@ metaDescription: "Real 2026 prices: painting an apartment in Madrid costs €15-
 h1: "How much does it cost to paint an apartment in Madrid? (2026)"
 translationKey: precio-pintar-piso
 locale: en
+draft: true
 priceKey: pintura-interior
 showCalculator: true
 metodologia: "Prices compiled from our real quotes in Madrid during 2026. This guide is updated quarterly."

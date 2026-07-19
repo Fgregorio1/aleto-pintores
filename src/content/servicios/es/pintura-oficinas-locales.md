@@ -1,6 +1,6 @@
 ---
-title: "Pintura de oficinas y locales en Madrid — 10-16 €/m²"
-metaDescription: "Pintamos oficinas, locales y naves en Madrid en horario nocturno o fin de semana, sin parar tu actividad. De 10 a 16 €/m². Presupuesto en 24 h con factura."
+title: "Pintura de oficinas y locales en Madrid | Aleto Pintores"
+metaDescription: "Pintamos tu oficina o local de noche o en fin de semana, sin parar tu actividad. Secado rápido sin olor, certificados y factura. Presupuesto en 24 h."
 h1: "Pintura de oficinas y locales comerciales en Madrid"
 translationKey: service-oficinas
 locale: es
@@ -26,6 +26,25 @@ proceso:
     detalle: "Equipos amplios, pintura de secado rápido sin olor y protección total de mobiliario y equipos informáticos."
   - paso: "Entrega documentada"
     detalle: "Repaso conjunto, certificados de trabajos y prevención si tu empresa los requiere, y factura con IVA."
+features:
+  - icon: "clock"
+    title: "Noches y fines de semana"
+    text: "Pintamos cuando tu negocio descansa: tu equipo llega el lunes a un espacio impecable."
+  - icon: "check"
+    title: "Actividad sin parar"
+    text: "Planificación por zonas para que no pierdas ni una hora de operación."
+  - icon: "sparkle"
+    title: "Secado rápido sin olor"
+    text: "Pinturas específicas para espacios de trabajo ocupados al día siguiente."
+  - icon: "home"
+    title: "Equipos protegidos"
+    text: "Mobiliario, informática y señalética cubiertos y repuestos en su sitio."
+  - icon: "doc"
+    title: "Certificados y PRL"
+    text: "Documentación de prevención y certificados de trabajo si tu empresa los requiere."
+  - icon: "doc"
+    title: "Factura con IVA"
+    text: "Presupuesto formal por escrito y factura. Sin economía sumergida."
 faq:
   - q: "¿Podéis pintar sin que cerremos la oficina o la tienda?"
     a: "Sí, es nuestra especialidad. Trabajamos por las noches, fines de semana o por zonas, con pinturas al agua sin olor y secado rápido. Tu equipo llega el lunes a un espacio pintado, ventilado y en su sitio."
@@ -38,7 +57,7 @@ faq:
   - q: "¿Trabajáis en centros comerciales con horarios restringidos?"
     a: "Sí. Estamos habituados a los horarios de obra nocturnos de los centros comerciales y a coordinar accesos, acopios y normativa con la gerencia del centro."
   - q: "¿Cuánto cuesta pintar una oficina?"
-    a: "Entre 10 y 16 €/m² de superficie en 2026, con el trabajo nocturno o de fin de semana incluido. Una oficina de 150 m², entre 1.500 y 2.400 €. Pide el desglose exacto con una visita fuera de horario."
+    a: "Cada casa es distinta, así que no trabajamos con tarifas genéricas: visitamos tu piso gratis, medimos y te damos un presupuesto cerrado por escrito en 24 horas, con materiales y fechas incluidos. Ese precio no cambia después — si aparece algo que no vimos en la visita, lo asumimos nosotros."
 ---
 
 ## ¿Por qué las empresas repiten con nosotros?

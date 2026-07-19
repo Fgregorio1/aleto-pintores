@@ -4,6 +4,7 @@ metaDescription: "Terrace and roof waterproofing in Madrid with liquid membrane:
 h1: "Terrace waterproofing in Madrid"
 translationKey: service-terrazas
 locale: en
+draft: true
 serviceName: "Terrace waterproofing"
 priceKey: impermeabilizacion
 image: "../../../assets/servicios/impermeabilizacion-terrazas.jpg"

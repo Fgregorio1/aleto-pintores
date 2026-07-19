@@ -5,6 +5,7 @@ h1: "Painting prices in Madrid (2026)"
 pageKey: precios-hub
 translationKey: page-precios-hub
 locale: en
+draft: true
 directAnswer: "These are our real Madrid rates for 2026: full flat painting from €13 to €20 per m² of floor area, gotelé removal and smoothing €9–15 per m² of wall, door lacquering €80–140 per door, and facade painting €12–22 per m². Almost no painting company publishes its prices; we do, because we have nothing to hide."
 datePublished: 2026-07-09
 dateModified: 2026-07-09

@@ -5,6 +5,7 @@ h1: "About Aleto Pintores"
 pageKey: sobre-nosotros
 translationKey: page-about
 locale: en
+draft: true
 heroLead: "We combine 7 years of experience managing painting projects in the US with the craftsmanship of local painters in Madrid, under a clear, trusted method."
 directAnswer: "Aleto Pintores is a residential and commercial painting company founded in 2026 by Felipe Gregorio, an industry professional with 7 years of experience running a painting business in the US. Based in Chamberí (Madrid), we combine US-grade customer service standards with experienced local painters. We offer published prices, fixed quotes, full insurance, and written warranties."
 datePublished: 2026-07-09

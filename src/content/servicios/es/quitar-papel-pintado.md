@@ -1,6 +1,6 @@
 ---
-title: "Quitar papel pintado en Madrid — 4-8 €/m² con preparación"
-metaDescription: "Retiramos papel pintado y dejamos la pared lista para pintar: 4-8 €/m² de pared en Madrid. Con reparación del soporte incluida. Presupuesto gratis en 24 h."
+title: "Quitar papel pintado en Madrid | Aleto Pintores"
+metaDescription: "Retiramos el papel pintado sin dañar el yeso, lavamos la cola y dejamos la pared lista para el siguiente acabado. Visita gratuita y presupuesto en 24 h."
 h1: "Quitar papel pintado en Madrid"
 translationKey: service-papel
 locale: es
@@ -26,6 +26,25 @@ proceso:
     detalle: "Eliminamos restos de cola — el paso que muchos se saltan y que arruina la pintura posterior — y reparamos desperfectos."
   - paso: "Acabado a elegir"
     detalle: "Pared lista para pintar, alisar o empapelar de nuevo, con consejo honesto según el estado real del soporte."
+features:
+  - icon: "check"
+    title: "Prueba antes del precio"
+    text: "Comprobamos el tipo de papel y cuántas capas hay antes de dar un precio cerrado."
+  - icon: "spray"
+    title: "Vapor sin dañar el yeso"
+    text: "Vaporeta o producto específico según el papel, con los tiempos de empapado correctos."
+  - icon: "sparkle"
+    title: "Lavado completo de cola"
+    text: "El paso que muchos se saltan y que arruina la pintura posterior. Nosotros no lo saltamos."
+  - icon: "home"
+    title: "Saneado de desperfectos"
+    text: "Reparamos los arranques y golpes que aparecen al retirar el papel."
+  - icon: "doc"
+    title: "Consejo honesto"
+    text: "Te decimos el mejor siguiente acabado para tu pared — aunque sea la opción más barata."
+  - icon: "shield"
+    title: "Garantía por escrito"
+    text: "Trabajo asegurado (RC 300.000 €) y garantizado por contrato."
 faq:
   - q: "¿Puede la retirada dañar la pared?"
     a: "Si se hace en seco y con prisas, sí: el papel puede llevarse el yeso. Por eso trabajamos con vapor y tiempos de empapado correctos, y hacemos una prueba previa en zona discreta. Nuestro objetivo es entregarte el soporte intacto, no solo sin papel."
@@ -36,7 +55,7 @@ faq:
   - q: "¿Qué pasa si debajo aparece gotelé o la pared en mal estado?"
     a: "Es habitual en pisos antiguos. Te damos precio en el momento para la solución que prefieras — reparación puntual y pintura, o alisado completo — y nunca continuamos con extras sin tu aprobación explícita."
   - q: "¿Cuánto cuesta y cuánto se tarda?"
-    a: "Entre 4 y 8 €/m² de pared (2026) con lavado y preparación incluidos; un salón medio queda entre 160 y 320 € en una jornada. Un piso completo se retira y prepara en 2-3 días, encadenando la pintura sin días muertos si la hacemos nosotros."
+    a: "Cada casa es distinta, así que no trabajamos con tarifas genéricas: visitamos tu piso gratis, medimos y te damos un presupuesto cerrado por escrito en 24 horas, con materiales y fechas incluidos. Ese precio no cambia después — si aparece algo que no vimos en la visita, lo asumimos nosotros."
 ---
 
 ## ¿Por qué la retirada de papel es más delicada de lo que parece?

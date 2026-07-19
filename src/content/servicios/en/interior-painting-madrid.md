@@ -4,6 +4,7 @@ metaDescription: "English-speaking painters in Madrid. Painting an 80 m² flat c
 h1: "Interior painting in Madrid (flats & houses)"
 translationKey: service-pintura-interior
 locale: en
+draft: true
 serviceName: "Interior painting (flats & houses)"
 priceKey: pintura-interior
 image: "../../../assets/servicios/pintura-interior.jpg"

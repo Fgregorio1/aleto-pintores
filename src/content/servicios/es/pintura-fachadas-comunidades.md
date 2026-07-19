@@ -1,6 +1,6 @@
 ---
-title: "Pintura de fachadas y comunidades en Madrid — 12-22 €/m²"
-metaDescription: "Pintamos fachadas, portales, escaleras y garajes para comunidades de propietarios en Madrid. Fachadas de 12 a 22 €/m². Presupuesto detallado para tu junta."
+title: "Pintura de fachadas y comunidades en Madrid | Aleto"
+metaDescription: "Pintura de fachadas y zonas comunes para comunidades en Madrid: presupuesto por partidas para la junta, obra documentada y garantía por escrito."
 h1: "Pintura de fachadas y comunidades de propietarios en Madrid"
 translationKey: service-fachadas
 locale: es
@@ -27,6 +27,25 @@ proceso:
     detalle: "Saneado de fisuras y desconchados, imprimación y revestimiento acrílico o al pliolite según el soporte."
   - paso: "Entrega documentada"
     detalle: "Entrega con informe fotográfico y garantía por escrito para la comunidad."
+features:
+  - icon: "doc"
+    title: "Inspección documentada"
+    text: "Fisuras, desconchados y humedades documentados con fotos antes de presupuestar."
+  - icon: "doc"
+    title: "Presupuesto por partidas"
+    text: "Desglosado para que el administrador lo presente tal cual a la junta."
+  - icon: "home"
+    title: "Respeto a los vecinos"
+    text: "Horarios pactados, zonas comunes limpias y un responsable localizable toda la obra."
+  - icon: "check"
+    title: "Saneado antes de pintar"
+    text: "Reparamos el soporte de verdad: pintar sobre fisuras vivas es tirar el dinero de la comunidad."
+  - icon: "spray"
+    title: "Sistema según soporte"
+    text: "Revestimiento acrílico o al pliolite según diagnóstico, no según lo que haya en oferta."
+  - icon: "shield"
+    title: "Garantía a la comunidad"
+    text: "Entrega con informe fotográfico y garantía por escrito."
 faq:
   - q: "¿Trabajáis con administradores de fincas?"
     a: "Sí, es una parte central de nuestro trabajo. Preparamos presupuestos por partidas listos para junta, cumplimos los plazos pactados y entregamos informe fotográfico final. El administrador tiene un contacto único de obra y reporte semanal — buscamos relaciones a largo plazo, no obras sueltas."
@@ -39,7 +58,7 @@ faq:
   - q: "¿El presupuesto incluye reparar grietas y desconchados?"
     a: "La reparación básica va incluida en nuestros rangos. El saneado estructural (grietas vivas, armaduras vistas) se presupuesta como partida aparte tras la inspección — siempre con fotos y medición, nunca como sorpresa a mitad de obra."
   - q: "¿Cuánto cuesta pintar la fachada de un edificio?"
-    a: "Entre 12 y 22 €/m² de fachada en 2026 según soporte y medio de acceso. La guía completa para comparar ofertas, con el desglose de partidas explicado, está en nuestra página de precio de pintar fachada."
+    a: "Cada casa es distinta, así que no trabajamos con tarifas genéricas: visitamos tu piso gratis, medimos y te damos un presupuesto cerrado por escrito en 24 horas, con materiales y fechas incluidos. Ese precio no cambia después — si aparece algo que no vimos en la visita, lo asumimos nosotros."
 ---
 
 ## ¿Qué necesita una comunidad antes de votar la obra?

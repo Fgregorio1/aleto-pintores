@@ -1,7 +1,7 @@
 ---
-title: "Pintores en Madrid — Precios publicados y 24 h"
-metaDescription: "Empresa de pintores en Madrid con precios publicados: pintar piso desde 15 €/m², quitar gotelé 9-15 €/m². Presupuesto cerrado en 24 h. Atención 24/7."
-h1: "Pintores profesionales en Madrid: el acabado que buscas con la seriedad que exiges"
+title: "Pintores en Madrid — Presupuesto cerrado en 24 h"
+metaDescription: "Empresa de pintores en Madrid: protección total, el mismo equipo del primer al último día y fechas por contrato. Visita gratuita y presupuesto cerrado en 24 h."
+h1: "Pintores profesionales en Madrid"
 pageKey: home
 translationKey: page-home
 locale: es
@@ -16,8 +16,8 @@ faq:
     a: "Protocolo completo antes de abrir un bote: suelos cubiertos, muebles agrupados y envueltos, carpintería enmascarada. Lijado con aspiración, pinturas al agua sin olor y limpieza cada tarde. La casa sigue siendo habitable todos los días."
   - q: "¿Se cumplen las fechas?"
     a: "Sí: fecha de inicio y fecha de entrega van por escrito en el presupuesto, junto al precio cerrado. Si aparece algo que no vimos en la visita, lo asumimos nosotros — ese es el trato."
-  - q: "¿Cuánto cobra un pintor en Madrid?"
-    a: "En 2026, pintar un piso completo cuesta entre 15 y 23 €/m² con material incluido (un piso de 80 m², entre 1.250 € y 1.950 €); quitar gotelé y alisar, de 9 a 15 €/m² de pared. Publicamos todas las tarifas en la sección de precios."
+  - q: "¿Cuánto me va a costar?"
+    a: "Cada vivienda es distinta, así que no damos tarifas genéricas: visitamos tu casa gratis, medimos y te entregamos un presupuesto cerrado por escrito en 24 horas, con materiales y fechas incluidos. Ese precio no cambia durante la obra."
   - q: "¿En qué zonas de Madrid trabajáis?"
     a: "En todo Madrid capital y el área metropolitana: Alcorcón, Móstoles, Getafe, Leganés, Fuenlabrada, Las Rozas, Pozuelo, Majadahonda, Alcobendas y alrededores."
   - q: "¿Qué pasa después de la entrega?"
