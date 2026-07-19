@@ -124,14 +124,15 @@ CAMPAIGNS = [
                 "path1": "quitar-gotele",
                 "path2": "madrid",
                 # 2026-07-15: "quitar gotele precio" dropped (price-shopper
-                # intent); bundled-job and noun-form variants added.
+                # intent); bundled-job variant added.
+                # 2026-07-19: all alisado-intent keywords removed ("alisado de
+                # paredes", "alisar paredes", "alisar paredes madrid") —
+                # Felipe's call: focus spend on gotelé removal only. Gotelé
+                # queries that mention alisar still match via these keywords.
                 "keywords": [
                     ("quitar gotele madrid", "PHRASE"),
                     ("quitar gotele", "EXACT"),
                     ("quitar gotele y pintar", "PHRASE"),
-                    ("alisar paredes madrid", "PHRASE"),
-                    ("alisar paredes", "EXACT"),
-                    ("alisado de paredes", "PHRASE"),
                     ("eliminar gotele madrid", "PHRASE"),
                     ("quitar gotele piso", "PHRASE"),
                 ],
