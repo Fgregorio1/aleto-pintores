@@ -65,6 +65,10 @@ GEO_NAMES = [
 LANG_ES = "languageConstants/1003"
 LANG_EN = "languageConstants/1000"
 
+# 2026-07-19 (later): live RSA copy is now the PRICE-FREE set in
+# scripts/ads_no_price_rewrite.py (Wolf CRO rebuild — site shows no prices,
+# ads stopped promising them; price assets + price sitelinks removed).
+# The headlines below are the historical launch copy.
 CAMPAIGNS = [
     {
         "name": "Aleto Pintores - Madrid (Spanish)",
