@@ -63,7 +63,10 @@ h3,
   @apply text-ink leading-relaxed;
 }
 .prose-aleto h2 {
-  @apply text-2xl sm:text-3xl text-forest-900 mt-12 mb-4;
+  @apply text-2xl sm:text-3xl text-forest-900 mt-14 mb-4 pt-5 border-t-4 border-chartreuse-400/70 max-w-fit pr-8;
+}
+.prose-aleto > p:first-of-type {
+  @apply text-lg text-ink-soft;
 }
 .prose-aleto h3 {
   @apply text-xl text-forest-800 mt-8 mb-3;

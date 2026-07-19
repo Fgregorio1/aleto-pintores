@@ -3,22 +3,30 @@ import { render, getEntries, getEntry, type CollectionEntry } from 'astro:conten
 import { Image } from 'astro:assets';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import DirectAnswer from '@/components/DirectAnswer.astro';
 import Faq from '@/components/Faq.astro';
 import UpdatedDate from '@/components/UpdatedDate.astro';
 import CtaBlock from '@/components/CtaBlock.astro';
 import ContactSection from '@/components/contact/ContactSection.astro';
+import WistiaEmbed from '@/components/contact/WistiaEmbed.astro';
+import FounderCard from '@/components/FounderCard.astro';
+import TrustGarantias from '@/components/TrustGarantias.astro';
 import PriceTable from '@/components/PriceTable.astro';
 import { seoFromEntry } from '@/lib/seo';
 import { faqSchema, serviceSchema } from '@/lib/schema';
 import { entryLocale, precioPath, servicioPath } from '@/lib/paths';
 import { staticPath } from '@/i18n/routes';
 import { useTranslations } from '@/i18n/ui';
-import { whatsappLink } from '@/data/business';
+import { whatsappLink, WHATSAPP_DEFAULT_MSG, STATS } from '@/data/business';
 import WhatsAppIcon from '@/components/WhatsAppIcon.astro';
 
 /**
- * Template order per docs/02 §3: H1 → direct answer with numbers →
- * price table → process → body sections → FAQ → CTA.
+ * CRO-first service page (2026-07-19 redesign), SEO layer intact:
+ * gradient hero (H1 + CTA + trust chips) → direct answer + collapsed
+ * tarifas → proceso → trust band (video/stats/garantías/founder) →
+ * CTA band → body → gallery → FAQ → price pointer → related → form.
+ * Scroll data drove this: 80% of paid visitors never passed 50% on the
+ * old text-wall order, and the form was section 12/12.
  */
 interface Props {
   entry: CollectionEntry<'servicios'>;
@@ -38,69 +46,99 @@ const crumbs = [
   { name: entry.data.shortLabel, path: seo.canonicalPath },
 ];
 
-const waMessage =
-  locale === 'es'
-    ? `Hola, me interesa: ${entry.data.serviceName}. ¿Me podéis dar un presupuesto?`
-    : `Hi, I'm interested in: ${entry.data.serviceName}. Could you give me a quote?`;
-const heroCta = {
-  es: { btn: 'Pedir presupuesto gratis', micro: 'Visita gratuita · Presupuesto cerrado en 24 h · Sin compromiso' },
-  en: { btn: 'Get a free quote', micro: 'Free visit · Fixed quote within 24 h · No obligation' },
+const waMessage = WHATSAPP_DEFAULT_MSG[locale];
+const ui = {
+  es: {
+    btn: 'Presupuesto por WhatsApp',
+    btnForm: 'Presupuesto en 24 h',
+    micro: 'Respuesta hoy · Visita gratuita · Sin compromiso',
+    chips: ['Seguro RC 300.000 €', 'Garantía por escrito', 'Fechas por contrato'],
+    trustTitle: 'Quién entra en tu casa',
+    trustLead: 'Un equipo con nombre, asegurado y con cada compromiso por escrito.',
+  },
+  en: {
+    btn: 'Quote via WhatsApp',
+    btnForm: 'Fixed quote in 24 h',
+    micro: 'Reply today · Free visit · No obligation',
+    chips: ['€300k liability insured', 'Written guarantee', 'Dates in the contract'],
+    trustTitle: 'Who comes into your home',
+    trustLead: 'A named crew, insured, with every commitment in writing.',
+  },
 }[locale];
 ---
 
 <BaseLayout seo={seo} schemas={[serviceSchema(entry, seo.canonicalPath), faqSchema(entry.data.faq)]}>
   <Breadcrumbs items={crumbs} />
-  <article class="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
-    <header class="max-w-3xl">
-      <h1 class="text-3xl leading-tight text-forest-900 sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
-      {/* Value-first hero. Visible prices live ONLY in the FAQ and /precios/ (docs/03 §3b). */}
-      <p class="mt-5 max-w-3xl text-lg leading-relaxed text-ink-soft">
-        {entry.data.heroLead ?? entry.data.directAnswer}
-      </p>
-      {/* CRO: conversion path in the first viewport */}
-      <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
-        <a
-          href={whatsappLink(waMessage)}
-          data-pos="hero"
-          class="inline-flex items-center gap-2 rounded-full bg-forest-700 px-6 py-3 text-sm font-semibold text-paper transition-colors hover:bg-forest-800"
-        >
-          <WhatsAppIcon size={15} />
-          {heroCta.btn}
-        </a>
-        <p class="text-xs font-medium text-ink-soft">{heroCta.micro}</p>
-      </div>
-    </header>
 
-    {/* Collapsable Pricing Table: minimal presence so pricing isn't the primary focus, but highly accessible for Google Ads/SEO crawlers */}
-    <details class="group mt-8 border border-line bg-white rounded-2xl overflow-hidden max-w-3xl">
-      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-4 font-medium text-forest-900 [&::-webkit-details-marker]:hidden bg-paper-dark/30 hover:bg-paper-dark/50 select-none">
-        <span class="text-sm font-semibold tracking-normal flex items-center gap-2">
+  {/* Hero: conversion path + trust chips in the first viewport */}
+  <header class="bg-brand-gradient text-paper">
+    <div class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.25em] text-chartreuse-300">{entry.data.serviceName}</p>
+        <h1 class="mt-3 text-3xl leading-tight sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
+        {/* Value-first hero. Visible prices live ONLY in the FAQ and /precios/ (docs/03 §3b). */}
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-paper/90">
+          {entry.data.heroLead ?? entry.data.directAnswer}
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <a
+            href={whatsappLink(waMessage)}
+            data-pos="hero"
+            class="inline-flex items-center gap-2 rounded-full bg-paper px-6 py-3.5 text-sm font-semibold text-forest-900 transition-transform hover:scale-[1.02]"
+          >
+            <WhatsAppIcon size={15} />
+            {ui.btn}
+          </a>
+          <a
+            href="#contacto"
+            class="rounded-full border border-paper/50 px-6 py-3.5 text-sm font-semibold text-paper hover:border-paper"
+          >{ui.btnForm}</a>
+        </div>
+        <p class="mt-4 text-xs font-medium text-paper/80">{ui.micro}</p>
+        <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+          {ui.chips.map((c) => (
+            <li class="flex items-center gap-1.5 text-sm text-paper/90">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" class="text-chartreuse-300"><path d="M2 6.5 4.8 9.2 10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              {c}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {
+        entry.data.image && (
+          <div class="overflow-hidden rounded-2xl border border-paper/20">
+            <Image
+              src={entry.data.image}
+              alt={entry.data.serviceName}
+              widths={[600, 900, 1200]}
+              sizes="(min-width: 1024px) 500px, 100vw"
+              class="aspect-[4/3] w-full object-cover"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+        )
+      }
+    </div>
+  </header>
+
+  <article class="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
+    {/* Direct answer (snippet layer, keeps its numbers) + collapsed tarifas as one compact unit */}
+    <DirectAnswer text={entry.data.directAnswer} />
+
+    <details class="group mt-4 max-w-3xl overflow-hidden rounded-2xl border border-line bg-white">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 bg-paper-dark/30 p-4 font-medium text-forest-900 select-none hover:bg-paper-dark/50 [&::-webkit-details-marker]:hidden">
+        <span class="flex items-center gap-2 text-sm font-semibold tracking-normal">
           📊 {locale === 'es' ? 'Ver tarifas orientativas de este servicio' : 'View estimated rates for this service'}
         </span>
         <span class="text-olive-500 transition-transform group-open:rotate-45" aria-hidden="true">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
         </span>
       </summary>
-      <div class="px-5 pb-5 border-t border-line">
+      <div class="border-t border-line px-5 pb-5">
         <PriceTable priceKey={entry.data.priceKey} locale={locale} />
       </div>
     </details>
-
-    {
-      entry.data.image && (
-        <div class="mt-8 overflow-hidden rounded-2xl border border-line bg-white">
-          <Image
-            src={entry.data.image}
-            alt={entry.data.serviceName}
-            widths={[800, 1200, 1600]}
-            sizes="(min-width: 1152px) 1120px, 100vw"
-            class="aspect-[21/9] w-full object-cover"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </div>
-      )
-    }
 
     {
       entry.data.proceso.length > 0 && (
@@ -108,7 +146,7 @@ const heroCta = {
           <h2 class="text-2xl text-forest-900 sm:text-3xl">{t('proceso.title')}</h2>
           <ol class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {entry.data.proceso.map((p, i) => (
-              <li class="rounded-2xl border border-line bg-white p-5">
+              <li class="rounded-2xl border border-line border-t-4 border-t-chartreuse-400 bg-white p-5">
                 <span class="font-display text-3xl font-semibold text-olive-400">{String(i + 1).padStart(2, '0')}</span>
                 <h3 class="mt-2 font-sans text-base font-semibold tracking-normal text-forest-900">{p.paso}</h3>
                 <p class="mt-1.5 text-sm leading-relaxed text-ink-soft">{p.detalle}</p>
@@ -118,15 +156,70 @@ const heroCta = {
         </section>
       )
     }
+  </article>
 
-    <div class="prose-aleto mt-10 max-w-3xl">
+  {/* Trust band: the mid-page E-E-A-T moment for paid traffic */}
+  <section class="mt-14 border-y border-line bg-paper-dark/40">
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+      <h2 class="text-2xl text-forest-900 sm:text-3xl">{ui.trustTitle}</h2>
+      <p class="mt-2 max-w-2xl text-ink-soft">{ui.trustLead}</p>
+      <div class="mt-8 grid gap-8 lg:grid-cols-2">
+        <div class="space-y-6">
+          <WistiaEmbed />
+          <div class="grid grid-cols-3 divide-x divide-line rounded-2xl border border-line bg-white">
+            {STATS.map((s) => (
+              <div class="px-4 py-5 text-center">
+                <p class="text-xs font-semibold uppercase tracking-wider text-olive-600">{s.label[locale]}</p>
+                <p class="font-display mt-1 text-3xl font-semibold text-forest-900">{s.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <TrustGarantias locale={locale} />
+          <FounderCard locale={locale} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <CtaBlock locale={locale} />
+  </div>
+
+  <article class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="prose-aleto mt-12 max-w-3xl">
       <Content />
     </div>
 
+    {
+      entry.data.gallery.length > 0 && (
+        <section class="mt-12">
+          <div class="grid gap-4 sm:grid-cols-3">
+            {entry.data.gallery.map((g) => (
+              <figure class="overflow-hidden rounded-2xl border border-line bg-white">
+                <Image
+                  src={g.src}
+                  alt={g.alt}
+                  widths={[400, 700]}
+                  sizes="(min-width: 640px) 360px, 100vw"
+                  class="aspect-[4/3] w-full object-cover"
+                  loading="lazy"
+                />
+                {g.caption && <figcaption class="px-4 py-3 text-xs font-medium text-ink-soft">{g.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
     <UpdatedDate date={entry.data.dateModified} locale={locale} />
 
+    <Faq faq={entry.data.faq} locale={locale} />
+
     {/* Price POINTER only — no numbers on the page outside the FAQ (docs/03 §3b) */}
-    <section class="mt-4 max-w-3xl rounded-2xl border border-line bg-white p-6 sm:p-8">
+    <section class="mt-12 max-w-3xl rounded-2xl border border-line bg-white p-6 sm:p-8">
       <h2 class="text-xl text-forest-900">{t('precio.pointer.title')}</h2>
       <p class="mt-2 text-sm leading-relaxed text-ink-soft">{t('precio.pointer.text')}</p>
       <div class="mt-4 flex flex-wrap gap-3">
@@ -141,11 +234,9 @@ const heroCta = {
       </div>
     </section>
 
-    <Faq faq={entry.data.faq} locale={locale} />
-
     {
       related.length > 0 && (
-        <section class="mt-16">
+        <section class="mt-14 pb-2">
           <h2 class="text-xl text-forest-900">{t('related.servicios')}</h2>
           <ul class="mt-4 flex flex-wrap gap-3">
             {related.map((r) => (
@@ -159,10 +250,10 @@ const heroCta = {
         </section>
       )
     }
-
-    <CtaBlock locale={locale} message={locale === 'es' ? `Hola, me interesa: ${entry.data.serviceName}. ¿Me podéis dar un presupuesto?` : `Hi, I'm interested in: ${entry.data.serviceName}. Could you give me a quote?`} />
   </article>
 
-  {/* Full Contact Form & Trust Signals for Ads Traffic */}
-  <ContactSection locale={locale} formSource={`servicio_${entry.id.replace('/', '_')}`} />
+  {/* Full contact form — anchor target of the hero's secondary CTA */}
+  <div id="contacto">
+    <ContactSection locale={locale} formSource={`servicio_${entry.id.replace('/', '_')}`} />
+  </div>
 </BaseLayout>

@@ -57,6 +57,14 @@ const servicios = defineCollection({
     proceso: z.array(z.object({ paso: z.string(), detalle: z.string() })).default([]),
     relatedServices: z.array(reference('servicios')).default([]),
     relatedPrecio: reference('precios').optional(),
+    /**
+     * Illustrative image strip rendered between body and FAQ. Captions must be
+     * process-descriptive ("Lijado con aspiración"), NEVER presented as our own
+     * projects while stock interims are in use (docs/03: no fabricated proof).
+     */
+    gallery: z
+      .array(z.object({ src: image(), alt: z.string(), caption: z.string().optional() }))
+      .default([]),
     /** Short label for cards/nav */
     shortLabel: z.string(),
     /** One-line summary for service cards */

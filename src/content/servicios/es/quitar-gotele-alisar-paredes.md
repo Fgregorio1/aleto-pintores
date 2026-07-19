@@ -13,7 +13,19 @@ orden: 2
 heroLead: "Paredes perfectamente lisas, comprobadas contigo a contraluz — y una casa que sigue siendo habitable todos los días de la obra, sin polvo hasta en los armarios."
 directAnswer: "Quitar el gotelé y alisar las paredes en Madrid cuesta entre 9 y 15 €/m² de pared en 2026, con el alisado y la pintura final incluidos. Un piso de 80 m² (unos 200 m² de pared) queda entre 1.800 € y 2.600 € y se termina en 4-6 días laborables."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-07-19
+# Interim stock (Pexels, free license) — swap for real job photos as they exist.
+# Captions are process-descriptive on purpose: never claim stock as our work.
+gallery:
+  - src: "../../../assets/servicios/stock/imprimacion-pared-alisada.jpg"
+    alt: "Aplicación de imprimación con rodillo sobre una pared recién alisada, con la ventana protegida con plástico"
+    caption: "Protección total e imprimación tras el alisado"
+  - src: "../../../assets/servicios/stock/rodillo-acabado-pared-lisa.jpg"
+    alt: "Pintor aplicando una mano de acabado con rodillo sobre una pared lisa"
+    caption: "Manos de acabado sobre la pared ya lisa"
+  - src: "../../../assets/servicios/stock/detalle-rodillo-pared-blanca.jpg"
+    alt: "Detalle de un rodillo pintando una pared blanca perfectamente lisa junto a un borde protegido con cinta"
+    caption: "El resultado: pared fina y uniforme a contraluz"
 relatedServices:
   - es/pintura-interior-pisos
   - es/quitar-papel-pintado

@@ -13,7 +13,19 @@ orden: 1
 heroLead: "Tu piso pintado en días, no en semanas: protección total de muebles y suelos, el mismo equipo de principio a fin y un acabado que revisamos contigo pared a pared antes de cobrar."
 directAnswer: "Pintar un piso de 80 m² en Madrid cuesta entre 1.250 € y 1.950 € en 2026, con materiales y protección incluidos, y se termina en 4-5 días. El precio exacto depende del estado de las paredes, la altura de los techos y los colores elegidos: te damos un presupuesto cerrado gratis en 24 horas."
 datePublished: 2026-07-09
-dateModified: 2026-07-12
+dateModified: 2026-07-19
+# Interim stock (Pexels, free license) — swap for real job photos as they exist.
+# Captions are process-descriptive on purpose: never claim stock as our work.
+gallery:
+  - src: "../../../assets/servicios/stock/corte-cinta-pintura-verde.jpg"
+    alt: "Rodillo pintando de verde una pared con el borde superior protegido con cinta de enmascarar"
+    caption: "Cortes limpios con cinta en cada encuentro"
+  - src: "../../../assets/servicios/stock/remate-minirodillo-pintor.jpg"
+    alt: "Pintor rematando con minirodillo el borde de una pared verde junto a la carpintería"
+    caption: "Remates a minirodillo junto a marcos y molduras"
+  - src: "../../../assets/servicios/stock/cambio-color-rodillo.jpg"
+    alt: "Rodillo cubriendo una pared blanca con una primera mano de pintura gris"
+    caption: "Cambio de color en dos manos cruzadas"
 relatedServices:
   - es/quitar-gotele-alisar-paredes
   - es/lacado-puertas-armarios

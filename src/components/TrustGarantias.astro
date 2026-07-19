@@ -1,0 +1,63 @@
+---
+import type { Locale } from '@/i18n/ui';
+
+/**
+ * Guarantee checklist shared by service pages and presupuesto-gratis — the
+ * mid-page trust moment for paid traffic. Claims mirror the site-wide set
+ * (RC insurance, written guarantee, contracted dates); no price figures
+ * (docs/03 §3b).
+ */
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+
+const garantias = {
+  es: [
+    {
+      titulo: 'Seguro de Responsabilidad Civil',
+      descripcion: 'Pintores completamente asegurados con MAPFRE hasta 300.000 € de cobertura ante cualquier daño accidental.',
+    },
+    {
+      titulo: 'Garantía de calidad por escrito',
+      descripcion: 'Cada proyecto se respalda con un contrato que detalla los materiales aplicados y su garantía.',
+    },
+    {
+      titulo: 'Compromiso de fechas y plazos',
+      descripcion: 'Firmamos fechas exactas de inicio y fin. Si hay un retraso por nuestra culpa, te compensamos.',
+    },
+  ],
+  en: [
+    {
+      titulo: 'Public liability insurance',
+      descripcion: 'Fully insured painters — MAPFRE coverage up to €300,000 against any accidental damage.',
+    },
+    {
+      titulo: 'Written quality guarantee',
+      descripcion: 'Every project is backed by a contract detailing the materials applied and their guarantee.',
+    },
+    {
+      titulo: 'Committed start and end dates',
+      descripcion: 'We sign exact start and finish dates. If a delay is our fault, we compensate you.',
+    },
+  ],
+}[locale];
+---
+
+<ul class="space-y-4">
+  {
+    garantias.map((g) => (
+      <li class="flex gap-3">
+        <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-chartreuse-100 text-forest-800" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M2 6.5 4.8 9.2 10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+        <div>
+          <p class="text-sm font-semibold text-forest-900">{g.titulo}</p>
+          <p class="mt-0.5 text-sm leading-relaxed text-ink-soft">{g.descripcion}</p>
+        </div>
+      </li>
+    ))
+  }
+</ul>
