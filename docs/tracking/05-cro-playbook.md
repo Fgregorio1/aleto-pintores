@@ -23,6 +23,8 @@ Access: PostHog EU project 220433 — UI at eu.posthog.com, or through the PostH
 
 Dashboard **"CRO Semanal"**: the 3 funnels + conversion rate by `utm_campaign` / device / landing page + `form_error` breakdown by `kind`+`fields` + `form_abandon` by `last_field` + web vitals by template.
 
+✅ BUILT 2026-07-14 via the PostHog MCP: dashboard 819228 (pinned) — <https://eu.posthog.com/project/220433/dashboard/819228>. 9 insights tagged `cro` (funnels at last-7-days, friction/web-vitals trends at 30 days; the conversion-rate views are funnels with a single breakdown each). Replay project settings applied the same day: 20% sampling + URL trigger 100% on the four quote/contact paths, match type "any".
+
 ## The weekly loop (~30 min, run it with Claude + the PostHog MCP)
 
 1. **Quant — find the drop.** Open the form funnel, last 7 days vs previous 7. Identify the step with the biggest absolute loss, then segment it by device / source / page until a cohort stands out ("mobile paid visitors on /contacto/ drop 80% between form_start and submit").

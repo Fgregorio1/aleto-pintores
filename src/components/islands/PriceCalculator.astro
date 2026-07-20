@@ -138,10 +138,7 @@ const config = { services, mods, waBase: whatsappLink(), locale };
       const range = `${nf.format(min)}–${nf.format(max)} €`;
       result.textContent = range;
       last = { service: svc.key, m2, range };
-      let msg = waMsgs[config.locale](svc.label, String(m2), range);
-      // Source-stamp the lead (docs/04) — set by Attribution.astro
-      const src = (window as any).aletoSrc;
-      if (src) msg += `\nRef: ${src}`;
+      const msg = waMsgs[config.locale](svc.label, String(m2), range);
       cta.href = `${config.waBase}?text=${encodeURIComponent(msg)}`;
     }
 

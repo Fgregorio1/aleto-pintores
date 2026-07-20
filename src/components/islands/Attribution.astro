@@ -106,17 +106,7 @@
   };
   (window as any).aletoTrack = track;
 
-  // Stamp all prefilled WhatsApp links with the source
-  document.querySelectorAll<HTMLAnchorElement>('a[href^="https://wa.me"]').forEach((a) => {
-    try {
-      const u = new URL(a.href);
-      const t = u.searchParams.get('text') || '';
-      if (t && !/\bRef:/.test(t)) {
-        u.searchParams.set('text', t + '\nRef: ' + src);
-        a.href = u.toString();
-      }
-    } catch {}
-  });
+
 
   // service slug from the URL (docs/04 event property)
   const service = (() => {

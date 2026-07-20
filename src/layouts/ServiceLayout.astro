@@ -59,52 +59,88 @@ const ui = {
 ---
 
 <BaseLayout seo={seo} schemas={[serviceSchema(entry, seo.canonicalPath), faqSchema(entry.data.faq)]}>
-  <Breadcrumbs items={crumbs} />
-
-  {/* Hero: short, visual, conversion-first */}
-  <header class="bg-brand-gradient text-paper">
-    <div class="mx-auto grid max-w-6xl items-center gap-8 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.05fr_0.95fr]">
-      <div>
-        <h1 class="text-3xl leading-tight sm:text-4xl lg:text-[2.75rem]">{entry.data.h1}</h1>
-        <p class="mt-4 max-w-xl text-lg leading-relaxed text-paper/90">{entry.data.heroLead}</p>
-        <div class="mt-7 flex flex-wrap items-center gap-3">
-          <a
-            href={whatsappLink(waMessage)}
-            data-pos="hero"
-            class="inline-flex items-center gap-2 rounded-full bg-paper px-6 py-3.5 text-sm font-semibold text-forest-900 transition-transform hover:scale-[1.02]"
-          >
-            <WhatsAppIcon size={15} />
-            {ui.btn}
-          </a>
-          <a href="#contacto" class="rounded-full border border-paper/50 px-6 py-3.5 text-sm font-semibold text-paper hover:border-paper">
-            {ui.btnForm}
-          </a>
+  {/* Hero: full-bleed background visual, conversion-first */}
+  <header class="relative overflow-hidden bg-forest-950 text-paper min-h-[520px] flex flex-col justify-between pb-8 sm:pb-12 lg:pb-16">
+    {
+      entry.data.image ? (
+        <div class="absolute inset-0 z-0 select-none pointer-events-none">
+          <Image
+            src={entry.data.image}
+            alt={entry.data.serviceName}
+            widths={[600, 900, 1200, 1600]}
+            sizes="100vw"
+            class="h-full w-full object-cover object-center"
+            loading="eager"
+            fetchpriority="high"
+          />
+          {/* Multi-layered gradient overlay to ensure readability */}
+          <div class="absolute inset-0 bg-forest-950/45 mix-blend-multiply" />
+          <div class="hero-gradient-overlay absolute inset-0" />
         </div>
-        <p class="mt-4 text-xs font-medium text-paper/80">{ui.micro}</p>
-        <ul class="mt-6 flex flex-wrap gap-x-5 gap-y-2">
-          {ui.chips.map((c) => (
-            <li class="flex items-center gap-1.5 text-sm text-paper/90">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" class="text-chartreuse-300"><path d="M2 6.5 4.8 9.2 10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              {c}
-            </li>
-          ))}
-        </ul>
-      </div>
-      {
-        entry.data.image && (
-          <div class="overflow-hidden rounded-2xl border border-paper/20">
-            <Image
-              src={entry.data.image}
-              alt={entry.data.serviceName}
-              widths={[600, 900, 1200]}
-              sizes="(min-width: 1024px) 520px, 100vw"
-              class="aspect-[4/3] w-full object-cover"
-              loading="eager"
-              fetchpriority="high"
-            />
+      ) : (
+        <div class="absolute inset-0 z-0 bg-brand-gradient" />
+      )
+    }
+
+    {/* Header-integrated Breadcrumbs */}
+    <div class="relative z-10 w-full pt-4">
+      <Breadcrumbs items={crumbs} theme="light" />
+    </div>
+
+    <div class="relative z-10 w-full flex-1 flex items-center">
+      <div class="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:py-16">
+        <div class="max-w-2xl backdrop-blur-md bg-forest-950/40 p-6 sm:p-10 rounded-3xl border border-paper/10 shadow-2xl relative overflow-hidden">
+          {/* Subtle gradient glow behind the text to draw focus */}
+          <div class="absolute -top-12 -left-12 w-48 h-48 bg-chartreuse-400/10 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Sub-badge indicating service category */}
+          <span class="inline-flex items-center gap-1.5 rounded-full bg-chartreuse-400/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-chartreuse-300 border border-chartreuse-400/30 backdrop-blur-xs mb-5">
+            <span class="flex h-1.5 w-1.5 rounded-full bg-chartreuse-400 animate-pulse"></span>
+            {t('nav.servicios')}
+          </span>
+
+          <h1 class="text-3xl leading-tight sm:text-4xl lg:text-[3rem] font-display font-bold text-paper drop-shadow-sm">{entry.data.h1}</h1>
+          <p class="mt-4 max-w-xl text-lg leading-relaxed text-paper/95 drop-shadow-sm">{entry.data.heroLead}</p>
+          
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href={whatsappLink(waMessage)}
+              data-pos="hero"
+              class="inline-flex items-center gap-2 rounded-full bg-paper px-6 py-3.5 text-sm font-semibold text-forest-900 transition-all hover:scale-[1.02] hover:bg-chartreuse-400 hover:text-forest-950 shadow-md"
+            >
+              <WhatsAppIcon size={15} />
+              {ui.btn}
+            </a>
+            <a 
+              href="#contacto" 
+              class="rounded-full border border-paper/40 bg-paper/10 backdrop-blur-xs px-6 py-3.5 text-sm font-semibold text-paper transition-all hover:bg-paper/20 hover:border-paper shadow-sm"
+            >
+              {ui.btnForm}
+            </a>
           </div>
-        )
-      }
+          
+          <p class="mt-4 text-xs font-medium text-paper/85 flex items-center gap-2">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-chartreuse-400"></span>
+            {ui.micro}
+          </p>
+          
+          <ul class="mt-8 flex flex-wrap gap-x-4 gap-y-2">
+            {ui.chips.map((c) => (
+              <li class="flex items-center gap-2 text-sm text-paper bg-forest-900/40 backdrop-blur-xs border border-paper/10 px-3 py-1.5 rounded-full shadow-xs">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" class="text-chartreuse-400"><path d="M2 6.5 4.8 9.2 10 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {/* Curved Bottom Divider matching background color */}
+    <div class="absolute bottom-0 left-0 right-0 z-20 h-6 sm:h-8 pointer-events-none select-none">
+      <svg class="w-full h-full" viewBox="0 0 1440 28" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 28h1440V0c-261.2 18-522.4 27-783.6 27C395.2 27 197.6 18 0 0v28z" fill="var(--color-paper)"/>
+      </svg>
     </div>
   </header>
 
@@ -155,3 +191,26 @@ const ui = {
     }
   </section>
 </BaseLayout>
+
+<style>
+  .hero-gradient-overlay {
+    background: linear-gradient(
+      to right,
+      rgba(15, 42, 28, 0.95) 0%,
+      rgba(15, 42, 28, 0.85) 35%,
+      rgba(15, 42, 28, 0.6) 65%,
+      rgba(15, 42, 28, 0.2) 100%
+    );
+  }
+
+  @media (max-width: 1023px) {
+    .hero-gradient-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(15, 42, 28, 0.98) 0%,
+        rgba(15, 42, 28, 0.85) 45%,
+        rgba(15, 42, 28, 0.5) 100%
+      );
+    }
+  }
+</style>
