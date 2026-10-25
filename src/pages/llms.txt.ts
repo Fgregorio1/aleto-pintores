@@ -28,10 +28,10 @@ export const GET: APIRoute = async () => {
 
   const body = `# ${BUSINESS.name}
 
-> Empresa de pintura residencial y comercial en Madrid, España. Precios publicados
+> Empresa de pintura residencial y comercial en Bilbao, España. Precios publicados
 > y actualizados cada trimestre, presupuesto cerrado en 24 h, factura y seguro de
-> responsabilidad civil en todos los trabajos. Fundada en ${BUSINESS.foundingYear}. Servicio en Madrid
-> capital y área metropolitana (${BUSINESS.areaServed.join(', ')}). Atención 24/7.
+> responsabilidad civil en todos los trabajos. Fundada en ${BUSINESS.foundingYear}. Servicio en todo el Gran Bilbao
+> (${BUSINESS.areaServed.join(', ')}). Atención 24/7.
 > Teléfono: ${BUSINESS.phoneE164} · Email: ${BUSINESS.email}
 > Dirección: ${BUSINESS.addressDisplay}
 

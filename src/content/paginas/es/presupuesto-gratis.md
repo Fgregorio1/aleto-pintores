@@ -1,16 +1,16 @@
 ---
-title: "Presupuesto de Pintura Gratis en Madrid | Aleto"
-metaDescription: "Pide presupuesto de pintura gratis en Madrid. Visita de medición técnica incluida y presupuesto cerrado por escrito en 24h con garantía y sin sorpresas."
+title: "Presupuesto de Pintura Gratis en Bilbao | Aleto"
+metaDescription: "Pide presupuesto de pintura gratis en Bilbao. Visita de medición técnica incluida y presupuesto cerrado por escrito en 24h con garantía y sin sorpresas."
 h1: "Pide tu presupuesto cerrado en 24 horas"
 pageKey: presupuesto-gratis
 translationKey: page-presupuesto-gratis
 locale: es
-directAnswer: "Consigue un presupuesto cerrado y detallado en menos de 24 horas para tus trabajos de pintura en Madrid. Incluimos visita técnica gratuita y sin compromiso para medir y revisar el estado de las paredes."
+directAnswer: "Consigue un presupuesto cerrado y detallado en menos de 24 horas para tus trabajos de pintura en Bilbao. Incluimos visita técnica gratuita y sin compromiso para medir y revisar el estado de las paredes."
 datePublished: 2026-07-13
-dateModified: 2026-07-13
+dateModified: 2026-10-25
 faq:
   - q: "¿La visita de medición tiene algún coste?"
-    a: "No, es 100% gratuita y sin compromiso. Nos desplazamos a tu vivienda o local en cualquier punto de Madrid para medir con precisión y darte un precio cerrado."
+    a: "No, es 100% gratuita y sin compromiso. Nos desplazamos a tu vivienda o local en cualquier punto del Gran Bilbao para medir con precisión y darte un precio cerrado."
   - q: "¿Cuánto tardáis en entregar el presupuesto?"
     a: "Te entregamos el presupuesto detallado en PDF en un plazo máximo de 24 horas laborables después de realizar la visita técnica."
   - q: "¿El precio del presupuesto puede subir luego?"

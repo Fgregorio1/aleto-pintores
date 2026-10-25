@@ -1,13 +1,13 @@
 ---
-title: "Contacto — Presupuesto de pintura en 24 h en Madrid"
-metaDescription: "Pide presupuesto de pintura en Madrid: WhatsApp con respuesta inmediata, teléfono 624 04 62 10 y visita gratuita. Presupuesto cerrado en 24 horas."
+title: "Contacto — Presupuesto de pintura en 24 h en Bilbao"
+metaDescription: "Pide presupuesto de pintura en Bilbao: WhatsApp con respuesta inmediata, teléfono 624 04 62 10 y visita gratuita. Presupuesto cerrado en 24 horas."
 h1: "Pide tu presupuesto en 24 horas"
 pageKey: contacto
 translationKey: page-contacto
 locale: es
-directAnswer: "La forma más rápida de tener un precio es WhatsApp: envíanos fotos de lo que quieres pintar y te damos una estimación hoy mismo. Para un presupuesto cerrado, hacemos una visita gratuita de 20 minutos en cualquier punto de Madrid y te lo entregamos por escrito en 24 horas."
+directAnswer: "La forma más rápida de tener un precio es WhatsApp: envíanos fotos de lo que quieres pintar y te damos una estimación hoy mismo. Para un presupuesto cerrado, hacemos una visita gratuita de 20 minutos en cualquier punto del Gran Bilbao y te lo entregamos por escrito en 24 horas."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-10-25
 faq:
   - q: "¿Qué fotos os envío para una estimación por WhatsApp?"
     a: "Una foto general de cada estancia a pintar y algún detalle de desperfectos si los hay (grietas, humedades, gotelé). Con eso y los m² aproximados te damos un rango orientativo en el día."

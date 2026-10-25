@@ -15,7 +15,7 @@ const year = new Date().getFullYear();
   <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
     <div class="md:col-span-2">
       <p class="font-display text-2xl font-semibold tracking-[0.08em]">ALETO</p>
-      <p class="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-chartreuse-300">Pintores · Madrid</p>
+      <p class="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.22em] text-chartreuse-300">Pintores · Bilbao</p>
       <p class="mt-4 max-w-sm text-sm leading-relaxed text-paper/75">{t('footer.tagline')}</p>
       {/* NAP verbatim — must match NAP.md byte-for-byte (entity consistency) */}
       <address class="mt-6 text-sm not-italic leading-relaxed text-paper/90">
@@ -41,7 +41,8 @@ const year = new Date().getFullYear();
 
     <div>
       <h2 class="text-sm font-semibold uppercase tracking-wider text-chartreuse-300">{t('footer.zonas')}</h2>
-      <p class="mt-4 text-sm leading-relaxed text-paper/80">{BUSINESS.areaServed.join(' · ')}</p>
+      <p class="mt-4 text-sm font-semibold text-paper">{locale === 'en' ? 'We serve Greater Bilbao.' : BUSINESS.serviceAreaLine}</p>
+      <p class="mt-2 text-sm leading-relaxed text-paper/80">{BUSINESS.areaServed.join(' · ')}</p>
       <p class="mt-4 text-sm">
         <a href={BUSINESS.gbpUrl} rel="noopener" class="text-paper/80 underline decoration-chartreuse-400/60 underline-offset-2 hover:text-chartreuse-300">
           {locale === 'en' ? 'Find us on Google' : 'Encuéntranos en Google'}

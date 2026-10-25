@@ -31,7 +31,7 @@ const directAnswer = `Pintar un piso de 80 m² en ${d.nombre} cuesta entre ${nf.
 
 const seo = seoFromSingleLocale('zonas', zona, {
   title: `Pintores en ${d.nombre} — Precios 2026`,
-  description: `Empresa de pintura en ${d.nombre} (${d.tipo === 'distrito' ? 'Madrid' : 'Comunidad de Madrid'}). Pintar un piso de 80 m² desde ${nf.format(pMin)} €. Presupuesto en 24 h.`,
+  description: `Empresa de pintura en ${d.nombre} (${d.tipo === 'distrito' ? 'Bilbao' : 'Bizkaia'}). Pintar un piso de 80 m² desde ${nf.format(pMin)} €. Presupuesto en 24 h.`,
 });
 
 const servicios = (await getCollection('servicios', (e) => e.id.startsWith('es/'))).sort(

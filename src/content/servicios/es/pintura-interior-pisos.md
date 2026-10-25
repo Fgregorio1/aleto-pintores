@@ -1,7 +1,7 @@
 ---
-title: "Pintar piso o casa en Madrid — En días, no semanas"
-metaDescription: "Empresa de pintores en Madrid: protección total, el mismo equipo de principio a fin y fechas por contrato. Visita gratuita y presupuesto cerrado en 24 h."
-h1: "Pintar piso o casa en Madrid"
+title: "Pintar piso o casa en Bilbao — En días, no semanas"
+metaDescription: "Empresa de pintores en Bilbao: protección total, el mismo equipo de principio a fin y fechas por contrato. Visita gratuita y presupuesto cerrado en 24 h."
+h1: "Pintar piso o casa en Bilbao"
 translationKey: service-pintura-interior
 locale: es
 serviceName: "Pintura interior de pisos y casas"
@@ -11,9 +11,9 @@ shortLabel: "Pintura interior"
 excerpt: "Pisos y casas completas con protección total, fechas que se cumplen y un acabado que aguanta años."
 orden: 1
 heroLead: "Tu piso pintado en días, no en semanas: protección total de muebles y suelos, el mismo equipo de principio a fin y un acabado que revisamos contigo pared a pared antes de cobrar."
-directAnswer: "Pintar un piso de 80 m² en Madrid cuesta entre 1.250 € y 1.950 € en 2026, con materiales y protección incluidos, y se termina en 4-5 días. El precio exacto depende del estado de las paredes, la altura de los techos y los colores elegidos: te damos un presupuesto cerrado gratis en 24 horas."
+directAnswer: "Pintar un piso de 80 m² en Bilbao cuesta entre 1.250 € y 1.950 € en 2026, con materiales y protección incluidos, y se termina en 4-5 días. El precio exacto depende del estado de las paredes, la altura de los techos y los colores elegidos: te damos un presupuesto cerrado gratis en 24 horas."
 datePublished: 2026-07-09
-dateModified: 2026-07-19
+dateModified: 2026-10-25
 # Interim stock (Pexels, free license) — swap for real job photos as they exist.
 # Captions are process-descriptive on purpose: never claim stock as our work.
 gallery:
@@ -76,7 +76,7 @@ faq:
     a: "Te asesoramos sin coste y pintamos muestras reales en tus paredes antes de decidir — el mismo gris cambia por completo entre una habitación que da al norte y otra al sur. Nadie debería elegir un color de toda la casa desde un abanico de cartulinas."
   - q: "¿Se cumplen las fechas y el precio?"
     a: "Sí, por escrito: fecha de inicio, fecha de entrega y precio cerrado en el presupuesto. Si al empezar aparece algo que no vimos en la visita, lo asumimos nosotros."
-  - q: "¿Cuánto cuesta pintar un piso en Madrid?"
+  - q: "¿Cuánto cuesta pintar un piso en Bilbao?"
     a: "Cada casa es distinta, así que no trabajamos con tarifas genéricas: visitamos tu piso gratis, medimos y te damos un presupuesto cerrado por escrito en 24 horas, con materiales y fechas incluidos. Ese precio no cambia después — si aparece algo que no vimos en la visita, lo asumimos nosotros."
   - q: "¿Dais factura y garantía?"
     a: "Siempre. Factura con IVA y garantía por escrito sobre el trabajo. Al terminar te dejamos la pintura sobrante etiquetada por estancia para futuros retoques."
@@ -96,4 +96,4 @@ El color es la decisión que más ilusión hace y la que más miedo da. Nuestro 
 
 ## ¿Qué garantías tengo de fechas y de precio?
 
-Las tres cosas que firmamos por escrito: fecha de inicio, fecha de entrega y precio cerrado. El presupuesto detalla estancias, preparación, marca y modelo de pintura y número de manos, así que no hay dónde esconder sorpresas. Si aparece algo que no vimos en la visita, lo asumimos nosotros. Los rangos orientativos por tamaño de piso están publicados en la [guía de precios de pintar un piso en Madrid](/precios/precio-pintar-piso-madrid/) — consúltalos antes incluso de llamarnos.
+Las tres cosas que firmamos por escrito: fecha de inicio, fecha de entrega y precio cerrado. El presupuesto detalla estancias, preparación, marca y modelo de pintura y número de manos, así que no hay dónde esconder sorpresas. Si aparece algo que no vimos en la visita, lo asumimos nosotros. Los rangos orientativos por tamaño de piso están publicados en la [guía de precios de pintar un piso en Bilbao](/precios/precio-pintar-piso-madrid/) — consúltalos antes incluso de llamarnos.

@@ -1,5 +1,5 @@
 ---
-title: "Política de privacidad — Aleto Pintores, Madrid"
+title: "Política de privacidad — Aleto Pintores, Bilbao"
 metaDescription: "Política de privacidad y cookies de aletopintores.com: qué datos tratamos, con qué finalidad, qué cookies usamos solo con tu consentimiento y tus derechos RGPD."
 h1: "Política de privacidad y cookies"
 pageKey: politica-privacidad
@@ -7,7 +7,7 @@ translationKey: page-privacidad
 locale: es
 noindex: true
 datePublished: 2026-07-09
-dateModified: 2026-07-10
+dateModified: 2026-10-25
 faq: []
 ---
 
@@ -15,7 +15,7 @@ faq: []
 
 - **Responsable / Titular:** Paola Alejandra Vera Zambrano
 - **NIF:** 48473949T
-- **Domicilio:** C. de Juan de Austria, 13, Chamberí, 28010 Madrid, España
+- **Domicilio:** Rafaela Ybarra Kalea, 14, Deusto, 48014 Bilbao, Bizkaia
 - **Correo:** contacto@aletopintores.com
 
 ## Qué datos tratamos y para qué

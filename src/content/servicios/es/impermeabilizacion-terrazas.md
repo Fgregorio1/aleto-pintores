@@ -1,7 +1,7 @@
 ---
-title: "Impermeabilización de terrazas en Madrid | Aleto Pintores"
+title: "Impermeabilización de terrazas en Bilbao | Aleto Pintores"
 metaDescription: "Impermeabilizamos tu terraza con membrana de poliuretano armada: diagnóstico del origen real de la gotera, garantía por escrito y revisión gratis al año."
-h1: "Impermeabilización de terrazas en Madrid"
+h1: "Impermeabilización de terrazas en Bilbao"
 translationKey: service-terrazas
 locale: es
 serviceName: "Impermeabilización de terrazas"
@@ -11,9 +11,9 @@ shortLabel: "Impermeabilizar terrazas"
 excerpt: "Diagnóstico del origen real de la filtración, sistema con refuerzo en puntos críticos y revisión al año."
 orden: 7
 heroLead: "Localizamos el origen real de la gotera antes de presupuestar y aplicamos un sistema reforzado justo en los puntos donde fallan casi todos, con revisión gratuita al año."
-directAnswer: "Impermeabilizar una terraza en Madrid cuesta entre 25 y 45 €/m² en 2026 con membrana de poliuretano líquido, incluida la preparación del soporte. Una terraza de 20 m² queda entre 500 € y 900 € en 2-3 días, con garantía por escrito de 10 años en el sistema aplicado."
+directAnswer: "Impermeabilizar una terraza en Bilbao cuesta entre 25 y 45 €/m² en 2026 con membrana de poliuretano líquido, incluida la preparación del soporte. Una terraza de 20 m² queda entre 500 € y 900 € en 2-3 días, con garantía por escrito de 10 años en el sistema aplicado."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-10-25
 relatedServices:
   - es/pintura-fachadas-comunidades
   - es/pintura-interior-pisos
@@ -64,9 +64,9 @@ faq:
 
 Porque el agua engaña. La mancha del dormitorio puede venir de una junta a cuatro metros, de un sumidero mal sellado o de una pendiente que embalsa — y una impermeabilización perfecta aplicada en el sitio equivocado no arregla nada. Por eso nuestra visita no es un vistazo para dar precio: comprobamos pendientes, desagües, juntas y encuentros, y localizamos el origen real antes de proponer solución. A veces la respuesta honesta es una pequeña reparación puntual y no un sistema completo; también te lo diremos.
 
-## ¿Qué hace que un sistema dure 15 años en el clima de Madrid?
+## ¿Qué hace que un sistema dure 15 años en el clima de Bilbao?
 
-Madrid castiga las cubiertas por los dos extremos: ciclos de hielo-deshielo en invierno y superficies a más de 70 °C en verano. Un sistema duradero necesita tres cosas: membrana continua sin juntas ni solapes (por eso trabajamos con poliuretano líquido en dos capas cruzadas), **refuerzo con malla en los puntos singulares** — sumideros, esquinas, encuentros con muros, que es donde fallan casi todas —, y una preparación del soporte sin atajos. El acabado queda transitable y del color que elijas, con la ficha técnica del sistema entregada junto a la garantía.
+Bilbao castiga las cubiertas con agua: lluvia frecuente durante buena parte del año, humedad alta y pocas rachas largas de sol para que el soporte seque. Un sistema duradero necesita tres cosas: membrana continua sin juntas ni solapes (por eso trabajamos con poliuretano líquido en dos capas cruzadas), **refuerzo con malla en los puntos singulares** — sumideros, esquinas, encuentros con muros, que es donde fallan casi todas —, y una preparación del soporte sin atajos. El acabado queda transitable y del color que elijas, con la ficha técnica del sistema entregada junto a la garantía.
 
 ## ¿Qué pasa después de la obra?
 

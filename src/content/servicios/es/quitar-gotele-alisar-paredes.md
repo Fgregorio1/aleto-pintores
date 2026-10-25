@@ -1,7 +1,7 @@
 ---
-title: "Quitar gotelé y alisar paredes en Madrid | Aleto Pintores"
-metaDescription: "Quitamos el gotelé y alisamos tus paredes en Madrid sin polvo y sin mudarte. Visita gratuita y presupuesto cerrado por escrito en 24 horas."
-h1: "Quitar gotelé y alisar paredes en Madrid"
+title: "Quitar gotelé y alisar paredes en Bilbao | Aleto Pintores"
+metaDescription: "Quitamos el gotelé y alisamos tus paredes en Bilbao sin polvo y sin mudarte. Visita gratuita y presupuesto cerrado por escrito en 24 horas."
+h1: "Quitar gotelé y alisar paredes en Bilbao"
 translationKey: service-gotele
 locale: es
 serviceName: "Quitar gotelé y alisado de paredes"
@@ -11,9 +11,9 @@ shortLabel: "Quitar gotelé y alisar"
 excerpt: "Paredes lisas perfectas comprobadas a contraluz, sin convertir tu casa en una obra polvorienta."
 orden: 2
 heroLead: "Paredes perfectamente lisas, comprobadas contigo a contraluz — y una casa que sigue siendo habitable todos los días de la obra, sin polvo hasta en los armarios."
-directAnswer: "Quitar el gotelé y alisar las paredes en Madrid cuesta entre 9 y 15 €/m² de pared en 2026, con el alisado y la pintura final incluidos. Un piso de 80 m² (unos 200 m² de pared) queda entre 1.800 € y 2.600 € y se termina en 4-6 días laborables."
+directAnswer: "Quitar el gotelé y alisar las paredes en Bilbao cuesta entre 9 y 15 €/m² de pared en 2026, con el alisado y la pintura final incluidos. Un piso de 80 m² (unos 200 m² de pared) queda entre 1.800 € y 2.600 € y se termina en 4-6 días laborables."
 datePublished: 2026-07-09
-dateModified: 2026-07-19
+dateModified: 2026-10-25
 # Interim stock (Pexels, free license) — swap for real job photos as they exist.
 # Captions are process-descriptive on purpose: never claim stock as our work.
 gallery:
@@ -88,7 +88,7 @@ Las historias de terror del gotelé van siempre de polvo: semanas respirándolo 
 
 La luz rasante. Una pared puede parecer lisa de frente y ondular como el mar cuando la luz entra en ángulo — que es exactamente como entra el sol por una ventana. Un alisado serio lleva su proceso: diagnóstico del tipo de gotelé (temple o plástico, cada uno con su técnica), dos capas cruzadas de plaste aplicadas a llana, lijado mecánico fino y comprobación estancia por estancia con lámpara rasante antes de imprimar. Nosotros entregamos con esa prueba delante de ti. El plaste además necesita sus tiempos de secado: desconfía de plazos imposibles, porque las prisas en el alisado se quedan en la pared para siempre.
 
-## ¿Por qué es la reforma con más impacto en un piso de Madrid?
+## ¿Por qué es la reforma con más impacto en un piso de Bilbao?
 
 Porque cambia la categoría del piso entero sin tocar un tabique. El gotelé grita "años 80"; la pared lisa deja correr la luz, agranda visualmente las estancias y es la base de cualquier decoración actual. Compradores e inquilinos lo perciben en los primeros segundos de una visita — los portales inmobiliarios lo citan sistemáticamente entre las mejoras con mejor retorno junto a cocina y baño. Y es la puerta a lo demás: con la pared lisa, el [lacado de puertas](/servicios/lacado-puertas-armarios/) y una buena elección de color terminan la transformación.
 

@@ -1,13 +1,13 @@
 ---
-title: "Servicios de pintura en Madrid — Todos con precio"
-metaDescription: "Todos nuestros servicios de pintura en Madrid con precios publicados: interior, quitar gotelé, lacado de puertas, fachadas, oficinas, papel pintado y terrazas."
-h1: "Servicios de pintura en Madrid"
+title: "Servicios de pintura en Bilbao — Todos con precio"
+metaDescription: "Todos nuestros servicios de pintura en Bilbao con precios publicados: interior, quitar gotelé, lacado de puertas, fachadas, oficinas, papel pintado y terrazas."
+h1: "Servicios de pintura en Bilbao"
 pageKey: servicios-hub
 translationKey: page-servicios-hub
 locale: es
-directAnswer: "Todos los servicios de pintura para vivienda y empresa en Madrid — interior, gotelé y alisado, lacado, fachadas, oficinas, papel pintado y terrazas — ejecutados con el mismo método: protección total, el mismo equipo de principio a fin, fechas por escrito y presupuesto cerrado en 24 h."
+directAnswer: "Todos los servicios de pintura para vivienda y empresa en Bilbao — interior, gotelé y alisado, lacado, fachadas, oficinas, papel pintado y terrazas — ejecutados con el mismo método: protección total, el mismo equipo de principio a fin, fechas por escrito y presupuesto cerrado en 24 h."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-10-25
 faq: []
 ---
 

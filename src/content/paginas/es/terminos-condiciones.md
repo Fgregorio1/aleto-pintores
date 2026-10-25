@@ -1,5 +1,5 @@
 ---
-title: "Términos y condiciones — Aleto Pintores, Madrid"
+title: "Términos y condiciones — Aleto Pintores, Bilbao"
 metaDescription: "Condiciones generales de contratación de Aleto Pintores: presupuestos, precios, ejecución del servicio, garantía y derecho de desistimiento."
 h1: "Términos y condiciones"
 pageKey: terminos-condiciones
@@ -7,13 +7,13 @@ translationKey: page-terminos-condiciones
 locale: es
 noindex: true
 datePublished: 2026-07-10
-dateModified: 2026-07-10
+dateModified: 2026-10-25
 faq: []
 ---
 
 ## Objeto y ámbito
 
-Estas condiciones generales regulan la contratación de servicios de pintura y acabados de **Aleto Pintores** (C. de Juan de Austria, 13, Chamberí, 28010 Madrid, España · 624 04 62 10 · contacto@aletopintores.com), tanto si la solicitud se realiza a través de este sitio web como por WhatsApp, teléfono o correo electrónico.
+Estas condiciones generales regulan la contratación de servicios de pintura y acabados de **Aleto Pintores** (Rafaela Ybarra Kalea, 14, Deusto, 48014 Bilbao, Bizkaia · 624 04 62 10 · contacto@aletopintores.com), tanto si la solicitud se realiza a través de este sitio web como por WhatsApp, teléfono o correo electrónico.
 
 *(Completar con NIF/CIF y, en su caso, datos registrales antes de la puesta en producción.)*
 
@@ -52,7 +52,7 @@ Aleto Pintores dispone de **seguro de responsabilidad civil vigente** que cubre 
 
 ## Reclamaciones
 
-Para cualquier incidencia, el cliente puede dirigirse a contacto@aletopintores.com o al 624 04 62 10; nos comprometemos a responder en un plazo máximo de 72 horas. Existen **hojas de reclamaciones** a disposición del consumidor conforme a la normativa de la Comunidad de Madrid.
+Para cualquier incidencia, el cliente puede dirigirse a contacto@aletopintores.com o al 624 04 62 10; nos comprometemos a responder en un plazo máximo de 72 horas. Existen **hojas de reclamaciones** a disposición del consumidor conforme a la normativa del País Vasco.
 
 ## Modificaciones
 
@@ -60,4 +60,4 @@ Aleto Pintores puede actualizar estas condiciones para adaptarlas a cambios norm
 
 ## Legislación aplicable y jurisdicción
 
-Estas condiciones se rigen por la legislación española. Para los clientes consumidores, cualquier controversia se someterá a los juzgados y tribunales que resulten competentes conforme a la normativa de protección de consumidores; en contratos entre empresas, a los juzgados y tribunales de Madrid capital.
+Estas condiciones se rigen por la legislación española. Para los clientes consumidores, cualquier controversia se someterá a los juzgados y tribunales que resulten competentes conforme a la normativa de protección de consumidores; en contratos entre empresas, a los juzgados y tribunales de Bilbao.

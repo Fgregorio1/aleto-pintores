@@ -1,7 +1,7 @@
 ---
-title: "Pintura de fachadas y comunidades en Madrid | Aleto"
-metaDescription: "Pintura de fachadas y zonas comunes para comunidades en Madrid: presupuesto por partidas para la junta, obra documentada y garantía por escrito."
-h1: "Pintura de fachadas y comunidades de propietarios en Madrid"
+title: "Pintura de fachadas y comunidades en Bilbao | Aleto"
+metaDescription: "Pintura de fachadas y zonas comunes para comunidades en Bilbao: presupuesto por partidas para la junta, obra documentada y garantía por escrito."
+h1: "Pintura de fachadas y comunidades de propietarios en Bilbao"
 translationKey: service-fachadas
 locale: es
 serviceName: "Pintura de fachadas y comunidades"
@@ -11,9 +11,9 @@ shortLabel: "Fachadas y comunidades"
 excerpt: "Diagnóstico honesto, presupuesto por partidas listo para junta y una obra que respeta a los vecinos."
 orden: 4
 heroLead: "Diagnóstico honesto del soporte, presupuesto por partidas listo para presentar a la junta y una obra que respeta a los vecinos del primer día al último."
-directAnswer: "Pintar una fachada en Madrid cuesta entre 12 y 22 €/m² en 2026, según el estado del soporte y el sistema de acceso (andamio, cesta o trabajos verticales). Una fachada de 300 m² queda entre 3.600 € y 6.600 €. Preparamos presupuestos detallados por partidas, listos para presentar a la junta de propietarios."
+directAnswer: "Pintar una fachada en Bilbao cuesta entre 12 y 22 €/m² en 2026, según el estado del soporte y el sistema de acceso (andamio, cesta o trabajos verticales). Una fachada de 300 m² queda entre 3.600 € y 6.600 €. Preparamos presupuestos detallados por partidas, listos para presentar a la junta de propietarios."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-10-25
 relatedServices:
   - es/pintura-oficinas-locales
   - es/impermeabilizacion-terrazas

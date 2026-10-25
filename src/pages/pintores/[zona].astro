@@ -42,7 +42,7 @@ const servicios = (await getCollection('servicios', (e) => e.id.startsWith('es/'
 <BaseLayout seo={seo}>
   <header class="bg-brand-gradient text-paper">
     <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-chartreuse-300">Comunidad de Madrid</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-chartreuse-300">Gran Bilbao · Bizkaia</p>
       <h1 class="mt-4 max-w-2xl text-4xl leading-tight sm:text-5xl">Pintores {town.en}</h1>
       <p class="mt-5 max-w-xl text-lg leading-relaxed text-paper/90">{town.intro}</p>
       <div class="mt-8 flex flex-wrap items-center gap-3">
@@ -59,7 +59,9 @@ const servicios = (await getCollection('servicios', (e) => e.id.startsWith('es/'
         </a>
       </div>
       <p class="mt-5 text-sm text-paper/80">
-        Atendemos todo {town.name}: {town.barrios.join(', ')} y el resto del municipio.
+        {town.barrios.length > 0
+          ? `Atendemos todo ${town.name}: ${town.barrios.join(', ')} y el resto del municipio.`
+          : `Atendemos todo ${town.name} y el resto del Gran Bilbao.`}
       </p>
     </div>
   </header>
@@ -75,7 +77,7 @@ const servicios = (await getCollection('servicios', (e) => e.id.startsWith('es/'
     <div class="mx-auto grid max-w-6xl items-start gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2">
       <div>
         <h2 class="text-2xl text-forest-900 sm:text-3xl">Garantías en cada trabajo</h2>
-        <p class="mt-2 max-w-md text-ink-soft">Mismo estándar en {town.name} que en cualquier punto de Madrid: por escrito y sin letra pequeña.</p>
+        <p class="mt-2 max-w-md text-ink-soft">Mismo estándar en {town.name} que en cualquier punto del Gran Bilbao: por escrito y sin letra pequeña.</p>
       </div>
       <TrustGarantias locale="es" />
     </div>

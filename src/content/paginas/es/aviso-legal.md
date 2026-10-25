@@ -1,13 +1,13 @@
 ---
-title: "Aviso legal — Aleto Pintores, Madrid"
-metaDescription: "Aviso legal de aletopintores.com: identificación del titular, condiciones de uso del sitio web y propiedad intelectual de Aleto Pintores, Madrid."
+title: "Aviso legal — Aleto Pintores, Bilbao"
+metaDescription: "Aviso legal de aletopintores.com: identificación del titular, condiciones de uso del sitio web y propiedad intelectual de Aleto Pintores, Bilbao."
 h1: "Aviso legal"
 pageKey: aviso-legal
 translationKey: page-aviso-legal
 locale: es
 noindex: true
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-10-25
 faq: []
 ---
 
@@ -17,7 +17,7 @@ En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Informació
 
 - **Titular / Responsable legal:** Paola Alejandra Vera Zambrano (comercializado como Aleto Pintores)
 - **NIF:** 48473949T
-- **Domicilio:** C. de Juan de Austria, 13, Chamberí, 28010 Madrid, España
+- **Domicilio:** Rafaela Ybarra Kalea, 14, Deusto, 48014 Bilbao, Bizkaia
 - **Correo electrónico:** contacto@aletopintores.com
 - **Teléfono:** 624 04 62 10
 - **Sitio web:** https://aletopintores.com
@@ -40,4 +40,4 @@ Aleto Pintores no se hace responsable del mal uso de los contenidos de este siti
 
 ## Legislación aplicable
 
-Estas condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Madrid capital.
+Estas condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Bilbao.

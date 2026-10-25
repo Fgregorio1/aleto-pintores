@@ -9,3 +9,18 @@
 #
 # Add path redirects below when URLs change, e.g.:
 # /old-path/ /new-path/ 301
+
+# 2026-10-25: business moved Madrid -> Bilbao; old Madrid town landers go home
+/pintores/alcorcon/ / 301
+/pintores/mostoles/ / 301
+/pintores/getafe/ / 301
+/pintores/leganes/ / 301
+/pintores/fuenlabrada/ / 301
+/pintores/alcobendas/ / 301
+/pintores/san-sebastian-de-los-reyes/ / 301
+/pintores/las-rozas/ / 301
+/pintores/majadahonda/ / 301
+/pintores/pozuelo-de-alarcon/ / 301
+/pintores/boadilla-del-monte/ / 301
+/pintores/rivas-vaciamadrid/ / 301
+/pintores/tres-cantos/ / 301

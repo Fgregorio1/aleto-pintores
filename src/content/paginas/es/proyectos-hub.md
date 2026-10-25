@@ -1,13 +1,13 @@
 ---
-title: "Trabajos realizados — Antes y después en Madrid"
-metaDescription: "Galería de trabajos de pintura realizados en Madrid: antes y después reales, con barrio, servicio, precio y duración de cada proyecto. Sin fotos de banco."
-h1: "Trabajos realizados en Madrid"
+title: "Trabajos realizados — Antes y después en Bilbao"
+metaDescription: "Galería de trabajos de pintura realizados en Bilbao: antes y después reales, con barrio, servicio, precio y duración de cada proyecto. Sin fotos de banco."
+h1: "Trabajos realizados en Bilbao"
 pageKey: proyectos-hub
 translationKey: page-proyectos-hub
 locale: es
 noindex: true
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-10-25
 faq: []
 ---
 

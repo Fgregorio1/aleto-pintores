@@ -1,7 +1,7 @@
 ---
-title: "Lacado de puertas y armarios en Madrid | Aleto Pintores"
+title: "Lacado de puertas y armarios en Bilbao | Aleto Pintores"
 metaDescription: "Lacamos puertas y armarios en tu casa con acabado tipo fábrica: imprimación de agarre, esmalte que no amarillea y garantía por escrito. Presupuesto en 24 h."
-h1: "Lacado de puertas y armarios en Madrid"
+h1: "Lacado de puertas y armarios en Bilbao"
 translationKey: service-lacado
 locale: es
 serviceName: "Lacado de puertas y armarios"
@@ -11,9 +11,9 @@ shortLabel: "Lacado de puertas"
 excerpt: "Acabado tipo fábrica que no amarillea ni se descascarilla, hecho en tu casa y sin desmontarla."
 orden: 3
 heroLead: "Tus puertas de madera con acabado de fábrica, en blanco o el color que elijas: preparación completa, imprimación de agarre y un esmalte que no amarillea ni se descascarilla."
-directAnswer: "Lacar una puerta en Madrid cuesta entre 80 € y 140 € en 2026, incluyendo las dos caras, el marco y las jambas. Un piso con 8 puertas queda entre 640 € y 1.120 €, con acabado tipo fábrica, en 3-4 días. Pasar de puertas de sapelli a blanco lacado es el cambio estético con más impacto por euro en un piso de los 80-90."
+directAnswer: "Lacar una puerta en Bilbao cuesta entre 80 € y 140 € en 2026, incluyendo las dos caras, el marco y las jambas. Un piso con 8 puertas queda entre 640 € y 1.120 €, con acabado tipo fábrica, en 3-4 días. Pasar de puertas de sapelli a blanco lacado es el cambio estético con más impacto por euro en un piso de los 80-90."
 datePublished: 2026-07-09
-dateModified: 2026-07-09
+dateModified: 2026-10-25
 relatedServices:
   - es/pintura-interior-pisos
   - es/quitar-gotele-alisar-paredes
@@ -54,7 +54,7 @@ faq:
   - q: "¿El blanco amarillea con el tiempo?"
     a: "Los esmaltes sintéticos antiguos sí. Los esmaltes de poliuretano al agua que usamos no amarillean, ni siquiera en puertas con sol directo, y no desprenden apenas olor durante el trabajo."
   - q: "¿Se pueden lacar puertas barnizadas de sapelli?"
-    a: "Sí, es el trabajo más habitual en Madrid y el de mayor impacto: la carpintería oscura de los 70-90 pasa a blanco con acabado de fábrica. La clave es la imprimación de agarre sobre el barniz — sin ella, cualquier esmalte acaba pelándose."
+    a: "Sí, es el trabajo más habitual y el de mayor impacto: la carpintería oscura de los 70-90 pasa a blanco con acabado de fábrica. La clave es la imprimación de agarre sobre el barniz — sin ella, cualquier esmalte acaba pelándose."
   - q: "¿Cuánto tiempo están las puertas sin poder usarse?"
     a: "Cada mano seca al tacto en 2-4 horas; las puertas se pueden cerrar con cuidado el mismo día. El curado completo llega en unos 7 días, en los que conviene tratarlas con suavidad. Tu casa nunca se queda 'sin puertas'."
   - q: "¿Lacáis también armarios, ventanas y radiadores?"
@@ -69,7 +69,7 @@ Porque el 70% del lacado no se ve: es lo que pasa antes del esmalte. Desmontar l
 
 ## ¿Merece la pena lacar en vez de cambiar las puertas?
 
-Casi siempre, y no solo por dinero. Las puertas de los pisos madrileños de los 70-90 suelen ser de madera maciza o de una calidad que hoy cuesta encontrar: sustituirlas por puertas nuevas de gama media es, literalmente, cambiar algo bueno por algo peor con otro color. Lacarlas conserva la carpintería original — con su peso, su sonido y sus molduras — y le da el acabado actual que buscas. La sustitución solo compensa cuando la puerta está estructuralmente dañada o quieres cambiar de formato.
+Casi siempre, y no solo por dinero. Las puertas de los pisos de los 70-90 suelen ser de madera maciza o de una calidad que hoy cuesta encontrar: sustituirlas por puertas nuevas de gama media es, literalmente, cambiar algo bueno por algo peor con otro color. Lacarlas conserva la carpintería original — con su peso, su sonido y sus molduras — y le da el acabado actual que buscas. La sustitución solo compensa cuando la puerta está estructuralmente dañada o quieres cambiar de formato.
 
 ## ¿Cuándo conviene hacerlo y qué cuesta?
 

@@ -21,36 +21,39 @@ export const BUSINESS = {
   phoneE164: '+34624046210',
   email: 'contacto@aletopintores.com',
   address: {
-    street: 'C. de Juan de Austria, 13',
-    district: 'Chamberí',
-    postalCode: '28010',
-    city: 'Madrid',
-    region: 'Comunidad de Madrid',
+    street: 'Rafaela Ybarra Kalea, 14',
+    district: 'Deusto',
+    postalCode: '48014',
+    city: 'Bilbao',
+    region: 'Bizkaia',
     countryCode: 'ES',
     countryName: 'España',
   },
   /** Display line exactly as in NAP.md */
-  addressDisplay: 'C. de Juan de Austria, 13, Chamberí, 28010 Madrid, España',
+  addressDisplay: 'Rafaela Ybarra Kalea, 14, Deusto, 48014 Bilbao, Bizkaia',
   foundingYear: 2026,
   hoursDisplay: {
     es: 'Atención 24 h · todos los días',
     en: 'Open 24/7 · every day',
   },
-  /** Metro-belt service area (playbook §4, GBP service area) */
+  /** Gran Bilbao service area (GBP service area) — keep in sync with src/data/towns.ts */
   areaServed: [
-    'Madrid',
-    'Alcorcón',
-    'Móstoles',
-    'Getafe',
-    'Leganés',
-    'Fuenlabrada',
-    'Las Rozas',
-    'Pozuelo de Alarcón',
-    'Majadahonda',
-    'Alcobendas',
-    'San Sebastián de los Reyes',
-    'Rivas-Vaciamadrid',
+    'Bilbao',
+    'Barakaldo',
+    'Getxo',
+    'Portugalete',
+    'Santurtzi',
+    'Basauri',
+    'Leioa',
+    'Galdakao',
+    'Sestao',
+    'Erandio',
+    'Sopela',
+    'Arrigorriaga',
+    'Etxebarri',
   ],
+  /** Service-area line shown on the site */
+  serviceAreaLine: 'Atendemos todo el Gran Bilbao.',
   /**
    * Entity-resolution glue (docs/02 §4). ADD every real profile the moment
    * it exists (GBP, Instagram, Habitissimo, Houzz…). Never list a profile
@@ -88,8 +91,8 @@ export const FOUNDER = {
   name: 'Felipe Gregorio',
   jobTitle: { es: 'Fundador', en: 'Founder' },
   bio: {
-    es: 'Tras 7 años dirigiendo una empresa de pintura residencial y comercial en Estados Unidos, fundó Aleto en 2026 para traer ese estándar de servicio a Madrid, trabajando con pintores locales experimentados.',
-    en: 'After 7 years running a residential and commercial painting company in the US, he founded Aleto in 2026 to bring that standard of service to Madrid, working with experienced local painters.',
+    es: 'Tras 7 años dirigiendo una empresa de pintura residencial y comercial en Estados Unidos, fundó Aleto en 2026 para traer ese estándar de servicio a Bilbao, trabajando con pintores locales experimentados.',
+    en: 'After 7 years running a residential and commercial painting company in the US, he founded Aleto in 2026 to bring that standard of service to Bilbao, working with experienced local painters.',
   },
   sameAs: [
     'https://www.linkedin.com/in/fgregoriobr/'
@@ -111,7 +114,7 @@ export const MAPS_LINK = `https://maps.google.com/?q=${MAPS_QUERY}`;
 /** Honest stats for the contact section (no invented client counts) */
 export const STATS = [
   { value: '24 h', label: { es: 'Presupuesto cerrado', en: 'Fixed quote' } },
-  { value: '2026', label: { es: 'Fundada en Madrid', en: 'Founded in Madrid' } },
+  { value: '2026', label: { es: 'Año de fundación', en: 'Year founded' } },
   { value: '24/7', label: { es: 'Atención', en: 'Availability' } },
 ] as const;
 
